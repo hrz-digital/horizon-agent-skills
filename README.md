@@ -7,7 +7,8 @@ Skills carry workflow policy and best practices. Horizon remains source of truth
 ## Skills
 
 - `horizon` — bootstrap Discovery, classify work, select or resume Workspace, and coordinate handoff.
-- `horizon-metadata-authoring` — propose coherent Metadata through Workspace validation and human review.
+- `horizon-metadata-authoring` — propose coherent Metadata through Workspace validation and human review, including AMT implementation.
+- `horizon-architecture-analysis` — audit Published Metadata architecture and maintain Architectural Metadata Tickets.
 - `horizon-runtime` — operate Business Data and execute Actions on behalf of Agent Credential's Owner User.
 - `horizon-ask-for-guidance` — route a User to suitable Horizon workflow and skill.
 

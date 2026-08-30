@@ -12,3 +12,9 @@ _Avoid_: API client, platform contract, Lua runtime
 
 **Horizon Skill**: One portable workflow instruction in the Horizon Skill Set. It obtains current schemas, affordances, and capability state from Discovery.
 _Avoid_: API documentation, hard-coded schema
+
+**Metadata Architecture Analysis**: A complete review of one Installation's Published Metadata for conceptual overlap, misplaced meaning, and Structure boundaries that may warrant consolidation.
+_Avoid_: Source-code review, Workspace validation, automatic Metadata repair
+
+**Architectural Metadata Ticket**: A durable Metadata architecture quality concern created or reconfirmed by Metadata Architecture Analysis and tracked through implementation, verification, resolution, or reasoned acceptance.
+_Avoid_: Workspace Attention Item, issue tracker ticket, analysis report

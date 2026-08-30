@@ -19,6 +19,7 @@ horizon-ask-for-guidance
        ↓ recommends
 horizon
   ├── horizon-metadata-authoring
+  ├── horizon-architecture-analysis
   └── horizon-runtime
 ```
 
@@ -29,6 +30,10 @@ Coordinator. Bootstraps Discovery, distinguishes runtime from Metadata work, sel
 ### `horizon-metadata-authoring`
 
 Metadata proposal workflow. Reviews Semantic neighborhood, follows authoring schemas/catalogs, validates coherent Workspace, treats shared Business Data preview carefully, and hands every Attention acknowledgement and Publication decision to human.
+
+### `horizon-architecture-analysis`
+
+Published Metadata quality workflow for HSC-owned Agents. Inventories every discoverable element, verifies implemented Architectural Metadata Tickets, identifies actionable architecture concerns, and creates or updates Tickets through Discovery without changing Metadata.
 
 ### `horizon-runtime`
 
@@ -61,6 +66,7 @@ Each skill should be tested against black-box Horizon journey with no Core repos
 3. resume or create Workspace correctly;
 4. author and validate complete Metadata proposal;
 5. stop at human Attention/review boundaries;
-6. execute authorized runtime Action from current Business Instance link.
+6. execute authorized runtime Action from current Business Instance link;
+7. audit Published Metadata through discovered Architecture Analysis contracts without copying schemas or changing Metadata.
 
 Skill tests judge decisions and observable API use, not exact prose.

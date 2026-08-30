@@ -16,6 +16,8 @@ Router over Horizon Skill Set. Recommend flow; do not perform platform work here
 
 - “Approve Project 001”, update Business Data, manage Relations or Assets, run Data Source, execute Action → `horizon-runtime`.
 - Create or change Structure, Field, Relation, Expression, Action definition, Constraint, Data Source, Page, View, Node, Package, Semantic, or navigation → `horizon` then `horizon-metadata-authoring`.
+- Audit Published Metadata architecture or verify implemented AMTs → `horizon-architecture-analysis`; no Workspace and no Metadata mutation.
+- Implement selected AMT recommendation → `horizon` then `horizon-metadata-authoring`; use Ticket evidence as request context and normal human Publication gate.
 - Continue work from earlier session → `horizon`; inspect open Workspaces before creating one.
 - Test proposed Metadata → `horizon-metadata-authoring` preview branch; remind User Workspace Business Data is shared and audited.
 - Explain missing authority → use Discovery reason; eligible HSC-owned Agent may follow Authorization Diagnosis. Never reproduce authorization evaluation.

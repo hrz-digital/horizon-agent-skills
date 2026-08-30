@@ -16,7 +16,8 @@ Treat Discovery as platform contract. Skills supply workflow, never endpoint mem
 1. Call Discovery from href returned by token exchange. Confirm supported contract major version. Completion: current identity, Metadata Context, runtime root, and optional authoring root are known.
 2. Classify request:
    - Business Data or Action work → follow `horizon-runtime`.
-   - Structure, Field, Relation, Expression, Action definition, Data Source, Page, View, or other Metadata proposal → follow `horizon-metadata-authoring`.
+   - Published Metadata architecture audit or post-Publication AMT verification → follow `horizon-architecture-analysis`.
+   - Structure, Field, Relation, Expression, Action definition, Data Source, Page, View, or other Metadata proposal, including implementation of a selected AMT → follow `horizon-metadata-authoring`.
    - Unsure which workflow fits → use `horizon-ask-for-guidance` with User.
 
 ## Workspace selection
