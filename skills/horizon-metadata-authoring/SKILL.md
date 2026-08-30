@@ -13,9 +13,11 @@ Author one coherent Metadata proposal from machine-readable Discovery contracts.
 
 ## Enter Workspace
 
-1. Run `horizon` Workspace selection protocol. Completion: User selected existing Workspace or approved new one.
-2. Send `Horizon-Workspace: <workspace-code>` on Discovery, effective Metadata reads, Metadata writes, and intentional runtime preview requests.
-3. Follow authoring affordances and JSON Schema references. Use only implemented values returned by catalogs.
+1. Run `horizon` Workspace selection protocol.
+2. Pass the Workspace context required by current Discovery on Metadata reads, Metadata writes, and intentional runtime preview requests.
+3. Follow current authoring affordances and JSON Schema references. Use only values returned by current catalogs.
+
+Completion: User selected an existing Workspace or approved a new one, current Workspace context is active, and authoring schemas and catalogs are loaded.
 
 ## Architectural Metadata Tickets
 
@@ -26,6 +28,8 @@ When request names one or more AMTs:
 3. Before Metadata edits, update each Ticket through its linked schema to record active Workspace and implementation progress. Never claim implementation or resolution before Publication and later analysis establish them.
 4. If implementation stops before proposal is ready, follow current Ticket affordance to return concern for attention rather than leaving false progress.
 5. Record Ticket codes in Workspace Activity with requested outcome, decisions, evidence, and remaining work.
+
+Completion: each named Ticket is linked to active Workspace progress or returned through its current affordance, and its code and evidence are recorded in Activity.
 
 ## Model
 
@@ -39,19 +43,25 @@ Before proposing change:
 
 Semantic explains meaning. Executable Metadata defines types, validation, behavior, availability, and authorization.
 
+Completion: each affected concept has owner evidence or a clear User question for unresolved ambiguity, and any exceptional placement rationale is recorded.
+
 ## Author
 
 1. Use schema-required properties, immutable-property declarations, enum catalogs, examples, and concurrency requirements exactly.
 2. Keep related Structure, Fields, Pages, Views, Actions, and supporting Metadata in same Workspace when they form one review outcome.
 3. Re-read affected Semantic neighborhood after executable change.
-4. Validate Workspace. Correct every danger issue and requested technical conflict through server-provided remediation.
-5. Show Attention to User. AI Agents never acknowledge Attention, approve, or publish.
-6. Submit completed Workspace for human review when submission affordance is available.
+4. Validate Workspace. Resolve every server-reported danger or technical conflict through its remediation affordance, then validate again.
+5. Show Attention to User. Leave Attention acknowledgement, approval, and Publication to human decision-makers.
+6. Submit the completed Workspace only when current Discovery exposes a human-review submission affordance.
+
+Completion: proposal uses current schema and catalog values, validation has no unresolved technical conflicts, and any human Attention or review gate is surfaced.
 
 ## Preview
 
-Workspace preview uses shared Business Data. Reads and validation are default proof.
+Workspace preview uses shared Business Data. Treat reads and validation results as evidence from shared, real, audited data.
 
-Create fictional test Business Instances only with explicit User intent. Record their identities and purpose in Workspace Activity, avoid personal/customer data, use smallest representative set, and clean up through discovered runtime affordances when User requests cleanup. Runtime mutations remain real and audited.
+Create fictional test Business Instances only with explicit User intent. Record their identities and purpose in Workspace Activity, avoid personal/customer data, use the smallest representative set, and clean up through discovered runtime affordances when User requests cleanup. Runtime mutations remain real and audited.
 
-Completion: Workspace validates, evidence is recorded, unresolved human Attention is surfaced, linked AMTs remain traceable to Workspace, and proposal is submitted or ready for User-directed continuation.
+Completion: preview results and any test-instance identities, purpose, and cleanup state are recorded; no test instances are created without explicit User intent.
+
+Completion: Workspace validates, evidence is recorded, unresolved human Attention is surfaced, linked AMTs remain traceable to the Workspace, and the proposal is either submitted through a current review affordance or clearly ready for User-directed continuation.

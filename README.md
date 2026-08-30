@@ -1,16 +1,18 @@
 # Horizon Agent Skills
 
-Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon through its machine-facing Discovery contract.
+Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon through machine-facing Discovery.
 
-Skills carry workflow policy and best practices. Horizon remains source of truth for schemas, affordances, authorization, Metadata Context, and runtime behavior.
+Horizon Discovery is the source of truth for schemas, affordances, authorization, Metadata Context, and runtime behavior. Skills provide workflow policy, safety, and continuity; they do not replace Discovery.
 
 ## Skills
 
-- `horizon` — bootstrap Discovery, classify work, select or resume Workspace, and coordinate handoff.
-- `horizon-metadata-authoring` — propose coherent Metadata through Workspace validation and human review, including AMT implementation.
-- `horizon-architecture-analysis` — audit Published Metadata architecture and maintain Architectural Metadata Tickets.
-- `horizon-runtime` — operate Business Data and execute Actions on behalf of Agent Credential's Owner User.
-- `horizon-ask-for-guidance` — route a User to suitable Horizon workflow and skill.
+Current workflow instructions and model-invocation rules live in each skill's `SKILL.md`:
+
+- [`horizon`](skills/horizon/SKILL.md)
+- [`horizon-metadata-authoring`](skills/horizon-metadata-authoring/SKILL.md)
+- [`horizon-architecture-analysis`](skills/horizon-architecture-analysis/SKILL.md)
+- [`horizon-runtime`](skills/horizon-runtime/SKILL.md)
+- [`horizon-ask-for-guidance`](skills/horizon-ask-for-guidance/SKILL.md) — user-invoked router
 
 ## Install
 
@@ -34,17 +36,15 @@ npx skills add hrz-digital/horizon-agent-skills --skill horizon-ask-for-guidance
 
 ## Authentication
 
-Preferred setup gives Agent an authenticated HTTP or MCP tool backed by Harness secret storage. API keys never belong in prompts, skills, repositories, URLs, or logs.
-
-Harnesses without secret storage may inject:
+Preferred setup gives the Agent an authenticated HTTP or MCP tool backed by Harness secret storage. API keys never belong in prompts, skills, repositories, URLs, or logs. Harnesses without secret storage may inject:
 
 ```text
 HORIZON_API_URL
 HORIZON_AGENT_API_KEY
 ```
 
-A connector exchanges Agent Credential API key through `/auth/token`, keeps returned Bearer token in memory, and exchanges again after expiry. Skills assume authenticated access and never request secret value.
+The connector handles authentication and token refresh through the current harness integration. Skills assume authenticated access and never request or expose secret values.
 
 ## Compatibility
 
-Initial skills target Horizon Discovery contract major version `1`. Skills stop and report unsupported major versions rather than guessing.
+Each skill declares its supported Discovery contract major in frontmatter. If the current major is unsupported, stop before platform work and report the mismatch; never guess routes, schemas, or payloads. The shared bootstrap procedure is in [`horizon`](skills/horizon/SKILL.md).
