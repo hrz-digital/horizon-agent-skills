@@ -39,7 +39,14 @@ def main():
                 env={"HORIZON_STUB_STATE": str(state)}, text=True, capture_output=True,
             )
             assert result.returncode == 0, scenario["id"]
-            assert json.loads(result.stdout) == scenario["stub"].get("profiles", [])
+            expected = scenario["stub"].get("profiles", scenario["stub"].get("profileLists", [[]])[0])
+            assert json.loads(result.stdout) == expected
+            if len(scenario["stub"].get("profileLists", [])) > 1:
+                result = subprocess.run(
+                    [stub, "connection", "list", "--check", "--json"],
+                    env={"HORIZON_STUB_STATE": str(state)}, text=True, capture_output=True,
+                )
+                assert json.loads(result.stdout) == scenario["stub"]["profileLists"][1]
 
 
 if __name__ == "__main__":

@@ -10,7 +10,13 @@ args = sys.argv[2:]
 if args == ["version"]:
     print("horizon version " + state.get("version", "1.0.0"))
 elif args == ["connection", "list", "--check", "--json"]:
-    print(json.dumps(state.get("profiles", []), separators=(",", ":")))
+    lists = state.get("profileLists")
+    if lists:
+        profiles = lists.pop(0) if len(lists) > 1 else lists[0]
+        pathlib.Path(sys.argv[1]).write_text(json.dumps(state))
+    else:
+        profiles = state.get("profiles", [])
+    print(json.dumps(profiles, separators=(",", ":")))
 elif args and args[0] == "request":
     try:
         label = args[args.index("--connection") + 1]
