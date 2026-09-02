@@ -1,10 +1,10 @@
 ---
 name: horizon-metadata-authoring
 description: Propose Horizon Metadata through Workspaces. Use when creating or changing Structures, Fields, Relations, Expressions, Actions, Constraints, Data Sources, Pages, Views, Nodes, Semantic, Packages, navigation, or implementing an Architectural Metadata Ticket.
-compatibility: Requires authenticated HSC-owned Agent access to Horizon Discovery contract v1.
+compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Horizon Metadata Authoring
@@ -13,8 +13,8 @@ Author one coherent Metadata proposal from machine-readable Discovery contracts.
 
 ## Enter Workspace
 
-1. Run `horizon` Workspace selection protocol.
-2. Pass the Workspace context required by current Discovery on Metadata reads, Metadata writes, and intentional runtime preview requests.
+1. Run `horizon` bootstrap, including explicit live-valid customer Installation selection, then its Workspace selection protocol.
+2. Pass selected profile through `--connection` on every request and Workspace context required by current Discovery on Metadata reads, Metadata writes, and intentional runtime preview requests.
 3. Follow current authoring affordances and JSON Schema references. Use only values returned by current catalogs.
 
 Completion: User selected an existing Workspace or approved a new one, current Workspace context is active, and authoring schemas and catalogs are loaded.

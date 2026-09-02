@@ -1,12 +1,8 @@
 # Horizon Agent Skills
 
-Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon through machine-facing Discovery.
-
-Horizon Discovery is the source of truth for schemas, affordances, authorization, Metadata Context, and runtime behavior. Skills provide workflow policy, safety, and continuity; they do not replace Discovery.
+Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon through machine-facing Discovery. Horizon Discovery is source of truth for schemas, affordances, authorization, Metadata Context, and runtime behavior. Skills provide workflow policy, safety, and continuity; they do not replace Discovery.
 
 ## Skills
-
-Current workflow instructions and model-invocation rules live in each skill's `SKILL.md`:
 
 - [`horizon`](skills/horizon/SKILL.md)
 - [`horizon-metadata-authoring`](skills/horizon-metadata-authoring/SKILL.md)
@@ -14,7 +10,12 @@ Current workflow instructions and model-invocation rules live in each skill's `S
 - [`horizon-runtime`](skills/horizon-runtime/SKILL.md)
 - [`horizon-ask-for-guidance`](skills/horizon-ask-for-guidance/SKILL.md) — user-invoked router
 
-## Install
+## Required setup
+
+Initial supported AI Harnesses are OpenAI Codex, Claude Code, and Pi. Each needs both:
+
+1. Horizon Skill Set installed in Harness.
+2. Released Horizon CLI 1.x installed and Connection Profile imported by User in separate terminal.
 
 List available skills:
 
@@ -28,23 +29,14 @@ Install all skills globally:
 npx skills add hrz-digital/horizon-agent-skills --all -g
 ```
 
-Install one skill:
-
-```bash
-npx skills add hrz-digital/horizon-agent-skills --skill horizon-ask-for-guidance -g
-```
+Install CLI through [official verified instructions](https://github.com/hrz-digital/core/blob/main/docs/cli/install.md). Then create Agent Credential in target Installation, copy one-time Connection Profile, and personally run `horizon connection add` in separate terminal. Never paste Connection Profile or API key into Agent chat.
 
 ## Authentication
 
-Preferred setup gives the Agent an authenticated HTTP or MCP tool backed by Harness secret storage. API keys never belong in prompts, skills, repositories, URLs, or logs. Harnesses without secret storage may inject:
+Horizon CLI is required authentication and transport boundary. It stores Agent Credential API keys in operating-system credential store, exchanges short-lived tokens, and sends authenticated requests. API keys and tokens never belong in Harness storage, environment variables, prompts, skills, repositories, URLs, command arguments, output, or logs.
 
-```text
-HORIZON_API_URL
-HORIZON_AGENT_API_KEY
-```
-
-The connector handles authentication and token refresh through the current harness integration. Skills assume authenticated access and never request or expose secret values.
+Skills verify CLI, list live-checked non-secret Connection Profiles, require explicit customer Installation choice, and pass selected profile on every request. Shared procedure lives in [`horizon`](skills/horizon/SKILL.md).
 
 ## Compatibility
 
-Each skill declares its supported Discovery contract major in frontmatter. If the current major is unsupported, stop before platform work and report the mismatch; never guess routes, schemas, or payloads. The shared bootstrap procedure is in [`horizon`](skills/horizon/SKILL.md).
+Each workflow declares supported CLI and Discovery contract majors in frontmatter. Missing or unsupported CLI or Discovery major stops platform work; Skills never guess routes, schemas, payloads, or fall back to raw credential-bearing HTTP.
