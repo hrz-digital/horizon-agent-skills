@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/horizon-logo.svg" alt="Horizon" width="220">
+</p>
+
 # Horizon Agent Skills
 
 Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon through machine-facing Discovery. Horizon Discovery is source of truth for schemas, affordances, authorization, Metadata Context, and runtime behavior. Skills provide workflow policy, safety, and continuity; they do not replace Discovery.
@@ -29,7 +33,19 @@ Install all skills globally:
 npx skills add hrz-digital/horizon-agent-skills --all -g
 ```
 
-Install CLI through [official verified instructions](https://github.com/hrz-digital/core/blob/main/docs/cli/install.md). Then create Agent Credential in target Installation, copy one-time Connection Profile, and personally run `horizon connection add` in separate terminal. Never paste Connection Profile or API key into Agent chat.
+Install Horizon CLI from official distribution:
+
+```sh
+curl -fsSL https://platform.hrz.digital/cli/install.sh | sh
+```
+
+Windows PowerShell:
+
+```powershell
+irm https://platform.hrz.digital/cli/install.ps1 | iex
+```
+
+Verify with `horizon version`. Then create Agent Credential in target Installation, copy one-time Connection Profile, and personally run `horizon connection add` in separate terminal. Never paste Connection Profile or API key into Agent chat.
 
 ## Authentication
 
