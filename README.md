@@ -16,10 +16,28 @@ Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon 
 
 ## Required setup
 
-Initial supported AI Harnesses are OpenAI Codex, Claude Code, and Pi. Each needs both:
+Initial supported AI Harnesses are OpenAI Codex, Claude Code, and Pi. Complete setup in this order.
 
-1. Horizon Skill Set installed in Harness.
-2. Released Horizon CLI 1.x installed and Connection Profile imported by User in separate terminal.
+1. Install Horizon CLI and verify `horizon version`.
+2. Install Horizon Skills in your Harness.
+
+### 1. Install Horizon CLI
+
+macOS/Linux:
+
+```sh
+curl -fsSL https://platform.hrz.digital/cli/install.sh | sh
+horizon version
+```
+
+Windows PowerShell:
+
+```powershell
+irm https://platform.hrz.digital/cli/install.ps1 | iex
+horizon version
+```
+
+### 2. Install Horizon Skills
 
 List available skills:
 
@@ -33,19 +51,7 @@ Install all skills globally:
 npx skills add hrz-digital/horizon-agent-skills --all -g
 ```
 
-Install Horizon CLI from official distribution:
-
-```sh
-curl -fsSL https://platform.hrz.digital/cli/install.sh | sh
-```
-
-Windows PowerShell:
-
-```powershell
-irm https://platform.hrz.digital/cli/install.ps1 | iex
-```
-
-Verify with `horizon version`. Then create Agent Credential in target Installation, copy one-time Connection Profile, and personally run `horizon connection add` in separate terminal. Never paste Connection Profile or API key into Agent chat.
+After both steps, create an Agent Credential in the target Installation, copy the one-time Connection Profile, and personally run `horizon connection add` in a separate terminal. Never paste Connection Profile JSON or API keys into Agent chat.
 
 ## Authentication
 
