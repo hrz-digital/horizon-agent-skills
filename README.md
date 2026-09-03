@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="assets/horizon-logo.svg" alt="Horizon" width="220">
+  <img src="assets/horizon-logo.png" alt="Horizon" height="271">
 </p>
 
 # Horizon Agent Skills
