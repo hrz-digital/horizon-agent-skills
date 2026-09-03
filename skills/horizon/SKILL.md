@@ -17,7 +17,7 @@ Treat CLI as authenticated transport and Discovery as platform contract. Skills 
 2. Read and follow shared [Connection Profile](references/connections.md) guidance. Run checked JSON listing, obtain explicit customer Installation choice when absent, and require selected status `valid`.
 3. Request Discovery through `horizon request --connection "<selected label>" GET /discovery`. Confirm current contract major version. If unsupported, stop and report mismatch; never guess routes, schemas, or payloads from memory.
 
-Completion: released CLI 1.x and Discovery v1 confirmed, selected Connection Profile is explicit and live-valid, current identity known, available Metadata Context and Discovery roots recorded. Selected label remains current session context and every later request carries it explicitly.
+Completion: compatible CLI 1.x and Discovery v1 confirmed, selected Connection Profile is explicit and live-valid, current identity known, available Metadata Context and Discovery roots recorded. Selected label remains current session context and every later request carries it explicitly.
 
 ## Classify
 
