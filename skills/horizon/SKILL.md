@@ -4,7 +4,7 @@ description: Coordinate work against Horizon Platform through Discovery. Use whe
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.1.0"
+  version: "1.0.0"
 ---
 
 # Horizon

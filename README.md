@@ -53,6 +53,20 @@ npx skills add hrz-digital/horizon-agent-skills --all -g
 
 After both steps, create an Agent Credential in the target Installation, copy the one-time Connection Profile, and personally run `horizon connection add` in a separate terminal. Never paste Connection Profile JSON or API keys into Agent chat.
 
+## Updating Skills
+
+Update installed Skills to latest published version:
+
+```bash
+npx skills update
+```
+
+Install this Skill Set at an exact version:
+
+```bash
+npx skills add https://github.com/hrz-digital/horizon-agent-skills/archive/refs/tags/v1.0.0.tar.gz --all -g
+```
+
 ## Authentication
 
 Horizon CLI is required authentication and transport boundary. It stores Agent Credential API keys in operating-system credential store, exchanges short-lived tokens, and sends authenticated requests. API keys and tokens never belong in Harness storage, environment variables, prompts, skills, repositories, URLs, command arguments, output, or logs.
