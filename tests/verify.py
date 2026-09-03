@@ -23,7 +23,7 @@ def main():
     required = {
         "missing-cli", "unsupported-cli", "install-refused", "zero-profiles", "one-profile", "many-profiles",
         "invalid", "unreachable", "error", "explicit-choice", "explicit-propagation",
-        "safe-onboarding", "discovery-workflow", "acceptance-journey",
+        "safe-onboarding", "discovery-workflow", "acceptance-journey", "field-authoring-journey",
     }
     assert required == {scenario["id"] for scenario in scenarios}
 

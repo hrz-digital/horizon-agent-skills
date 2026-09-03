@@ -47,14 +47,14 @@ Completion: each affected concept has owner evidence or a clear User question fo
 
 ## Author
 
-1. Use schema-required properties, immutable-property declarations, enum catalogs, examples, and concurrency requirements exactly.
+1. Use schema-required properties, immutable-property declarations, enum catalogs, examples, and concurrency requirements exactly. For a new Field, discover Structure detail and Field-create affordance, fetch linked schema, then send only schema-valid data through its discovered method and href. Never construct authoring routes from memory.
 2. Keep related Structure, Fields, Pages, Views, Actions, and supporting Metadata in same Workspace when they form one review outcome.
 3. Re-read affected Semantic neighborhood after executable change.
-4. Validate Workspace. Resolve every server-reported danger or technical conflict through its remediation affordance, then validate again.
+4. Validate Workspace and request its discovered diff/report. Resolve every server-reported danger or technical conflict through its remediation affordance, then validate again.
 5. Show Attention to User. Leave Attention acknowledgement, approval, and Publication to human decision-makers.
 6. Submit the completed Workspace only when current Discovery exposes a human-review submission affordance.
 
-Completion: proposal uses current schema and catalog values, validation has no unresolved technical conflicts, and any human Attention or review gate is surfaced.
+Completion: representative Field exists in selected Workspace draft, validation and diff report are shown, unresolved human Attention is surfaced, and work stops before acknowledgement, approval, or Publication.
 
 ## Preview
 
