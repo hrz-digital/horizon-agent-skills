@@ -9,6 +9,13 @@ state = json.loads(pathlib.Path(sys.argv[1]).read_text())
 args = sys.argv[2:]
 if args == ["version"]:
     print("horizon version " + state.get("version", "1.0.0"))
+elif args == ["version", "--check", "--json"]:
+    if state.get("versionCheckUnsupported"):
+        print("unknown flag: --check", file=sys.stderr)
+        raise SystemExit(2)
+    current = state.get("version", "1.0.0")
+    latest = state.get("latestVersion", current)
+    print(json.dumps({"current": current, "latest": latest, "available": True, "updateAvailable": state.get("updateAvailable", current != latest)}, separators=(",", ":")))
 elif args == ["connection", "list", "--check", "--json"]:
     lists = state.get("profileLists")
     if lists:

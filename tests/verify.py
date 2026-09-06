@@ -15,13 +15,14 @@ def require(path, *texts):
 
 def main():
     require("skills/horizon/SKILL.md", "references/cli-installation.md", "references/connections.md")
+    require("skills/horizon/references/cli-installation.md", "horizon version --check --json", "updateAvailable")
     require("skills/horizon/references/connections.md", "horizon connection list --check --json", "--connection")
     for skill in ("horizon-runtime", "horizon-metadata-authoring", "horizon-architecture-analysis"):
         require(f"skills/{skill}/SKILL.md", "Run `horizon` bootstrap")
 
     scenarios = json.loads((ROOT / "tests/scenarios.json").read_text())
     required = {
-        "missing-cli", "unsupported-cli", "install-refused", "zero-profiles", "one-profile", "many-profiles",
+        "missing-cli", "unsupported-cli", "update-available", "install-refused", "zero-profiles", "one-profile", "many-profiles",
         "invalid", "unreachable", "error", "explicit-choice", "explicit-propagation",
         "safe-onboarding", "discovery-workflow", "acceptance-journey", "field-authoring-journey",
     }
@@ -34,6 +35,13 @@ def main():
         with tempfile.TemporaryDirectory() as directory:
             state = pathlib.Path(directory) / "state.json"
             state.write_text(json.dumps(scenario["stub"]))
+            version_check = subprocess.run(
+                [stub, "version", "--check", "--json"],
+                env={"HORIZON_STUB_STATE": str(state)}, text=True, capture_output=True,
+            )
+            assert version_check.returncode == 0, scenario["id"]
+            status = json.loads(version_check.stdout)
+            assert set(status) == {"current", "latest", "available", "updateAvailable"}, scenario["id"]
             result = subprocess.run(
                 [stub, "connection", "list", "--check", "--json"],
                 env={"HORIZON_STUB_STATE": str(state)}, text=True, capture_output=True,

@@ -16,10 +16,11 @@ Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon 
 
 ## Required setup
 
-Initial supported AI Harnesses are OpenAI Codex, Claude Code, and Pi. Complete setup in this order.
+Horizon CLI is independent of any AI Harness. Horizon Skills work with Harnesses that support Agent Skills directly or through a compatible installer. Complete setup in this order.
 
 1. Install Horizon CLI and verify `horizon version`.
 2. Install Horizon Skills in your Harness.
+3. Connect the CLI to a Horizon Installation.
 
 ### 1. Install Horizon CLI
 
@@ -48,12 +49,51 @@ npx skills add hrz-digital/horizon-agent-skills --list
 Install all skills globally:
 
 ```bash
-npx skills add hrz-digital/horizon-agent-skills --all -g
+npx skills add hrz-digital/horizon-agent-skills --skill '*' -g
 ```
 
-After both steps, create an Agent Credential in the target Installation, copy the one-time Connection Profile, and personally run `horizon connection add` in a separate terminal. Never paste Connection Profile JSON or API keys into Agent chat.
+### 3. Connect to a Horizon Installation
 
-## Updating Skills
+1. Open the Account Sidebar in the target Horizon Installation.
+2. Create an Agent Credential.
+3. Copy the one-time Connection Profile.
+4. Open a separate terminal outside the AI Harness.
+5. Run `horizon connection add`, paste the Connection Profile into the hidden prompt, and confirm it.
+6. Return to the Agent. It can verify the non-secret profile with `horizon connection list --check --json` and ask which Installation to use.
+
+You must personally perform steps 1–5. Never paste Connection Profile JSON or API keys into Agent chat or let the Agent run `horizon connection add`.
+
+## Updating setup
+
+Update Horizon CLI first, then update the Skill Set.
+
+### Update Horizon CLI
+
+Check whether a newer release is available:
+
+```sh
+horizon version --check
+```
+
+If an update is available, run the installer for your operating system.
+
+macOS/Linux:
+
+```sh
+curl -fsSL https://platform.hrz.digital/cli/install.sh | sh
+horizon version
+```
+
+Windows PowerShell:
+
+```powershell
+irm https://platform.hrz.digital/cli/install.ps1 | iex
+horizon version
+```
+
+The installer resolves the latest release, verifies its checksum, and replaces the existing user-local executable. Stored Connection Profiles remain unchanged.
+
+### Update Horizon Skills
 
 Update installed Skills to latest published version:
 
