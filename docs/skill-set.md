@@ -10,7 +10,7 @@ This repository packages portable workflow skills for AI Agents operating Horizo
 - [`horizon-metadata-authoring`](../skills/horizon-metadata-authoring/SKILL.md) — propose Metadata through a Workspace and human review.
 - [`horizon-architecture-analysis`](../skills/horizon-architecture-analysis/SKILL.md) — analyze Published Metadata and maintain Architectural Metadata Tickets.
 - [`horizon-runtime`](../skills/horizon-runtime/SKILL.md) — operate Business Data and execute runtime Actions.
-- [`horizon-ask-for-guidance`](../skills/horizon-ask-for-guidance/SKILL.md) — user-invoked router that recommends a workflow without performing platform work.
+- [`horizon-ask-for-guidance`](../skills/horizon-ask-for-guidance/SKILL.md) — user-invoked, read-only guidance for Metadata decisions and explaining configured Installation behavior.
 
 Every platform workflow first runs [`horizon`](../skills/horizon/SKILL.md) bootstrap. It links single shared [CLI installation](../skills/horizon/references/cli-installation.md) and [Connection Profile](../skills/horizon/references/connections.md) references. When classifying runtime versus Metadata work, selecting or resuming Workspace, or recording handoff, continue there. When the request follows another branch, read that branch's linked skill; do not copy its workflow rules here.
 

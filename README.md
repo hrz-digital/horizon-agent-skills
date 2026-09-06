@@ -104,7 +104,7 @@ npx skills update
 Install this Skill Set at an exact version:
 
 ```bash
-npx skills add https://github.com/hrz-digital/horizon-agent-skills/archive/refs/tags/v1.0.0.tar.gz --all -g
+npx skills add https://github.com/hrz-digital/horizon-agent-skills/archive/refs/tags/v1.1.0.tar.gz --all -g
 ```
 
 ## Authentication

@@ -16,6 +16,7 @@ def require(path, *texts):
 def main():
     require("skills/horizon/SKILL.md", "references/cli-installation.md", "references/connections.md")
     require("skills/horizon/references/cli-installation.md", "horizon version --check --json", "updateAvailable")
+    require("skills/horizon-ask-for-guidance/SKILL.md", "Semantic engine", "Actual configured Metadata", "Published Metadata", "owned secondary Structure", "Completion:")
     require("skills/horizon/references/connections.md", "horizon connection list --check --json", "--connection")
     for skill in ("horizon-runtime", "horizon-metadata-authoring", "horizon-architecture-analysis"):
         require(f"skills/{skill}/SKILL.md", "Run `horizon` bootstrap")
