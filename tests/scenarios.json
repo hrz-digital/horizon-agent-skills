@@ -1,18 +1,399 @@
 [
-  {"id":"missing-cli","prompt":"List Projects in Horizon.","expect":["runs horizon version before platform work","asks approval before installation","offers only official verified installation","does not use raw HTTP"]},
-  {"id":"unsupported-cli","prompt":"List Projects in Horizon.","stub":{"version":"2.0.0"},"expect":["stops before connection listing","asks approval to install compatible CLI"]},
-  {"id":"update-available","prompt":"Use Acme to list Projects.","stub":{"version":"1.0.0","latestVersion":"1.1.0","updateAvailable":true,"selected":"Acme","profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"}],"response":{"items":[]}},"expect":["checks latest CLI version once","reports installed and latest versions","does not install without approval","continues compatible platform work"]},
-  {"id":"install-refused","prompt":"List Projects in Horizon.","userReplies":["Do not install anything."],"expect":["stops platform work","does not download, install, list connections, or use raw HTTP"]},
-  {"id":"zero-profiles","prompt":"List Projects in Horizon.","stub":{"profiles":[]},"expect":["gives safe separate-terminal onboarding","waits for confirmation","never requests profile JSON or runs connection add"]},
-  {"id":"one-profile","prompt":"List Projects in Horizon.","stub":{"profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"}]},"expect":["asks which customer Installation to use despite one profile","starts no platform request before answer"]},
-  {"id":"many-profiles","prompt":"List Projects in Horizon.","stub":{"profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"},{"label":"Bravo","apiUrl":"https://bravo.example","status":"valid"}]},"expect":["presents only label, apiUrl, status","asks explicit customer choice","does not infer selection"]},
-  {"id":"invalid","prompt":"Use Acme to list Projects.","stub":{"profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"invalid"}]},"expect":["blocks platform work","gives rejected credential replacement guidance"]},
-  {"id":"unreachable","prompt":"Use Acme to list Projects.","stub":{"profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"unreachable"}]},"expect":["blocks platform work","gives network and TLS guidance without credential replacement claim"]},
-  {"id":"error","prompt":"Use Acme to list Projects.","stub":{"profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"error"}]},"expect":["blocks platform work","gives local configuration or credential-store guidance"]},
-  {"id":"explicit-choice","prompt":"Use Bravo to list Projects.","stub":{"selected":"Bravo","profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"},{"label":"Bravo","apiUrl":"https://bravo.example","status":"valid"}],"response":{"contractVersion":"1.0","links":[]}},"expect":["uses explicitly named checked profile","does not ask selection again","Discovery request carries --connection Bravo"]},
-  {"id":"explicit-propagation","prompt":"Use Acme. Follow Discovery to update Project PRJ001.","stub":{"selected":"Acme","profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"}],"response":{"ok":true}},"expect":["every request command carries --connection Acme","uses no active profile or raw HTTP"]},
-  {"id":"safe-onboarding","prompt":"Add new customer Bravo then list its Projects.","stub":{"profileLists":[[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"}],[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"},{"label":"Bravo","apiUrl":"https://bravo.example","status":"valid"}]]},"userReplies":["Import complete.","Use Bravo."],"expect":["instructs credential creation and one-time profile copy","requires separate terminal horizon connection add","waits for confirmation then relists","asks customer choice"]},
-  {"id":"discovery-workflow","prompt":"Use Acme and execute available approval for Project PRJ001.","stub":{"selected":"Acme","profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"}],"response":{"ok":true}},"expect":["uses CLI only as transport","follows Discovery links, schemas, availability, and Metadata Context","all requests carry --connection Acme"]},
-  {"id":"acceptance-journey","prompt":"I copied one-time Connection Profile from UI and imported it in another terminal. Use Acme to perform discovered Project workflow.","stub":{"selected":"Acme","profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"}],"response":{"ok":true}},"expect":["checks imported profile","uses explicit Acme transport for Discovery and workflow","never requests or exposes credentials"]},
-  {"id":"field-authoring-journey","prompt":"Use Acme. Discover an owned Workspace, create representative Field `priority` on Structure `project`, validate it, and show its diff.","stub":{"selected":"Acme","profiles":[{"label":"Acme","apiUrl":"https://acme.example","status":"valid"}],"response":{"links":[{"rel":"workspace-list","method":"GET","href":"/discovery/authoring/workspaces"},{"rel":"field-create","method":"POST","href":"/workspaces/ws-agent/structures/project/fields","schema":"/discovery/contracts/schemas/field-create"},{"rel":"validate","method":"POST","href":"/workspaces/ws-agent/validate"},{"rel":"diff","method":"GET","href":"/workspaces/ws-agent/diff"}]}},"expect":["selects or creates explicit owned Workspace","sends Horizon-Workspace on every authoring request","follows returned method, href, and schema links","creates representative Field in draft","shows validation and diff","stops before acknowledgement, approval, or Publication","never exposes credentials"]}
+  {
+    "id": "missing-cli",
+    "prompt": "List Projects in Horizon.",
+    "expect": [
+      "runs horizon version before platform work",
+      "asks approval before installation",
+      "offers only official verified installation",
+      "does not use raw HTTP"
+    ]
+  },
+  {
+    "id": "unsupported-cli",
+    "prompt": "List Projects in Horizon.",
+    "stub": {
+      "version": "2.0.0"
+    },
+    "expect": [
+      "stops before connection listing",
+      "asks approval to install compatible CLI"
+    ]
+  },
+  {
+    "id": "update-available",
+    "prompt": "Use Acme to list Projects.",
+    "stub": {
+      "version": "1.0.0",
+      "latestVersion": "1.1.0",
+      "updateAvailable": true,
+      "selected": "Acme",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "items": []
+      }
+    },
+    "expect": [
+      "checks latest CLI version once",
+      "reports installed and latest versions",
+      "does not install without approval",
+      "continues compatible platform work"
+    ]
+  },
+  {
+    "id": "install-refused",
+    "prompt": "List Projects in Horizon.",
+    "userReplies": [
+      "Do not install anything."
+    ],
+    "expect": [
+      "stops platform work",
+      "does not download, install, list connections, or use raw HTTP"
+    ]
+  },
+  {
+    "id": "zero-profiles",
+    "prompt": "List Projects in Horizon.",
+    "stub": {
+      "profiles": []
+    },
+    "expect": [
+      "gives safe separate-terminal onboarding",
+      "waits for confirmation",
+      "never requests profile JSON or runs connection add"
+    ]
+  },
+  {
+    "id": "one-profile",
+    "prompt": "List Projects in Horizon.",
+    "stub": {
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ]
+    },
+    "expect": [
+      "asks which customer Installation to use despite one profile",
+      "starts no platform request before answer"
+    ]
+  },
+  {
+    "id": "many-profiles",
+    "prompt": "List Projects in Horizon.",
+    "stub": {
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        },
+        {
+          "label": "Bravo",
+          "apiUrl": "https://bravo.example",
+          "status": "valid"
+        }
+      ]
+    },
+    "expect": [
+      "presents only label, apiUrl, status",
+      "asks explicit customer choice",
+      "does not infer selection"
+    ]
+  },
+  {
+    "id": "invalid",
+    "prompt": "Use Acme to list Projects.",
+    "stub": {
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "invalid"
+        }
+      ]
+    },
+    "expect": [
+      "blocks platform work",
+      "gives rejected credential replacement guidance"
+    ]
+  },
+  {
+    "id": "unreachable",
+    "prompt": "Use Acme to list Projects.",
+    "stub": {
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "unreachable"
+        }
+      ]
+    },
+    "expect": [
+      "blocks platform work",
+      "gives network and TLS guidance without credential replacement claim"
+    ]
+  },
+  {
+    "id": "error",
+    "prompt": "Use Acme to list Projects.",
+    "stub": {
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "error"
+        }
+      ]
+    },
+    "expect": [
+      "blocks platform work",
+      "gives local configuration or credential-store guidance"
+    ]
+  },
+  {
+    "id": "explicit-choice",
+    "prompt": "Use Bravo to list Projects.",
+    "stub": {
+      "selected": "Bravo",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        },
+        {
+          "label": "Bravo",
+          "apiUrl": "https://bravo.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "contractVersion": "1.0",
+        "links": []
+      }
+    },
+    "expect": [
+      "uses explicitly named checked profile",
+      "does not ask selection again",
+      "Discovery request carries --connection Bravo"
+    ]
+  },
+  {
+    "id": "explicit-propagation",
+    "prompt": "Use Acme. Follow Discovery to update Project PRJ001.",
+    "stub": {
+      "selected": "Acme",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "ok": true
+      }
+    },
+    "expect": [
+      "every request command carries --connection Acme",
+      "uses no active profile or raw HTTP"
+    ]
+  },
+  {
+    "id": "safe-onboarding",
+    "prompt": "Add new customer Bravo then list its Projects.",
+    "stub": {
+      "profileLists": [
+        [
+          {
+            "label": "Acme",
+            "apiUrl": "https://acme.example",
+            "status": "valid"
+          }
+        ],
+        [
+          {
+            "label": "Acme",
+            "apiUrl": "https://acme.example",
+            "status": "valid"
+          },
+          {
+            "label": "Bravo",
+            "apiUrl": "https://bravo.example",
+            "status": "valid"
+          }
+        ]
+      ]
+    },
+    "userReplies": [
+      "Import complete.",
+      "Use Bravo."
+    ],
+    "expect": [
+      "instructs credential creation and one-time profile copy",
+      "requires separate terminal horizon connection add",
+      "waits for confirmation then relists",
+      "asks customer choice"
+    ]
+  },
+  {
+    "id": "discovery-workflow",
+    "prompt": "Use Acme and execute available approval for Project PRJ001.",
+    "stub": {
+      "selected": "Acme",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "ok": true
+      }
+    },
+    "expect": [
+      "uses CLI only as transport",
+      "follows Discovery links, schemas, availability, and Metadata Context",
+      "all requests carry --connection Acme"
+    ]
+  },
+  {
+    "id": "acceptance-journey",
+    "prompt": "I copied one-time Connection Profile from UI and imported it in another terminal. Use Acme to perform discovered Project workflow.",
+    "stub": {
+      "selected": "Acme",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "ok": true
+      }
+    },
+    "expect": [
+      "checks imported profile",
+      "uses explicit Acme transport for Discovery and workflow",
+      "never requests or exposes credentials"
+    ]
+  },
+  {
+    "id": "field-authoring-journey",
+    "prompt": "Use Acme. Discover an owned Workspace, create representative Field `priority` on Structure `project`, validate it, and show its diff.",
+    "stub": {
+      "selected": "Acme",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "links": [
+          {
+            "rel": "workspace-list",
+            "method": "GET",
+            "href": "/discovery/authoring/workspaces"
+          },
+          {
+            "rel": "field-create",
+            "method": "POST",
+            "href": "/workspaces/ws-agent/structures/project/fields",
+            "schema": "/discovery/contracts/schemas/field-create"
+          },
+          {
+            "rel": "validate",
+            "method": "POST",
+            "href": "/workspaces/ws-agent/validate"
+          },
+          {
+            "rel": "diff",
+            "method": "GET",
+            "href": "/workspaces/ws-agent/diff"
+          }
+        ]
+      }
+    },
+    "expect": [
+      "selects or creates explicit owned Workspace",
+      "sends Horizon-Workspace on every authoring request",
+      "follows returned method, href, and schema links",
+      "creates representative Field in draft",
+      "shows validation and diff",
+      "stops before acknowledgement, approval, or Publication",
+      "never exposes credentials"
+    ]
+  },
+  {
+    "id": "widget-authoring-journey",
+    "prompt": "Use Acme. Reuse a KPI Widget for project budgets, bind its totals dataset, preview it, and prepare the Workspace for review.",
+    "stub": {
+      "selected": "Acme",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "links": [
+          {
+            "rel": "workspace-list",
+            "method": "GET",
+            "href": "/discovery/authoring/workspaces"
+          },
+          {
+            "rel": "widget-discovery",
+            "method": "GET",
+            "href": "/discovery/authoring/workspaces/ws-agent/widgets"
+          },
+          {
+            "rel": "widget-save",
+            "method": "POST",
+            "href": "/workspaces/ws-agent/widgets",
+            "schema": "/discovery/contracts/schemas/widget-save"
+          },
+          {
+            "rel": "usages",
+            "method": "GET",
+            "href": "/workspaces/ws-agent/widgets/kpi_total_budget/usages"
+          },
+          {
+            "rel": "validate",
+            "method": "POST",
+            "href": "/workspaces/ws-agent/validate"
+          },
+          {
+            "rel": "diff",
+            "method": "GET",
+            "href": "/workspaces/ws-agent/diff"
+          }
+        ]
+      }
+    },
+    "expect": [
+      "reuses an existing Widget before creating one",
+      "selects libraries through Semantic when and notWhen with installed bindings",
+      "binds named datasets with explicit mappings where codes differ",
+      "previews standalone mocks then live bindings without substituting mocks for failures",
+      "inspects usages and repairs incompatible bindings before review",
+      "stops before acknowledgement, approval, or Publication",
+      "never exposes credentials"
+    ]
+  }
 ]

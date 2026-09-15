@@ -4,7 +4,7 @@ description: Propose Horizon Metadata through Workspaces. Use when creating or c
 compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Horizon Metadata Authoring
@@ -55,6 +55,21 @@ Completion: each affected concept has owner evidence or a clear User question fo
 6. Submit the completed Workspace only when current Discovery exposes a human-review submission affordance.
 
 Completion: representative Field exists in selected Workspace draft, validation and diff report are shown, unresolved human Attention is surfaced, and work stops before acknowledgement, approval, or Publication.
+
+## Widgets
+
+Reuse an existing Widget before authoring one. Discover authorization-filtered Widgets through current authoring links and read each candidate's Semantic, presentation inputs, named data contracts, layout defaults, dependencies, and usage locations. Create a new Widget only when no suitable Widget exists; evolve genuinely different behavior as a separate Widget.
+
+1. Select libraries through catalog Semantic `when`/`notWhen` guidance, then read the installed entry's versions, module bindings, lifecycle instructions, and executable examples. Use only installed bindings read from Discovery; never guess API names. A Widget needing no chart library stays plain HTML.
+2. Bind named datasets to Data Sources through current placement affordances. Identically named compatible outputs bind without explicit mappings; otherwise declare explicit column mappings. Respect typed presentation inputs and defaults, required columns, types, and nullability. Extra output columns are allowed; there is no implicit coercion. One Widget may consume multiple Data Sources. Expect complete aggregate results, never first-page totals.
+3. Preview both ways: Widget-owned mock inputs and data for standalone preview without Business Data, then Node-context preview exercising real mappings against authorized live Data Sources. Author mocks with fictional values; mocks never substitute for failed live queries.
+4. Load geographic and font presentation assets only through declared local Package asset dependencies at pinned immutable versions. Geographic data comes from approved local assets, never third-party downloads. For fonts, inherit the platform default by declaring no Package font dependency; choose a custom font through Semantic suitability, verify family, weight/style, coverage, and license attribution, then use documented CSS bindings with readable fallbacks. Canvas and chart text needs declared fonts ready before measurement. Blocked third-party requests must still render.
+5. Respect shared Widget identity: Publication updates every usage. Before changing contracts, inspect the complete usage set across Pages, Views, resolution trees, and Packages, and repair affected Nodes and Data Sources in the same Workspace. Non-breaking impact requires acknowledgement; incompatible changes are blocking findings that acknowledgement cannot waive, and changing the definition or usage set invalidates prior acknowledgement.
+6. Place with layout defaults in mind: omitted Node size and height inherit current Widget defaults, while explicit Node values override them. Exclude a Widget from mobile through the existing Node Visibility tab, and use an alternate mobile View tree for genuinely different mobile content. Never recommend numeric minimums, automatic hiding, or per-Node version pinning.
+7. Author trusted main-realm scripts: no direct API requests and no unapproved library imports. Never claim iframe isolation or technical containment. Implement mount, optional state-preserving update, and mandatory disposal; keep local interaction state in the Widget; expose accessible labels and descriptions; communicate only through declared host filter and drill-through intents. Ordinary refresh failures keep the last successful result under central platform handling; initial failure leaves the reserved area empty; authorization loss clears affected data.
+8. Validate the Workspace and request its discovered diff and review state. Resolve every server-reported danger through its remediation affordance, then validate again. Show Attention to User and stop before acknowledgement, approval, or Publication.
+
+Completion: reused or newly authored Widget binds valid Data Sources, standalone and live previews are recorded, usages are inspected with incompatible bindings repaired or blocking findings surfaced, and work stops before human acknowledgement, approval, or Publication.
 
 ## Preview
 

@@ -4,7 +4,7 @@ description: Coordinate work against Horizon Platform through Discovery. Use whe
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Horizon
@@ -23,7 +23,7 @@ Completion: compatible CLI 1.x and Discovery v1 confirmed, selected Connection P
 
 - Business Data or Action work → follow `horizon-runtime`.
 - Published Metadata architecture audit or post-Publication AMT verification → follow `horizon-architecture-analysis`.
-- Structure, Field, Relation, Expression, Action definition, Data Source, Page, View, or other Metadata proposal, including implementation of selected AMT → follow `horizon-metadata-authoring`.
+- Structure, Field, Relation, Expression, Action definition, Data Source, Page, View, Widget, or other Metadata proposal, including implementation of selected AMT → follow `horizon-metadata-authoring`.
 - Architecture guidance or explanation of configured Installation Metadata → ask User to invoke `horizon-ask-for-guidance`.
 
 Completion: request classified, next skill selected, User has clear instruction when router is needed.

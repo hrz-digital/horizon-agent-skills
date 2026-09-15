@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.2.0
+
+### Added
+
+- Added complete Widget workflow to `horizon-metadata-authoring`: reuse-first discovery, library selection through Semantic `when`/`notWhen` with installed bindings, named dataset binding with explicit mappings, standalone mock versus live Node-context preview, local geographic and font assets with platform-default-first typography, shared-identity usage inspection and repair, layout default inheritance with Visibility-tab mobile exclusion, trusted main-realm governance, and the human acknowledgement, approval, and Publication boundary.
+- Added `widget-authoring-journey` black-box scenario covering Widget reuse, binding, preview, usage repair, and review handoff.
+
+### Changed
+
+- Updated all Skill frontmatter versions to `1.2.0`.
+
 ## v1.1.0
 
 ### Added
