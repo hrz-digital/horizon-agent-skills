@@ -391,6 +391,11 @@
       "selects libraries through Semantic when and notWhen with installed bindings",
       "binds named datasets with explicit mappings where codes differ",
       "previews standalone mocks then live bindings without substituting mocks for failures",
+      "loads geographic and font assets as pinned local Package dependencies, never third-party downloads",
+      "keeps the platform default font unless a Semantic-suitable custom font exists",
+      "declares fonts ready before canvas or chart text measurement with readable fallbacks",
+      "renders with third-party requests blocked",
+      "records evidence for a default-font Widget and a custom multi-font Widget",
       "inspects usages and repairs incompatible bindings before review",
       "stops before acknowledgement, approval, or Publication",
       "never exposes credentials"
