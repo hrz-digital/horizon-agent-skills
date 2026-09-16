@@ -4,7 +4,7 @@ description: Audit Horizon Published Metadata architecture and verify Architectu
 compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1 with Metadata Architecture Analysis available.
 metadata:
   author: hrz-digital
-  version: "1.2.0"
+  version: "1.2.1"
 ---
 
 # Horizon Architecture Analysis

@@ -20,13 +20,21 @@ def main():
     require("skills/horizon/references/connections.md", "horizon connection list --check --json", "--connection")
     for skill in ("horizon-runtime", "horizon-metadata-authoring", "horizon-architecture-analysis"):
         require(f"skills/{skill}/SKILL.md", "Run `horizon` bootstrap")
-    require("skills/horizon-metadata-authoring/SKILL.md", "Reuse an existing Widget", "when", "notWhen", "mock", "usages")
+    require(
+        "skills/horizon-metadata-authoring/SKILL.md", "Reuse an existing Widget", "when", "notWhen", "mock", "usages",
+        "pinned immutable versions", "inherit the platform default", "ready before measurement",
+        "Blocked third-party requests must still render", "never third-party downloads",
+        "horizon metadata asset upload", "Register a new font or a new GeoJSON",
+        "the schema it names", "Never take the href or the payload shape from memory",
+        "font descriptors and attribution from the discovered asset contract",
+    )
 
     scenarios = json.loads((ROOT / "tests/scenarios.json").read_text())
     required = {
         "missing-cli", "unsupported-cli", "update-available", "install-refused", "zero-profiles", "one-profile", "many-profiles",
         "invalid", "unreachable", "error", "explicit-choice", "explicit-propagation",
         "safe-onboarding", "discovery-workflow", "acceptance-journey", "field-authoring-journey", "widget-authoring-journey",
+        "package-asset-upload-journey",
     }
     assert required == {scenario["id"] for scenario in scenarios}
 
