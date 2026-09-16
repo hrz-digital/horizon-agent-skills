@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.2
+
+### Added
+
+- Added error-reporting rule to `horizon` bootstrap: the normal scenario has no errors; agents report error status and message back to the user as-is and stop for the user to treat it, never retrying with workarounds, guessed variants, or silent fallbacks.
+
 ## v1.2.1
 
 ### Added

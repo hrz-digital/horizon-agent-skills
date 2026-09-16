@@ -4,12 +4,16 @@ description: Coordinate work against Horizon Platform through Discovery. Use whe
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.2.1"
+  version: "1.2.2"
 ---
 
 # Horizon
 
 Treat CLI as authenticated transport and Discovery as platform contract. Skills supply workflow, never endpoint memory.
+
+## Errors
+
+The normal scenario has no errors. Report error status and message back to User as-is, then stop for User to treat it. Never retry with workarounds, guessed variants, or silent fallbacks.
 
 ## Bootstrap
 
