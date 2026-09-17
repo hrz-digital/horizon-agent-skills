@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.3.0
+
+### Added
+
+- Added `horizon-interview` for planning unclear, complex, bulk, relational, destructive, or cross-surface work before execution.
+- Added local redacted plans at `.hrz/<customer-code>/<installation-code>/<feature-slug>/implementation-plan.md` with explicit approval gates and purge guidance.
+- Added Business Data mutation confirmation and scope-change reapproval rules.
+
+### Changed
+
+- Updated Horizon routing and authoring/runtime skills to require approved plans for complex work.
+
+
 ## v1.2.2
 
 ### Added

@@ -9,6 +9,7 @@ Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon 
 ## Skills
 
 - [`horizon`](skills/horizon/SKILL.md)
+- [`horizon-interview`](skills/horizon-interview/SKILL.md) — plan complex or ambiguous work before execution.
 - [`horizon-metadata-authoring`](skills/horizon-metadata-authoring/SKILL.md)
 - [`horizon-architecture-analysis`](skills/horizon-architecture-analysis/SKILL.md)
 - [`horizon-runtime`](skills/horizon-runtime/SKILL.md)

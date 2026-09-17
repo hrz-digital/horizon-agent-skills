@@ -4,12 +4,12 @@ description: Operate Horizon Business Data and execute runtime Actions through D
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.2.2"
+  version: "1.3.0"
 ---
 
 # Horizon Runtime
 
-Agent Credential acts only on behalf of Owner User:
+Agent Credential acts only on behalf of Owner User. When `horizon` routes complex work through `horizon-interview`, require its approved implementation plan before any Business Data mutation. Small mutations still require explicit confirmation of target, records, values, and intended effect:
 
 ```text
 Agent authority = Owner User current effective authority ∩ Agent governance

@@ -20,6 +20,8 @@ def main():
     require("skills/horizon/references/connections.md", "horizon connection list --check --json", "--connection")
     for skill in ("horizon-runtime", "horizon-metadata-authoring", "horizon-architecture-analysis"):
         require(f"skills/{skill}/SKILL.md", "Run `horizon` bootstrap")
+    require("skills/horizon-interview/SKILL.md", "implementation-plan.md", "awaiting-approval", "Business Data mutation", "explicit confirmation", "After completion, recommend User purge")
+    require("skills/horizon-interview/references/implementation-plan.md", "Status: awaiting-approval", "Approval gate", "Source column", "anonymized examples", "current Discovery remains source of truth")
     require(
         "skills/horizon-metadata-authoring/SKILL.md", "Reuse an existing Widget", "when", "notWhen", "mock", "usages",
         "pinned immutable versions", "inherit the platform default", "ready before measurement",
@@ -35,6 +37,9 @@ def main():
         "invalid", "unreachable", "error", "explicit-choice", "explicit-propagation",
         "safe-onboarding", "discovery-workflow", "acceptance-journey", "field-authoring-journey", "widget-authoring-journey",
         "package-asset-upload-journey",
+        "simple-task-skips-interview",
+        "complex-metadata-plan-gate",
+        "business-data-confirmation",
     }
     assert required == {scenario["id"] for scenario in scenarios}
 

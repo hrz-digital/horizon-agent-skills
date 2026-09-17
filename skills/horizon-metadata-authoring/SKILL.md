@@ -4,10 +4,12 @@ description: Propose Horizon Metadata through Workspaces. Use when creating or c
 compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.2.2"
+  version: "1.3.0"
 ---
 
 # Horizon Metadata Authoring
+
+When `horizon` routes complex work through `horizon-interview`, continue only with its approved implementation plan. Small, unambiguous Metadata changes may proceed without a full interview.
 
 Author one coherent Metadata proposal from machine-readable Discovery contracts. Never infer database tables, Relation Edge storage, Action task behavior, request payloads, or supported catalog entries.
 

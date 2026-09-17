@@ -4,12 +4,12 @@ description: Coordinate work against Horizon Platform through Discovery. Use whe
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.2.2"
+  version: "1.3.0"
 ---
 
 # Horizon
 
-Treat CLI as authenticated transport and Discovery as platform contract. Skills supply workflow, never endpoint memory.
+Treat CLI as authenticated transport and Discovery as platform contract. Skills supply workflow, never endpoint memory. Before platform work, route unclear, broad, multi-step, bulk, relational, destructive, or cross-surface requests through [`horizon-interview`](../horizon-interview/SKILL.md). Small, unambiguous Metadata changes may proceed without a full interview. Every Business Data mutation needs explicit confirmation; complex mutations need an approved local implementation plan. Interview happens in two stages: clarify intent before bootstrap, then resolve platform-specific decisions from Discovery.
 
 ## Errors
 
@@ -48,4 +48,4 @@ Use Workspace Activity for cross-session and cross-Agent handoff: intent, decisi
 
 Completion: after any listed event, current context is synchronized and handoff Activity records intent, decisions, evidence, remaining work.
 
-Overall completion: request routed, Connection Profile and Metadata Context explicit, next skill has current Discovery links rather than guessed routes.
+Overall completion: request routed, any required interview plan is approved, Connection Profile and Metadata Context explicit, next skill has current Discovery links rather than guessed routes.
