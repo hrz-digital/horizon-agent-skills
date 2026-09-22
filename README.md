@@ -53,6 +53,14 @@ Install all skills globally:
 npx skills add hrz-digital/horizon-agent-skills --skill '*' -g
 ```
 
+#### Google Antigravity CLI
+
+`npx skills` does not install Skills where Antigravity CLI can discover them. Create the required symlink:
+
+```bash
+ln -s ~/.agents/skills ~/.gemini/antigravity-cli/skills
+```
+
 ### 3. Connect to a Horizon Installation
 
 1. Open the Account Sidebar in the target Horizon Installation.
