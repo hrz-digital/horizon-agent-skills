@@ -61,16 +61,26 @@ npx skills add hrz-digital/horizon-agent-skills --skill '*' -g
 ln -s ~/.agents/skills ~/.gemini/antigravity-cli/skills
 ```
 
-### 3. Connect to a Horizon Installation
+### 3. Connect you Horizon CLI to a Horizon Installation
 
 1. Open the Account Sidebar in the target Horizon Installation.
 2. Create an Agent Credential.
-3. Copy the one-time Connection Profile.
+3. Copy the one-time **Connection Profile**.
 4. Open a separate terminal outside the AI Harness.
-5. Run `horizon connection add`, paste the Connection Profile into the hidden prompt, and confirm it.
-6. Return to the Agent. It can verify the non-secret profile with `horizon connection list --check --json` and ask which Installation to use.
+5. Run the below command and paste the **Connection Profile** into the hidden prompt, and confirm it.
 
-You must personally perform steps 1–5. Never paste Connection Profile JSON or API keys into Agent chat or let the Agent run `horizon connection add`.
+```bash
+horizon connection add
+```
+
+6. Run the below command to verify the profile with:
+
+```bash
+horizon connection list --check
+```
+
+[!WARNING]
+You must personally perform all this steps mannualy. Never paste **Connection Profile** JSON or API keys into Agent chat or ask the Agent to run `horizon connection add`.
 
 ## Updating setup
 
