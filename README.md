@@ -79,8 +79,8 @@ horizon connection add
 horizon connection list --check
 ```
 
-[!WARNING]
-You must personally perform all this steps mannualy. Never paste **Connection Profile** JSON or API keys into Agent chat or ask the Agent to run `horizon connection add`.
+> [!WARNING]
+> You must personally perform all this steps mannualy. Never paste **Connection Profile** JSON or API keys into Agent chat or ask the Agent to run `horizon connection add`.
 
 ## Updating setup
 
