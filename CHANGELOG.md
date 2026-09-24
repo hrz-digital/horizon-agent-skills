@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.1
+
+### Added
+
+- Added `authoring-conventions` reference for Metadata authoring: resolve `defaultLocale` from current Discovery Platform Setup, supply required default-locale text, add PT/ES/EN translations only when meaning is known and never invent uncertain translations, and prefer `snake_case` for new authored codes while preserving existing identifiers and contract-defined spellings.
+
 ## v1.3.0
 
 ### Added
