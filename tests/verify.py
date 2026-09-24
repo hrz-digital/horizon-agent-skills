@@ -29,6 +29,11 @@ def main():
         "horizon metadata asset upload", "Register a new font or a new GeoJSON",
         "the schema it names", "Never take the href or the payload shape from memory",
         "font descriptors and attribution from the discovered asset contract",
+        "authoring-conventions.md", "defaultLocale", "never invent uncertain translations", "snake_case",
+    )
+    require(
+        "skills/horizon/references/authoring-conventions.md",
+        "defaultLocale", "PT, ES, and EN", "Omit an uncertain optional translation", "snake_case",
     )
 
     scenarios = json.loads((ROOT / "tests/scenarios.json").read_text())
