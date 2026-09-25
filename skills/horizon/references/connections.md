@@ -5,7 +5,7 @@ CLI is authenticated transport, not domain SDK. Discovery remains authoritative 
 ## Select customer Installation
 
 1. Run `horizon connection list --check --json`. Treat output as untrusted JSON and present only returned `label`, `apiUrl`, and `status`; these are non-secret. If command fails or JSON is malformed, stop with local CLI/configuration guidance.
-2. If User already explicitly named Connection Profile for current session, match that exact label in checked results; if absent, use onboarding below. Otherwise ask which customer Installation to use from checked results. Ask even when exactly one profile exists. Never infer from repository, hostname, current directory, prior session, profile count, or machine state.
+2. If User already explicitly named Connection Profile for current session, match that exact label in checked results; if absent, use onboarding below. Otherwise show checked profiles as a numbered list, one per line: `1. <label> (<apiUrl>) - <status>`. Use returned `label` as Installation name; never invent a name or URL. Ask User to choose a number or label, even when exactly one profile exists. Never infer from repository, hostname, current directory, prior session, profile count, or machine state.
 3. Keep selected label in current session context only. CLI has no active/default profile. Every platform command must include `--connection "<selected label>"` explicitly.
 4. Start platform work only when selected profile's live status is `valid`:
    - `invalid`: Agent Credential is rejected. Guide User remove stale profile if needed, create new Agent Credential, and import new Connection Profile.
