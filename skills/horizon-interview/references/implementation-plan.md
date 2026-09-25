@@ -12,8 +12,10 @@ Create the plan only after selecting the Installation, inspecting its Discovery 
 # <title>
 
 Status: awaiting-approval
-Customer: <customer-code>
-Installation: <installation-code>
+Customer: <confirmed customer-code>
+Installation: <confirmed installation-code>
+Connection: <exact selected Connection Profile label>
+API URL: <checked non-secret apiUrl>
 Created: <date>
 
 ## Goal
@@ -45,8 +47,24 @@ Created: <date>
 Explicit approval required before mutation: <pending|approved>
 
 ## Resume notes
-<optional; include whether new session is recommended>
+<session recommendation; when work starts, record Workspace code, completed steps, and next step>
 ```
+
+Before requesting approval, show User a concise review summary from this plan (not only its path):
+
+```markdown
+Plan: <path> — awaiting approval
+Data Modeling: <Structures and Primary/Secondary classifications; source → target Relations, cardinalities, ownership; required and derived Fields>
+Visualization: <per-Structure Create inputs, List columns, Details groups; parent-to-child Navigation>
+Automation: <agreed behavior or no configuration needed>
+Execution: <Workspace reuse/new, order, validation and diff>
+Risks/unresolved decisions: <none, or return to interview>
+Execution complexity: <small/moderate/large — concrete authoring and validation workload>
+Session recommendation: <continue / fresh session — reason>
+No Metadata or Business Data changes made. Approval starts authoring, not Publication.
+```
+
+After explicit approval of the reviewed plan, set `Status: approved-to-implement` and Approval gate to `approved`. On execution start, set `Status: in-progress` and record Workspace and progress in Resume notes so later sessions can resume rather than replay edits. A changed scope or material evidence returns Status to `draft` and Approval gate to `pending` for renewed approval. Confirm Customer and Installation with User rather than splitting a Connection Profile label. Store the selected profile label and checked non-secret API URL so a later session can verify the intended Installation without guessing.
 
 For spreadsheet or bulk Business Data work, add a compact mapping table under **Affected work**:
 
@@ -56,4 +74,4 @@ For spreadsheet or bulk Business Data work, add a compact mapping table under **
 
 Record row counts and anonymized examples only. Never copy raw records, credentials, tokens, or secrets.
 
-When scope changes or new evidence changes a decision, set `Status: draft`, update plan, and obtain approval again. When work finishes, recommend purging plan; current Discovery remains source of truth.
+After agreed execution and validation, mark `Status: completed` so it is no longer offered for implementation; recommend purging the plan; current Discovery remains source of truth.

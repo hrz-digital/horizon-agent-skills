@@ -5,12 +5,14 @@
 ### Added
 
 - Added three-layer Metadata planning and authoring guidance: Data Modeling → Visualization → Automation, with Discovery-grounded relationship mapping, Page placement defaults, and agreed `no configuration needed` outcomes.
-- Added per-Structure Create/List/Details placement recommendations and one-decision-per-number interview questions with grounded recommendations.
+- Added per-Structure Create/List/Details placement recommendations and a consistent three-layer interview response format with one decision and grounded recommendation per question.
+- Added reviewable plan summaries, execution complexity/session advice, approved-plan lookup by "implement plan" / "Executar o plano", and resume from recorded Workspace progress without requiring the plan path.
+- Added user-invoked skill-set usage guidance explaining planning, approval, fresh-session handoff, and implementation.
 
 ### Changed
 
 - Select Installation and inspect Discovery before asking questions already answered by existing Metadata; recheck Discovery between interview rounds. Interview only for unresolved decisions or substantial execution; written plans depend on execution workload or handoff risk.
-- Clarified Primary/Secondary Structures, owned/reference Relations, User-linked person Fields, and overridable long-text Page defaults. New Structures get usable default Pages and owned-child navigation as baseline work.
+- Clarified Primary/Secondary Structures, owned/reference Relations, User-linked person Fields, required Create inputs, and long-text defaults (allowed on Create, excluded from List unless requested). New Structures get usable default Pages and owned-child navigation as baseline work.
 - Show checked Installations as numbered name/URL/status choices; follow authoring hrefs verbatim and stop all requests on any HTTP error or CLI failure.
 - Read default language and currency through the linked Platform Setup instead of guessing values or asking for the default currency.
 

@@ -1,6 +1,6 @@
 ---
 name: horizon-ask-for-guidance
-description: Answer user-invoked Horizon architecture and Installation-configuration questions; recommend the next workflow without performing mutations.
+description: Answer user-invoked questions about Horizon modeling, Installation configuration, or how to use the Horizon skill set and resume approved plans; no mutations.
 disable-model-invocation: true
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1 for Installation-specific guidance.
 metadata:
@@ -14,12 +14,18 @@ Help User understand Horizon modeling choices and what is configured in a Horizo
 
 ## Decide context
 
-1. For a generic modeling question with no Installation context, explain the relevant trade-offs without bootstrapping.
+1. For a generic modeling or skill-set usage question with no Installation context, explain the workflow without bootstrapping.
 2. For a question about an Installation, its configured Metadata, or supported behavior, run [`horizon`](../horizon/SKILL.md) bootstrap first. Require explicit live-valid Installation selection.
 3. Use Published Metadata by default. Use an explicit Workspace only when User names or selects one.
 4. Follow current Discovery links and schemas for Metadata, authorization, capabilities, and Semantic. Never guess routes, payloads, catalogs, or query shapes.
 
 Completion: request is classified as generic or Installation-specific, and Installation-specific guidance has an explicit current Metadata context.
+
+## Using the skill set
+
+When User asks how to work with Horizon, explain the path without doing it: describe task to `horizon` → select Installation and inspect Discovery/Metadata → interview ↔ targeted Discovery only for unresolved decisions or substantial execution → agree outcomes in Data Modeling, Visualization, and Automation → write and approve a plan when authoring workload or handoff warrants it → optionally start a fresh session → tell `horizon` "implement plan" or "Executar o plano" (no path) → recheck Installation, Discovery, and Workspace → author and validate. Clear localized work can proceed after inspection without interview or plan. Approval begins authoring, not Publication.
+
+Approved plans live under `.hrz/<customer>/<installation>/<feature>/implementation-plan.md` with `Status: approved-to-implement`; `Customer` and `Installation` identify the target. `horizon` lists choices when multiple plans qualify, stops when none qualify, and resumes an `in-progress` plan from recorded Workspace progress. A fresh session clears chat context, not platform state. This Skill explains the workflow; `horizon` executes it.
 
 ## Evidence precedence
 

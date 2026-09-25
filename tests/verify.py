@@ -14,14 +14,15 @@ def require(path, *texts):
 
 
 def main():
-    require("skills/horizon/SKILL.md", "references/cli-installation.md", "references/connections.md")
+    require("skills/horizon/SKILL.md", "references/cli-installation.md", "references/connections.md", "implement plan", "Executar o plano", "approved-to-implement")
     require("skills/horizon/references/cli-installation.md", "horizon version --check --json", "updateAvailable")
     require("skills/horizon-ask-for-guidance/SKILL.md", "Semantic engine", "Actual configured Metadata", "Published Metadata", "owned secondary Structure", "Completion:")
     require("skills/horizon/references/connections.md", "horizon connection list --check --json", "--connection")
     for skill in ("horizon-runtime", "horizon-metadata-authoring", "horizon-architecture-analysis"):
         require(f"skills/{skill}/SKILL.md", "Run `horizon` bootstrap")
     require("skills/horizon-interview/SKILL.md", "implementation-plan.md", "awaiting-approval", "Business Data mutation", "explicit confirmation", "After completion, recommend User purge")
-    require("skills/horizon-interview/references/implementation-plan.md", "Status: awaiting-approval", "Approval gate", "Source column", "anonymized examples", "current Discovery remains source of truth")
+    require("skills/horizon-interview/references/implementation-plan.md", "Status: awaiting-approval", "Status: approved-to-implement", "Connection:", "API URL:", "Execution complexity", "Session recommendation", "Approval gate", "Source column", "anonymized examples", "current Discovery remains source of truth")
+    require("skills/horizon-ask-for-guidance/SKILL.md", "implement plan", "Executar o plano")
     require(
         "skills/horizon-metadata-authoring/SKILL.md", "Reuse an existing Widget", "when", "notWhen", "mock", "usages",
         "pinned immutable versions", "inherit the platform default", "ready before measurement",
