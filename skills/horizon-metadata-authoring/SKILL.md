@@ -57,8 +57,6 @@ Follow an approved interview plan for complex work; for small changes, make the 
 
 Use dependency order for agreed work: Data Modeling → Visualization → Automation; carry discovered element codes and affordances into dependent authoring steps, not guessed IDs or routes. If a later layer requires a model change, return to that layer and revalidate the Workspace. Completion: every layer is agreed or marked `none`, and dependent Metadata resolves in Workspace validation.
 
-Example to discuss, not auto-build: User asks for Project “approved by.” Data Modeling: is approver a related User or stored value, and is an approval timestamp needed? Visualization: show it in an approvals/audit group on `details` by default; ask about other placement only when consequential. Automation: should an approval Action record actor and time, and should manual editing be restricted? Verify Discovery can support the agreed behavior before authoring. `none` is valid for Automation.
-
 ## Structure and Page defaults
 
 1. For each new Structure: create Structure → API supplies empty `create`, `list`, `details` Pages → add Fields and confirmed Relations → create/configure Data Source with selected output Fields and appropriate fixed/caller Filters → configure default Pages' View Nodes. Inspect Structure detail after creation. Follow its `actions.createDataSource`, schema, catalog, and Page detail/update affordances; never guess payloads. Empty defaults alone are not usable Pages. Completion: each Page has its intended data and controls.
