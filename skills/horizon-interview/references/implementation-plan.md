@@ -27,7 +27,9 @@ Created: <date>
 - <decision and rationale>
 
 ## Affected work
-- Metadata: <structures, fields, relations, pages, views, actions, etc.>
+- Data Modeling: <Structures, Fields, Relations, Constraints, or none>
+- Visualization: <Data Sources, Pages, Views, Nodes, Widgets, or none>
+- Automation: <Actions, Alerts, executable rules, or none>
 - Business Data: <types, scope, intended create/update/delete effects, or none>
 
 ## Steps

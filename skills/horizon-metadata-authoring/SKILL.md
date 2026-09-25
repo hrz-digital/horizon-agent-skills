@@ -47,6 +47,18 @@ Semantic explains meaning. Executable Metadata defines types, validation, behavi
 
 Completion: each affected concept has owner evidence or a clear User question for unresolved ambiguity, and any exceptional placement rationale is recorded.
 
+## Three-layer Metadata proposal
+
+Follow an approved interview plan for complex work; for small changes, make the same layer check without a full interview. Before authoring, read current Discovery contracts, examples, and Semantic for affected Metadata; keep all three layers visible to User. Record `none` for a layer with no agreed work rather than inventing features. Defaults are recommendations, not requirements when User decides otherwise.
+
+1. **Data Modeling — what state exists?** Identify owning Structures, Fields, types, Relations, cardinality, ownership, and applicable Constraints. Resolve ambiguous meaning with User before choosing Field versus Relation. For multiple Structures, confirm their relationship map before authoring.
+2. **Visualization — how is state seen or entered?** Identify Data Sources, Pages, Views, and Nodes; apply agreed Page defaults only where User has not specified placement.
+3. **Automation — what should happen when state changes?** Ask whether Actions, Alerts, and supported rules/notifications are needed; `none` is valid. Do not infer executable behavior from a Field name. Check Action and Constraint contracts before promising side effects or read-only behavior.
+
+Use dependency order for agreed work: Data Modeling → Visualization → Automation; carry discovered element codes and affordances into dependent authoring steps, not guessed IDs or routes. If a later layer requires a model change, return to that layer and revalidate the Workspace. Completion: every layer is agreed or marked `none`, and dependent Metadata resolves in Workspace validation.
+
+Example to discuss, not auto-build: User asks for Project “approved by.” Data Modeling: is approver a related User or stored value, and is an approval timestamp needed? Visualization: show it in an approvals/audit group on `details` by default; ask about other placement only when consequential. Automation: should an approval Action record actor and time, and should manual editing be restricted? Verify Discovery can support the agreed behavior before authoring. `none` is valid for Automation.
+
 ## Structure and Page defaults
 
 1. For each new Structure: create Structure → API supplies empty `create`, `list`, `details` Pages → add Fields and confirmed Relations → create/configure Data Source with selected output Fields and appropriate fixed/caller Filters → configure default Pages' View Nodes. Inspect Structure detail after creation. Follow its `actions.createDataSource`, schema, catalog, and Page detail/update affordances; never guess payloads. Empty defaults alone are not usable Pages. Completion: each Page has its intended data and controls.
