@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.4.0
+
+### Added
+
+- Added three-layer Metadata planning and authoring guidance: Data Modeling → Visualization → Automation, with Discovery-grounded relationship mapping, Page placement defaults, and agreed `no configuration needed` outcomes.
+- Added per-Structure Create/List/Details placement recommendations and one-decision-per-number interview questions with grounded recommendations.
+
+### Changed
+
+- Select Installation and inspect Discovery before asking questions already answered by existing Metadata; recheck Discovery between interview rounds. Interview only for unresolved decisions or substantial execution; written plans depend on execution workload or handoff risk.
+- Clarified Primary/Secondary Structures, owned/reference Relations, User-linked person Fields, and overridable long-text Page defaults. New Structures get usable default Pages and owned-child navigation as baseline work.
+- Show checked Installations as numbered name/URL/status choices; follow authoring hrefs verbatim and stop all requests on any HTTP error or CLI failure.
+- Read default language and currency through the linked Platform Setup instead of guessing values or asking for the default currency.
+
 ## v1.3.1
 
 ### Added

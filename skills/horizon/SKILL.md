@@ -4,24 +4,24 @@ description: Coordinate work against Horizon Platform through Discovery. Use whe
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.3.1"
+  version: "1.4.0"
 ---
 
 # Horizon
 
-Treat CLI as authenticated transport and Discovery as platform contract. Skills supply workflow, never endpoint memory. Before platform work, route unclear, broad, multi-step, bulk, relational, destructive, or cross-surface requests through [`horizon-interview`](../horizon-interview/SKILL.md). Small, unambiguous Metadata changes may proceed without a full interview. Every Business Data mutation needs explicit confirmation; complex mutations need an approved local implementation plan. Interview happens in two stages: clarify intent before bootstrap, then resolve platform-specific decisions from Discovery.
+Treat CLI as authenticated transport and Discovery as platform contract. Skills supply workflow, never endpoint memory. Every Business Data mutation needs explicit confirmation; complex mutations need an approved local implementation plan.
 
-For Metadata proposals, follow **Interview intent → Discovery → confirm plan → Data Modeling → Visualization → Automation → Workspace validation**. The interview establishes business meaning; Discovery establishes supported contracts; confirm decisions before mutations. For small, unambiguous changes, use a brief layer check rather than a full interview. Record `none` for layers with no agreed work, recheck Discovery at each authoring layer, and follow explicit User choices over defaults. `horizon-interview` owns planning and approval; `horizon-metadata-authoring` owns execution. This sequence does not govern Business Data or runtime Actions.
+For Metadata proposals, follow **select Installation → inspect Discovery and existing Metadata → interview ↔ targeted Discovery rechecks only for unresolved decisions or substantial execution → Data Modeling → Visualization → Automation → Workspace validation**. Inspect current Installation patterns before asking what they already answer. Route to [`horizon-interview`](../horizon-interview/SKILL.md) when decisions remain, execution is substantial, or a session handoff is likely; also route unclear, broad, multi-step, bulk, relational, destructive, or cross-surface runtime work there. When a localized Metadata request is fully specified and inspection finds no conflict, proceed directly to authoring without questions or a plan file. Recheck Discovery when User answers change the model; settle layer outcomes through the request or clarification, recording `no configuration needed` only when understood, not as a substitute for unresolved meaning. Written plans follow execution workload or handoff risk, not interview depth. Recheck Discovery at each authoring layer and follow explicit User choices over defaults. `horizon-interview` owns planning and approval; `horizon-metadata-authoring` owns execution. This sequence does not govern Business Data or runtime Actions.
 
 ## Errors
 
-The normal scenario has no errors. Report error status and message back to User as-is, then stop for User to treat it. Never retry with workarounds, guessed variants, or silent fallbacks.
+The normal scenario has no errors. On any HTTP error status or CLI failure, report status and message to User and stop all Horizon requests for this run, including diagnostic reads. Never retry with a guessed variant or continue elsewhere after an error.
 
 ## Bootstrap
 
 1. Read and follow shared [CLI installation](references/cli-installation.md) guidance. Verify compatible `horizon` before platform work.
 2. Read and follow shared [Connection Profile](references/connections.md) guidance. Run checked JSON listing, obtain explicit customer Installation choice when absent, and require selected status `valid`.
-3. Request Discovery through `horizon request --connection "<selected label>" GET /discovery`. Confirm current contract major version. If unsupported, stop and report mismatch; never guess routes, schemas, or payloads from memory.
+3. Request Discovery through `horizon request --connection "<selected label>" GET /discovery`. Confirm current contract major version. If unsupported, stop and report mismatch. For authoring, follow the returned `authoring.href`, then the returned `structures` and `workspaces` method/href values. Copy hrefs verbatim, including their `/discovery` prefix; `/discovery/catalogs` lists catalogs, not authoring paths. If an affordance is absent, stop and report it instead of constructing a route. Use Architecture Analysis links only for an architecture audit or Ticket workflow, not to inspect existing Structures for ordinary authoring.
 
 Completion: compatible CLI 1.x and Discovery v1 confirmed, selected Connection Profile is explicit and live-valid, current identity known, available Metadata Context and Discovery roots recorded. Selected label remains current session context and every later request carries it explicitly.
 

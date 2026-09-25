@@ -6,7 +6,7 @@ Use one file per effort:
 
 This relative path and `/` separator work on Windows, macOS, and Linux; use native separators when accessing it.
 
-Keep plan concise. It captures shared understanding, not platform truth. Re-read current Discovery before every execution step.
+Create the plan only after selecting the Installation, inspecting its Discovery and existing Metadata, and resolving decisions through interview ↔ targeted Discovery checks. Keep plan concise. It captures shared understanding, not platform truth. Re-read current Discovery before every execution step.
 
 ```markdown
 # <title>
@@ -27,9 +27,9 @@ Created: <date>
 - <decision and rationale>
 
 ## Affected work
-- Data Modeling: <Structures, Fields, Relations, Constraints, or none>
-- Visualization: <Data Sources, Pages, Views, Nodes, Widgets, or none>
-- Automation: <Actions, Alerts, executable rules, or none>
+- Data Modeling: <agreed Structures, Fields, Relations, Constraints, or no configuration needed (agreed)>
+- Visualization: <agreed Data Sources, Pages, Views, Nodes, Widgets, or no configuration needed (agreed)>
+- Automation: <agreed Actions, Alerts, executable rules, or no configuration needed (agreed)>
 - Business Data: <types, scope, intended create/update/delete effects, or none>
 
 ## Steps
