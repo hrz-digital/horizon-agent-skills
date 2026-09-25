@@ -11,6 +11,8 @@ metadata:
 
 Treat CLI as authenticated transport and Discovery as platform contract. Skills supply workflow, never endpoint memory. Before platform work, route unclear, broad, multi-step, bulk, relational, destructive, or cross-surface requests through [`horizon-interview`](../horizon-interview/SKILL.md). Small, unambiguous Metadata changes may proceed without a full interview. Every Business Data mutation needs explicit confirmation; complex mutations need an approved local implementation plan. Interview happens in two stages: clarify intent before bootstrap, then resolve platform-specific decisions from Discovery.
 
+For Metadata proposals, follow **Interview intent → Discovery → confirm plan → Data Modeling → Visualization → Automation → Workspace validation**. The interview establishes business meaning; Discovery establishes supported contracts; confirm decisions before mutations. For small, unambiguous changes, use a brief layer check rather than a full interview. Record `none` for layers with no agreed work, recheck Discovery at each authoring layer, and follow explicit User choices over defaults. `horizon-interview` owns planning and approval; `horizon-metadata-authoring` owns execution. This sequence does not govern Business Data or runtime Actions.
+
 ## Errors
 
 The normal scenario has no errors. Report error status and message back to User as-is, then stop for User to treat it. Never retry with workarounds, guessed variants, or silent fallbacks.
