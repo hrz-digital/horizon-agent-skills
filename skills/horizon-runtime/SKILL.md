@@ -9,7 +9,7 @@ metadata:
 
 # Horizon Runtime
 
-Agent Credential acts only on behalf of Owner User. When `horizon` routes complex work through `horizon-interview`, require its approved implementation plan before any Business Data mutation. Small mutations still require explicit confirmation of target, records, values, and intended effect:
+Agent Credential acts only on behalf of Owner User. Apply the [interview and plan gates](../horizon-interview/SKILL.md#planning-gates) before mutation; every Business Data mutation requires explicit confirmation. Resume written plans through `horizon`'s [approved-plan procedure](../horizon/SKILL.md#implement-approved-plan). Runtime-only work needs no Workspace:
 
 ```text
 Agent authority = Owner User current effective authority ∩ Agent governance
@@ -39,7 +39,7 @@ Completion: target Structure or Business Instance, current runtime affordance, r
 3. Explain material effect and obtain explicit User intent when current affordance declares destructive impact, irreversible behavior, external side effect, or confirmation requirement.
 4. Respect concurrency, idempotency, atomicity, and retry declarations.
 5. Send request once through Horizon CLI with selected `--connection`. On stale state, refetch and reassess; never silently overwrite. Authentication and token refresh belong CLI transport, not skill.
-6. Report result using Business Instance Display Label and stable instance code.
+6. Report result using Business Instance Display Label and stable instance code. For changes, follow [Execution and User testing](../horizon-interview/SKILL.md#execution-and-user-testing) for safe manual checks and requested adjustments; do not repeat the operation as a test.
 
 Workspace runtime preview is exceptional. Use it only when User explicitly asks to test proposed Metadata, through current Discovery context mechanism, after explaining Business Data remains shared, real, and audited.
 

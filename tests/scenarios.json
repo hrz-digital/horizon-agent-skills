@@ -421,13 +421,13 @@
  ]
  },
  {
- "id": "complex-metadata-plan-gate",
- "prompt": "Create full Structure with Fields, Data Sources, Pages, Views, and Actions in Horizon.",
+ "id": "complex-metadata-chat-plan",
+ "prompt": "Use Acme. Create two related Structures with Fields, Data Sources, Pages, Views, and Actions. We can finish and test this in this session.",
  "expect": [
  "asks focused questions in rounds before implementation",
- "creates local `.hrz/<customer-code>/<installation-code>/<feature-slug>/implementation-plan.md` after Installation selection",
- "waits for explicit plan approval",
- "does not mutate Metadata before approval"
+ "shows a concise plan summary in chat without creating a local plan file",
+ "obtains required confirmations before mutation and executes in the same session",
+ "offers focused manual checks after validation and invites User adjustments"
  ]
  },
  {
@@ -435,9 +435,93 @@
  "prompt": "Create Business Data records from a spreadsheet in Horizon.",
  "expect": [
  "maps every source column to a destination or explicit ignore decision",
- "redacts raw records from local plan",
+ "uses mappings, counts, and anonymized examples in the chat summary rather than raw records",
+ "does not require a plan file merely because the work is bulk or relational",
  "requires explicit confirmation before Business Data mutation",
- "does not treat Workspace protection as covering runtime mutations"
+ "does not treat Workspace protection as covering runtime mutations",
+ "includes Business Data targets, scope, values, effects, and failure handling in the approval summary",
+ "does not require a Workspace or authoring access for runtime-only planning or execution"
  ]
- }
+ },
+  {
+    "id": "data-model-only-scope",
+    "prompt": "Use Acme. Create a new Structure for inspection notes with one optional plain-text note Field. Data Modeling only; exclude Visualization and Automation. Inspect existing Metadata first and ask only unresolved decisions.",
+    "expect": [
+      "bootstraps and inspects before interviewing",
+      "records Visualization and Automation as out of scope (User-directed), not as unresolved or already served",
+      "does not propose or configure Pages, Data Sources, or Navigation outside the requested scope",
+      "uses Discovery for Structure provisioning and Relation behavior rather than asserting cached contracts",
+      "does not require a plan file for this localized request"
+    ]
+  },
+  {
+    "id": "page-only-completion",
+    "prompt": "Use Acme. In Workspace ws-project, add the existing priority Field to the existing project List Page, validate, and show the diff. Do not create Fields or change the data model.",
+    "expect": [
+      "verifies the explicitly selected Workspace and current Discovery",
+      "uses existing Field and Data Source evidence without creating a representative Field",
+      "completes only after all agreed Page changes and required validation and diff evidence",
+      "stops before acknowledgement, human review approval, or Publication"
+    ]
+  },
+  {
+    "id": "durable-plan-request",
+    "prompt": "Use Acme. Plan a small Field-label change on project, but explicitly save a durable local plan for me to approve before execution.",
+    "expect": [
+      "inspects Installation and settles decisions before writing the requested file",
+      "writes `.hrz/<customer-code>/<installation-code>/<feature-slug>/implementation-plan.md` because User requested persistence",
+      "shows the summary and waits for explicit approval without mutating Metadata",
+      "does not require a fresh session after approval"
+    ]
+  },
+  {
+    "id": "large-multi-session-plan",
+    "prompt": "Use Acme. Plan a large migration over several sessions: model three related domains, then migrate Business Data in dependent batches, then validate and replace existing Pages. Keep cross-session sequencing and progress explicit; do not execute yet.",
+    "expect": [
+      "inspects and clarifies scope, dependencies, effects, and validation before writing a file",
+      "uses a durable plan because substantial dependent work spans multiple sessions",
+      "includes Metadata and Business Data scope in the review summary",
+      "waits for explicit approval and preserves runtime confirmation and human Publication gates"
+    ]
+  },
+  {
+    "id": "workspace-resume-without-plan",
+    "prompt": "Use Acme and continue Workspace ws-project after a routine interruption. Read its Activity for agreed changes and remaining work; no local plan file exists.",
+    "expect": [
+      "verifies the named Workspace and reconciles Activity with current Discovery and progress",
+      "does not require or create a plan file merely to resume",
+      "clarifies missing intent instead of replaying completed changes",
+      "offers manual checks after remaining work is validated"
+    ]
+  },
+  {
+    "id": "three-structures-three-layers",
+ "prompt": "Use Horizon Training. Create Project (title, status: Not started/In progress/Completed, stage: planning/execution/closure, objective, resume, manager, planned value, start, finish, partner, total tasks), Partner (name, cnpj text code, financial responsible, about), Task (title, start, finish, completed, description).",
+ "expect": [
+ "interview shows Data Modeling, Visualization, Automation even without questions",
+ "new Structures alone do not imply data-model-only exclusion",
+ "proposes per-Structure Create/List/Details Pages, Views, Nodes, Data Sources, and owned-child navigation where applicable",
+ "includes Visualization placement table with one row per Project, Partner, Task in interview and plan summary, specifying Create inputs, List columns, Details Field order",
+ "uses one unlabeled Details group when few Fields form a coherent sequence; splits into named groups only where useful",
+ "asks only unresolved modeling decisions",
+ "summary uses peer Markdown headings for Scope, Metadata, Business Data, Execution, Complexity, Risks, Validation, Next; only Data Modeling/Visualization/Automation nest under Metadata; Customer and Installation appear above headings",
+ "out-of-scope layers give reason; Visualization remains in scope unless explicitly excluded",
+ "Installation default currency BRL formats planned value in Visualization, not a Data Modeling restriction on stored monetary values"
+ ]
+ },
+ {
+ "id": "same-session-summary-and-adjustments",
+    "prompt": "Use Acme. Agreed plan summary for Workspace ws-project: add the existing priority Field to the project List Page, validate, and show the diff. No data-model or Business Data changes. Implement plan in this session.",
+    "userReplies": [
+      "I tested the List Page. Move priority before the name column; keep everything else unchanged."
+    ],
+    "expect": [
+      "uses the agreed current-session summary without searching for or creating a plan file",
+      "executes through current Discovery after verifying the Workspace",
+      "reports Agent validation separately from User testing and offers focused manual checks",
+      "applies the requested placement adjustment in the same Workspace and validates again without another full interview",
+      "records User feedback and remaining work in Workspace Activity",
+      "stops before acknowledgement, human review approval, or Publication"
+    ]
+  }
 ]

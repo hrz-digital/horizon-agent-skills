@@ -7,13 +7,15 @@ This repository packages portable workflow skills for AI Agents operating Horizo
 ## Skill map
 
 - [`horizon`](../skills/horizon/SKILL.md) — verify CLI, explicitly select live-valid customer Installation, bootstrap Discovery, classify work, select or resume Workspace, and record handoff.
-- [`horizon-interview`](../skills/horizon-interview/SKILL.md) — clarify complex work, write a local implementation plan, and obtain approval before execution.
+- [`horizon-interview`](../skills/horizon-interview/SKILL.md) — clarify intent, summarize agreed work in chat, obtain required confirmations, and reserve files for exceptional plans.
 - [`horizon-metadata-authoring`](../skills/horizon-metadata-authoring/SKILL.md) — propose Metadata through a Workspace and human review.
 - [`horizon-architecture-analysis`](../skills/horizon-architecture-analysis/SKILL.md) — analyze Published Metadata and maintain Architectural Metadata Tickets.
 - [`horizon-runtime`](../skills/horizon-runtime/SKILL.md) — operate Business Data and execute runtime Actions.
 - [`horizon-ask-for-guidance`](../skills/horizon-ask-for-guidance/SKILL.md) — user-invoked, read-only guidance for Metadata decisions and explaining configured Installation behavior.
 
-Complex or ambiguous work first passes through [`horizon-interview`](../skills/horizon-interview/SKILL.md); every platform workflow then runs [`horizon`](../skills/horizon/SKILL.md) bootstrap. It links single shared [CLI installation](../skills/horizon/references/cli-installation.md) and [Connection Profile](../skills/horizon/references/connections.md) references. When classifying runtime versus Metadata work, selecting or resuming Workspace, or recording handoff, continue there. When the request follows another branch, read that branch's linked skill; do not copy its workflow rules here.
+Bootstrap and inspect first through [`horizon`](../skills/horizon/SKILL.md), then apply the [interview and plan gates](../skills/horizon-interview/SKILL.md#planning-gates). Default to a chat summary and same-session execution, validation, User testing, and adjustments. Routine Metadata continuity uses Workspace Activity; files follow the exceptional plan-file gate. Generic guidance needs no bootstrap.
+
+Keep policy with its owner: `horizon` owns routing, target verification, and Workspace selection; `horizon-interview` owns planning gates; its [plan reference](../skills/horizon-interview/references/implementation-plan.md) owns the saved-file lifecycle; `horizon-metadata-authoring` owns modeling/Page defaults and execution; guidance explains these workflows without running them. Shared [CLI installation](../skills/horizon/references/cli-installation.md) and [Connection Profile](../skills/horizon/references/connections.md) references own setup. Link to these owners rather than copying their rules.
 
 ## Repository boundary
 

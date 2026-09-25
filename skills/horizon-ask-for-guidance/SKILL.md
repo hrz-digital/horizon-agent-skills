@@ -10,7 +10,7 @@ metadata:
 
 # Horizon guidance
 
-Help User understand Horizon modeling choices and what is configured in a Horizon Installation. Guidance is read-only. Route Metadata changes, Publication, Business Data changes, and Actions to their dedicated Skills.
+Explain Horizon modeling, configured Metadata, and skill-set usage without mutations. Route execution to its skill; leave Publication to human decision-makers.
 
 ## Decide context
 
@@ -23,9 +23,9 @@ Completion: request is classified as generic or Installation-specific, and Insta
 
 ## Using the skill set
 
-When User asks how to work with Horizon, explain the path without doing it: describe task to `horizon` → select Installation and inspect Discovery/Metadata → interview ↔ targeted Discovery only for unresolved decisions or substantial execution → agree outcomes in Data Modeling, Visualization, and Automation → write and approve a plan when authoring workload or handoff warrants it → optionally start a fresh session → tell `horizon` "implement plan" or "Executar o plano" (no path) → recheck Installation, Discovery, and Workspace → author and validate. Clear localized work can proceed after inspection without interview or plan. Approval begins authoring, not Publication.
+Explain the default without executing it: describe the task to `horizon` → select Installation and inspect Discovery/Metadata → clarify under the [interview gates](../horizon-interview/SKILL.md#planning-gates) → show a [plan summary](../horizon-interview/SKILL.md#plan-summary) and obtain required confirmations → execute in the same session and validate → User tests and requests adjustments. For Metadata, explain the [three-layer proposal](../horizon-metadata-authoring/SKILL.md#three-layer-metadata-proposal).
 
-Approved plans live under `.hrz/<customer>/<installation>/<feature>/implementation-plan.md` with `Status: approved-to-implement`; `Customer` and `Installation` identify the target. `horizon` lists choices when multiple plans qualify, stops when none qualify, and resumes an `in-progress` plan from recorded Workspace progress. A fresh session clears chat context, not platform state. This Skill explains the workflow; `horizon` executes it.
+A saved file is exceptional under the interview gates, not a condition for planning or execution. Explain the [file lifecycle](../horizon-interview/references/implementation-plan.md) only when it applies. "implement plan" or "Executar o plano" uses an agreed current-session summary without a file; the [approved-plan procedure](../horizon/SKILL.md#implement-approved-plan) also supports saved plans. Routine Metadata continuation uses Workspace Activity. A fresh session clears chat context, not platform state. Plan approval permits agreed execution, not Publication.
 
 ## Evidence precedence
 
@@ -98,6 +98,6 @@ Ask the smallest focused clarification when a missing fact changes the recommend
 - Audit overlap, misplaced concepts, consolidation candidates, or AMTs → `horizon-architecture-analysis`.
 - Test proposed Metadata → `horizon-metadata-authoring` preview; explain that preview reads Business Data shared and audited.
 - Change, query, or act on Business Data → `horizon-runtime`.
-- Continue earlier work → `horizon`; inspect open Workspaces before creating one.
+- Continue earlier work → `horizon`'s approved-plan procedure or Workspace selection, as applicable.
 
 Completion: User has a grounded answer, source limits, required human decision, and exactly one safe next step; no platform mutation was performed by this Skill.

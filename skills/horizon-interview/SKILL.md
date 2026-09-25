@@ -9,53 +9,106 @@ metadata:
 
 # Horizon Interview
 
-Reach shared understanding before execution. This is a planning gate, not a replacement for Discovery. Platform contracts, schemas, catalogs, routes, availability, authorization, and Metadata Context remain authoritative in current Discovery.
+Settle intent before execution. Current Discovery supplies platform contracts and evidence; this skill owns clarification and plan approval.
 
-## Interview depth and written plan
+## Planning gates
 
-For Metadata, enter this workflow after initial Installation selection and Discovery inspection only when a decision remains, execution is substantial, or a handoff is likely. A clear localized change with no conflicting evidence proceeds directly to authoring. Ask only unresolved decisions: one round may settle a change; uncertain meaning may take many rounds. Separately, judge execution workload after understanding is settled. Few localized Metadata edits can proceed without a plan file, even after a deep interview. Multiple related Structures, substantial cross-surface authoring, or likely session handoff need a written plan, even when intent was easy to understand.
+Apply these gates after `horizon` bootstrap and initial Discovery/Metadata inspection:
 
-For every Business Data mutation, obtain explicit confirmation of target, records, values, and intended effect; require an approved written plan for bulk, relational, destructive, or ambiguous work.
+- **Clarification:** interview unresolved or substantial Metadata work and unclear, broad, multi-step, bulk, relational, destructive, or cross-surface runtime work. Ask only what inspection and the request cannot settle. Fully specified localized work can proceed directly.
+- **Default:** show a concise plan summary in chat, confirm clarified decisions and required approvals, then execute in the same session. Multiple Structures, bulk work, and interview depth do not by themselves require a file.
+- **Business Data:** every Business Data mutation needs explicit confirmation of target, records, values, and intended effect, whether planned in chat or in a file.
+- **Plan file:** use one only for large work spanning multiple sessions with substantial dependencies or sequencing, or when User explicitly requests a durable plan. Routine interruptions do not require a file; use Workspace Activity for Metadata continuity.
 
 ## Interview
 
-1. Use the explicit live-valid customer Installation selected through `horizon` bootstrap. If the request does not identify what to inspect, ask only the minimum orientation needed. No implementation plan yet.
-2. Inspect or refresh current Discovery and relevant Published Metadata, Workspace state, Semantic, schemas, catalogs, affordances, and availability. For Metadata authoring, follow the Discovery authoring links to list Structures and Workspaces and read relevant Structure detail; Architecture Analysis is for audits and Tickets, not this inventory. Use each returned method and href unchanged, including its prefix. Determine whether the request extends existing Structures or patterns or creates genuinely new ones. Ask User only about decisions this inspection cannot settle. Follow root Discovery `platformSetup` link for `defaultLocale` and `defaultCurrency`. For financial presentation, use that default currency unless User requests a different currency or multi-currency behavior; do not ask for its default value.
-3. For Metadata requests, frame decisions in three layers: **Data Modeling** (Structures, Fields, Relations, types, Constraints), **Visualization** (Data Sources, Pages, Views, Nodes, Widgets), **Automation** (Actions, Alerts, executable rules and supported side effects). Show User a recommendation for each layer. For new Structures, the Visualization proposal includes configuring usable Create, List, and Details Pages and parent Navigation to owned child lists by default. After inspection, show this as proposed work using Discovery contracts. For each new Structure, show a compact table with columns `Structure | Create inputs | List columns | Details groups`; name suitable Create inputs, useful List columns, and all Fields on Details grouped by context (identity/classification first). Put every long-text Field on Details and omit it from List columns by default unless User requests otherwise. Create may include useful long text and must include confirmed required Fields; exclude derived values from Create inputs. Refine proposals as inspection continues; ask about specific additional screens or placement only when relevant. An explicit User request for a data-model-only scope overrides this default; absent that request, do not turn Page configuration into a choice or call Visualization `no configuration needed`. Clarify each layer's intended outcome; record `no configuration needed` only when User agrees no change is needed in that layer, never as a substitute for unresolved understanding. A requested list of new Structures does not exclude existing platform concepts such as User; discover availability before recommending a link. Ask only decisions that affect the requested outcome; accept explicit User overrides of defaults. For new Fields, clarify genuinely ambiguous meaning before choosing a type. For new Structures, confirm which Fields are required at creation; for a single Field on an existing Structure, keep it optional unless the request or existing rules say otherwise. For multiple Structures, propose a relationship map with Primary/Secondary classification and each Relation's source, target, cardinality, and ownership; confirm independent Relation decisions separately, then confirm the complete map before authoring. A proposed relationship from names is never a decision.
-4. Work questions in rounds using the Metadata response format below. Each numbered item asks one independent decision: split any clauses whose answers could differ, including cardinality versus requiredness on the same Relation and required Fields on different Structures. Omit questions already answered by User (such as supplied enum options) unless Discovery finds a conflict. Immediately below it put a grounded `recommendation:` line with a specific choice and reason, or what evidence must be clarified; this line ends the item, with no second question. Show baseline work as a proposal, not a permission question. Ask every currently unblocked decision, wait for answers, then use targeted Discovery reads to check what the response implies before the next round. Revise recommendations against existing Installation patterns; repeat interview ↔ Discovery until no material decision remains unresolved. Do not silently assume unresolved answers.
-5. For Business Data creation or change, make destination, identity, relationships, values, validation, duplicate/update behavior, failure handling, scope, and intended effects explicit. For spreadsheet imports, map every source column to a destination or an explicit ignore decision; record counts and anonymized examples, never raw records.
-6. Once Installation inspection and interview ↔ Discovery have settled decisions, assess execution workload independently of interview difficulty. For substantial Metadata work, complex Business Data work, or likely handoff, write a concise plan using [implementation-plan.md guidance](references/implementation-plan.md) at `.hrz/<customer-code>/<installation-code>/<feature-slug>/implementation-plan.md`. Normalize path components to lowercase `[a-z0-9._-]`; replace other characters with `-`; reject empty values and `..`, `/`, or `\\`. For a few localized Metadata edits, show agreed layer outcomes and continue without a file.
-7. For written plans, set status to `awaiting-approval` and show the review summary in [implementation-plan.md guidance](references/implementation-plan.md): agreed decisions for each layer, risks, execution complexity based on work to author and validate, and whether a fresh session is recommended. Show contents, not just the file path. Wait for explicit approval of the reviewed plan, then set status to `approved-to-implement` and Approval gate to `approved` before handoff or execution. For work without a plan file, proceed only after User confirms any clarified decisions; do not add a file-approval gate.
-8. If a written plan's scope or material evidence changes, return it to `draft` with Approval gate `pending`, update it, and request approval again. After completion, recommend User purge the plan to prevent stale guidance; Discovery remains the only source of truth.
+1. Use the explicit live-valid Installation selected through `horizon` bootstrap. If the request does not identify what to inspect, ask only the minimum orientation needed. No implementation plan yet.
+2. Inspect relevant Discovery, Metadata, Semantic, and Workspace state when applicable. For ordinary Metadata inventory, use the authoring links to Structures and Workspaces, not Architecture Analysis. Follow returned methods, hrefs, schemas, catalogs, and availability; decide whether to extend existing concepts or create new ones.
+3. For Metadata, use authoring's [three-layer proposal](../horizon-metadata-authoring/SKILL.md#three-layer-metadata-proposal) and [Structure and Page defaults](../horizon-metadata-authoring/SKILL.md#structure-and-page-defaults) as planning reference, not permission to execute. Show a recommendation for each layer and, when Visualization is in scope for new Structures, the Page table below. Always show all three layers. New Structures alone do not imply a data-model-only request. Propose usable Visualization by default: Create/List/Details Pages, Data Sources, Views/Nodes, and owned-child navigation where applicable. Settle each layer as agreed configuration, `out of scope (no configuration needed)` with reason, or `out of scope (User-directed)` only for explicit exclusions. Keep Installation default currency in Visualization as display formatting, not a Data Modeling commitment to a currency; cite current Discovery and User preference. Show defaults as proposed work, not permission questions.
+4. Ask every currently unblocked decision in numbered rounds. Each item asks one independent question followed by a `recommendation:` statement with a specific choice and reason, or the evidence needed. Split decisions whose answers could differ, including Relation cardinality versus requiredness and required Fields on different Structures. Omit decisions already settled unless Discovery reveals a conflict. Wait for answers, then make targeted Discovery rechecks of their implications. Repeat until no material decision remains unresolved.
+5. For Business Data changes, settle destination, identity, relationships, values, validation, duplicate/update behavior, failure handling, scope, and effects. For spreadsheet imports, map every source column to a destination or an explicit ignore decision; record counts and anonymized examples, never raw records.
+6. Show the **Plan summary** below and obtain confirmation of clarified decisions and required mutation approvals. Existing explicit instructions count as settled decisions; do not ask again without conflicting evidence. Only when the plan-file gate applies, follow [implementation-plan.md](references/implementation-plan.md) for storage, privacy, and lifecycle, and obtain explicit approval of its reviewed summary.
+7. Continue through the appropriate execution skill in the same session, then follow **Execution and User testing** below. Ordinary execution needs neither a fresh session nor a saved file. For later Metadata sessions, use `horizon` Workspace selection and Activity; use its [approved-plan procedure](../horizon/SKILL.md#implement-approved-plan) when resuming a saved plan.
 
 ## Metadata interview response
 
-Use this shape for each round; number questions continuously across layers, omit questions already settled, and include the table when creating Structures:
+Use this shape for each round. Always show all three headings, even if a layer has no questions. Number questions continuously across layers; omit settled questions and omit the Page table when no new Structure's Visualization is in scope.
 
 ```markdown
 Installation: <selected name>; inspected: <relevant existing Metadata>
 
 ## Data Modeling
-Proposed: <model and existing patterns>
+Proposed: <model and existing patterns, or settled layer outcome>
 1. <one unresolved decision?>
    recommendation: <choice and reason; no further question>
 
 ## Visualization
-Proposed: <baseline Pages and access to owned children>
-| Structure | Create inputs | List columns | Details groups |
+Proposed: <Create/List/Details Pages → Views → Nodes with Data Sources and owned-child navigation, or out of scope with reason>
+| Structure | Create inputs | List columns | Details groups and Field order |
 | --- | --- | --- | --- |
-| <name> | <inputs, including required Fields> | <useful short columns> | <all Fields grouped by context> |
+| <each new Structure> | <editable inputs, including required Fields> | <useful short columns> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
 
 ## Automation
-Proposed: <behavior or candidate for no configuration needed>
+Proposed: <behavior, or out of scope with reason (User-directed or no configuration needed)>
 2. <one unresolved decision, if any?>
    recommendation: <choice and reason; no further question>
 
-Next: <targeted Discovery recheck, plan approval, or authoring>
+Next: <targeted Discovery recheck, plan approval, or execution>
 ```
 
-A layer with no questions still shows its proposed or agreed outcome. A recommendation ends with a statement, never another question.
+A layer with no questions still shows its proposed or agreed outcome. A recommendation ends with a statement, never another question. For both interview and plan tables, include one row per new Structure when Visualization is in scope. For few Fields that form one coherent flow, use one unlabeled Details group with Fields in contextual order; name and split groups only when that improves navigation. Verify grouping affordances through Discovery.
 
-Plans are local and personal. Do not add host `.gitignore` entries automatically. Never write credentials, tokens, raw Business Data, or raw spreadsheet contents to a plan.
+## Plan summary
 
-Completion: Metadata decisions are settled in each layer as agreed configuration or `no configuration needed`; substantial execution has an approved written plan, localized execution has confirmed decisions without a file, and no platform mutation occurs while understanding remains unresolved.
+Summarize agreed intent in chat using Markdown headings exactly as below. Keep every top-level section as a peer of Metadata, not a nested bullet; only the three architecture layers belong under Metadata. Use `not applicable` with brief reason when needed. For new Structures with Visualization in scope, include the placement table below with actual per-Structure inputs, columns, and Details group/Field order; omit the table only when Visualization is out of scope. Treat Installation default currency as presentation, not a fixed-currency modeling decision or risk unless User and current contract require it:
+
+```markdown
+# Plan summary
+Customer: <confirmed customer; or not applicable — reason>
+Installation: <selected live-valid Installation; or not applicable — reason>
+
+## Scope
+<goal, included work, exclusions>
+
+## Metadata
+### Data Modeling
+<Structures, Fields, Relations, Constraints; or out of scope — reason>
+
+### Visualization
+<Data Sources; Create/List/Details Pages → Views → Nodes, bindings and owned-child navigation; or out of scope — reason>
+| Structure | Create inputs | List columns | Details groups and Field order |
+| --- | --- | --- | --- |
+| <each new Structure> | <editable inputs, including required Fields> | <useful short columns> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
+
+### Automation
+<Actions, rules and effects; or out of scope — reason>
+
+## Business Data
+<targets, record scope, values, effects, failure handling; or not applicable — reason>
+
+## Execution
+<steps, dependencies, Workspace choice for Metadata; or not applicable — reason>
+
+## Complexity
+<execution and validation workload with reason, even if small>
+
+## Risks
+<material effects and limits; or not applicable — reason>
+
+## Validation
+<Agent checks and safe manual checks for User; or not applicable — reason>
+
+## Next
+<required confirmation or same-session execution>
+```
+
+Use counts, mappings, and anonymized examples rather than raw records in summaries. Approval permits agreed execution, not Workspace acknowledgement, human review approval, or Publication.
+
+## Execution and User testing
+
+1. Execute agreed work through the appropriate skill and current Discovery; report validation evidence and any limits.
+2. Offer focused manual checks and ask User to test and report adjustments. Distinguish Agent validation from pending User acceptance; never claim User testing occurred without feedback.
+3. Apply requested adjustments and validate again. Reopen clarification or approval only when scope, effects, or material evidence changes; every additional Business Data mutation still needs explicit confirmation. Do not replay successful mutations as a test. Workspace preview uses real Business Data, and test-instance creation needs explicit User intent.
+4. Record Metadata decisions, progress, User feedback, and remaining work in Workspace Activity. A routine interruption resumes there without creating a plan file. For runtime-only work, reconcile current state and confirm remaining intent if session context is lost; do not invent a Workspace or replay mutations.
+
+Completion: in-scope decisions and required approvals are settled, the summary is sufficient for execution, and no platform mutation occurs while understanding remains unresolved. A file is required only by the plan-file gate.

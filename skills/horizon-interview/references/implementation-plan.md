@@ -1,12 +1,20 @@
 # Implementation plan
 
-Use one file per effort:
+Use this reference only when the [plan-file gate](../SKILL.md#planning-gates) applies: large multi-session work with substantial dependencies or sequencing, or an explicit User request for a durable plan. Otherwise use the in-chat summary and execute in the same session.
 
-`.hrz/<customer-code>/<installation-code>/<feature-slug>/implementation-plan.md`
+A local plan records agreed intent and progress, not platform contracts or executable authority. Create it after Installation inspection and clarification; execute through current Discovery and the appropriate skill.
 
-This relative path and `/` separator work on Windows, macOS, and Linux; use native separators when accessing it.
+## Location and privacy
 
-Create the plan only after selecting the Installation, inspecting its Discovery and existing Metadata, and resolving decisions through interview ↔ targeted Discovery checks. Keep plan concise. It captures shared understanding, not platform truth. Re-read current Discovery before every execution step.
+Use one file per effort: `.hrz/<customer-code>/<installation-code>/<feature-slug>/implementation-plan.md`. Normalize components to lowercase `[a-z0-9._-]`, replace other characters with `-`, and reject empty, `.` or `..` components and path separators. Use native separators when accessing the path.
+
+Confirm Customer and Installation with User rather than splitting a Connection Profile label. Store the selected profile label and checked non-secret API URL for later identity verification.
+
+Plans are local and personal. Do not add host `.gitignore` entries automatically. Never store credentials, tokens, raw Business Data, or raw spreadsheet contents. Use counts and anonymized examples only.
+
+## Contents
+
+For Metadata layer outcomes, use the [three-layer proposal](../../horizon-metadata-authoring/SKILL.md#three-layer-metadata-proposal): agreed configuration, `out of scope (no configuration needed)` with reason, or `out of scope (User-directed)` for explicit exclusion. A new Structure normally includes proposed Visualization. When Visualization is in scope for new Structures, fill one table row per Structure; omit table when out of scope.
 
 ```markdown
 # <title>
@@ -29,16 +37,26 @@ Created: <date>
 - <decision and rationale>
 
 ## Affected work
-- Data Modeling: <agreed Structures, Fields, Relations, Constraints, or no configuration needed (agreed)>
-- Visualization: <agreed Data Sources, Pages, Views, Nodes, Widgets, or no configuration needed (agreed)>
-- Automation: <agreed Actions, Alerts, executable rules, or no configuration needed (agreed)>
-- Business Data: <types, scope, intended create/update/delete effects, or none>
+### Metadata
+- Data Modeling: <Structures, Fields, Relations, Constraints; or out of scope — reason>
+- Visualization: <Data Sources; per-Structure Create/List/Details Pages → Views → Nodes, bindings and navigation; or out of scope — reason>
+
+| Structure | Create inputs | List columns | Details groups and Field order |
+| --- | --- | --- | --- |
+| <each new Structure> | <editable inputs, including required Fields> | <useful short columns> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
+
+- Automation: <Actions, rules and effects; or out of scope — reason>
+### Business Data
+- Business Data: <targets, record scope, values, intended effects, failure handling; or not applicable — reason>
 
 ## Steps
 1. <step>
 
+## Complexity
+<execution and validation workload with reason, even if small>
+
 ## Risks and unresolved questions
-- <risk or None>
+- <risk or None; unresolved decisions block approval>
 
 ## Validation evidence
 - <Discovery links, schema/catalog evidence, preview or validation result>
@@ -47,31 +65,37 @@ Created: <date>
 Explicit approval required before mutation: <pending|approved>
 
 ## Resume notes
-<session recommendation; when work starts, record Workspace code, completed steps, and next step>
+<session recommendation; completed steps and evidence, next step; Workspace code and selection decision only when applicable>
 ```
 
-Before requesting approval, show User a concise review summary from this plan (not only its path):
-
-```markdown
-Plan: <path> — awaiting approval
-Data Modeling: <Structures and Primary/Secondary classifications; source → target Relations, cardinalities, ownership; required and derived Fields>
-Visualization: <per-Structure Create inputs, List columns, Details groups; parent-to-child Navigation>
-Automation: <agreed behavior or no configuration needed>
-Execution: <Workspace reuse/new, order, validation and diff>
-Risks/unresolved decisions: <none, or return to interview>
-Execution complexity: <small/moderate/large — concrete authoring and validation workload>
-Session recommendation: <continue / fresh session — reason>
-No Metadata or Business Data changes made. Approval starts authoring, not Publication.
-```
-
-After explicit approval of the reviewed plan, set `Status: approved-to-implement` and Approval gate to `approved`. On execution start, set `Status: in-progress` and record Workspace and progress in Resume notes so later sessions can resume rather than replay edits. A changed scope or material evidence returns Status to `draft` and Approval gate to `pending` for renewed approval. Confirm Customer and Installation with User rather than splitting a Connection Profile label. Store the selected profile label and checked non-secret API URL so a later session can verify the intended Installation without guessing.
-
-For spreadsheet or bulk Business Data work, add a compact mapping table under **Affected work**:
+For spreadsheet or bulk Business Data work, add under **Affected work**:
 
 | Source column | Destination | Transform/validation | Missing or invalid handling |
 |---|---|---|---|
 | `<column>` | `<Field/Relation or Ignore>` | `<rule>` | `<decision>` |
 
-Record row counts and anonymized examples only. Never copy raw records, credentials, tokens, or secrets.
+## Approval summary
 
-After agreed execution and validation, mark `Status: completed` so it is no longer offered for implementation; recommend purging the plan; current Discovery remains source of truth.
+Show the [Plan summary](../SKILL.md#plan-summary), not just the path, with these file-specific additions:
+
+```markdown
+Plan: <path> — awaiting approval
+Persistence reason: <large multi-session dependencies/sequencing or User request>
+Execution complexity: <concrete execution and validation workload>
+Session recommendation: <continue / handoff — reason>
+Mutation state: <none yet, or completed work when reviewing a revised plan>
+```
+
+Approval allows execution in the same session; saving a file does not require a fresh session. User testing and adjustments follow the interview skill's execution loop.
+
+## Lifecycle
+
+- **Draft:** unresolved decisions or unexpected material changes block execution. Set `Status: draft` and Approval gate `pending`.
+- **Review:** when decisions are settled, set `Status: awaiting-approval`, keep Approval gate `pending`, and show the approval summary.
+- **Approval:** after explicit approval of that summary, set `Status: approved-to-implement` and Approval gate `approved`.
+- **Execution:** set `Status: in-progress` when work starts. Record completed steps, evidence, and next step in Resume notes; include Workspace identity and selection decision only for Metadata work. Update progress as steps complete.
+- **Completion:** after agreed execution and validation, set `Status: completed`; it is no longer eligible for implementation. Recommend User purge the plan; current Discovery remains source of truth.
+
+On resume, compare current evidence with approved scope **and recorded progress**. Expected changes from completed steps are progress, not approval-invalidating drift. Verify their results and skip completed mutations; if completion is uncertain, reconcile current state before continuing. Unexpected changes affecting remaining work return the plan to Draft, preserve completed-step evidence, and require an updated review and approval before further mutation.
+
+Resume through `horizon`'s [approved-plan procedure](../../horizon/SKILL.md#implement-approved-plan) for target verification, conditional Workspace selection, and execution routing.
