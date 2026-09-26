@@ -1,5 +1,36 @@
 [
   {
+    "id": "field-batch-authoring",
+    "prompt": "Add the agreed Fields to Project and Task in the selected Workspace; current Discovery offers atomic batch creation.",
+    "expect": [
+      "fetches current Structure authoring affordance and linked schema",
+      "prefers one atomic batch for multiple Fields on each Structure",
+      "keeps different Structures in separate requests",
+      "uses discovered method, href, and payload shape through generic CLI request transport",
+      "validates Workspace and inspects diff after creation"
+    ]
+  },
+  {
+    "id": "field-batch-unavailable",
+    "prompt": "Add the agreed Fields to Project; this Installation does not expose available batch creation.",
+    "expect": [
+      "falls back to discovered single-Field creation and linked schema",
+      "tracks completed writes before retrying unfinished work",
+      "does not infer platform capability from installed skill version",
+      "never guesses a batch route or payload shape"
+    ]
+  },
+  {
+    "id": "field-batch-rejected",
+    "prompt": "The discovered atomic Field batch failed validation or reported a Workspace conflict. Continue the agreed work.",
+    "expect": [
+      "treats failed batch as no Fields committed",
+      "corrects indexed Field issues or refreshes after conflict",
+      "checks current Workspace state before retrying",
+      "does not switch to single-Field creation to bypass batch rejection"
+    ]
+  },
+  {
     "id": "missing-cli",
     "prompt": "List Projects in Horizon.",
     "expect": [

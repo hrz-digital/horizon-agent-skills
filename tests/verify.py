@@ -58,6 +58,14 @@ def main():
         "defaultLocale", "PT, ES, and EN", "Omit an uncertain optional translation", "snake_case",
     )
 
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "prefer an available atomic batch-creation affordance",
+            "keep different Structures in separate requests",
+            "If batch creation is absent or unavailable",
+            "track completed writes",
+            "A failed batch commits no Fields",
+            "never switch to singles to bypass a rejected batch",
+            "skill installation alone does not establish platform capability")
     scenarios = json.loads((ROOT / "tests/scenarios.json").read_text())
     required = {
         "missing-cli", "unsupported-cli", "update-available", "install-refused", "zero-profiles", "one-profile", "many-profiles",
@@ -71,6 +79,7 @@ def main():
         "same-session-summary-and-adjustments",
         "three-structures-three-layers",
     }
+    required.update({"field-batch-authoring", "field-batch-unavailable", "field-batch-rejected"})
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"
