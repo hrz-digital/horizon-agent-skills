@@ -22,17 +22,17 @@ def main():
         require(f"skills/{skill}/SKILL.md", "Run `horizon` bootstrap")
     require("skills/horizon-interview/SKILL.md", "implementation-plan.md", "Planning gates", "Business Data mutation", "explicit confirmation", "#three-layer-metadata-proposal", "#structure-and-page-defaults")
     require("skills/horizon-interview/SKILL.md", "## Plan summary", "## Execution and User testing", "large work spanning multiple sessions with substantial dependencies or sequencing", "User explicitly requests a durable plan", "Multiple Structures, bulk work, and interview depth do not by themselves require a file", "pending User acceptance", "every additional Business Data mutation still needs explicit confirmation")
-    require("skills/horizon-interview/SKILL.md", "New Structures alone do not imply a data-model-only request", "Always show all three headings", "Customer: <confirmed customer", "Installation: <selected live-valid", "only the three architecture layers belong under Metadata")
+    require("skills/horizon-interview/SKILL.md", "New Structures alone do not imply a data-model-only request", "always show all three headings, even when one layer has no questions", "Customer: <confirmed customer", "Installation: <selected live-valid", "only the three architecture layers belong under Metadata")
     summary = (ROOT / "skills/horizon-interview/SKILL.md").read_text().split("## Plan summary\n", 1)[1].split("## Execution and User testing", 1)[0]
     template = summary.split("```markdown\n", 1)[1].split("\n```", 1)[0]
     assert [line for line in template.splitlines() if line.startswith(("## ", "### "))] == [
         "## Scope", "## Metadata", "### Data Modeling", "### Visualization", "### Automation",
         "## Business Data", "## Execution", "## Complexity", "## Risks", "## Validation", "## Next",
     ]
-    assert template.count("| Structure | Create inputs | List columns | Details groups and Field order |") == 1
+    assert template.count("| Structure | Create inputs | List table, columns, and create trigger | Details groups and Field order |") == 1
     assert template.index("### Visualization") < template.index("| Structure | Create inputs") < template.index("### Automation")
     require("skills/horizon-interview/SKILL.md", "one row per new Structure", "one unlabeled Details group")
-    require("skills/horizon-interview/references/implementation-plan.md", "### Metadata", "## Complexity", "out of scope (no configuration needed)", "| Structure | Create inputs | List columns | Details groups and Field order |")
+    require("skills/horizon-interview/references/implementation-plan.md", "### Metadata", "## Complexity", "out of scope (no configuration needed)", "| Structure | Create inputs | List table, columns, and create trigger | Details groups and Field order |")
     require("skills/horizon-metadata-authoring/SKILL.md", "one unlabeled group", "named groups only when they improve navigation")
     require("skills/horizon-interview/SKILL.md", "default currency in Visualization as display formatting")
     require("skills/horizon-metadata-authoring/SKILL.md", "without treating this display default as a restriction on stored values")
@@ -66,6 +66,44 @@ def main():
             "A failed batch commits no Fields",
             "never switch to singles to bypass a rejected batch",
             "skill installation alone does not establish platform capability")
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "unfinished work, not a valid finish",
+            "A new Structure never settles Visualization this way",
+            "Sequence the work as Structure → Fields → Data Source → Nodes",
+            "A Page update replaces the whole View list",
+            "Keep Data Source output and Page node selection as separate decisions",
+            "Prove each Page by reading it back",
+            "reported issues carry no severity",
+            "treat each one as blocking",
+            "is not a completed proposal",
+            "no server-reported issue remains unresolved",
+            "The minimum useful set is one field node per required Field on Create",
+            "a table element bound to a Data Source over the owning Structure",
+            "Give a table element a stable node code",
+            "falls back to a positional binding that shifts when nodes are reordered",
+            "Reach the Create Page with a create trigger element",
+            "that the List table's Data Source resolves to the owning Structure",
+            "that the Create Page is reachable from the Structure's Pages",
+            "Read the exact node and source-data vocabulary from the current Page schema",
+            "default_nodes_required")
+    require("skills/horizon-interview/SKILL.md",
+            "a new Structure's Visualization settles as agreed configuration or `out of scope (User-directed)` only",
+            "the create trigger that makes each new Structure's Create Page reachable",
+            "plus the create trigger reaching the Create Page",
+            "Create/List/Details Pages → Views → Nodes, bindings, the create trigger reaching each Create Page",
+            "Use this shape only when a round actually has questions.",
+            "skip the interview round and show the Plan summary directly",
+            "not a literal code fence",
+            "ask none and go straight to the Plan summary when inspection and the request already settle everything",
+            "Show a clarification round only when the agent holds at least one real question",
+            "never show an empty round",
+            "Skip the interview round when the agent has no question, and wait for approval before proposing any mutation",
+            "wait for that approval before any mutation")
+    require("skills/horizon-interview/references/implementation-plan.md",
+            "A new Structure's Visualization settles as agreed configuration or `out of scope (User-directed)` only",
+            "its generated Pages stay unfinished until configured",
+            "the create trigger reaching each Create Page",
+            "plus the create trigger reaching the Create Page")
     scenarios = json.loads((ROOT / "tests/scenarios.json").read_text())
     required = {
         "missing-cli", "unsupported-cli", "update-available", "install-refused", "zero-profiles", "one-profile", "many-profiles",
@@ -77,7 +115,7 @@ def main():
         "business-data-confirmation", "data-model-only-scope", "page-only-completion",
         "durable-plan-request", "large-multi-session-plan", "workspace-resume-without-plan",
         "same-session-summary-and-adjustments",
-        "three-structures-three-layers",
+        "three-structures-three-layers", "new-structure-page-defaults",
     }
     required.update({"field-batch-authoring", "field-batch-unavailable", "field-batch-rejected"})
     assert required == {scenario["id"] for scenario in scenarios}

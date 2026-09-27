@@ -14,7 +14,7 @@ Plans are local and personal. Do not add host `.gitignore` entries automatically
 
 ## Contents
 
-For Metadata layer outcomes, use the [three-layer proposal](../../horizon-metadata-authoring/SKILL.md#three-layer-metadata-proposal): agreed configuration, `out of scope (no configuration needed)` with reason, or `out of scope (User-directed)` for explicit exclusion. A new Structure normally includes proposed Visualization. When Visualization is in scope for new Structures, fill one table row per Structure; omit table when out of scope.
+For Metadata layer outcomes, use the [three-layer proposal](../../horizon-metadata-authoring/SKILL.md#three-layer-metadata-proposal): agreed configuration, `out of scope (no configuration needed)` with reason, or `out of scope (User-directed)` for explicit exclusion. A new Structure's Visualization settles as agreed configuration or `out of scope (User-directed)` only, because its generated Pages stay unfinished until configured. A new Structure normally includes proposed Visualization. When Visualization is in scope for new Structures, fill one table row per Structure; omit table when out of scope.
 
 ```markdown
 # <title>
@@ -39,11 +39,11 @@ Created: <date>
 ## Affected work
 ### Metadata
 - Data Modeling: <Structures, Fields, Relations, Constraints; or out of scope — reason>
-- Visualization: <Data Sources; per-Structure Create/List/Details Pages → Views → Nodes, bindings and navigation; or out of scope — reason>
+- Visualization: <Data Sources; per-Structure Create/List/Details Pages → Views → Nodes, bindings, the create trigger reaching each Create Page, and navigation; or out of scope — reason>
 
-| Structure | Create inputs | List columns | Details groups and Field order |
+| Structure | Create inputs | List table, columns, and create trigger | Details groups and Field order |
 | --- | --- | --- | --- |
-| <each new Structure> | <editable inputs, including required Fields> | <useful short columns> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
+| <each new Structure> | <editable inputs, including required Fields> | <table element on the Data Source with useful short columns, plus the create trigger reaching the Create Page> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
 
 - Automation: <Actions, rules and effects; or out of scope — reason>
 ### Business Data

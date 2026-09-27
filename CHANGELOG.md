@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.4.1
+
+### Changed
+
+- Made a non-empty Create/List/Details Page set the required end state for every new Structure. A Page whose `default` View carries no nodes is unfinished work, generated default Pages are configured through their update affordance instead of recreated, and Visualization no longer settles as `out of scope (no configuration needed)` for a new Structure.
+- Added the authoring sequence Structure → Fields → Data Source → Nodes, the whole-View-list replacement rule for Page updates, the Data Source output coverage rule, and Page read-back proof through returned requirements, with a minimum useful node set that excludes unrequested charts, Widgets, filters, extra Pages, and named groups.
+- Specified what a usable List Page carries: one table element bound to a Data Source over the owning Structure, with a stable node code because the Platform otherwise derives a positional data binding that shifts when nodes are reordered, plus a create trigger or Navigation item that keeps the Create Page reachable. Create trigger absence was never a validation error, so an unreachable Create Page previously passed unnoticed.
+- Show a clarification round only when the agent actually holds a question; otherwise go straight to the Plan summary, which already carries all three layers, and wait for approval before any mutation. Stated in the skill intro, the Default planning gate, the interview steps, and the response shape, with the interview template marked as the reply's structure rather than a literal code fence.
+- Treat every server-reported Workspace issue as blocking, since reported issues carry no severity. `default_nodes_required` is named as the signal that a generated Page renders nothing, expected from Structure creation until configured, and a Workspace with it unresolved is not a completed proposal.
+
 ## v1.4.0
 
 ### Added

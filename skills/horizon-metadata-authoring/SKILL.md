@@ -4,7 +4,7 @@ description: Propose Horizon Metadata through Workspaces. Use when creating or c
 compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.4.0"
+  version: "1.4.1"
 ---
 
 # Horizon Metadata Authoring
@@ -52,7 +52,7 @@ Completion: each affected concept has owner evidence or a clear User question fo
 Use the request, confirmed interview decisions, or approved plan as scope. Check each layer against current Discovery contracts, examples, and Semantic. A fully specified request needs no redundant confirmation. Settle each layer as:
 
 - **Agreed configuration:** changes to implement.
-- **`out of scope (no configuration needed)`:** no changes needed for the intended outcome; state why.
+- **`out of scope (no configuration needed)`:** no changes needed for the intended outcome; state why. A new Structure never settles Visualization this way, because its generated Pages stay unfinished until configured; use `agreed configuration` or `out of scope (User-directed)` instead.
 - **`out of scope (User-directed)`:** User explicitly excludes the layer. Request to create Structures alone is not a data-model-only exclusion; propose Visualization defaults below.
 
 An unresolved decision is none of these; return it to interview. User choices override defaults.
@@ -78,26 +78,26 @@ Use these defaults in both interview proposals and execution. Ask only decisions
 
 ### Visualization
 
-Apply only when Visualization is in scope. Recommend usable Create, List, and Details Pages for new Structures, plus parent Navigation to owned child lists. Show this baseline as proposed work, not a permission question; follow explicit placement overrides.
+Apply only when Visualization is in scope. A Page whose `default` View carries no nodes is unfinished work, not a valid finish, because it renders nothing. Treat usable Create, List, and Details Pages for new Structures, plus parent Navigation to owned child lists, as the default end state rather than a recommendation. Show this baseline as proposed work, not a permission question; follow explicit placement overrides.
 
 - **Create:** suitable editable inputs, including every confirmed required Field; include long text when required or useful, and exclude derived values.
-- **List:** useful short columns supported by Data Source output. Omit long text by default unless User requests it.
+- **List:** a table element bound to a Data Source over the owning Structure, carrying useful short columns drawn from that Data Source's outputs, plus a create trigger element that makes the Create Page reachable. Omit long text by default unless User requests it.
 - **Details:** show every new Field, including long text, in a contextual sequence with identity/classification first. For few Fields forming one coherent flow, use one unlabeled group; add named groups only when they improve navigation and current Discovery supports the layout. Do not ask whether to display every Field.
 
-After creating a Structure and its agreed Fields/Relations, inspect Structure detail to discover which Pages exist and how to create or configure any missing ones. Follow current Data Source, Page, View Node, and Navigation affordances and schemas. Select output Fields and fixed/caller Filters for each Page's intended data and controls; empty Pages do not satisfy the proposal. For owned children, configure their lists and parent Navigation through discovered affordances.
+After creating a Structure and its agreed Fields/Relations, inspect Structure detail to discover which Pages exist and which Data Source, Page, View Node, and Navigation affordances apply. Platform-generated default Pages arrive with empty node trees: configure them through their discovered update affordance instead of creating replacements, and reserve Page creation for additional Pages the request needs. A Page's default View holds an array of nodes, and each node type binds data through its own source: a List Page carries one element whose type is a table and whose source data binds to the Data Source code, while Create and Details Pages carry Field elements. Give a table element a stable node code, because the Platform derives that element's data binding from the code and otherwise falls back to a positional binding that shifts when nodes are reordered. Read the exact node and source-data vocabulary from the current Page schema and its examples rather than assuming these property names. Reach the Create Page with a create trigger element on the List or Details Page, or with a Navigation item for it, following whichever current Discovery and existing Metadata already use. Sequence the work as Structure → Fields → Data Source → Nodes, because a node cannot bind a Field that does not exist yet and a node bound to a missing, unauthorized, or read-only Field is silently dropped from the Page's requirements at read time. A Page update replaces the whole View list, so send the complete node tree. Data Sources are not generated: create one when the List Page needs it, and keep its declared outputs covering every Field placed on any Page bound to it, because output is a whole-array replace and an unlisted Field stays invisible. Keep Data Source output and Page node selection as separate decisions, and trim displayed columns by editing nodes rather than by trimming output. Prove each Page by reading it back and confirming its returned requirements list every expected Field, that the List table's Data Source resolves to the owning Structure, and that the Create Page is reachable from the Structure's Pages. The minimum useful set is one field node per required Field on Create, a table element bound to a Data Source on List, and every Field on Details; add no chart, Widget, filter, extra Page, or named group unless the request asks for it. For owned children, configure their lists and parent Navigation through discovered affordances.
 
-Completion: modeling decisions are confirmed, in-scope Pages have usable data and controls, and parent Navigation reaches each in-scope owned-child list.
+Completion: modeling decisions are confirmed, every in-scope Page's default View carries nodes that resolve to usable data and controls, and parent Navigation reaches each in-scope owned-child list.
 
 ## Author
 
 1. Use schema-required properties, immutable-property declarations, enum catalogs, examples, and concurrency requirements exactly. For multiple new Fields on one Structure, prefer an available atomic batch-creation affordance from current Structure authoring Discovery. Fetch its linked schema and send the whole group through its discovered method and href; keep different Structures in separate requests. If batch creation is absent or unavailable, use discovered single-Field creation for each Field and track completed writes. A failed batch commits no Fields: correct indexed issues or refresh after a concurrency conflict, then retry only after checking current Workspace state; never switch to singles to bypass a rejected batch. For one new Field, use the discovered single-Field affordance and linked schema. Fetch every payload shape from current Discovery; skill installation alone does not establish platform capability. Never construct authoring routes from memory. Before constructing labels, localized messages, or new codes, follow [Localized text and codes](../horizon/references/authoring-conventions.md). Transfer every file through the Horizon CLI, never raw HTTP: `horizon asset upload` for Business Data Assets, `horizon metadata asset upload --declare` for Metadata Assets. Register a new font or a new GeoJSON only this way: read the Package assets authoring affordance from current Discovery, upload through its href, and build `--declare` only from the domain fields of the schema it names.
 2. Keep related Structure, Fields, Pages, Views, Actions, and supporting Metadata in same Workspace when they form one review outcome.
 3. Re-read affected Semantic neighborhood after executable change.
-4. Validate Workspace and request its discovered diff/report. Resolve every server-reported danger or technical conflict through its remediation affordance, then validate again.
+4. Validate Workspace and request its discovered diff/report. Resolve every server-reported issue through its remediation affordance, then validate again; reported issues carry no severity, so treat each one as blocking until current Discovery shows otherwise. `default_nodes_required` on a Page's `views[].nodes.default` means that Page renders nothing, and expect it on every generated default Page from the moment its Structure is created; it clears only once that View carries nodes, so a Workspace with an unresolved `default_nodes_required` is not a completed proposal.
 5. Show Attention to User. Leave Attention acknowledgement, approval, and Publication to human decision-makers.
 6. Follow [Execution and User testing](../horizon-interview/SKILL.md#execution-and-user-testing): offer manual checks, apply requested adjustments, and revalidate. Submit the completed Workspace only when current Discovery exposes a human-review submission affordance.
 
-Completion: all agreed Metadata changes exist in the selected Workspace, required validation and diff evidence is shown, unresolved human Attention is surfaced, and work stops before acknowledgement, approval, or Publication.
+Completion: all agreed Metadata changes exist in the selected Workspace, required validation and diff evidence is shown, no server-reported issue remains unresolved including `default_nodes_required` on any in-scope Page, unresolved human Attention is surfaced, and work stops before acknowledgement, approval, or Publication.
 
 ## Widgets
 

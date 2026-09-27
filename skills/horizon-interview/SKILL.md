@@ -4,19 +4,19 @@ description: Plan unclear, broad, multi-step, bulk, relational, destructive, or 
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1 when platform facts are needed.
 metadata:
   author: hrz-digital
-  version: "1.4.0"
+  version: "1.4.1"
 ---
 
 # Horizon Interview
 
-Settle intent before execution. Current Discovery supplies platform contracts and evidence; this skill owns clarification and plan approval.
+Settle intent before execution. Current Discovery supplies platform contracts and evidence; this skill owns clarification and plan approval. Show a clarification round only when the agent holds at least one real question. When it holds none, go straight to the Plan summary and wait for approval; never show an empty round.
 
 ## Planning gates
 
 Apply these gates after `horizon` bootstrap and initial Discovery/Metadata inspection:
 
 - **Clarification:** interview unresolved or substantial Metadata work and unclear, broad, multi-step, bulk, relational, destructive, or cross-surface runtime work. Ask only what inspection and the request cannot settle. Fully specified localized work can proceed directly.
-- **Default:** show a concise plan summary in chat, confirm clarified decisions and required approvals, then execute in the same session. Multiple Structures, bulk work, and interview depth do not by themselves require a file.
+- **Default:** show a concise plan summary in chat, confirm clarified decisions and required approvals, then execute in the same session. Skip the interview round when the agent has no question, and wait for approval before proposing any mutation. Multiple Structures, bulk work, and interview depth do not by themselves require a file.
 - **Business Data:** every Business Data mutation needs explicit confirmation of target, records, values, and intended effect, whether planned in chat or in a file.
 - **Plan file:** use one only for large work spanning multiple sessions with substantial dependencies or sequencing, or when User explicitly requests a durable plan. Routine interruptions do not require a file; use Workspace Activity for Metadata continuity.
 
@@ -24,15 +24,15 @@ Apply these gates after `horizon` bootstrap and initial Discovery/Metadata inspe
 
 1. Use the explicit live-valid Installation selected through `horizon` bootstrap. If the request does not identify what to inspect, ask only the minimum orientation needed. No implementation plan yet.
 2. Inspect relevant Discovery, Metadata, Semantic, and Workspace state when applicable. For ordinary Metadata inventory, use the authoring links to Structures and Workspaces, not Architecture Analysis. Follow returned methods, hrefs, schemas, catalogs, and availability; decide whether to extend existing concepts or create new ones.
-3. For Metadata, use authoring's [three-layer proposal](../horizon-metadata-authoring/SKILL.md#three-layer-metadata-proposal) and [Structure and Page defaults](../horizon-metadata-authoring/SKILL.md#structure-and-page-defaults) as planning reference, not permission to execute. Show a recommendation for each layer and, when Visualization is in scope for new Structures, the Page table below. Always show all three layers. New Structures alone do not imply a data-model-only request. Propose usable Visualization by default: Create/List/Details Pages, Data Sources, Views/Nodes, and owned-child navigation where applicable. Settle each layer as agreed configuration, `out of scope (no configuration needed)` with reason, or `out of scope (User-directed)` only for explicit exclusions. Keep Installation default currency in Visualization as display formatting, not a Data Modeling commitment to a currency; cite current Discovery and User preference. Show defaults as proposed work, not permission questions.
-4. Ask every currently unblocked decision in numbered rounds. Each item asks one independent question followed by a `recommendation:` statement with a specific choice and reason, or the evidence needed. Split decisions whose answers could differ, including Relation cardinality versus requiredness and required Fields on different Structures. Omit decisions already settled unless Discovery reveals a conflict. Wait for answers, then make targeted Discovery rechecks of their implications. Repeat until no material decision remains unresolved.
+3. For Metadata, use authoring's [three-layer proposal](../horizon-metadata-authoring/SKILL.md#three-layer-metadata-proposal) and [Structure and Page defaults](../horizon-metadata-authoring/SKILL.md#structure-and-page-defaults) as planning reference, not permission to execute. Show a recommendation for each layer and, when Visualization is in scope for new Structures, the Page table below. Always show all three layers. New Structures alone do not imply a data-model-only request. Propose usable Visualization by default: Create/List/Details Pages, Data Sources, Views/Nodes, the create trigger that makes each new Structure's Create Page reachable, and owned-child navigation where applicable. Settle each layer as agreed configuration, `out of scope (no configuration needed)` with reason, or `out of scope (User-directed)` only for explicit exclusions; a new Structure's Visualization settles as agreed configuration or `out of scope (User-directed)` only. Keep Installation default currency in Visualization as display formatting, not a Data Modeling commitment to a currency; cite current Discovery and User preference. Show defaults as proposed work, not permission questions.
+4. Ask every currently unblocked decision in numbered rounds; ask none and go straight to the Plan summary when inspection and the request already settle everything. Each item asks one independent question followed by a `recommendation:` statement with a specific choice and reason, or the evidence needed. Split decisions whose answers could differ, including Relation cardinality versus requiredness and required Fields on different Structures. Omit decisions already settled unless Discovery reveals a conflict. Wait for answers, then make targeted Discovery rechecks of their implications. Repeat until no material decision remains unresolved.
 5. For Business Data changes, settle destination, identity, relationships, values, validation, duplicate/update behavior, failure handling, scope, and effects. For spreadsheet imports, map every source column to a destination or an explicit ignore decision; record counts and anonymized examples, never raw records.
-6. Show the **Plan summary** below and obtain confirmation of clarified decisions and required mutation approvals. Existing explicit instructions count as settled decisions; do not ask again without conflicting evidence. Only when the plan-file gate applies, follow [implementation-plan.md](references/implementation-plan.md) for storage, privacy, and lifecycle, and obtain explicit approval of its reviewed summary.
+6. Show the **Plan summary** below and obtain confirmation of clarified decisions and required mutation approvals, then wait for that approval before any mutation. Existing explicit instructions count as settled decisions; do not ask again without conflicting evidence. Only when the plan-file gate applies, follow [implementation-plan.md](references/implementation-plan.md) for storage, privacy, and lifecycle, and obtain explicit approval of its reviewed summary.
 7. Continue through the appropriate execution skill in the same session, then follow **Execution and User testing** below. Ordinary execution needs neither a fresh session nor a saved file. For later Metadata sessions, use `horizon` Workspace selection and Activity; use its [approved-plan procedure](../horizon/SKILL.md#implement-approved-plan) when resuming a saved plan.
 
 ## Metadata interview response
 
-Use this shape for each round. Always show all three headings, even if a layer has no questions. Number questions continuously across layers; omit settled questions and omit the Page table when no new Structure's Visualization is in scope.
+Use this shape only when a round actually has questions. When no decision is unresolved, skip the interview round and show the Plan summary directly, because it already carries all three layers; an empty round only repeats the summary. In a round, always show all three headings, even when one layer has no questions. The fenced block below shows the reply's structure, not a literal code fence: emit it as rendered Markdown. Number questions continuously across layers; omit settled questions and omit the Page table when no new Structure's Visualization is in scope.
 
 ```markdown
 Installation: <selected name>; inspected: <relevant existing Metadata>
@@ -43,10 +43,10 @@ Proposed: <model and existing patterns, or settled layer outcome>
    recommendation: <choice and reason; no further question>
 
 ## Visualization
-Proposed: <Create/List/Details Pages → Views → Nodes with Data Sources and owned-child navigation, or out of scope with reason>
-| Structure | Create inputs | List columns | Details groups and Field order |
+Proposed: <Create/List/Details Pages → Views → Nodes with Data Sources, the create trigger reaching each Create Page, and owned-child navigation, or out of scope with reason>
+| Structure | Create inputs | List table, columns, and create trigger | Details groups and Field order |
 | --- | --- | --- | --- |
-| <each new Structure> | <editable inputs, including required Fields> | <useful short columns> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
+| <each new Structure> | <editable inputs, including required Fields> | <table element on the Data Source with useful short columns, plus the create trigger reaching the Create Page> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
 
 ## Automation
 Proposed: <behavior, or out of scope with reason (User-directed or no configuration needed)>
@@ -75,10 +75,10 @@ Installation: <selected live-valid Installation; or not applicable — reason>
 <Structures, Fields, Relations, Constraints; or out of scope — reason>
 
 ### Visualization
-<Data Sources; Create/List/Details Pages → Views → Nodes, bindings and owned-child navigation; or out of scope — reason>
-| Structure | Create inputs | List columns | Details groups and Field order |
+<Data Sources; Create/List/Details Pages → Views → Nodes, bindings, the create trigger reaching each Create Page, and owned-child navigation; or out of scope — reason>
+| Structure | Create inputs | List table, columns, and create trigger | Details groups and Field order |
 | --- | --- | --- | --- |
-| <each new Structure> | <editable inputs, including required Fields> | <useful short columns> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
+| <each new Structure> | <editable inputs, including required Fields> | <table element on the Data Source with useful short columns, plus the create trigger reaching the Create Page> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
 
 ### Automation
 <Actions, rules and effects; or out of scope — reason>

@@ -529,10 +529,10 @@
     "id": "three-structures-three-layers",
  "prompt": "Use Horizon Training. Create Project (title, status: Not started/In progress/Completed, stage: planning/execution/closure, objective, resume, manager, planned value, start, finish, partner, total tasks), Partner (name, cnpj text code, financial responsible, about), Task (title, start, finish, completed, description).",
  "expect": [
- "interview shows Data Modeling, Visualization, Automation even without questions",
+ "shows all three Metadata layers inside the Plan summary, skips the interview round entirely when it holds no question, and waits for approval before any mutation",
  "new Structures alone do not imply data-model-only exclusion",
  "proposes per-Structure Create/List/Details Pages, Views, Nodes, Data Sources, and owned-child navigation where applicable",
- "includes Visualization placement table with one row per Project, Partner, Task in interview and plan summary, specifying Create inputs, List columns, Details Field order",
+ "includes Visualization placement table with one row per Project, Partner, Task in interview and plan summary, specifying Create inputs, the List table with its columns and create trigger, Details Field order",
  "uses one unlabeled Details group when few Fields form a coherent sequence; splits into named groups only where useful",
  "asks only unresolved modeling decisions",
  "summary uses peer Markdown headings for Scope, Metadata, Business Data, Execution, Complexity, Risks, Validation, Next; only Data Modeling/Visualization/Automation nest under Metadata; Customer and Installation appear above headings",
@@ -554,5 +554,28 @@
       "records User feedback and remaining work in Workspace Activity",
       "stops before acknowledgement, human review approval, or Publication"
     ]
-  }
+  },
+ {
+  "id": "new-structure-page-defaults",
+  "prompt": "Use Acme. In Workspace ws-sales, create Structure Customer with Fields name (required text) and notes (long text). Author the agreed Visualization and validate.",
+  "expect": [
+   "goes straight to the Plan summary when it holds no question, with no empty interview round",
+   "settles Visualization as agreed configuration rather than out of scope (no configuration needed) for the new Structure",
+   "sequences work as Structure then Fields then Data Source then Nodes, because a node cannot bind a Field that does not exist yet",
+   "reads Structure detail after creating the Structure and finds the generated default Pages",
+   "configures the generated Pages through their discovered update affordance instead of creating replacements",
+   "creates a Data Source and keeps its declared outputs covering the Fields placed on the Pages",
+   "sends the complete node tree because a Page update replaces the whole View list",
+   "places one field node per required Field on the Create Page, a table element bound to a Data Source over the same Structure on the List Page, and every Field on the Details Page",
+   "gives the List table element a stable node code instead of relying on a positional data binding",
+   "makes the Create Page reachable with a create trigger element on the List Page or a Navigation item",
+   "confirms on read-back that the List table's Data Source resolves to the owning Structure",
+   "omits long text from Create inputs and List columns without trimming the Data Source output",
+   "proves each Page by reading it back and confirming its returned requirements list the expected Fields",
+   "adds no chart, Widget, filter, or extra Page because the request did not ask for one",
+   "resolves the reported default_nodes_required issue by configuring each Page default View, then validates again",
+   "treats every server-reported issue as blocking and does not finish before validation is clean",
+   "stops before acknowledgement, human review approval, or Publication"
+  ]
+ }
 ]
