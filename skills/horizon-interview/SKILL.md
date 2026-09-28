@@ -4,7 +4,7 @@ description: Plan unclear, broad, multi-step, bulk, relational, destructive, or 
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1 when platform facts are needed.
 metadata:
   author: hrz-digital
-  version: "1.4.1"
+  version: "1.5.0"
 ---
 
 # Horizon Interview
@@ -96,7 +96,7 @@ Installation: <selected live-valid Installation; or not applicable — reason>
 <material effects and limits; or not applicable — reason>
 
 ## Validation
-<Agent checks and safe manual checks for User; or not applicable — reason>
+<Agent checks and safe manual checks for User, including the Test instances the checks reuse or create; or not applicable — reason>
 
 ## Next
 <required confirmation or same-session execution>
@@ -108,7 +108,7 @@ Use counts, mappings, and anonymized examples rather than raw records in summari
 
 1. Execute agreed work through the appropriate skill and current Discovery; report validation evidence and any limits.
 2. Offer focused manual checks and ask User to test and report adjustments. Distinguish Agent validation from pending User acceptance; never claim User testing occurred without feedback.
-3. Apply requested adjustments and validate again. Reopen clarification or approval only when scope, effects, or material evidence changes; every additional Business Data mutation still needs explicit confirmation. Do not replay successful mutations as a test. Workspace preview uses real Business Data, and test-instance creation needs explicit User intent.
+3. Apply requested adjustments and validate again. Reopen clarification or approval only when scope, effects, or material evidence changes; every additional Business Data mutation still needs explicit confirmation. Do not replay successful mutations as a test. A test scenario is a normal part of feature validation: name the Test instances it reuses or creates in the plan summary so approval covers them, then follow `horizon-metadata-authoring`'s [test scenarios](../horizon-metadata-authoring/SKILL.md#test-scenarios). Fixtures beyond that set need fresh confirmation.
 4. Record Metadata decisions, progress, User feedback, and remaining work in Workspace Activity. A routine interruption resumes there without creating a plan file. For runtime-only work, reconcile current state and confirm remaining intent if session context is lost; do not invent a Workspace or replay mutations.
 
 Completion: in-scope decisions and required approvals are settled, the summary is sufficient for execution, and no platform mutation occurs while understanding remains unresolved. A file is required only by the plan-file gate.

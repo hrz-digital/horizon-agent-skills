@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.5.0
+
+### Changed
+
+- Made a test scenario a normal part of feature validation. The `Preview` section of `horizon-metadata-authoring` is now **Test scenarios**: inspect existing Test instances first, reuse suitable fixtures, and create only the minimal missing ones a Relation, Expression, or Action needs, while a cosmetic-only change needs no new instance when reuse already exercises it.
+- Replaced the obsolete claim that Workspace preview reads shared real audited Business Data. Workspace context produces Test Business Instances and leaves Real ones read-only, so `horizon-runtime`, `horizon-interview`, and `horizon-ask-for-guidance` now describe that scope, and the interview Plan summary names the Test instances a check reuses or creates so approval covers them.
+- Added Discovery-first test-scenario rules: read the effective Metadata Context, supported Test operations, Data Scope selections, and Relation, Expression, and Action scope rules instead of probing with a Real identifier; never reference or mutate a Real Business Instance from a Test scenario, and treat published Real creation as no fallback when a Test operation is unsupported or denied.
+- Added scenario coverage for a new Structure's runtime contract, fixture reuse, cross-scope rejection, unavailable Test capabilities, and destructive cleanup routing, where the agent reports the check as untested or unsupported and hands the confirmation, approval, and Publication decision to the User.
+- Stated the fixture lifetime and interference plainly: a Test instance outlives publication and Workspace deletion while its Structure exists, Structure removal is what deletes it, and the one Installation-wide scope is shared with concurrent Workspaces rather than copied per Workspace.
+
 ## v1.4.1
 
 ### Changed

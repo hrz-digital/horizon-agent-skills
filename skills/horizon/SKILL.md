@@ -4,7 +4,7 @@ description: Coordinate Horizon work through Discovery. Use to select Installati
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.4.1"
+  version: "1.5.0"
 ---
 
 # Horizon

@@ -104,6 +104,34 @@ def main():
             "its generated Pages stay unfinished until configured",
             "the create trigger reaching each Create Page",
             "plus the create trigger reaching the Create Page")
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "## Test scenarios",
+            "a test scenario is a normal part of feature validation",
+            "Inspect existing Test instances before creating any",
+            "cosmetic-only change",
+            "supported Test operations",
+            "never guess a route, parameter, or capability",
+            "one meaningful failure case",
+            "published Real creation is not a fallback",
+            "Report a refused or unsupported effect as refused and suppressed",
+            "outlives publication and Workspace deletion while its Structure exists",
+            "route that destructive confirmation or approval to the User",
+            "an Agent acknowledges, approves, and publishes nothing",
+            "one Installation-wide scope shared by concurrent Workspaces",
+            "instead of proposing a per-Workspace copy or sandbox",
+            "separates observed runtime facts from suggested manual UI checks",
+            "state plainly that it was not observed when no such tooling exists")
+    require("skills/horizon-runtime/SKILL.md",
+            "#test-scenarios",
+            "creation there produces Test Business Instances while Real ones stay read-only",
+            "read them instead of learning them by submitting a Real identifier",
+            "is the fallback-free path when a Test operation is unsupported or denied")
+    require("skills/horizon-interview/SKILL.md",
+            "#test-scenarios",
+            "name the Test instances it reuses or creates in the plan summary so approval covers them",
+            "Fixtures beyond that set need fresh confirmation",
+            "including the Test instances the checks reuse or create")
+    require("skills/horizon-ask-for-guidance/SKILL.md", "test scenarios; explain that Workspace context validates against Test Business Instances")
     scenarios = json.loads((ROOT / "tests/scenarios.json").read_text())
     required = {
         "missing-cli", "unsupported-cli", "update-available", "install-refused", "zero-profiles", "one-profile", "many-profiles",
@@ -118,6 +146,10 @@ def main():
         "three-structures-three-layers", "new-structure-page-defaults",
     }
     required.update({"field-batch-authoring", "field-batch-unavailable", "field-batch-rejected"})
+    required.update({
+        "test-scenario-new-structure", "test-scenario-fixture-reuse", "test-scenario-cross-scope-rejection",
+        "test-scenario-unsupported-capability", "test-scenario-destructive-cleanup",
+    })
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

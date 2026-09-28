@@ -5,7 +5,7 @@ disable-model-invocation: true
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1 for Installation-specific guidance.
 metadata:
   author: hrz-digital
-  version: "1.4.1"
+  version: "1.5.0"
 ---
 
 # Horizon guidance
@@ -96,7 +96,7 @@ Ask the smallest focused clarification when a missing fact changes the recommend
 
 - Create or change Metadata, including a proposed modeling decision → `horizon` then `horizon-metadata-authoring`.
 - Audit overlap, misplaced concepts, consolidation candidates, or AMTs → `horizon-architecture-analysis`.
-- Test proposed Metadata → `horizon-metadata-authoring` preview; explain that preview reads Business Data shared and audited.
+- Test proposed Metadata → `horizon-metadata-authoring` test scenarios; explain that Workspace context validates against Test Business Instances, which are shared with other Workspaces and outlive their Workspace.
 - Change, query, or act on Business Data → `horizon-runtime`.
 - Continue earlier work → `horizon`'s approved-plan procedure or Workspace selection, as applicable.
 

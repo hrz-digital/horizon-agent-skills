@@ -4,7 +4,7 @@ description: Propose Horizon Metadata through Workspaces. Use when creating or c
 compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.4.1"
+  version: "1.5.0"
 ---
 
 # Horizon Metadata Authoring
@@ -16,7 +16,7 @@ Author one coherent Metadata proposal from machine-readable Discovery contracts.
 ## Enter Workspace
 
 1. Run `horizon` bootstrap and inspect relevant Metadata. Satisfy the planning gates, then follow its Workspace selection protocol; retain an already verified selection from approved-plan resume.
-2. Pass selected profile through `--connection` on every request and Workspace context required by current Discovery on Metadata reads, Metadata writes, and intentional runtime preview requests.
+2. Pass selected profile through `--connection` on every request and Workspace context required by current Discovery on Metadata reads, Metadata writes, and the Test-scenario validation requests below.
 3. Follow current authoring affordances and JSON Schema references. Use only values returned by current catalogs.
 
 Completion: Workspace selection follows `horizon`'s protocol, current Workspace context is active, and authoring schemas and catalogs are loaded.
@@ -114,12 +114,20 @@ Reuse an existing Widget before authoring one. Discover authorization-filtered W
 
 Completion: reused or newly authored Widget binds valid Data Sources, standalone and live previews are recorded, usages are inspected with incompatible bindings repaired or blocking findings surfaced, and work stops before human acknowledgement, approval, or Publication.
 
-## Preview
+## Test scenarios
 
-Workspace preview uses shared Business Data. Treat reads and validation results as evidence from shared, real, audited data.
+A new Structure or changed behavior is unvalidated until representative Test Business Instances exercise it, so a test scenario is a normal part of feature validation. Inspect existing Test instances before creating any, reuse a fixture that already represents the case, and create only the missing instances a Relation, Expression, or Action needs. A cosmetic-only change, such as a label or Page layout, needs no new instance when reuse already exercises it. Keep Test data fictional and free of personal or customer data.
 
-Create fictional test Business Instances only with explicit User intent. Record their identities and purpose in Workspace Activity, avoid personal/customer data, use the smallest representative set, and clean up through discovered runtime affordances when User requests cleanup. Runtime mutations remain real and audited.
+1. Select the authorized Workspace through `horizon` and read the effective Metadata Context, supported Test operations, Data Scope selections, and Relation and Action scope rules from current Discovery. Follow the returned affordances; never guess a route, parameter, or capability to find out.
+2. For a new Structure, create one representative Test instance, read it back through the runtime contract behind the Details Page, and confirm creation, listing, and the read-back agree. Verify UI behavior through current tooling when it exists, and state plainly that it was not observed when no such tooling exists.
+3. Keep the scenario inside Test scope. A Test Relation target comes from Test data, a Real Business Instance is never referenced from a Test graph, and validating never mutates a Real Business Instance. When a needed Test operation is unsupported or denied, report the reason and stop that check; published Real creation is not a fallback.
+4. Exercise what the feature does: feature-relevant Constraints including one meaningful failure case, Relations, Expressions, and the Actions current Discovery reports as available for Test data. Report a refused or unsupported effect as refused and suppressed; never claim an external delivery or notification that did not happen.
+5. Keep the fixtures. A Test instance outlives publication and Workspace deletion while its Structure exists, and Structure removal is what deletes it. Inspect current cleanup impact before proposing Structure removal, and route that destructive confirmation or approval to the User through the affordance Discovery exposes; an Agent acknowledges, approves, and publishes nothing.
 
-Completion: preview results and any test-instance identities, purpose, and cleanup state are recorded; no test instances are created without explicit User intent.
+Test data is one Installation-wide scope shared by concurrent Workspaces, so another Workspace can change the totals a check reads. Report that interference when observed instead of proposing a per-Workspace copy or sandbox.
+
+Record reused and created fixtures with their purpose in Workspace Activity, so later sessions extend the scenario instead of rebuilding it.
+
+Completion: the report names reused and created fixtures, the checks run and their results, validation failures, and behavior left untested or unsupported, and separates observed runtime facts from suggested manual UI checks.
 
 Completion: Workspace validates, evidence is recorded, unresolved human Attention is surfaced, linked AMTs remain traceable to the Workspace, and the proposal is either submitted through a current review affordance or clearly ready for User-directed continuation.
