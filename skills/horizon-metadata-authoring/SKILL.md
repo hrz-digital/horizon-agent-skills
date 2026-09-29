@@ -1,6 +1,6 @@
 ---
 name: horizon-metadata-authoring
-description: Propose Horizon Metadata through Workspaces. Use when creating or changing Structures, Fields, Relations, Expressions, Actions, Constraints, Data Sources, Pages, Views, Nodes, Semantic, Packages, navigation, or implementing an Architectural Metadata Ticket.
+description: Propose Horizon Metadata through Workspaces. Use when creating or changing Structures, Fields, Relations, Expressions, Actions, Constraints, Data Sources, Pages, Views, Nodes, Semantic, Packages, navigation, Process Definitions, or implementing an Architectural Metadata Ticket.
 compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
@@ -98,6 +98,18 @@ Completion: modeling decisions are confirmed, every in-scope Page's default View
 6. Follow [Execution and User testing](../horizon-interview/SKILL.md#execution-and-user-testing): offer manual checks, apply requested adjustments, and revalidate. Submit the completed Workspace only when current Discovery exposes a human-review submission affordance.
 
 Completion: all agreed Metadata changes exist in the selected Workspace, required validation and diff evidence is shown, no server-reported issue remains unresolved including `default_nodes_required` on any in-scope Page, unresolved human Attention is surfaced, and work stops before acknowledgement, approval, or Publication.
+
+## Process Definitions
+
+When authoring or changing a Process Definition:
+
+1. Inspect current Discovery for Package-owned definitions that already express the requested outcome. Reuse a suitable definition; author one only when none fits. Keep initial scope minimal: independent Package-owned definition, declared inputs, and one typed mutation operation. Do not attach definition ownership to a Structure or add unrequested operations, orchestration, scheduling, or UI.
+2. Follow live Discovery links for Process Definition authoring, schemas, catalogs, Workspace lifecycle, and validation. Use only the currently exposed operation kinds and declared references. Never copy routes, schemas, payloads, error codes, or catalog values into this skill or infer them from examples elsewhere.
+3. Make edits in a Workspace. Treat the draft as Workspace-scoped: it must remain invisible in Published context until Publication. Validate before requesting human review; resolve broken references or unsupported operation kinds before Publication. Unknown kinds are rejected, not a cue to invent an executable shape. Broken references must fail validation before Publication; stop and report any mismatch between those expectations and live Discovery.
+4. Surface the validated diff and hand off to an eligible human to review, approve, and publish. Agents propose and validate; never acknowledge, approve, publish, or approve their own proposal. If review or publication affordances are unavailable, leave the draft intact and tell the User what human action is needed.
+5. Treat published releases as immutable. For corrections or removal, make a forward change through a new reviewed release; never rewrite published history. Check current Discovery for Package reference and transport impact before proposing removal.
+
+Completion: suitable existing definitions were reused or minimal new definition authored, Workspace validation passed with references intact, and the human handoff is explicit; stop before approval or Publication.
 
 ## Widgets
 
