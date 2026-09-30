@@ -150,8 +150,25 @@ def main():
         "test-scenario-new-structure", "test-scenario-fixture-reuse", "test-scenario-cross-scope-rejection",
         "test-scenario-unsupported-capability", "test-scenario-destructive-cleanup",
     })
-    required.update({"process-summary-oversight", "process-summary-missed-notice"})
-    require("skills/horizon-runtime/SKILL.md", "## Inspect Process Instances", "linked summary contract", "actual caller's authority", "Live notices are hints", "Visibility through recipients or assignees")
+    required.update({
+        "process-authoring-reuse", "process-authoring-workspace", "process-direct-run",
+        "process-start-ambiguous", "process-action-delegation", "process-protection-authoring",
+        "process-protection-conflict", "process-support-absent", "process-start-unavailable",
+        "process-summary-oversight", "process-summary-missed-notice",
+    })
+    require("skills/horizon/SKILL.md", "Process Instance listing/inspection", "Process Definition or its Structure Action bindings")
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "Use Package-owned Process Definitions for executable workflow",
+            "Read candidate Semantic", "configure Structure Action bindings inside the Process Definition",
+            "binding creation does not grant launch authority", "## Active-execution protection",
+            "Validate the proposed selection and read it back through Discovery",
+            "otherwise report it untested, never substitute a Real run")
+    require("skills/horizon-runtime/SKILL.md",
+            "## Process runs", "direct or Action-backed", "ambiguous start response",
+            "actual requesting Actor, Process Initiator, and automation Actor distinct",
+            "Terminal settlement may permit the same inputs again",
+            "## Inspect Process Instances", "linked summary contract", "actual caller's authority",
+            "Live notices are hints", "Visibility through recipients or assignees")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

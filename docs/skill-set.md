@@ -8,9 +8,9 @@ This repository packages portable workflow skills for AI Agents operating Horizo
 
 - [`horizon`](../skills/horizon/SKILL.md) — verify CLI, explicitly select live-valid customer Installation, bootstrap Discovery, classify work, select or resume Workspace, and record handoff.
 - [`horizon-interview`](../skills/horizon-interview/SKILL.md) — clarify intent, summarize agreed work in chat, obtain required confirmations, and reserve files for exceptional plans.
-- [`horizon-metadata-authoring`](../skills/horizon-metadata-authoring/SKILL.md) — propose Metadata through a Workspace and human review.
+- [`horizon-metadata-authoring`](../skills/horizon-metadata-authoring/SKILL.md) — propose Metadata, including Process Definitions and their Structure Action bindings, through a Workspace and human review.
 - [`horizon-architecture-analysis`](../skills/horizon-architecture-analysis/SKILL.md) — analyze Published Metadata and maintain Architectural Metadata Tickets.
-- [`horizon-runtime`](../skills/horizon-runtime/SKILL.md) — operate Business Data and execute runtime Actions.
+- [`horizon-runtime`](../skills/horizon-runtime/SKILL.md) — operate Business Data, execute runtime Actions and Process runs, and inspect authorized Process Instances.
 - [`horizon-ask-for-guidance`](../skills/horizon-ask-for-guidance/SKILL.md) — user-invoked, read-only guidance for Metadata decisions and explaining configured Installation behavior.
 
 Bootstrap and inspect first through [`horizon`](../skills/horizon/SKILL.md), then apply the [interview and plan gates](../skills/horizon-interview/SKILL.md#planning-gates). Default to a chat summary and same-session execution, validation, User testing, and adjustments. Routine Metadata continuity uses Workspace Activity; files follow the exceptional plan-file gate. Generic guidance needs no bootstrap.

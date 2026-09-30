@@ -81,7 +81,7 @@ Installation: <selected live-valid Installation; or not applicable — reason>
 | <each new Structure> | <editable inputs, including required Fields> | <table element on the Data Source with useful short columns, plus the create trigger reaching the Create Page> | <one unlabeled group in contextual order when sufficient; otherwise named groups with Fields> |
 
 ### Automation
-<Actions, rules and effects; or out of scope — reason>
+<Process Definitions, Structure Action bindings, supported triggers/operations and effects; or out of scope — reason>
 
 ## Business Data
 <targets, record scope, values, effects, failure handling; or not applicable — reason>

@@ -37,9 +37,9 @@ Completion: compatible CLI 1.x and Discovery v1 confirmed, selected Connection P
 ## Classify
 
 - "implement plan" / "Executar o plano" → follow **Implement approved plan** above; no path required.
-- Business Data, Action, or Process run work → follow `horizon-runtime`.
+- Business Data, Action, Process run, or Process Instance listing/inspection → follow `horizon-runtime`.
 - Published Metadata architecture audit or post-Publication AMT verification → follow `horizon-architecture-analysis`.
-- Structure, Field, Relation, Expression, Action definition, Data Source, Page, View, Widget, or other Metadata proposal, including implementation of selected AMT → follow `horizon-metadata-authoring`.
+- Structure, Field, Relation, Expression, Process Definition or its Structure Action bindings, Data Source, Page, View, Widget, or other Metadata proposal, including implementation of selected AMT → follow `horizon-metadata-authoring`.
 - Architecture guidance or explanation of configured Installation Metadata → ask User to invoke `horizon-ask-for-guidance`.
 
 Completion: request classified, next skill selected, User has clear instruction when router is needed.

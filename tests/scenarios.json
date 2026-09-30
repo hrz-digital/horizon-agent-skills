@@ -637,6 +637,108 @@
   ]
  },
   {
+    "id": "process-authoring-reuse",
+    "prompt": "Use Acme. Add a Project approval Action. Current Discovery exposes a suitable Package-owned Process Definition. Inspect it and propose the smallest change.",
+    "expect": [
+      "routes Process Definition work to Metadata authoring and places it in Automation within the three-layer proposal",
+      "reads candidate Semantic, inputs, behavior, and referenced Structures before deciding reuse",
+      "reuses the suitable definition rather than creating a duplicate or Structure-owned executable workflow",
+      "discovers the definition-owned manual binding contract and derived authorization capabilities",
+      "settles only actual model or presentation dependencies and waits for plan approval before mutation"
+    ]
+  },
+  {
+    "id": "process-authoring-workspace",
+    "prompt": "Use Acme. Approved summary: in selected Workspace ws-sales, create the missing Package-owned Project approval Process Definition with declared inputs, one supported mutation operation, and its Project Action binding. Validate and exercise only supported Test behavior.",
+    "expect": [
+      "uses current Process Definition authoring links, schemas, catalogs, and Workspace context without guessing routes or payloads",
+      "configures the Action binding inside the definition with target, presentation, input mappings, and availability rules",
+      "treats derived capability existence as distinct from a launch grant",
+      "reads the draft back and verifies Published invisibility and Workspace validation including binding and reference integrity",
+      "reuses authorized Test fixtures and discovers whether this draft can be exercised instead of assuming Workspace launch support",
+      "reports unsupported draft execution as untested without substituting a Real run",
+      "shows validation and diff evidence and stops before human acknowledgement, approval, or Publication"
+    ]
+  },
+  {
+    "id": "process-direct-run",
+    "prompt": "Use Acme. Current Discovery offers a direct start for the published Project approval process. Start it for Project p-1 using the declared inputs, then check the actual result.",
+    "expect": [
+      "follows the published Process Definition catalog and detail rather than requiring a Structure catalog entry point",
+      "reads the linked start schema and confirms target, inputs, scope, and intended business effect before admission",
+      "reports the start as accepted rather than completed and follows returned execution state links",
+      "verifies committed values only after runtime confirms completion",
+      "keeps actual requesting Actor, Process Initiator, and automation Actor distinct in provenance",
+      "does not replay the successful start as a test or assume accepted work stops with the initiator session"
+    ]
+  },
+  {
+    "id": "process-start-ambiguous",
+    "prompt": "Use Acme. Resume yesterday's direct Process start: the reply was lost, so I do not know whether admission succeeded. Continue without duplicating business work.",
+    "expect": [
+      "inspects authorized execution references and durable state before considering another start",
+      "does not assume operation checkpoint safety makes a fresh admission idempotent",
+      "does not replay the start unless current Discovery and reconciled state justify it with required confirmation",
+      "reports uncertainty when no authorized evidence establishes whether the earlier start was accepted",
+      "preserves selected context and does not probe unrelated execution identifiers"
+    ]
+  },
+  {
+    "id": "process-action-delegation",
+    "prompt": "Use Acme. I can execute Project p-1's approval Action but cannot edit Project Business Data directly. Start approval through the Action; current runtime binds its contextual inputs.",
+    "expect": [
+      "reads the concrete Business Instance Action availability, execution href, and linked input schema",
+      "supplies only caller-owned inputs and never substitutes the runtime-bound target or contextual values",
+      "does not demand general update authority or treat the Action grant as unrestricted Business Data authority",
+      "confirms the intended effect, reports accepted work truthfully, and follows authorized execution state",
+      "keeps business attribution separate from automation audit provenance",
+      "does not scan definitions to infer concrete Action availability or retry a lost start blindly"
+    ]
+  },
+  {
+    "id": "process-protection-authoring",
+    "prompt": "Use Acme. Configure the approved Process Definition in Workspace ws-sales so equivalent unfinished work cannot overlap. Intended grouping is confirmed; discover the declared input selection and equivalence rules.",
+    "expect": [
+      "selects declared inputs that express the confirmed concurrency boundary through current authoring affordances",
+      "reads normalization, defaults, Data Scope, Publication, and lifecycle semantics from Discovery",
+      "validates the selection against declared inputs and reads the saved configuration back",
+      "keeps concurrency protection separate from permanent business uniqueness and intentional repeat policy",
+      "stops before human approval and Publication"
+    ]
+  },
+  {
+    "id": "process-protection-conflict",
+    "prompt": "Use Acme. Current Discovery reports equivalent unfinished work for the published process I intended to start. Explain what I can safely do now and after terminal settlement.",
+    "expect": [
+      "reports unfinished equivalent work and inspects only execution references the caller may read",
+      "uses discovered lifecycle rules to distinguish recovery inside an admitted instance from a new start",
+      "does not change input formatting, switch context, or publish a revision as an assumed bypass",
+      "does not infer that transient failure or expired worker claims release protection",
+      "explains that terminal settlement may permit repeated inputs but establishes no permanent business uniqueness rule",
+      "obtains fresh confirmation before any additional admission or business mutation"
+    ]
+  },
+  {
+    "id": "process-support-absent",
+    "prompt": "Use Acme. Author and run a Project approval process, but this Installation's current Discovery exposes no Process Definition support to my Agent.",
+    "expect": [
+      "reports missing or hidden capability without guessing whether the cause is platform version or authority",
+      "constructs no missing routes, schemas, payloads, or catalog values from skill memory",
+      "does not create a legacy Structure-owned Action or Alert as a fallback",
+      "does not claim the installed skill grants authoring, launch, or Publication authority"
+    ]
+  },
+  {
+    "id": "process-start-unavailable",
+    "prompt": "Use Acme. The published Process Definition is visible, but current Discovery marks its start unavailable and supplies a reason without an execution link. I also want scheduling and a Human Interaction; these are not exposed here.",
+    "expect": [
+      "reports the discovered start refusal and treats definition existence as distinct from launch capability",
+      "sends no start request and guesses no alternate route or Data Scope",
+      "reports scheduling and Human Interaction requirements as unsupported rather than inventing executable Metadata",
+      "does not claim accepted work, external delivery, or completed business effects"
+    ]
+  },
+  {
     "id": "process-summary-oversight",
     "prompt": "Use Acme. I have delegated oversight and want to inspect another User's process progress, then read its linked Business Data.",
     "expect": [
