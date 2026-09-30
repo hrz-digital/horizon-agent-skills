@@ -635,5 +635,27 @@
    "creates, acknowledges, approves, and publishes nothing that grants Agent authority over that decision",
    "keeps fixtures for surviving Structures instead of blanket-deleting test data"
   ]
- }
+ },
+  {
+    "id": "process-summary-oversight",
+    "prompt": "Use Acme. I have delegated oversight and want to inspect another User's process progress, then read its linked Business Data.",
+    "expect": [
+      "follows current Discovery execution catalog and linked summary contract",
+      "uses delegated read-all only for safe execution summaries",
+      "reads linked Business Data only through its own caller-authorized affordance",
+      "does not infer authority to launch, edit, cancel, clean up, or read diagnostics",
+      "does not advertise unsupported recipient or assignee participation"
+    ]
+  },
+  {
+    "id": "process-summary-missed-notice",
+    "prompt": "Use Acme. I missed an execution completion notice while testing Metadata in the selected Workspace; refresh progress.",
+    "expect": [
+      "refreshes durable execution state through current list or detail links",
+      "preserves selected Metadata Context across detail reads and pagination",
+      "does not infer completion from best-effort live notices",
+      "does not switch to Published context to bypass a denied reference",
+      "reports current pending, completed, or failed progress truthfully"
+    ]
+  }
 ]

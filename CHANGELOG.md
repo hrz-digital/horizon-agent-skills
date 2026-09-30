@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Runtime guidance covers authorized Process Instance summaries, delegated oversight limits, context containment, linked Business Data authority, and durable refresh after missed live notices.
+
 ## v1.4.0
 
 ### Added
