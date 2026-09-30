@@ -32,6 +32,16 @@ Completion: compatible CLI and Discovery confirmed, customer Installation explic
 
 Completion: target Structure or Business Instance, current runtime affordance, required context, linked schema, and request links identified.
 
+## Inspect Process Instances
+
+Follow the current execution catalog or a returned execution reference and its linked summary contract. Inspect only what current Discovery exposes: initiating a process or holding delegated read-all authority permits safe summaries, not launch, editing, cancellation, cleanup, diagnostics, or arbitrary linked Business Data access. Retrieve linked Business Data through its own current affordance under the actual caller's authority.
+
+Keep the selected Metadata Context when following links and paging. A grant does not expand context visibility; a denied reference is not permission to switch context or infer whether someone else's execution exists. Visibility through recipients or assignees is usable only when current Discovery exposes the persisted relationship.
+
+Refresh the durable list or detail after a missed live notice, and distinguish pending, completed, and failed progress. Live notices are hints rather than durable execution history.
+
+Completion: authorized execution state reported from a fresh read; context and caller authority preserved; unsupported participation and sensitive diagnostics never inferred.
+
 ## Execute
 
 1. Fetch current Business Instance state before mutation.

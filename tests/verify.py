@@ -150,6 +150,8 @@ def main():
         "test-scenario-new-structure", "test-scenario-fixture-reuse", "test-scenario-cross-scope-rejection",
         "test-scenario-unsupported-capability", "test-scenario-destructive-cleanup",
     })
+    required.update({"process-summary-oversight", "process-summary-missed-notice"})
+    require("skills/horizon-runtime/SKILL.md", "## Inspect Process Instances", "linked summary contract", "actual caller's authority", "Live notices are hints", "Visibility through recipients or assignees")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"
