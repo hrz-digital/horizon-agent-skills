@@ -35,11 +35,12 @@ Completion: target Structure or Business Instance, current runtime affordance, r
 ## Execute
 
 1. Fetch current Business Instance state before mutation.
-2. For Action, use current runtime availability and concrete execution href. Metadata Action existence does not prove availability.
+2. For Action, use current runtime availability and concrete execution href. Metadata Action existence does not prove availability. For a process-backed Action, supply only caller-owned inputs from its linked contract; runtime binds the Business Instance and contextual inputs. An Action grant delegates that process's declared effects, not general Business Data editing.
 3. Explain material effect and obtain explicit User intent when current affordance declares destructive impact, irreversible behavior, external side effect, or confirmation requirement.
 4. Respect concurrency, idempotency, atomicity, and retry declarations.
 5. Send request once through Horizon CLI with selected `--connection`. On stale state, refetch and reassess; never silently overwrite. Authentication and token refresh belong CLI transport, not skill.
-6. Report result using Business Instance Display Label and stable instance code. For changes, follow [Execution and User testing](../horizon-interview/SKILL.md#execution-and-user-testing) for safe manual checks and requested adjustments; do not repeat the operation as a test.
+6. For a process-backed Action, distinguish accepted start from completed work. Follow returned execution state links and report pending or failed work truthfully. After an ambiguous start response, inspect available execution references before retrying; a new start may duplicate work unless current Discovery promises admission idempotency.
+7. Report result using Business Instance Display Label and stable instance code. For changes, follow [Execution and User testing](../horizon-interview/SKILL.md#execution-and-user-testing) for safe manual checks and requested adjustments; do not repeat the operation as a test.
 
 Workspace context is where proposed Metadata gets tested. Current Discovery reports the effective Data Scope, so creation there produces Test Business Instances while Real ones stay read-only, and it publishes the supported Test operations, scope rules, and Data Scope selections: read them instead of learning them by submitting a Real identifier. Follow `horizon-metadata-authoring`'s [test scenarios](../horizon-metadata-authoring/SKILL.md#test-scenarios) for feature validation; its fixture set is confirmed like any other Business Data mutation, and it is the fallback-free path when a Test operation is unsupported or denied.
 

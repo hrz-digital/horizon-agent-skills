@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Runtime guidance covers process-backed Action delegation, server-bound inputs, accepted versus completed work, and ambiguous-start retry safety using current Discovery.
+
 ## v1.4.0
 
 ### Added
