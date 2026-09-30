@@ -1,6 +1,6 @@
 ---
 name: horizon-runtime
-description: Operate Horizon Business Data and execute runtime Actions through Discovery. Use listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, or acting on Business Instances.
+description: Operate Horizon Business Data and execute runtime Actions and Process runs through Discovery. Use listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, acting on Business Instances, or starting published Process Definitions and tracking Process Instances.
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
@@ -54,5 +54,17 @@ Completion: authorized execution state reported from a fresh read; context and c
 8. Report result using Business Instance Display Label and stable instance code. For changes, follow [Execution and User testing](../horizon-interview/SKILL.md#execution-and-user-testing) for safe manual checks and requested adjustments; do not repeat the operation as a test.
 
 Workspace context is where proposed Metadata gets tested. Current Discovery reports the effective Data Scope, so creation there produces Test Business Instances while Real ones stay read-only, and it publishes the supported Test operations, scope rules, and Data Scope selections: read them instead of learning them by submitting a Real identifier. Follow `horizon-metadata-authoring`'s [test scenarios](../horizon-metadata-authoring/SKILL.md#test-scenarios) for feature validation; its fixture set is confirmed like any other Business Data mutation, and it is the fallback-free path when a Test operation is unsupported or denied.
+
+## Process runs
+
+Start published Process Definitions and track Process Instances through live runtime Discovery.
+
+1. Start only a published definition through its current runtime detail links and linked start schema. Confirm target, inputs, and intended business effect explicitly before starting, as with any Business Data mutation. Invalid inputs create no instance; report the stable reason and stop that attempt.
+2. Treat admission as accepted, not completed. Follow returned state links to completion; never report business effects until runtime confirms them, then verify committed values and audit provenance.
+3. Keep the accepted Data Scope. Run under Published context unless current Discovery explicitly offers another scope. On a scope, target, or launch refusal, report the stable reason and stop; never fall back to other data or guess an alternate route.
+4. A missing executable link means no launch authority; report the stable reason and stop.
+5. A running instance keeps its original definition snapshot across later Publications; re-reading the definition never rewrites running state.
+
+Completion: launch confirmation obtained, accepted instance tracked through returned state links to runtime-confirmed completion or stable failure, committed values and provenance verified, and refusals reported without fallback or guessed routes.
 
 Completion: current runtime result returned or current stable denial/unavailability reason reported; required confirmation obtained; every request used explicit selected profile; no route, payload, availability, or authorization guessed; no identity impersonated.
