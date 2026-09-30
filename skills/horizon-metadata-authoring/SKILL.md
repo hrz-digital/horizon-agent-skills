@@ -65,6 +65,14 @@ Execute in dependency order: Data Modeling → Visualization → Automation. Rec
 
 Completion: every layer has a settled outcome, only in-scope work is authored, and dependent Metadata resolves in Workspace validation.
 
+## Active-execution protection
+
+When concurrent runs for the same business inputs would interfere, select declared inputs that express that boundary through the definition's current authoring affordance. Confirm the intended grouping with the User when it is unclear; include every input needed to distinguish independent work. Read normalization, defaults, Data Scope, Publication, and lifecycle semantics from Discovery before promising which starts conflict. Validate the proposed selection and read it back through Discovery.
+
+Treat active-execution protection as a concurrency policy. Express permanent business uniqueness and intentional repeat policy separately through the appropriate Metadata. A new definition revision alone does not justify assuming earlier work has finished.
+
+Completion: the intended grouping is settled, the discovered protection selection is validated and read back, and business repeat policy remains explicit.
+
 ## Structure and Page defaults
 
 Use these defaults in both interview proposals and execution. Ask only decisions not already settled by the request or current evidence.

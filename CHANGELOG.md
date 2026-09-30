@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added Discovery-grounded guidance for selecting active-execution protection inputs, respecting admission conflicts, and distinguishing operation recovery from new starts and permanent business uniqueness.
+
 - Runtime guidance covers authorized Process Instance summaries, delegated oversight limits, context containment, linked Business Data authority, and durable refresh after missed live notices.
 
 - Runtime guidance covers process-backed Action delegation, server-bound inputs, accepted versus completed work, and ambiguous-start retry safety using current Discovery.
