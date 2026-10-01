@@ -759,5 +759,38 @@
       "does not switch to Published context to bypass a denied reference",
       "reports current pending, completed, or failed progress truthfully"
     ]
+  },
+  {
+    "id": "process-actions-selection-partial",
+    "prompt": "Use Acme. Approve the explicitly selected Projects p-1 through p-6. The approved plan covers all six. Each initially offers the Action; after discovery one loses authority, one becomes unavailable, one has invalid inputs, and one reports an admission conflict. Other starts are accepted. Report the results and check progress.",
+    "expect": [
+      "discovers current Action availability and linked input contract for each selected Business Instance",
+      "uses individual runtime links sequentially or with bounded concurrency",
+      "continues eligible starts after individual rejections without rolling back accepted starts",
+      "associates each accepted Process Instance and state link with its selected Business Instance",
+      "reports accepted starts separately from rejections and never claims completion from acceptance",
+      "follows returned state links under current caller authority without requiring Business Data identifiers in ordinary summaries"
+    ]
+  },
+  {
+    "id": "process-actions-selection-stop-uncertain",
+    "prompt": "Use Acme. During the approved independent approval starts, stop dispatch now. One call lost its response, another is in flight, and two have been accepted. Explain what happens and whether you will retry or cancel them.",
+    "expect": [
+      "sends no further start requests after stop instruction",
+      "reports not-dispatched items separately and notes in-flight calls may still be accepted",
+      "explains accepted processes continue and cancellation needs separate explicit intent and current runtime support",
+      "marks the lost response as unknown acceptance and does not automatically retry",
+      "reads current admission idempotency contract and never treats active-execution protection as a general retry guarantee"
+    ]
+  },
+  {
+    "id": "process-actions-selection-coordinated",
+    "prompt": "Use Acme. I need one coordinated approval process over this collection of Projects, rather than independent starts. Determine whether current Discovery offers a suitable definition.",
+    "expect": [
+      "distinguishes coordinated collection intent from independent per-Business Instance starts",
+      "uses an appropriate Process Definition with explicit fan-out only when currently available",
+      "reports missing support without inventing a bulk endpoint or hidden parent process",
+      "confirms intended process before mutations using existing plan and confirmation gates"
+    ]
   }
 ]

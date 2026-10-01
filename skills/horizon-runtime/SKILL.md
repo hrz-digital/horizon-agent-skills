@@ -55,6 +55,18 @@ Completion: authorized execution state reported from a fresh read; context and c
 
 Workspace context is where proposed Metadata gets tested. Current Discovery reports the effective Data Scope, so creation there produces Test Business Instances while Real ones stay read-only, and it publishes the supported Test operations, scope rules, and Data Scope selections: read them instead of learning them by submitting a Real identifier. Follow `horizon-metadata-authoring`'s [test scenarios](../horizon-metadata-authoring/SKILL.md#test-scenarios) for feature validation; its fixture set is confirmed like any other Business Data mutation, and it is the fallback-free path when a Test operation is unsupported or denied.
 
+## Independent Action starts for a selection
+
+1. Confirm the explicitly selected Business Instances and intended effect using the existing plan and mutation gates. Discover each Business Instance's current Action availability and linked input contract separately; availability on one item says nothing about another.
+2. Dispatch one call per eligible Business Instance through its runtime link, sequentially or with a small bounded number of concurrent requests. Supply only caller-owned inputs. Associate each accepted Process Instance reference and returned state link with its selected Business Instance.
+3. Handle each denial, changed availability, invalid input, or admission conflict independently. Report unavailable items and rejected starts separately and continue eligible starts under the approved intent. Accepted starts remain valid: this sequence has neither an all-or-nothing outcome nor a hidden parent Process Instance.
+4. Report accepted starts as started or pending, with individual rejections and any uncertain outcomes. Acceptance is not completion. For requested progress or outcomes, follow each returned state link under current caller authority; retrieve Business Data separately when needed.
+5. On a User request to stop dispatch, send no further start requests. In-flight calls may still be accepted and accepted processes continue. Cancelling those processes requires a separate explicit request and current runtime support.
+6. When a start response is lost, mark that item's acceptance unknown and avoid automatic retry. Consult current Discovery's admission idempotency declaration: another call may create another Process Instance. Active-execution protection is not a general retry guarantee. Apply **Execute** for inspection and any deliberate retry decision.
+7. If the User needs one coordinated process over a collection, use an appropriate available Process Definition with explicit fan-out. Confirm that intent rather than silently replacing independent starts with a collection process; use current Discovery to establish support.
+
+Completion: every selected Business Instance has an accepted reference, a rejection/unavailability reason, an uncertain acceptance, or a not-dispatched result; acceptance and completion remain distinct, and a stop request ends further dispatch.
+
 ## Process runs
 
 Start published Process Definitions and track Process Instances through live runtime Discovery.

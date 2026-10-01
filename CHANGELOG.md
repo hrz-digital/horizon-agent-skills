@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added guidance and scenarios for independent Action starts over an explicit selection: bounded dispatch, partial acceptance, progress tracking, stopping remaining dispatch, transport uncertainty, and coordinated fan-out intent.
+
 ## v1.5.0
 
 - Completed Discovery-grounded Process Definition routing, reuse and authoring, definition-owned Action bindings, direct-run retry safety, and execution provenance guidance. Added scenarios for authoring, execution, delegation, protection, and missing or unavailable support.
