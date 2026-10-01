@@ -118,6 +118,8 @@ When authoring or changing a Process Definition:
 5. Exercise supported behavior through [Test scenarios](#test-scenarios). Discover whether the proposed definition can run in the selected Workspace; otherwise report it untested, never substitute a Real run. Surface the validated diff and hand off to an eligible human to review, approve, and publish. Agents propose and validate; never acknowledge, approve, publish, or approve their own proposal. If review or publication affordances are unavailable, leave the draft intact and tell the User what human action is needed.
 6. Treat published releases as immutable. For corrections or removal, make a forward change through a new reviewed release; never rewrite published history. Check current Discovery for Package reference and transport impact before proposing removal.
 
+For ordered conditional work, follow the current composition contracts. Keep operation identities stable while arranging order, declare outputs before referencing them, and validate every dependency and condition before human review. Choose a small linear flow for the requested outcome. Exercise true and false conditions, unavailable dynamic values, and a later failure in Test scope; report which earlier effects remain committed and whether dependent skipped outputs become unavailable. Discover recovery semantics instead of replaying successful work or switching an in-flight definition to a new release.
+
 Completion: suitable existing definitions were reused or minimal new definition authored, Workspace validation passed with references intact, supported Test checks and untested behavior are reported, and the human handoff is explicit; stop before approval or Publication.
 
 ## Widgets

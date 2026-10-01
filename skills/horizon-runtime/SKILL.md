@@ -38,7 +38,7 @@ Follow the current execution catalog or a returned execution reference and its l
 
 Keep the selected Metadata Context when following links and paging. A grant does not expand context visibility; a denied reference is not permission to switch context or infer whether someone else's execution exists. Visibility through recipients or assignees is usable only when current Discovery exposes the persisted relationship.
 
-Refresh the durable list or detail after a missed live notice, and distinguish pending, completed, and failed progress. Live notices are hints rather than durable execution history.
+Refresh the durable list or detail after a missed live notice, and distinguish pending, completed, failed, and skipped progress. For conditional composition, use current Discovery to distinguish a false condition from evaluation failure, inspect authorized skip reasons and dependencies, and report earlier committed effects when later work fails. Recover accepted work through the discovered engine semantics; starting again may repeat previously committed effects. Live notices are hints rather than durable execution history.
 
 Completion: authorized execution state reported from a fresh read; context and caller authority preserved; unsupported participation and sensitive diagnostics never inferred.
 

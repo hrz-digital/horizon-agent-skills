@@ -792,5 +792,18 @@
       "reports missing support without inventing a bulk endpoint or hidden parent process",
       "confirms intended process before mutations using existing plan and confirmation gates"
     ]
+  },
+  {
+    "id": "process-conditional-composition",
+    "prompt": "Author a small ordered Process Definition with a condition and a later mutation using a prior output; then explain a Test execution where the guard is false and a dependent operation needs the skipped output.",
+    "expect": [
+      "follows current Discovery composition schemas and implemented operation vocabulary",
+      "preserves stable operation identities and explicitly declares prior outputs before references",
+      "validates ordered dependencies and shared conditions before human review",
+      "exercises true, false, unavailable-value and later-failure cases in Test scope when available",
+      "distinguishes condition-false skips from condition evaluation failures and unavailable skipped outputs",
+      "reports earlier committed effects and uses discovered durable recovery rather than restarting successful work",
+      "does not invent graph frameworks, subprocesses, unsupported operation kinds or platform payloads"
+    ]
   }
 ]

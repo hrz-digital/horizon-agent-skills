@@ -156,7 +156,7 @@ def main():
         "process-protection-conflict", "process-support-absent", "process-start-unavailable",
         "process-summary-oversight", "process-summary-missed-notice",
         "process-actions-selection-partial", "process-actions-selection-stop-uncertain",
-        "process-actions-selection-coordinated",
+        "process-actions-selection-coordinated", "process-conditional-composition",
     })
     require("skills/horizon/SKILL.md", "Process Instance listing/inspection", "Process Definition or its Structure Action bindings")
     require("skills/horizon-metadata-authoring/SKILL.md",
