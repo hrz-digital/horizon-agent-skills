@@ -856,5 +856,31 @@
       "keeps the original definition snapshot and Data Scope and verifies bounded recovery progress",
       "reports complete success only when the original selected work has completed; does not equate accepted recovery with completion"
     ]
+  },
+  {
+    "id": "process-response-wait-authoring",
+    "prompt": "Propose the agreed quarterly report process: generate report requests, announce generation, then await the exact generated responses before a final summary. Current Discovery supports explicit response waiting. Test an early answer, restart, concurrent final answers, an empty selection and partial generation safely.",
+    "expect": [
+      "discovers current request, wait, result-binding and recovery support before authoring",
+      "separates request generation, generation summary, selected wait and final continuation",
+      "binds membership to exact generated requests rather than every Business Instance sharing the quarter or a status Field",
+      "settles completion meaning separately from acceptance of negative responses",
+      "exercises early response retention, restart, released worker capacity and one final continuation in authorized Test context",
+      "reports empty and partial-generation outcomes under the chosen failure policy without claiming all-generated success",
+      "records evidence and unsupported completion policies before human Publication handoff"
+    ]
+  },
+  {
+    "id": "process-response-wait-inspection",
+    "prompt": "The report generation finished but people have not answered every selected request. We reconnected after a restart; one answer arrived before waiting began. Inspect progress and then verify concurrent final answers completed the intended continuation once. Do not regenerate requests.",
+    "expect": [
+      "reads fresh authorized durable execution state in the selected Metadata Context and Data Scope",
+      "reports generation progress, outstanding responses and final completion separately",
+      "uses fixed selected membership and retained early responses rather than unrelated contextual status",
+      "treats accepted negative answers according to the discovered completion meaning without inferring approval",
+      "verifies continuation from durable state and preserves completed effects after reconnect or recovery",
+      "uses the existing execution and current recovery affordances without starting a replacement request set",
+      "limits ordinary reporting to safe counts and retrieves request identities only through authorized detail"
+    ]
   }
 ]

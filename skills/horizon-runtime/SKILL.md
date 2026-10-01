@@ -46,6 +46,8 @@ For coordinated fan-out, inspect selected membership and per-item progress throu
 
 Follow the execution's currently available recovery affordance only within the agreed mutation scope and caller authority. Resume failed or remaining work in the same Process Instance, check that earlier completed operations are retained, and preserve its definition snapshot and Data Scope. A new start is new work and may repeat committed effects. Rediscover progress after recovery; keep configured iteration concurrency distinct from the Installation's overall worker bound, and never infer completion from the recovery request being accepted.
 
+For response waits, inspect the exact selected request set only through authorized detail and use discovered safe response counts for ordinary reporting. Keep generation progress, outstanding responses and final Process Instance completion separate: generated requests can await people after automated work finishes. A received answer, including a negative decision, is not evidence of final completion or approval. Verify the configured completion meaning and continuation from fresh durable state. After reconnecting or restarting, retain the admitted membership and early accepted responses; recover through the existing execution rather than generating another request set. Treat empty, unavailable and partial-generation outcomes according to the current contract, and preserve earlier committed effects in the report.
+
 Completion: authorized execution state reported from a fresh read; context and caller authority preserved; unsupported participation and sensitive diagnostics never inferred.
 
 ## Notifications and delivery outcomes

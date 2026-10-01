@@ -160,6 +160,16 @@ Minimize contextual information and keep linked Business Data access under its o
 
 Completion: responsibility, response meaning and placement are supported by current Discovery, safe Test evidence establishes the exact request authority, and notification receipt, Field mutation, response acceptance and process continuation remain distinct.
 
+## Generation and response waiting
+
+When a process generates requests before awaiting people, discover the current waiting and result-binding support before authoring. Separate generation, its stakeholder summary, the selected response wait, and final continuation. Bind the wait to the exact requests produced by the intended operation or iteration; a shared business period or contextual status does not define its membership. Choose a process-level aggregate wait when all generation should finish first, or an iteration wait when that item's later work depends on its answer.
+
+Settle the business meaning of completion separately from response acceptance. Read the supported conditions and empty, unavailable and partial-generation outcomes from current Discovery. A received negative decision does not imply approval, and a generation failure must remain visible rather than becoming an all-generated announcement. Preserve committed effects and use discovered recovery within the admitted execution when generation is incomplete.
+
+Exercise an early answer, restart during waiting, concurrent final answers and continuation recovery in the authorized Test context. Verify stable membership, retained early responses, released worker capacity and one final continuation. Include an empty request selection and partial generation under the chosen failure policy. Record generation progress, outstanding responses and final completion as separate evidence.
+
+Completion: exact request selection and response meaning are settled, the discovered composition validates, representative Test evidence proves the separate stages and recovery, and unsupported completion policies remain explicit.
+
 ## Widgets
 
 Reuse an existing Widget before authoring one. Discover authorization-filtered Widgets through current authoring links and read each candidate's Semantic, presentation inputs, named data contracts, layout defaults, dependencies, and usage locations. Create a new Widget only when no suitable Widget exists; evolve genuinely different behavior as a separate Widget.

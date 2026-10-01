@@ -3,6 +3,7 @@
 ## v1.5.0 (Unreleased)
 
 ### Added
+- Added Discovery-grounded guidance and scenarios for exact response-wait membership, separate generation and completion evidence, early answers, restart and concurrent continuation checks, and explicit empty or partial-generation outcomes.
 - Added Discovery-grounded Human Interaction guidance for explicit responsibility and response meaning, assigned request authority, authenticated responder/Agent provenance, safe contextual access, durable acceptance, and retry versus stale-response recovery.
 - Added Discovery-grounded process notification guidance for recipient/content bindings, explicit email configuration, safe Test checks, independent channel outcomes, recipient-owned inbox recovery, and honest provider acceptance.
 - Added Discovery-grounded guidance and scenarios for coordinated fan-out: bounded iteration work, continue or stop intent, stable admitted selection, explicit empty and partial outcomes, retained committed effects, and same-instance recovery without repeating completed work.
@@ -13,6 +14,7 @@
 - Added Discovery-grounded guidance for selecting active-execution protection inputs, respecting admission conflicts, and distinguishing operation recovery from new starts and permanent business uniqueness.
 
 ### Changed
+- Process inspection now distinguishes generated requests, outstanding human responses and final completion, preserving accepted answers and the admitted execution during recovery.
 - Completed Discovery-grounded Process Definition routing, reuse and authoring, definition-owned Action bindings, direct-run retry safety, and execution provenance guidance. Added scenarios for authoring, execution, delegation, protection, and missing or unavailable support.
 - Runtime guidance covers authorized Process Instance summaries, delegated oversight limits, context containment, linked Business Data authority, and durable refresh after missed live notices.
 - Runtime guidance covers process-backed Action delegation, server-bound inputs, accepted versus completed work, and ambiguous-start retry safety using current Discovery.
