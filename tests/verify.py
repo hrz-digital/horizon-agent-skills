@@ -157,6 +157,7 @@ def main():
         "process-summary-oversight", "process-summary-missed-notice",
         "process-actions-selection-partial", "process-actions-selection-stop-uncertain",
         "process-actions-selection-coordinated", "process-conditional-composition",
+        "process-query-transformation",
     })
     require("skills/horizon/SKILL.md", "Process Instance listing/inspection", "Process Definition or its Structure Action bindings")
     require("skills/horizon-metadata-authoring/SKILL.md",
@@ -171,6 +172,13 @@ def main():
             "Terminal settlement may permit the same inputs again",
             "## Inspect Process Instances", "linked summary contract", "actual caller's authority",
             "Live notices are hints", "Visibility through recipients or assignees")
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "For query and transformation work", "supported Relation selection",
+            "current time and size limits", "persisted completed outputs",
+            "require sanitization wherever", "hard memory isolation")
+    require("skills/horizon-runtime/SKILL.md",
+            "For query and transformation runs", "bounded failures",
+            "does not freeze referenced Metadata or Business Data")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

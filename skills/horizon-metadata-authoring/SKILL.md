@@ -120,6 +120,12 @@ When authoring or changing a Process Definition:
 
 For ordered conditional work, follow the current composition contracts. Keep operation identities stable while arranging order, declare outputs before referencing them, and validate every dependency and condition before human review. Choose a small linear flow for the requested outcome. Exercise true and false conditions, unavailable dynamic values, and a later failure in Test scope; report which earlier effects remain committed and whether dependent skipped outputs become unavailable. Discover recovery semantics instead of replaying successful work or switching an in-flight definition to a new release.
 
+For query and transformation work, reuse a Data Source whose selection expresses the intended business set. Inspect its declared filters, outputs and supported Relation selection through current Discovery; bind only declared values and verify the fixed Data Scope. Declare the results a later operation needs and use the discovered script input/output convention. Keep scripts focused on transformation, with business effects expressed by explicit supported operations. Read current time and size limits before choosing a workload; use the available count-only selection when only a total is needed.
+
+Exercise representative, empty and failed selections, object and array results, downstream use, and bounded failures in Test scope before human review. Verify a resumed execution uses persisted completed outputs even when upstream Business Data changes. Treat the definition snapshot and referenced Metadata as separate lifecycles: inspect the discovered behavior for changed Data Sources instead of promising that all data is frozen. Treat script and AI-derived HTML as untrusted; require sanitization wherever the proposed surface renders it, and discover host restrictions rather than promising hard memory isolation.
+
+Completion for query and transformation work: selection and downstream contracts validate, relevant Test outcomes and recovery evidence are recorded, and unsupported selection or host capabilities are reported.
+
 Completion: suitable existing definitions were reused or minimal new definition authored, Workspace validation passed with references intact, supported Test checks and untested behavior are reported, and the human handoff is explicit; stop before approval or Publication.
 
 ## Widgets

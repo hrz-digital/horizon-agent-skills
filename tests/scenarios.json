@@ -805,5 +805,18 @@
       "reports earlier committed effects and uses discovered durable recovery rather than restarting successful work",
       "does not invent graph frameworks, subprocesses, unsupported operation kinds or platform payloads"
     ]
+  },
+  {
+    "id": "process-query-transformation",
+    "prompt": "Author a Process Definition that selects related Projects through a Data Source, transforms the results into a payload, and passes it to later work. Explain empty selection, a transformation timeout, a changed Data Source, and restart after upstream Business Data changes.",
+    "expect": [
+      "discovers current selection, Relation support, bindings, outputs, script convention and time and size limits before authoring",
+      "uses declared downstream results and explicit supported operations for business effects",
+      "tests representative and empty selection, object and array results, downstream use and bounded failures in Test scope",
+      "uses persisted completed results on recovery rather than rerunning completed transformations against changed upstream data",
+      "distinguishes definition snapshot from referenced Metadata and Business Data lifecycle",
+      "requires sanitization wherever script or AI-derived HTML is rendered",
+      "reports unavailable selection or host support without invented contracts or hard memory isolation claims"
+    ]
   }
 ]
