@@ -142,7 +142,7 @@ Completion: suitable existing definitions were reused or minimal new definition 
 
 ## Process notifications
 
-When the requested process includes stakeholder messages or lifecycle summaries, discover supported recipients, channels, templates and delivery behavior before authoring. Keep notification recipients separate from future Human Interaction responsibility. Include an initiating User only when meaningful; System initiation supplies no fabricated User. Resolve recipients as platform Users, including notification-only Users without login authority.
+When the requested process includes stakeholder messages or lifecycle summaries, discover supported recipients, channels, templates and delivery behavior before authoring. Keep notification recipients separate from Human Interaction responsibility. Include an initiating User only when meaningful; System initiation supplies no fabricated User. Resolve recipients as platform Users, including notification-only Users without login authority.
 
 Bind message content to declared inputs and prior typed outputs. Validate nested dependencies through current schemas and handle unavailable or skipped values explicitly. Choose an explicit selection, transformation or iteration binding for multiple Business Instances before using a scalar value; never assume the first result. Require meaningful subject and body content, escape substitutions, and treat HTML as untrusted. Verify recipient content visibility and safe summary links rather than treating receipt as a Business Data grant.
 
@@ -151,6 +151,14 @@ Select the intended channel and a named email configuration explicitly through D
 Validate supported Test recipients and channel restrictions before testing. Keep Workspace checks inside supported in-platform delivery until Discovery exposes safe external test destinations; use controlled provider boundaries for external-delivery verification. Exercise multiple recipients, duplicate resolution, missing values, channel failures, deletion and recovery, recording each outcome separately. Verify retries preserve successful inbox delivery and deleted items, and supplementary failures preserve committed business effects. Report provider acceptance without promising confirmed delivery or exactly-once SMTP dispatch.
 
 Completion: recipient/content/channel contracts validate, relevant safe Test evidence and unsupported checks are recorded, and message receipt, summary participation, business completion and channel delivery remain distinct.
+
+## Human Interaction responsibility and responses
+
+When a process requires a User's decision or typed input, discover supported Human Interaction authoring and assigned-request behavior before choosing an operation. Identify one responsible platform User with usable Authentication and Login Access, the intended response meaning and declared inputs, the necessary contextual Business Instance reference, and where the request should be presented. Keep notification recipients and responsibility distinct; receiving information alone does not establish response authority.
+
+Minimize contextual information and keep linked Business Data access under its own authority. Select response values explicitly rather than inferring approval from a Field name or status update. Discover whether request creation continues independently or an explicit wait is available; model continuation only when supported. Test using eligible Test Users and the authorized Workspace context, verifying assignment, input validation, durable acceptance, authenticated provenance and repeat behavior without adding process or CRUD grants to the responder.
+
+Completion: responsibility, response meaning and placement are supported by current Discovery, safe Test evidence establishes the exact request authority, and notification receipt, Field mutation, response acceptance and process continuation remain distinct.
 
 ## Widgets
 

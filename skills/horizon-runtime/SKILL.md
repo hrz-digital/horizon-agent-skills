@@ -1,6 +1,6 @@
 ---
 name: horizon-runtime
-description: Operate Horizon Business Data and execute runtime Actions and Process runs through Discovery. Use listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, acting on Business Instances, starting published Process Definitions, or listing and inspecting Process Instances.
+description: Operate Horizon Business Data and execute runtime Actions and Process runs through Discovery. Use listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, acting on Business Instances, starting published Process Definitions, listing and inspecting Process Instances, or answering assigned Human Interactions.
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
@@ -27,7 +27,7 @@ Completion: compatible CLI and Discovery confirmed, customer Installation explic
 
 1. Open current runtime Discovery entry and select Published Metadata context it exposes for ordinary runtime work. Keep authoring Workspace context out of ordinary runtime requests, except for the Workspace feature validation in `horizon-metadata-authoring`.
 2. For Business Data or an Action, select Structure from compact Semantic summaries, then follow detail link. For a direct Process run, follow the Process Definition catalog and detail instead; execution inspection follows **Inspect Process Instances** below without selecting a Structure.
-3. Follow authorized runtime affordance for Business Instance CRUD, Relations, Assets, Data Sources, recovery, following, notifications, Actions, or Process starts. Concrete Business Instance affordances determine Action availability; never infer it by scanning definitions.
+3. Follow authorized runtime affordance for Business Instance CRUD, Relations, Assets, Data Sources, recovery, following, notifications, assigned Human Interactions, Actions, or Process starts. Concrete Business Instance affordances determine Action availability; never infer it by scanning definitions.
 4. Read linked JSON Schema before constructing request. Use stable codes and runtime-provided links; never infer URL, payload, Relation Edge storage, or task implementation.
 
 Completion: target Business Instance, Process Definition, or Process Instance, current runtime affordance, required context, linked schema, and request links identified.
@@ -57,6 +57,16 @@ Treat live notices as refresh hints. Refetch the authorized durable inbox and un
 Report committed business effects separately from each recipient's channel outcome. A failed supplementary summary does not reverse business completion. Provider acceptance is evidence of acceptance, not confirmed external delivery; use discovered attempts and recovery semantics, and report ambiguous transport outcomes honestly. Recover within the admitted execution instead of starting another process to resend a message; a distinct Process Instance can intentionally notify the same User again.
 
 Completion: authorized inbox state and independent business/delivery outcomes are freshly verified, context is preserved, and external delivery is claimed only with supporting evidence.
+
+## Assigned Human Interactions
+
+Discover the acting User's assigned requests and read the selected request's current response contract before proposing an answer. Preserve the selected Metadata Context and Data Scope. Treat assignment as authority over that exact request; inspect contextual Business Data only through its separately authorized affordances. A request reference or notification does not authorize acting for another User.
+
+Confirm the User's intended response and submit only the declared response values through the current affordance. Let authenticated transport determine the acting identity. Keep the responsible User separate from Agent Credential provenance, and verify the accepted response and actual responder from a fresh read. If Login Access or assignment is unavailable, report that condition instead of proposing a general grant or substituting another identity.
+
+After an uncertain submission, read the durable request before retrying and follow the current repeat/stale-response contract. Preserve an already accepted response and its audit; reassess a stale rejection rather than sending a different answer as recovery. A contextual status change is a separate Business Data mutation and does not substitute for answering. Request creation, accepted response and subsequent process progress are separate facts; discover explicit continuation support before claiming that an answer resumed work.
+
+Completion: the intended response is durably verified through authorized request access, the authenticated responder/provenance is reported, and linked Business Data authority and process progress remain separately verified.
 
 ## Execute
 

@@ -3,6 +3,7 @@
 ## v1.5.0 (Unreleased)
 
 ### Added
+- Added Discovery-grounded Human Interaction guidance for explicit responsibility and response meaning, assigned request authority, authenticated responder/Agent provenance, safe contextual access, durable acceptance, and retry versus stale-response recovery.
 - Added Discovery-grounded process notification guidance for recipient/content bindings, explicit email configuration, safe Test checks, independent channel outcomes, recipient-owned inbox recovery, and honest provider acceptance.
 - Added Discovery-grounded guidance and scenarios for coordinated fan-out: bounded iteration work, continue or stop intent, stable admitted selection, explicit empty and partial outcomes, retained committed effects, and same-instance recovery without repeating completed work.
 - Added Discovery-grounded guidance and scenarios for transformed Business Data effects, declared target authority, committed identities, Relation ownership and nested creation, contained refusals, durable recovery, and independent automation attribution.
