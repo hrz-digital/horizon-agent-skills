@@ -832,5 +832,29 @@
       "uses discovered recovery within the admitted execution instead of a fresh start that could duplicate business outcomes",
       "reports automation provenance and initiating business attribution independently"
     ]
+  },
+  {
+    "id": "process-fan-out-authoring",
+    "prompt": "In the selected Installation, propose a Process Definition that loads Projects and updates each in one coordinated execution. Current Discovery supports iteration work and recovery. Keep concurrency bounded; test one invalid Project, stop and continue behavior, changed source selection, and an empty selection.",
+    "expect": [
+      "discovers current composition, iteration, progress and recovery contracts before authoring",
+      "keeps one coordinated Process Instance and separates selection from per-item effects",
+      "chooses bounded concurrency and explains continue or stop intent without promising rollback",
+      "tests empty selection, partial failure, committed effects and already admitted work in Test scope",
+      "verifies admitted membership stays fixed after source selection changes and recovered work does not repeat completed operations",
+      "records validation and untested behavior before human Publication handoff"
+    ]
+  },
+  {
+    "id": "process-fan-out-recovery",
+    "prompt": "Our agreed coordinated Project update has partially failed: two selected items completed, one failed, and others were not started after stopping. The Data Source filter has since changed. Inspect the execution and recover the unfinished work if its current affordance permits it; do not repeat completed effects.",
+    "expect": [
+      "reads fresh authorized execution detail and distinguishes failed items, remaining work and completed effects",
+      "uses admitted membership rather than the changed Data Source to define the denominator",
+      "preserves completed effects and identifies already admitted work still finishing",
+      "uses the current recovery affordance within caller authority and agreed mutation scope instead of starting another Process Instance",
+      "keeps the original definition snapshot and Data Scope and verifies bounded recovery progress",
+      "reports complete success only when the original selected work has completed; does not equate accepted recovery with completion"
+    ]
   }
 ]

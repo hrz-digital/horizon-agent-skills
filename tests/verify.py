@@ -158,6 +158,7 @@ def main():
         "process-actions-selection-partial", "process-actions-selection-stop-uncertain",
         "process-actions-selection-coordinated", "process-conditional-composition",
         "process-query-transformation", "process-transformed-business-effects",
+        "process-fan-out-authoring", "process-fan-out-recovery",
     })
     require("skills/horizon/SKILL.md", "Process Instance listing/inspection", "Process Definition or its Structure Action bindings")
     require("skills/horizon-metadata-authoring/SKILL.md",

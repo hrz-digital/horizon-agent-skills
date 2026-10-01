@@ -42,6 +42,10 @@ Refresh the durable list or detail after a missed live notice, and distinguish p
 
 For mutations consuming transformed results, inspect the authorized committed Business Instance identities and intended Relations through their current affordances. Distinguish operation recovery from a fresh process start when an outcome is uncertain. Check for an earlier committed effect before proposing another start; a later failure does not imply that earlier creation or linking was undone. Report which effects committed, which operation was refused, and what remains to recover. Keep automation provenance separate from initiating business attribution and preserve the selected Data Scope throughout inspection.
 
+For coordinated fan-out, inspect selected membership and per-item progress through current execution detail. Distinguish complete success, partial failure and remaining work; an empty selection is a separate explicit outcome. Do not let a later Data Source change redefine the admitted selection or completion denominator. Preserve completed effects when reporting failure or stopped scheduling, and distinguish unstarted items from already admitted sequences still finishing.
+
+Follow the execution's currently available recovery affordance only within the agreed mutation scope and caller authority. Resume failed or remaining work in the same Process Instance, check that earlier completed operations are retained, and preserve its definition snapshot and Data Scope. A new start is new work and may repeat committed effects. Rediscover progress after recovery; keep configured iteration concurrency distinct from the Installation's overall worker bound, and never infer completion from the recovery request being accepted.
+
 Completion: authorized execution state reported from a fresh read; context and caller authority preserved; unsupported participation and sensitive diagnostics never inferred.
 
 ## Execute

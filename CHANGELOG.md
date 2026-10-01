@@ -3,6 +3,7 @@
 ## v1.5.0 (Unreleased)
 
 ### Added
+- Added Discovery-grounded guidance and scenarios for coordinated fan-out: bounded iteration work, continue or stop intent, stable admitted selection, explicit empty and partial outcomes, retained committed effects, and same-instance recovery without repeating completed work.
 - Added Discovery-grounded guidance and scenarios for transformed Business Data effects, declared target authority, committed identities, Relation ownership and nested creation, contained refusals, durable recovery, and independent automation attribution.
 - Added Discovery-grounded guidance for Process Data Source selection and bounded transformations, declared downstream results, empty and failed selections, persisted-output recovery, referenced Metadata changes, and untrusted HTML.
 - Added Discovery-grounded guidance for ordered conditional Process Definitions, declared prior outputs, skipped dependencies, partial commits, and durable recovery.

@@ -132,6 +132,12 @@ Exercise creation and linking followed by a downstream update in Test scope. Inc
 
 Completion for transformed Business Data effects: the declared effects validate, committed identities and intended Relations are verified through authorized outcomes, relevant refusal and recovery cases are recorded, and unsupported effects remain explicit.
 
+For a selected collection whose effects need coordinated progress and recovery within one Process Instance, discover the supported fan-out contract before choosing a sequence. Keep selection separate from iteration effects, declare each item's data context and stable identity through current Discovery, and choose a bounded concurrency and failure policy appropriate to the business outcome. Prefer continuing independent items when partial completion is useful; choose stopping when admitting more items after a failure would be inappropriate. Stopping preserves committed effects and may leave selected membership unfinished.
+
+Exercise fan-out in Test scope with a valid selection, an invalid item, and an empty selection. Verify per-item outcomes, which effects committed, which selected items remain, and what already admitted work finishes after stopping. Change the source selection after execution begins and check that the admitted membership remains stable. Recover failed work through the same execution's current affordance and verify completed effects are not repeated; do not replace its definition snapshot or infer success from acceptance. Discover the Installation's current concurrency bounds and unsupported composition before proposing them.
+
+Completion for coordinated fan-out: selection, sequence and failure policy validate; empty and partial outcomes, fixed membership, bounded progress and recovery evidence are recorded; complete success is claimed only when all selected work has completed under the current contract.
+
 Completion: suitable existing definitions were reused or minimal new definition authored, Workspace validation passed with references intact, supported Test checks and untested behavior are reported, and the human handoff is explicit; stop before approval or Publication.
 
 ## Widgets
