@@ -818,5 +818,19 @@
       "requires sanitization wherever script or AI-derived HTML is rendered",
       "reports unavailable selection or host support without invented contracts or hard memory isolation claims"
     ]
+  },
+  {
+    "id": "process-transformed-business-effects",
+    "prompt": "Author a process that selects a Project, transforms a report payload, creates and links the report, and updates it using the committed identity. Explain invalid business values, forged targets, nested creation, a cross-scope attempt, and recovery around commit.",
+    "expect": [
+      "discovers current mutation, target, payload and Relation contracts without inventing platform shapes",
+      "keeps target authority and delegated effects explicit in the definition while scripts supply transformation values",
+      "consumes an operation's committed Business Instance identity and current concurrency contract for downstream work",
+      "preserves business Constraints, primary and secondary ownership, protected platform boundaries and fixed Data Scope",
+      "exercises supported creation, linking, downstream update, nested creation, refusals and recovery in Test scope",
+      "verifies refused operations leave no partial Business Instance or Relation Edge and earlier completed effects remain committed",
+      "uses discovered recovery within the admitted execution instead of a fresh start that could duplicate business outcomes",
+      "reports automation provenance and initiating business attribution independently"
+    ]
   }
 ]

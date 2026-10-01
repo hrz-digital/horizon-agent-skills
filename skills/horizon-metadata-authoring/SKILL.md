@@ -126,6 +126,12 @@ Exercise representative, empty and failed selections, object and array results, 
 
 Completion for query and transformation work: selection and downstream contracts validate, relevant Test outcomes and recovery evidence are recorded, and unsupported selection or host capabilities are reported.
 
+For Business Data effects from transformed results, discover the supported mutation and Relation contracts before authoring. Keep the target and delegated effects explicit in the definition, with scripts supplying transformation values. Validate targets, payloads and declared Relation intents through current Discovery; keep primary and secondary ownership, business Constraints and protected platform boundaries intact. Consume the committed Business Instance identity returned by an operation when later work needs that target, and discover its concurrency requirements instead of trusting an identity assembled by a script.
+
+Exercise creation and linking followed by a downstream update in Test scope. Include invalid payloads, undeclared targets or effects, cross-scope attempts, nested creation where supported, and recovery before and after commit. Check that a refused operation leaves no partial Business Instance or Relation Edge, while earlier completed effects remain. Verify automation provenance and initiating business attribution independently. Use discovered recovery within the admitted execution; a fresh start can create another business outcome and does not establish business uniqueness.
+
+Completion for transformed Business Data effects: the declared effects validate, committed identities and intended Relations are verified through authorized outcomes, relevant refusal and recovery cases are recorded, and unsupported effects remain explicit.
+
 Completion: suitable existing definitions were reused or minimal new definition authored, Workspace validation passed with references intact, supported Test checks and untested behavior are reported, and the human handoff is explicit; stop before approval or Publication.
 
 ## Widgets
