@@ -140,6 +140,18 @@ Completion for coordinated fan-out: selection, sequence and failure policy valid
 
 Completion: suitable existing definitions were reused or minimal new definition authored, Workspace validation passed with references intact, supported Test checks and untested behavior are reported, and the human handoff is explicit; stop before approval or Publication.
 
+## Process notifications
+
+When the requested process includes stakeholder messages or lifecycle summaries, discover supported recipients, channels, templates and delivery behavior before authoring. Keep notification recipients separate from future Human Interaction responsibility. Include an initiating User only when meaningful; System initiation supplies no fabricated User. Resolve recipients as platform Users, including notification-only Users without login authority.
+
+Bind message content to declared inputs and prior typed outputs. Validate nested dependencies through current schemas and handle unavailable or skipped values explicitly. Choose an explicit selection, transformation or iteration binding for multiple Business Instances before using a scalar value; never assume the first result. Require meaningful subject and body content, escape substitutions, and treat HTML as untrusted. Verify recipient content visibility and safe summary links rather than treating receipt as a Business Data grant.
+
+Select the intended channel and a named email configuration explicitly through Discovery. Installation email settings and protected credentials stay outside Process Definition Metadata and Package publication. Discover administrative settings authority, redact credentials in evidence, and preserve omitted secrets when the current update contract supports it. Multiple available configurations do not justify an arbitrary default.
+
+Validate supported Test recipients and channel restrictions before testing. Keep Workspace checks inside supported in-platform delivery until Discovery exposes safe external test destinations; use controlled provider boundaries for external-delivery verification. Exercise multiple recipients, duplicate resolution, missing values, channel failures, deletion and recovery, recording each outcome separately. Verify retries preserve successful inbox delivery and deleted items, and supplementary failures preserve committed business effects. Report provider acceptance without promising confirmed delivery or exactly-once SMTP dispatch.
+
+Completion: recipient/content/channel contracts validate, relevant safe Test evidence and unsupported checks are recorded, and message receipt, summary participation, business completion and channel delivery remain distinct.
+
 ## Widgets
 
 Reuse an existing Widget before authoring one. Discover authorization-filtered Widgets through current authoring links and read each candidate's Semantic, presentation inputs, named data contracts, layout defaults, dependencies, and usage locations. Create a new Widget only when no suitable Widget exists; evolve genuinely different behavior as a separate Widget.

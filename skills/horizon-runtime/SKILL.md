@@ -48,6 +48,16 @@ Follow the execution's currently available recovery affordance only within the a
 
 Completion: authorized execution state reported from a fresh read; context and caller authority preserved; unsupported participation and sensitive diagnostics never inferred.
 
+## Notifications and delivery outcomes
+
+Discover the current inbox and delivery affordances before inspecting notifications. Operate only the acting User's inbox in its selected Data Scope and Metadata Context. Read, unread and deletion changes affect that User's item; deletion preserves process history and other recipients' items. Receiving a notification does not itself require login authority or grant access to its referenced Business Data.
+
+Treat live notices as refresh hints. Refetch the authorized durable inbox and unread state after reconnecting, returning focus, or missing a notice; preserve context and let transport handle authentication. Inspect process summaries through discovered persisted participation, and retrieve linked Business Data under current caller authority.
+
+Report committed business effects separately from each recipient's channel outcome. A failed supplementary summary does not reverse business completion. Provider acceptance is evidence of acceptance, not confirmed external delivery; use discovered attempts and recovery semantics, and report ambiguous transport outcomes honestly. Recover within the admitted execution instead of starting another process to resend a message; a distinct Process Instance can intentionally notify the same User again.
+
+Completion: authorized inbox state and independent business/delivery outcomes are freshly verified, context is preserved, and external delivery is claimed only with supporting evidence.
+
 ## Execute
 
 1. Fetch current Business Instance state when a mutation targets existing Business Data.
