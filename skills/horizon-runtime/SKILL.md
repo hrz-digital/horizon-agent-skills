@@ -1,6 +1,6 @@
 ---
 name: horizon-runtime
-description: Operate Horizon Business Data and execute runtime Actions and Process runs through Discovery. Use listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, acting on Business Instances, starting published Process Definitions, listing and inspecting Process Instances, or answering assigned Human Interactions.
+description: Operate Horizon Business Data and execute runtime Actions and Process runs through Discovery. Use listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, acting on Business Instances, starting published Process Definitions, listing and inspecting Process Instances, answering assigned Human Interactions, reassigning pending requests, or inspecting response deadlines.
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
@@ -68,7 +68,13 @@ Confirm the User's intended response and submit only the declared response value
 
 After an uncertain submission, read the durable request before retrying and follow the current repeat/stale-response contract. Preserve an already accepted response and its audit; reassess a stale rejection rather than sending a different answer as recovery. A contextual status change is a separate Business Data mutation and does not substitute for answering. Request creation, accepted response and subsequent process progress are separate facts; discover explicit continuation support before claiming that an answer resumed work.
 
-Completion: the intended response is durably verified through authorized request access, the authenticated responder/provenance is reported, and linked Business Data authority and process progress remain separately verified.
+### Reassignment and deadline recovery
+
+An unavailable responsible User is not evidence that a request has resolved. Discover administrative reassignment support before offering that recovery, confirm the intended responsibility change, and verify replacement eligibility in the execution's current context. Follow only the authorized affordance, then verify responsibility and audit through fresh permitted reads. Keep former-assignee access and linked Business Data authority separate; a request reference or historical assignment is not continuing permission. On denial, report the condition rather than substituting an identity or proposing a broad grant.
+
+Treat overdue work as waiting for durable settlement, not as an answer inferred from a clock. Distinguish a User's accepted response from a configured non-response outcome, and distinguish request resolution from an execution wait's outcome. Route a new or changed silence policy through Metadata authoring: agree its business meaning and discover supported timing and outcomes before configuring it. Missing input is never evidence of approval. After restart, a race or an ambiguous intervention, inspect current durable state and preserve the authoritative winner; recovering uncertainty does not justify reopening or replacing completed requests.
+
+Completion: the intended response, responsibility change or explicit non-response outcome is durably verified through authorized state and audit; responder/provenance, linked Business Data authority and process progress remain separately verified.
 
 ## Execute
 

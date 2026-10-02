@@ -3,6 +3,7 @@
 ## v1.5.0 (Unreleased)
 
 ### Added
+- Added Discovery-grounded request reassignment and deadline-recovery guidance: confirm administrative intent and replacement eligibility, preserve current-assignee privacy and durable race winners, and distinguish overdue work and explicit non-response outcomes from User answers or approval.
 - Added Discovery-grounded guidance and scenarios for exact response-wait membership, separate generation and completion evidence, early answers, restart and concurrent continuation checks, and explicit empty or partial-generation outcomes.
 - Added Discovery-grounded Human Interaction guidance for explicit responsibility and response meaning, assigned request authority, authenticated responder/Agent provenance, safe contextual access, durable acceptance, and retry versus stale-response recovery.
 - Added Discovery-grounded process notification guidance for recipient/content bindings, explicit email configuration, safe Test checks, independent channel outcomes, recipient-owned inbox recovery, and honest provider acceptance.
