@@ -125,6 +125,8 @@ A blocked start remains a reported refusal. Discover its current reason and the 
 
 For uncertain acceptance or a worker restart, inspect durable occurrence and execution state before considering another start. Distinguish recovery of admitted work from a deliberate additional execution, and discover identity/republication semantics before treating an edited definition as a repeat request. Report intended time separately from actual admission; make no real-time dispatch promise.
 
+For recurring schedules, read the saved timezone and next local occurrence from current Discovery. Inspect older unresolved occurrences separately from newer planned work; determine their relationship from the live policy before claiming that one delays another. On an edit, verify retained history and existing accepted snapshots alongside the replacement plan. On restart or concurrent retry, use durable occurrence identities and execution references to establish whether advancement preserved work without duplicates. Discover missed-run handling rather than inventing a catch-up queue or treating recurrence as permission to replay overdue intent.
+
 Completion: intended time and current start outcome are reported, any accepted execution is tracked through its returned links, provenance is verified, and blocked, overdue or uncertain work remains explicit without unauthorized replay.
 
 ### Workspace process exercise

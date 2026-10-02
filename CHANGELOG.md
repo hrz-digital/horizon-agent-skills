@@ -3,6 +3,7 @@
 ## v1.5.0 (Unreleased)
 
 ### Added
+- Added Discovery-grounded recurring schedule guidance and scenarios: business cadence and start anchors, saved-timezone and next-occurrence readback, discovered daylight-saving and short-month policies, safe edits with retained history and accepted snapshots, independent unresolved-occurrence inspection, and durable advancement verification after restart or concurrent retry.
 - Added Discovery-grounded one-time scheduling guidance and scenarios: explicit local time and timezone with converted-instant readback, durable intent versus accepted execution, System provenance, inactive Workspace schedules with explicit Test exercise, protected-input refusals, conservative overdue handling, and inspection before restart or repeat decisions.
 - Added Discovery-grounded Workspace process-exercise guidance: effective-definition and eligible-participant discovery, explicit Test-scope runs without fallback, logical-initiator selection with retained requester provenance, contained delivery and Workspace-gated requests, explicit-only automation, and failure and refusal reporting with restart and retry confirmation.
 - Added Discovery-grounded cancellation guidance: administrative privilege discovery and stable refusals, confirmed intent before stopping queued work or invalidating pending requests, honest stopping versus finished reporting, retained committed effects, persistence across restart, and no replacement execution for deliberately stopped work.

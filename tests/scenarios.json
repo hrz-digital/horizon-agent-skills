@@ -934,5 +934,29 @@
       "uses only available recovery controls after confirming business intent and reports absent controls honestly",
       "does not promise real-time dispatch or borrow schedule author credentials"
     ]
+  },
+  {
+    "id": "process-recurring-schedule-authoring",
+    "prompt": "Propose daily, selected-weekday, monthly and quarterly schedules at the agreed local time. The timezone defaults from my settings, which I may change later. Verify daylight-saving and short-month behavior before human review.",
+    "expect": [
+      "discovers current recurrence forms and calendar edge policies before authoring",
+      "settles business cadence, local clock time, timezone and start anchor without assuming calendar arithmetic",
+      "reads saved timezone and next intended local occurrence through Discovery rather than recomputing them",
+      "distinguishes later User timezone changes from deliberate edits to saved recurrence intent",
+      "exercises the Workspace explicitly with Test fixtures and relevant calendar refusals without automatic Real activation",
+      "leaves approval and Publication with the eligible human"
+    ]
+  },
+  {
+    "id": "process-recurring-schedule-edit-recovery",
+    "prompt": "A recurring schedule was edited after one accepted execution and an older unresolved occurrence. Inspect its history and next occurrence after restart and concurrent worker retry; do not replay missed work.",
+    "expect": [
+      "reads saved timezone, next intended occurrence and current advancement policy through authorized Discovery",
+      "distinguishes older unresolved intent from newer planned work using the discovered policy",
+      "verifies retained history and original accepted Process Instance snapshots after edits",
+      "uses durable occurrence identities and execution references to verify no lost or duplicate advancement after restart",
+      "does not materialize a speculative future queue or invent catch-up and replay controls",
+      "reports accepted execution separately from completion and preserves current administrative authority"
+    ]
   }
 ]

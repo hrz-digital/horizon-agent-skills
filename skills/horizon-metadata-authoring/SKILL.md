@@ -150,6 +150,14 @@ Exercise the configuration explicitly in the selected Workspace against suitable
 
 Completion: the intended local time and converted instant agree, parameters and any target validate, explicit Test exercise and relevant refusal evidence are recorded, and the proposal remains ready for human review without automatic Real activation.
 
+## Recurring schedules
+
+For recurring work, settle the business cadence, intended local clock time, timezone and start anchor before authoring. Discover the currently supported recurrence forms and edge policies; clarify how daylight-saving transitions and short months affect the requested intent rather than assuming calendar arithmetic. Verify the saved timezone and next intended occurrence through Discovery, including any default captured from User settings. Treat later User timezone changes as separate from an intentional edit to saved recurrence intent.
+
+Read back the next planned occurrence rather than computing a client-side schedule or creating a speculative queue. Before proposing an edit, inspect its effect on unstarted work, accepted Process Instance snapshots and retained history through the current contract. Exercise the proposal explicitly in the Workspace with Test fixtures and relevant transition/refusal cases; keep Real activation with eligible human Publication.
+
+Completion: discovered cadence and edge behavior match the business intent, saved timezone and next occurrence are verified, relevant Test evidence is recorded, and the effect of edits on existing work is understood before human review.
+
 ## Process notifications
 
 When the requested process includes stakeholder messages or lifecycle summaries, discover supported recipients, channels, templates and delivery behavior before authoring. Keep notification recipients separate from Human Interaction responsibility. Include an initiating User only when meaningful; System initiation supplies no fabricated User. Resolve recipients as platform Users, including notification-only Users without login authority.

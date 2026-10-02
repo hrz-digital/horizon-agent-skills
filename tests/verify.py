@@ -190,6 +190,8 @@ def main():
         "process-one-time-schedule-authoring",
         "process-one-time-schedule-workspace-exercise",
         "process-one-time-schedule-inspection-recovery",
+        "process-recurring-schedule-authoring",
+        "process-recurring-schedule-edit-recovery",
     })
     require("skills/horizon-metadata-authoring/SKILL.md",
             "## One-time schedules", "read the converted instant back through Discovery",
