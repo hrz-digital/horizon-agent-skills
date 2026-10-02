@@ -3,6 +3,7 @@
 ## v1.5.0 (Unreleased)
 
 ### Added
+- Added Discovery-grounded cancellation guidance: administrative privilege discovery and stable refusals, confirmed intent before stopping queued work or invalidating pending requests, honest stopping versus finished reporting, retained committed effects, persistence across restart, and no replacement execution for deliberately stopped work.
 - Added Discovery-grounded Test User fixture guidance for intentional recipients, authorized human preparation, meaningful refusals, unchanged business authority and safe recovery after eligibility changes.
 - Added Discovery-grounded request reassignment and deadline-recovery guidance: confirm administrative intent and replacement eligibility, preserve current-assignee privacy and durable race winners, and distinguish overdue work and explicit non-response outcomes from User answers or approval.
 - Added Discovery-grounded guidance and scenarios for exact response-wait membership, separate generation and completion evidence, early answers, restart and concurrent continuation checks, and explicit empty or partial-generation outcomes.

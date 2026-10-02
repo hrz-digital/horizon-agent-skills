@@ -160,6 +160,7 @@ def main():
         "process-query-transformation", "process-transformed-business-effects",
         "process-fan-out-authoring", "process-fan-out-recovery",
         "process-response-wait-authoring", "process-response-wait-inspection",
+        "process-cancellation",
     })
     require("skills/horizon/SKILL.md", "Process Instance listing/inspection", "Process Definition or its Structure Action bindings")
     require("skills/horizon-metadata-authoring/SKILL.md",
@@ -181,6 +182,10 @@ def main():
     require("skills/horizon-runtime/SKILL.md",
             "For query and transformation runs", "bounded failures",
             "does not freeze referenced Metadata or Business Data")
+    require("skills/horizon-runtime/SKILL.md",
+            "For cancellation, discover whether the acting identity actually holds the administrative privilege",
+            "are not undone", "report stopping and finished separately",
+            "settle rather than revive cancelled work")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"
