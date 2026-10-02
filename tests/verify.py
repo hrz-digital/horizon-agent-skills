@@ -161,6 +161,8 @@ def main():
         "process-fan-out-authoring", "process-fan-out-recovery",
         "process-response-wait-authoring", "process-response-wait-inspection",
         "process-cancellation",
+        "process-test-execution-purge",
+        "process-test-execution-purge-refusals",
     })
     require("skills/horizon/SKILL.md", "Process Instance listing/inspection", "Process Definition or its Structure Action bindings")
     require("skills/horizon-metadata-authoring/SKILL.md",
