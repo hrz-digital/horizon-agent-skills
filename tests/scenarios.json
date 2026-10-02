@@ -1070,5 +1070,203 @@
         "preserves the exact response denominator and early accepted answers",
         "does not hide existing failures or unsupported behavior behind a bespoke example path"
       ]
+    },
+  {
+    "id": "automation-approval-present",
+    "prompt": "Use Acme. Propose a Project approval process. Inspect all three layers and existing suitable processes before recommending authoring. This is a proposal only: explain the remaining Workspace Test and validation evidence and stop before mutation or human Publication.",
+    "contractFixture": "supported",
+    "expect": [
+      "inspects Discovery and candidate Semantic/typed contracts before reuse versus authoring",
+      "settles Data Modeling Visualization and Automation without reopening unrelated decisions",
+      "reports unobserved Test/validation evidence and stops at plan approval and human Publication"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
     }
+  },
+  {
+    "id": "automation-approval-absent",
+    "prompt": "Use Acme. Propose a Project approval process. Inspect all three layers and existing suitable processes before recommending authoring. This is a proposal only: explain the remaining Workspace Test and validation evidence and stop before mutation or human Publication.",
+    "contractFixture": "absent",
+    "expect": [
+      "bootstraps the selected Installation and reports missing or hidden process support without guessing its cause",
+      "sends no process mutation or guessed request and offers no obsolete workflow fallback",
+      "preserves agreed scope and reports requested process behavior and validation as unsupported or unobserved",
+      "explains the next authorized human or Installation-support step without claiming execution or Publication"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-summary-and-transition-present",
+    "prompt": "Use Acme. Plan a recurring inconsistency summary and an update-driven status transition. Discover schedule and watched-attribute condition support; preserve my agreed Data Modeling and Visualization scope. Proposal only; do not mutate.",
+    "contractFixture": "supported",
+    "expect": [
+      "uses ordinary scheduled selection and notification rather than obsolete Alerts",
+      "discovers watched-change and committed-condition semantics instead of Field-name inference",
+      "preserves settled layer outcomes unless actual automation dependencies require revision"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-summary-and-transition-absent",
+    "prompt": "Use Acme. Plan a recurring inconsistency summary and an update-driven status transition. Discover schedule and watched-attribute condition support; preserve my agreed Data Modeling and Visualization scope. Proposal only; do not mutate.",
+    "contractFixture": "absent",
+    "expect": [
+      "bootstraps the selected Installation and reports missing or hidden process support without guessing its cause",
+      "sends no process mutation or guessed request and offers no obsolete workflow fallback",
+      "preserves agreed scope and reports requested process behavior and validation as unsupported or unobserved",
+      "explains the next authorized human or Installation-support step without claiming execution or Publication"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-bulk-and-response-present",
+    "prompt": "Use Acme. Inspect the current process run. Explain how my explicitly selected Projects would launch independently, how pending work is tracked, and how I may answer an eligible assigned Human Interaction. Do not start or answer anything yet.",
+    "contractFixture": "supported",
+    "expect": [
+      "distinguishes independent admissions from coordinated fan-out",
+      "follows authorized state and assigned response contracts and separates linked Business Data authority",
+      "requires intended-response confirmation and authenticated eligible assignment before answer"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-bulk-and-response-absent",
+    "prompt": "Use Acme. Inspect the current process run. Explain how my explicitly selected Projects would launch independently, how pending work is tracked, and how I may answer an eligible assigned Human Interaction. Do not start or answer anything yet.",
+    "contractFixture": "absent",
+    "expect": [
+      "bootstraps the selected Installation and reports missing or hidden process support without guessing its cause",
+      "sends no process mutation or guessed request and offers no obsolete workflow fallback",
+      "preserves agreed scope and reports requested process behavior and validation as unsupported or unobserved",
+      "explains the next authorized human or Installation-support step without claiming execution or Publication"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-authority-and-test-present",
+    "prompt": "Use Acme. Inspect whether the current contract permits process testing and administrative intervention. Explain Test fixtures, User references, logical initiator choice and authenticated responses; I may need reassignment cancellation schedule review purge or Publication. Read only.",
+    "contractFixture": "restricted",
+    "expect": [
+      "discovers Test effects and participant eligibility without promising unsupported notification channels",
+      "separates logical initiator from actual Actor and responder authentication",
+      "withheld administrative affordances become human handoffs and no Real mutation fallback"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-authority-and-test-absent",
+    "prompt": "Use Acme. Inspect whether the current contract permits process testing and administrative intervention. Explain Test fixtures, User references, logical initiator choice and authenticated responses; I may need reassignment cancellation schedule review purge or Publication. Read only.",
+    "contractFixture": "absent",
+    "expect": [
+      "bootstraps the selected Installation and reports missing or hidden process support without guessing its cause",
+      "sends no process mutation or guessed request and offers no obsolete workflow fallback",
+      "preserves agreed scope and reports requested process behavior and validation as unsupported or unobserved",
+      "explains the next authorized human or Installation-support step without claiming execution or Publication"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-outcomes-present",
+    "prompt": "Use Acme. Inspect the current execution and report its actual state. Treat acceptance and operation failure accurately; explain safe recovery without starting another execution. Read only.",
+    "contractFixture": "failed",
+    "expect": [
+      "reads durable state instead of inferring completion from acceptance",
+      "reports observed failures as failures and leaves unavailable details unknown",
+      "keeps recovery inside admitted work and ambiguous new-start safety explicit"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-outcomes-absent",
+    "prompt": "Use Acme. Inspect the current execution and report its actual state. Treat acceptance and operation failure accurately; explain safe recovery without starting another execution. Read only.",
+    "contractFixture": "absent",
+    "expect": [
+      "bootstraps the selected Installation and reports missing or hidden process support without guessing its cause",
+      "sends no process mutation or guessed request and offers no obsolete workflow fallback",
+      "preserves agreed scope and reports requested process behavior and validation as unsupported or unobserved",
+      "explains the next authorized human or Installation-support step without claiming execution or Publication"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-surface-present",
+    "prompt": "Use Acme. Using only the installed skill guidance and the Horizon CLI, reach the available process surface and explain the next authorized step. Do not use Core repository documentation and do not mutate.",
+    "contractFixture": "supported",
+    "expect": [
+      "bootstraps selected Installation through CLI and current Discovery",
+      "follows returned process links without endpoint memory",
+      "reports missing support without legacy fallback or invented authority"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  },
+  {
+    "id": "automation-surface-absent",
+    "prompt": "Use Acme. Using only the installed skill guidance and the Horizon CLI, reach the available process surface and explain the next authorized step. Do not use Core repository documentation and do not mutate.",
+    "contractFixture": "absent",
+    "expect": [
+      "bootstraps the selected Installation and reports missing or hidden process support without guessing its cause",
+      "sends no process mutation or guessed request and offers no obsolete workflow fallback",
+      "preserves agreed scope and reports requested process behavior and validation as unsupported or unobserved",
+      "explains the next authorized human or Installation-support step without claiming execution or Publication"
+    ],
+    "trace": {
+      "connection": "Acme",
+      "readOnly": true,
+      "startAtDiscovery": true,
+      "followReturnedLinks": true
+    }
+  }
 ]

@@ -23,6 +23,7 @@
 - Added Discovery-grounded guidance for selecting active-execution protection inputs, respecting admission conflicts, and distinguishing operation recovery from new starts and permanent business uniqueness.
 
 ### Changed
+- Completed Automation-layer process guidance across routing, interviews, plans, authoring and runtime: preserve settled layer scope, reuse suitable definitions, model recurring summary alerts as scheduled selection and notification, honor unavailable administrative controls, and exercise narrow Test User references and authenticated responses through current Discovery. Extended behavioral scenarios for supported, missing and restricted Installations.
 - Expanded Discovery-grounded schedule recovery guidance and scenarios: explicit missed-work intent, discovered lateness tolerance, retained per-occurrence history, latest-only catch-up, audited administrative Run now and Skip decisions, current eligibility refusals, durable race winners, and accepted execution failure versus start problems.
 - Process inspection now distinguishes generated requests, outstanding human responses and final completion, preserving accepted answers and the admitted execution during recovery.
 - Completed Discovery-grounded Process Definition routing, reuse and authoring, definition-owned Action bindings, direct-run retry safety, and execution provenance guidance. Added scenarios for authoring, execution, delegation, protection, and missing or unavailable support.

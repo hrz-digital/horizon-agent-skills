@@ -15,6 +15,10 @@ Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon 
 - [`horizon-runtime`](skills/horizon-runtime/SKILL.md)
 - [`horizon-ask-for-guidance`](skills/horizon-ask-for-guidance/SKILL.md) — user-invoked router
 
+## Automation guidance
+
+Process work stays in the existing Data Modeling → Visualization → Automation workflow. The router selects authoring for definitions, triggers, summaries and Human Interaction orchestration, and runtime for authorized starts, inspection and assigned answers. Current Discovery supplies every executable contract and authority decision. Process proposal evidence uses the authoring skill’s Test scenarios; administrative controls without executable affordances and all Publication decisions go to an eligible human.
+
 ## Required setup
 
 Horizon CLI is independent of any AI Harness. Horizon Skills work with Harnesses that support Agent Skills directly or through a compatible installer. Complete setup in this order.

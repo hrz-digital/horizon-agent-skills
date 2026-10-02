@@ -3,6 +3,7 @@ import json
 import pathlib
 import subprocess
 import tempfile
+import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -222,9 +223,37 @@ def main():
             "### Event-triggered process inspection", "original Mutation and Actor",
             "a causal safeguard stop preserves earlier effects", "An exercise is not a subscription")
     required.update({"integrated-periodic-process-proof", "integrated-partial-generation-recovery"})
+    automation = [scenario for scenario in scenarios if scenario["id"].startswith("automation-")]
+    assert len(automation) == 12
+    assert {scenario["contractFixture"] for scenario in automation} == {"supported", "restricted", "failed", "absent"}
+    for scenario in automation:
+        assert scenario["trace"] == {"connection": "Acme", "readOnly": True, "startAtDiscovery": True, "followReturnedLinks": True}
+        assert len(scenario["expect"]) >= 3
+    required.update(scenario["id"] for scenario in automation)
+    require("skills/horizon-interview/SKILL.md", "cosmetic-only edit", "actual automation dependency")
+    require("skills/horizon-metadata-authoring/SKILL.md", "ordinary scheduled selection and notification", "narrow reference exception", "logical initiator override cannot answer")
+    require("skills/horizon-runtime/SKILL.md", "unavailable reason without a link", "response eligibility", "supported in-platform notifications")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"
+    # Adapter transport checks use generated paths, not a cached Horizon feature contract.
+    with tempfile.TemporaryDirectory() as directory:
+        base = pathlib.Path(directory)
+        linked = "/" + uuid.uuid4().hex
+        hidden = "/" + uuid.uuid4().hex
+        state = base / "state.json"
+        state.write_text(json.dumps({"selected": "Acme"}))
+        contracts = base / "contracts.json"
+        contracts.write_text(json.dumps({
+            "GET /discovery": {"status": 200, "body": {"link": {"hrefTemplate": linked + "/{identity}"}}},
+            "GET " + linked + "/sample": {"status": 200, "body": {"ok": True}},
+            "GET " + hidden: {"status": 200, "body": {"ok": True}},
+        }))
+        environment = {"HORIZON_STUB_STATE": str(state), "HORIZON_STUB_CONTRACT": str(contracts)}
+        for path, success in [(hidden, False), ("/discovery", True), (linked + "/sample", True)]:
+            response = subprocess.run([stub, "request", "--connection", "Acme", "GET", path], env=environment, text=True, capture_output=True)
+            assert (response.returncode == 0) == success, response.stderr
+
     for scenario in scenarios:
         if "stub" not in scenario:
             continue
