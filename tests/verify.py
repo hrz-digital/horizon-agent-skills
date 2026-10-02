@@ -206,6 +206,17 @@ def main():
             "make no real-time dispatch promise")
     require("skills/horizon-metadata-authoring/SKILL.md", "Settle missed-work intent explicitly", "downtime spanning multiple recurrences")
     require("skills/horizon-runtime/SKILL.md", "discovered lateness tolerance", "administrative Actor audit", "committed winner", "Delegated summary oversight alone")
+    required.update({
+        "process-watched-trigger-authoring",
+        "process-watched-trigger-delayed-recovery",
+        "process-watched-trigger-workspace-exercise",
+    })
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "## Watched Business Data triggers", "watched-change selection separate from state conditions",
+            "original event values govern matching", "notification delivery retry")
+    require("skills/horizon-runtime/SKILL.md",
+            "### Event-triggered process inspection", "original Mutation and Actor",
+            "a causal safeguard stop preserves earlier effects", "An exercise is not a subscription")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

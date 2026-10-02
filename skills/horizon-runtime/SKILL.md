@@ -133,6 +133,16 @@ Before an administrative Run now or Skip, confirm the selected occurrence and in
 
 Completion: intended time and current start outcome are reported, any accepted execution is tracked through its returned links, provenance is verified, and blocked, overdue or uncertain work remains explicit without unauthorized replay.
 
+### Event-triggered process inspection
+
+Discover current trigger outcomes and authorized execution links before explaining why a Business Data change did or did not start work. Keep the committed event, admission outcome and eventual business completion separate. Match the outcome to the original Mutation and Actor, and verify the responsible User initiator only where one actually exists; System-caused changes never justify inventing a User.
+
+For delayed processing or restart, inspect the original transition evidence and persisted definition snapshot available through the current contract. A later Business Instance value is not evidence of what the earlier event contained. Refresh durable outcomes after uncertain transport or missed live notices before proposing repetition, and track any accepted Process Instance through completion or its stable failure. Inspect unqualified, blocked and stopped outcomes as distinct results; a causal safeguard stop preserves earlier effects and calls for a business-policy review, not blind replay. Keep notification channel retries separate from repeating business work.
+
+In a Workspace, prepare an authorized committed Test transition and use the discovered trigger exercise explicitly. Verify matching and retry outcomes in that Workspace while preserving shared fixtures and fixed Test scope. An exercise is not a subscription, and a shared Test mutation is not evidence that another Workspace automatically ran its draft.
+
+Completion: original-event provenance, durable admission and execution outcome are reported separately, uncertain or stopped work remains explicit, and any Workspace verification uses current explicit Test affordances.
+
 ### Workspace process exercise
 
 Exercise a Workspace draft against Test fixtures before Publication, using the same engine that runs published work — never a mock, a clone, or a copied data set.
@@ -141,7 +151,7 @@ Exercise a Workspace draft against Test fixtures before Publication, using the s
 2. Start the effective definition explicitly in the Workspace and keep the fixed Test scope for the whole run: queries, mutations, fan-out items, retries, and resumes all stay inside it. A refusal means stop, never a silent switch to published definitions or Real data.
 3. When business logic should see someone other than the configurator, select a currently eligible Test User as the logical initiator. Audit still names the actual requester; the selection grants no login, borrows no authority, and cannot reach Real data.
 4. Deliver only to currently eligible test participants through contained in-app means and recheck eligibility at delivery time. Requests that need a human answer additionally require current authentication, login access, assignment availability, and Workspace access; plain notification recipients need none of that.
-5. Leave automatic schedules and event subscriptions off while exercising; explicit runs are the only automation. Fixtures outlive the run for reuse.
+5. Leave automatic schedules and event subscriptions off while exercising. Use explicit runs or discovered trigger exercises against committed Test transitions; neither subscribes the Workspace globally. Fixtures outlive the run for reuse.
 6. Report real failures as failures: a failed item, a refused recipient, or an ineligible participant is evidence, never a silent success. Restart mid-wait and retry failed items to confirm durable progress and continued containment before calling the exercise complete.
 
 Completion: effective definition and eligible participants discovered; explicit Test run tracked to completion or stable failure; Real data, audit, and other inboxes untouched; provenance distinguishes requester from logical initiator; refusals and failures reported as such.

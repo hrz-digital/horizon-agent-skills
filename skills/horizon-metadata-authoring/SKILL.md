@@ -140,6 +140,18 @@ Completion for coordinated fan-out: selection, sequence and failure policy valid
 
 Completion: suitable existing definitions were reused or minimal new definition authored, Workspace validation passed with references intact, supported Test checks and untested behavior are reported, and the human handoff is explicit; stop before approval or Publication.
 
+## Watched Business Data triggers
+
+For automation driven by a Business Data change, settle the business event, owning Structure, watched attributes and qualifying state before authoring. Distinguish a transition into a state from merely remaining in that state: an unrelated edit or a repeated unchanged value should not repeat work. Keep the Process Definition responsible for its business and notification operations.
+
+Read current trigger support, attribute kinds, shared condition language and matching semantics from Discovery. Choose whether a change to one selected attribute is enough or every selected attribute must change in the same Mutation. Keep watched-change selection separate from state conditions. Reject unavailable support rather than approximating an asset, Relation or Expression as a supported scalar attribute. Use declared inputs and target bindings that current validation permits, including the restrictions on deleted Business Instances.
+
+Exercise the proposal explicitly against committed Test transitions through its discovered Workspace affordance. Compare a qualifying transition with an unrelated edit, an unchanged watched value and a condition that fails. For multiple watched attributes, demonstrate a transition satisfying only one selection under both intended matching policies. Record evidence that the original event values govern matching when a later edit occurs before processing, and that retrying the same exercise retains one admitted execution. Shared Test data never implies that every Workspace subscribes to its changes.
+
+Before permitting process-produced changes to feed further automation, inspect the discovered causal safeguard and settle intentional business repetition separately from notification delivery retry. Include a bounded chain scenario and report a stopped chain as a visible failure outcome, preserving earlier committed effects. Keep Real activation with human Publication and verify the resulting durable trigger outcomes through authorized Discovery afterward.
+
+Completion: the intended transition and matching policy validate, supported Test scenarios prove qualifying and nonqualifying events, original-event and retry evidence is recorded, causal stops remain explicit, and the Workspace proposal is ready for human review.
+
 ## One-time schedules
 
 For a requested one-time start, discover current scheduling support before authoring. Settle the intended local date, wall clock, explicit timezone, parameters and any bound Business Instance with the User when the request leaves them unclear. Follow the live trigger schema and read the converted instant back through Discovery; verify that it expresses the intended local time. Correct field-specific refusals rather than guessing how daylight-saving gaps or repeated local times should resolve.

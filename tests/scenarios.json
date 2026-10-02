@@ -981,5 +981,43 @@
       "inspects the committed race winner or uncertain result before retry",
       "follows the accepted execution link for failure recovery rather than treating it as unstarted intent"
     ]
+  },
+  {
+    "id": "process-watched-trigger-authoring",
+    "prompt": "Propose automation when Project enters the agreed approval state. Compare watching status alone with watching status and owner; prove both matching policies before human review. An attachment may be unsupported.",
+    "expect": [
+      "discovers supported trigger events, attribute kinds, condition language and matching semantics",
+      "separates changed watched attributes from committed qualifying state",
+      "distinguishes one changed attribute from every selected attribute changing in the same Mutation",
+      "rejects unsupported attribute kinds rather than guessing scalar behavior",
+      "exercises qualifying, unrelated, unchanged and failing-condition Test transitions explicitly",
+      "retains Process Definition ownership of business and notification operations and human Publication"
+    ]
+  },
+  {
+    "id": "process-watched-trigger-delayed-recovery",
+    "prompt": "A committed status transition was processed after a later edit and a worker restart. Inspect whether one process started, whose Actor and initiator it retained, and why a process-produced recursive chain stopped.",
+    "expect": [
+      "follows authorized durable trigger outcomes and accepted execution links from current Discovery",
+      "uses original Mutation values and persisted definition snapshot instead of later Business Instance state",
+      "checks idempotent admission before proposing repeated business work",
+      "preserves original Actor and responsible User distinction without inventing a User for System changes",
+      "reports a causal safeguard stop visibly and preserves earlier committed effects",
+      "keeps notification delivery retry separate from business repeat policy",
+      "refreshes durable outcomes rather than relying on live notices"
+    ]
+  },
+  {
+    "id": "process-watched-trigger-workspace-exercise",
+    "prompt": "Another Workspace changed a shared Test Project. Exercise our draft trigger against that committed transition twice and demonstrate what happens when only one of two watched attributes changes.",
+    "expect": [
+      "discovers explicit Workspace trigger exercise and its current Test-transition contract",
+      "keeps fixed Test scope without switching to Real mutations",
+      "uses server-owned committed transition facts rather than submitting guessed event images",
+      "verifies a single admitted Process Instance on exercise retry",
+      "checks documented one-versus-every attribute behavior through actual outcomes",
+      "never assumes shared Test mutations globally subscribe Workspace drafts",
+      "records fixture and execution evidence while preserving shared Test data"
+    ]
   }
 ]
