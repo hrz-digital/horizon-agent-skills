@@ -191,13 +191,23 @@ A new Structure or changed behavior is unvalidated until representative Test Bus
 
 1. Select the authorized Workspace through `horizon` and read the effective Metadata Context, supported Test operations, Data Scope selections, and Relation and Action scope rules from current Discovery. Follow the returned affordances; never guess a route, parameter, or capability to find out.
 2. For a new Structure, create one representative Test instance, read it back through the runtime contract behind the Details Page, and confirm creation, listing, and the read-back agree. Verify UI behavior through current tooling when it exists, and state plainly that it was not observed when no such tooling exists.
-3. Keep the scenario inside Test scope. A Test Relation target comes from Test data, a Real Business Instance is never referenced from a Test graph, and validating never mutates a Real Business Instance. When a needed Test operation is unsupported or denied, report the reason and stop that check; published Real creation is not a fallback.
+3. Keep the scenario inside supported Test behavior. Discover assignment and recipient eligibility before selecting fixtures; follow **Test User fixtures** below when people participate. Validation never mutates Real Business Instances or treats a fixture reference as authority over their business graph. When a needed Test operation is unsupported or denied, report the reason and stop that check; published Real creation is not a fallback.
 4. Exercise what the feature does: feature-relevant Constraints including one meaningful failure case, Relations, Expressions, and the Actions current Discovery reports as available for Test data. Report a refused or unsupported effect as refused and suppressed; never claim an external delivery or notification that did not happen.
 5. Keep the fixtures. A Test instance outlives publication and Workspace deletion while its Structure exists, and Structure removal is what deletes it. Inspect current cleanup impact before proposing Structure removal, and route that destructive confirmation or approval to the User through the affordance Discovery exposes; an Agent acknowledges, approves, and publishes nothing.
 
 Test data is one Installation-wide scope shared by concurrent Workspaces, so another Workspace can change the totals a check reads. Report that interference when observed instead of proposing a per-Workspace copy or sandbox.
 
 Record reused and created fixtures with their purpose in Workspace Activity, so later sessions extend the scenario instead of rebuilding it.
+
+### Test User fixtures
+
+A Test User is an ordinary platform User designated for testing, not a sandbox identity or authorization role. Reuse an intentionally designated recipient and discover its current assignment, response and delivery eligibility. If preparation requires User administration that Agent governance withholds, ask an authorized human to prepare the User; do not invent credentials, duplicate identities or broaden grants to make a fixture work. Login needs depend on the interaction, not on the testing designation.
+
+Confirm recipient intent before using an offered fixture assignment. Exercise both an eligible assignment and a meaningful refusal through supported operations, and inspect related business state for unintended effects. Selection never substitutes for server-side revalidation or independently authorized access to linked Business Data.
+
+If designation or availability changes, rediscover eligibility and report blocked testing. Preserve existing Business Data and prior evidence; remove an obsolete assignment only under the agreed mutation scope and current authority. Never silently delete fixtures, restore eligibility without consent, or substitute an unrelated recipient to complete a check.
+
+Completion: intended recipients and authorized preparation are confirmed, eligible and refused cases are recorded, related business state remains intact, and stale eligibility is reported without identity substitution.
 
 Completion: the report names reused and created fixtures, the checks run and their results, validation failures, and behavior left untested or unsupported, and separates observed runtime facts from suggested manual UI checks.
 

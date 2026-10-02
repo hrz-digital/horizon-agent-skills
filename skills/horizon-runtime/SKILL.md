@@ -89,6 +89,8 @@ Completion: the intended response, responsibility change or explicit non-respons
 
 Workspace context is where proposed Metadata gets tested. Current Discovery reports the effective Data Scope, so creation there produces Test Business Instances while Real ones stay read-only, and it publishes the supported Test operations, scope rules, and Data Scope selections: read them instead of learning them by submitting a Real identifier. Follow `horizon-metadata-authoring`'s [test scenarios](../horizon-metadata-authoring/SKILL.md#test-scenarios) for feature validation; its fixture set is confirmed like any other Business Data mutation, and it is the fallback-free path when a Test operation is unsupported or denied.
 
+For assignment or recipient testing, follow [Test User fixtures](../horizon-metadata-authoring/SKILL.md#test-user-fixtures). Use current Discovery eligibility rather than inferring authority or deliverability from a User's testing designation.
+
 ## Independent Action starts for a selection
 
 1. Confirm the explicitly selected Business Instances and intended effect using the existing plan and mutation gates. Discover each Business Instance's current Action availability and linked input contract separately; availability on one item says nothing about another.
