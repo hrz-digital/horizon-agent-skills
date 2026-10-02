@@ -186,6 +186,20 @@ def main():
             "For cancellation, discover whether the acting identity actually holds the administrative privilege",
             "are not undone", "report stopping and finished separately",
             "settle rather than revive cancelled work")
+    required.update({
+        "process-one-time-schedule-authoring",
+        "process-one-time-schedule-workspace-exercise",
+        "process-one-time-schedule-inspection-recovery",
+    })
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "## One-time schedules", "read the converted instant back through Discovery",
+            "Workspace schedules remain inactive automatically",
+            "Keep Publication with the eligible human")
+    require("skills/horizon-runtime/SKILL.md",
+            "### Scheduled starts", "System initiation and schedule/occurrence provenance",
+            "preserve that boundary instead of launching equivalent work manually",
+            "inspect durable occurrence and execution state",
+            "make no real-time dispatch promise")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

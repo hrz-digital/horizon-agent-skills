@@ -895,5 +895,44 @@
       "keeps equivalent-work exclusion intact while cancelled effects may still be in flight and does not start a replacement execution",
       "verifies after reconnect that cancellation persisted, that no new operation started, and that no pending request was answered"
     ]
+  },
+  {
+    "id": "process-one-time-schedule-authoring",
+    "prompt": "Propose the agreed Process Definition to start once at 09:30 local time on the requested date in Lisbon. Validate the parameters and timezone before human review.",
+    "expect": [
+      "discovers live scheduling support and linked trigger schema before authoring",
+      "settles ambiguous local date or timezone without guessing daylight-saving behavior",
+      "reads converted instant back and verifies intended local time",
+      "keeps durable start intent distinct from its eventual Process Instance",
+      "discovers identity and republication semantics before promising another start",
+      "validates declared parameters and relevant active-execution grouping",
+      "leaves approval and Publication to an eligible human"
+    ]
+  },
+  {
+    "id": "process-one-time-schedule-workspace-exercise",
+    "prompt": "Test the proposed one-time schedule in the selected Workspace without starting Real work. The trigger parameters and time conversion need verification.",
+    "expect": [
+      "discovers the Workspace definition and its explicit exercise affordance",
+      "reuses suitable Test fixtures and keeps the execution in fixed Test scope",
+      "does not automatically activate the schedule or substitute a Real run",
+      "corrects invalid parameters and field-specific timezone refusals",
+      "verifies business result and relevant protection conflicts",
+      "reports the configuration as tested separately from scheduling Real intent"
+    ]
+  },
+  {
+    "id": "process-one-time-schedule-inspection-recovery",
+    "prompt": "Inspect the scheduled starts after a worker restart. One appears accepted, another blocked by equivalent active work, and a stale overdue occurrence needs review.",
+    "expect": [
+      "follows current Discovery administrative inspection links under caller authority and Data Scope",
+      "distinguishes intended time and start outcome from execution completion",
+      "follows the accepted execution reference and verifies System schedule and occurrence provenance",
+      "checks durable state before retrying uncertain acceptance",
+      "preserves active-execution protection and does not manually bypass the blocked start",
+      "treats overdue work as unresolved intent rather than permission to replay",
+      "uses only available recovery controls after confirming business intent and reports absent controls honestly",
+      "does not promise real-time dispatch or borrow schedule author credentials"
+    ]
   }
 ]

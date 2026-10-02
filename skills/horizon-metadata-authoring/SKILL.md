@@ -140,6 +140,16 @@ Completion for coordinated fan-out: selection, sequence and failure policy valid
 
 Completion: suitable existing definitions were reused or minimal new definition authored, Workspace validation passed with references intact, supported Test checks and untested behavior are reported, and the human handoff is explicit; stop before approval or Publication.
 
+## One-time schedules
+
+For a requested one-time start, discover current scheduling support before authoring. Settle the intended local date, wall clock, explicit timezone, parameters and any bound Business Instance with the User when the request leaves them unclear. Follow the live trigger schema and read the converted instant back through Discovery; verify that it expresses the intended local time. Correct field-specific refusals rather than guessing how daylight-saving gaps or repeated local times should resolve.
+
+Keep the schedule's durable start intent separate from its eventual Process Instance. Discover identity and republication semantics before promising another start; a new release alone is not evidence that previously settled work will repeat. Apply [Active-execution protection](#active-execution-protection) to scheduled parameters whenever equivalent concurrent work could interfere.
+
+Exercise the configuration explicitly in the selected Workspace against suitable Test fixtures through its current exercise affordance. Workspace schedules remain inactive automatically: demonstrate the business result without activating Real work. Include invalid parameters, timezone refusals and a protected-input conflict when relevant. Keep Publication with the eligible human; after their Publication, inspect only the occurrence and execution evidence current Discovery authorizes. Verify System initiation without attributing the start to an invented User or preserving the author's credentials.
+
+Completion: the intended local time and converted instant agree, parameters and any target validate, explicit Test exercise and relevant refusal evidence are recorded, and the proposal remains ready for human review without automatic Real activation.
+
 ## Process notifications
 
 When the requested process includes stakeholder messages or lifecycle summaries, discover supported recipients, channels, templates and delivery behavior before authoring. Keep notification recipients separate from Human Interaction responsibility. Include an initiating User only when meaningful; System initiation supplies no fabricated User. Resolve recipients as platform Users, including notification-only Users without login authority.

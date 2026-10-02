@@ -117,6 +117,16 @@ Start published Process Definitions and track Process Instances through live run
 
 Completion: launch confirmation obtained, accepted instance tracked through returned state links to runtime-confirmed completion or stable failure, committed values and provenance verified, and refusals reported without fallback or guessed routes.
 
+### Scheduled starts
+
+Inspect scheduled start intent through current Discovery under the caller's administrative authority and Data Scope. Read intended time, definition, parameters and the latest start outcome; treat an accepted Process Instance as a separate execution whose state and business result require following its returned links. Verify System initiation and schedule/occurrence provenance from authorized detail rather than borrowing the schedule author's identity.
+
+A blocked start remains a reported refusal. Discover its current reason and the protected business grouping; preserve that boundary instead of launching equivalent work manually or changing inputs to bypass it. An overdue occurrence requiring review is unresolved intent, not permission to replay stale work. Explain the intended business effect and follow only currently available recovery controls after the User confirms that intent. If those controls are absent, report the limitation and leave the occurrence visible.
+
+For uncertain acceptance or a worker restart, inspect durable occurrence and execution state before considering another start. Distinguish recovery of admitted work from a deliberate additional execution, and discover identity/republication semantics before treating an edited definition as a repeat request. Report intended time separately from actual admission; make no real-time dispatch promise.
+
+Completion: intended time and current start outcome are reported, any accepted execution is tracked through its returned links, provenance is verified, and blocked, overdue or uncertain work remains explicit without unauthorized replay.
+
 ### Workspace process exercise
 
 Exercise a Workspace draft against Test fixtures before Publication, using the same engine that runs published work — never a mock, a clone, or a copied data set.
