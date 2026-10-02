@@ -194,6 +194,8 @@ Completion: responsibility, response meaning and placement are supported by curr
 
 ## Generation and response waiting
 
+When proving a periodic process across generation, recovery, human responses, automatic starts and cleanup, follow [Integrated process proof](references/integrated-process-proof.md).
+
 When a process generates requests before awaiting people, discover the current waiting and result-binding support before authoring. Separate generation, its stakeholder summary, the selected response wait, and final continuation. Bind the wait to the exact requests produced by the intended operation or iteration; a shared business period or contextual status does not define its membership. Choose a process-level aggregate wait when all generation should finish first, or an iteration wait when that item's later work depends on its answer.
 
 Settle the business meaning of completion separately from response acceptance. Read the supported conditions and empty, unavailable and partial-generation outcomes from current Discovery. A received negative decision does not imply approval, and a generation failure must remain visible rather than becoming an all-generated announcement. Preserve committed effects and use discovered recovery within the admitted execution when generation is incomplete.

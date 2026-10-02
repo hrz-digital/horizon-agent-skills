@@ -14,6 +14,8 @@ def require(path, *texts):
 
 
 def main():
+    require("skills/horizon-metadata-authoring/SKILL.md", "references/integrated-process-proof.md")
+    require("skills/horizon-metadata-authoring/references/integrated-process-proof.md", "Completed iterations can undercount", "qualifying rolled-back transition", "unchanged Real data", "Completion:")
     require("skills/horizon/SKILL.md", "references/cli-installation.md", "references/connections.md", "implement plan", "Executar o plano", "approved-to-implement")
     require("skills/horizon/references/cli-installation.md", "horizon version --check --json", "updateAvailable")
     require("skills/horizon-ask-for-guidance/SKILL.md", "Semantic engine", "Actual configured Metadata", "Published Metadata", "owned secondary Structure", "Completion:")
@@ -219,6 +221,7 @@ def main():
     require("skills/horizon-runtime/SKILL.md",
             "### Event-triggered process inspection", "original Mutation and Actor",
             "a causal safeguard stop preserves earlier effects", "An exercise is not a subscription")
+    required.update({"integrated-periodic-process-proof", "integrated-partial-generation-recovery"})
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

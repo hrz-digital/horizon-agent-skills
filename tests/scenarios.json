@@ -1043,5 +1043,32 @@
         "does not force terminal state or start a replacement execution",
         "keeps cancellation and fixture deletion separate and obtains independent intent for either if appropriate"
       ]
+    },
+    {
+      "id": "integrated-periodic-process-proof",
+      "prompt": "Prove the agreed periodic follow-up process end to end through the current API: select eligible Projects, score and link reports, notify PMs, gather exact responses, recover partial failure, rerun for newly eligible work, exercise scheduled and watched starts, and clean up a safe Test execution.",
+      "expect": [
+        "retrieves current Discovery and ordinary examples rather than guessing a platform contract",
+        "keeps eligibility scoring and recipient selection in Metadata and anonymized fixtures",
+        "distinguishes generation outstanding responses and final completion",
+        "counts committed effects and actual delivery outcomes during partial generation rather than assuming completed iterations equal generated reports",
+        "keeps processed-work exclusion separate from equivalent active execution protection",
+        "verifies independent selected-instance Action identities and oversight without expanded Business Data authority",
+        "proves a qualifying rolled-back watched transition starts nothing",
+        "uses actual Test fixtures and eligible Test Users while preserving actual requester attribution and Real data",
+        "verifies terminal cleanup preserves fixtures and delayed work cannot revive execution"
+      ]
+    },
+    {
+      "id": "integrated-partial-generation-recovery",
+      "prompt": "One iteration failed after its report and notification committed. The parent has skipped its later generation summary and response wait. Explain current progress and perform the already-agreed recovery using available controls, then verify the early PM answer survives.",
+      "expect": [
+        "uses current authorized durable checkpoints and delivery outcomes for the partial summary",
+        "does not equate completed iterations or request count with committed reports or notification delivery",
+        "corrects the cause and uses available recovery within the admitted execution",
+        "verifies committed reports and notifications are not duplicated",
+        "preserves the exact response denominator and early accepted answers",
+        "does not hide existing failures or unsupported behavior behind a bespoke example path"
+      ]
     }
 ]
