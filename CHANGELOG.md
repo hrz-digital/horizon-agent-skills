@@ -20,6 +20,7 @@
 - Added Discovery-grounded guidance for selecting active-execution protection inputs, respecting admission conflicts, and distinguishing operation recovery from new starts and permanent business uniqueness.
 
 ### Changed
+- Expanded Discovery-grounded schedule recovery guidance and scenarios: explicit missed-work intent, discovered lateness tolerance, retained per-occurrence history, latest-only catch-up, audited administrative Run now and Skip decisions, current eligibility refusals, durable race winners, and accepted execution failure versus start problems.
 - Process inspection now distinguishes generated requests, outstanding human responses and final completion, preserving accepted answers and the admitted execution during recovery.
 - Completed Discovery-grounded Process Definition routing, reuse and authoring, definition-owned Action bindings, direct-run retry safety, and execution provenance guidance. Added scenarios for authoring, execution, delegation, protection, and missing or unavailable support.
 - Runtime guidance covers authorized Process Instance summaries, delegated oversight limits, context containment, linked Business Data authority, and durable refresh after missed live notices.

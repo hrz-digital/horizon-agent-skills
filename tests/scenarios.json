@@ -958,5 +958,28 @@
       "does not materialize a speculative future queue or invent catch-up and replay controls",
       "reports accepted execution separately from completion and preserves current administrative authority"
     ]
+  },
+  {
+    "id": "process-missed-schedule-policy",
+    "prompt": "An outage spans several recurrences. Help choose whether operators review missed work, only the latest missed start catches up, or missed work is omitted. Verify future work still advances.",
+    "expect": [
+      "discovers supported recovery choices, defaults and lateness tolerance rather than inventing contract values",
+      "clarifies the business decision and does not infer replay policy from process meaning",
+      "distinguishes ordinary dispatch delay from missed intended work",
+      "checks retained intended times for every missed occurrence and latest-only catch-up where selected",
+      "verifies future eligible occurrences advance independently of unresolved older work"
+    ]
+  },
+  {
+    "id": "process-scheduled-recovery-controls",
+    "prompt": "Review blocked scheduled starts. I have summary oversight; try Run now or Skip, and explain the result of a competing recovery request. One accepted execution has since failed.",
+    "expect": [
+      "discovers administrative authority and current control availability without assuming summary oversight grants recovery",
+      "confirms the selected occurrence and intended business effect before an available mutation",
+      "respects current input, start eligibility, Data Scope and active-execution refusals without bypass",
+      "re-reads durable control outcome and administrative Actor audit, preserving intended and actual admission time",
+      "inspects the committed race winner or uncertain result before retry",
+      "follows the accepted execution link for failure recovery rather than treating it as unstarted intent"
+    ]
   }
 ]

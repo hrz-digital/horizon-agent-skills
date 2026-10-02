@@ -192,6 +192,8 @@ def main():
         "process-one-time-schedule-inspection-recovery",
         "process-recurring-schedule-authoring",
         "process-recurring-schedule-edit-recovery",
+        "process-missed-schedule-policy",
+        "process-scheduled-recovery-controls",
     })
     require("skills/horizon-metadata-authoring/SKILL.md",
             "## One-time schedules", "read the converted instant back through Discovery",
@@ -202,6 +204,8 @@ def main():
             "preserve that boundary instead of launching equivalent work manually",
             "inspect durable occurrence and execution state",
             "make no real-time dispatch promise")
+    require("skills/horizon-metadata-authoring/SKILL.md", "Settle missed-work intent explicitly", "downtime spanning multiple recurrences")
+    require("skills/horizon-runtime/SKILL.md", "discovered lateness tolerance", "administrative Actor audit", "committed winner", "Delegated summary oversight alone")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"
