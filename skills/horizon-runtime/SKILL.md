@@ -117,4 +117,17 @@ Start published Process Definitions and track Process Instances through live run
 
 Completion: launch confirmation obtained, accepted instance tracked through returned state links to runtime-confirmed completion or stable failure, committed values and provenance verified, and refusals reported without fallback or guessed routes.
 
+### Workspace process exercise
+
+Exercise a Workspace draft against Test fixtures before Publication, using the same engine that runs published work — never a mock, a clone, or a copied data set.
+
+1. Discover which definitions the Workspace makes effective and which Users are currently eligible test participants; prepare fixtures and a valid initiator from that evidence rather than assumptions. For assignment or recipient testing, follow [Test User fixtures](../horizon-metadata-authoring/SKILL.md#test-user-fixtures).
+2. Start the effective definition explicitly in the Workspace and keep the fixed Test scope for the whole run: queries, mutations, fan-out items, retries, and resumes all stay inside it. A refusal means stop, never a silent switch to published definitions or Real data.
+3. When business logic should see someone other than the configurator, select a currently eligible Test User as the logical initiator. Audit still names the actual requester; the selection grants no login, borrows no authority, and cannot reach Real data.
+4. Deliver only to currently eligible test participants through contained in-app means and recheck eligibility at delivery time. Requests that need a human answer additionally require current authentication, login access, assignment availability, and Workspace access; plain notification recipients need none of that.
+5. Leave automatic schedules and event subscriptions off while exercising; explicit runs are the only automation. Fixtures outlive the run for reuse.
+6. Report real failures as failures: a failed item, a refused recipient, or an ineligible participant is evidence, never a silent success. Restart mid-wait and retry failed items to confirm durable progress and continued containment before calling the exercise complete.
+
+Completion: effective definition and eligible participants discovered; explicit Test run tracked to completion or stable failure; Real data, audit, and other inboxes untouched; provenance distinguishes requester from logical initiator; refusals and failures reported as such.
+
 Completion: current runtime result returned or current stable denial/unavailability reason reported; required confirmation obtained; every request used explicit selected profile; no route, payload, availability, or authorization guessed; no identity impersonated.
