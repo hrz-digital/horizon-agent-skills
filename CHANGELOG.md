@@ -24,6 +24,7 @@
 - Added Discovery-grounded guidance for selecting active-execution protection inputs, respecting admission conflicts, and distinguishing operation recovery from new starts and permanent business uniqueness.
 
 ### Changed
+- SMTP registration now follows an explicit register → test → User feedback and receipt-confirmation request → persist acknowledgment sequence, with a wait for the User’s confirmation before marking the setup as tested.
 - SMTP setup guidance now records receipt acknowledgment only after explicit recipient confirmation, verifies canonical persistence, and treats confirmation as stale after settings or credential changes.
 - Clarified that SMTP administration tests Installation-wide saved settings independently of the author’s selected Workspace when current Discovery permits the check; Process external-effect restrictions remain separate.
 - Horizon routing and runtime skill discovery now include Installation SMTP configuration and delivery checks.
