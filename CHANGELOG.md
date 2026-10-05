@@ -24,6 +24,7 @@
 - Added Discovery-grounded guidance for selecting active-execution protection inputs, respecting admission conflicts, and distinguishing operation recovery from new starts and permanent business uniqueness.
 
 ### Changed
+- SMTP setup guidance now records receipt acknowledgment only after explicit recipient confirmation, verifies canonical persistence, and treats confirmation as stale after settings or credential changes.
 - Clarified that SMTP administration tests Installation-wide saved settings independently of the author’s selected Workspace when current Discovery permits the check; Process external-effect restrictions remain separate.
 - Horizon routing and runtime skill discovery now include Installation SMTP configuration and delivery checks.
 - Completed Automation-layer process guidance across routing, interviews, plans, authoring and runtime: preserve settled layer scope, reuse suitable definitions, model recurring summary alerts as scheduled selection and notification, honor unavailable administrative controls, and exercise narrow Test User references and authenticated responses through current Discovery. Extended behavioral scenarios for supported, missing and restricted Installations.
