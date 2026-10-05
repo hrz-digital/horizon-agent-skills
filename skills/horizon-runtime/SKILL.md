@@ -1,6 +1,6 @@
 ---
 name: horizon-runtime
-description: Operate Horizon Business Data and execute runtime Actions and Process runs through Discovery. Use listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, acting on Business Instances, starting published Process Definitions, listing and inspecting Process Instances, answering assigned Human Interactions, reassigning pending requests, or inspecting response deadlines.
+description: Operate Horizon Business Data and execute runtime Actions and Process runs through Discovery. Use listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, acting on Business Instances, starting published Process Definitions, listing and inspecting Process Instances, answering assigned Human Interactions, reassigning pending requests, inspecting response deadlines, or configuring and testing Installation SMTP servers.
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
@@ -27,7 +27,7 @@ Completion: compatible CLI and Discovery confirmed, customer Installation explic
 
 1. Open current runtime Discovery entry and select Published Metadata context it exposes for ordinary runtime work. Keep authoring Workspace context out of ordinary runtime requests, except for the Workspace feature validation in `horizon-metadata-authoring`.
 2. For Business Data or an Action, select Structure from compact Semantic summaries, then follow detail link. For a direct Process run, follow the Process Definition catalog and detail instead; execution inspection follows **Inspect Process Instances** below without selecting a Structure.
-3. Follow authorized runtime affordance for Business Instance CRUD, Relations, Assets, Data Sources, recovery, following, notifications, assigned Human Interactions, Actions, or Process starts. Concrete Business Instance affordances determine Action availability; never infer it by scanning definitions.
+3. Follow authorized runtime affordance for Business Instance CRUD, Relations, Assets, Data Sources, recovery, following, notifications, Installation email settings, assigned Human Interactions, Actions, or Process starts. Concrete Business Instance affordances determine Action availability; never infer it by scanning definitions.
 4. Read linked JSON Schema before constructing request. Use stable codes and runtime-provided links; never infer URL, payload, Relation Edge storage, or task implementation.
 
 Completion: target Business Instance, Process Definition, or Process Instance, current runtime affordance, required context, linked schema, and request links identified.
@@ -65,6 +65,17 @@ Treat live notices as refresh hints. Refetch the authorized durable inbox and un
 Report committed business effects separately from each recipient's channel outcome. A failed supplementary summary does not reverse business completion. Provider acceptance is evidence of acceptance, not confirmed external delivery; use discovered attempts and recovery semantics, and report ambiguous transport outcomes honestly. Recover within the admitted execution instead of starting another process to resend a message; a distinct Process Instance can intentionally notify the same User again.
 
 Completion: authorized inbox state and independent business/delivery outcomes are freshly verified, context is preserved, and external delivery is claimed only with supporting evidence.
+
+## Configure and test an SMTP server
+
+Treat SMTP setup as Installation System Settings, separate from Business Data and Metadata authoring. Discover current email configuration management, schemas, authority and test availability first. With no authorized affordance, report the limit and hand off to an eligible administrator; an installed skill grants no authority.
+
+1. Establish the intended server, sender, authentication values and test recipient. Reuse the User's settled choices and authorization. A request to configure and test to an explicit recipient authorizes that check; otherwise clarify the recipient and external-send intent before sending. Use a trusted secret-input channel for the password and keep it out of conversational feedback, logs, artifacts and URLs. If none is available, let the User enter the password through the settings UI, then resume verification. Discover supported credential forms rather than inventing environment-variable references.
+2. Read saved definitions and preserve their values. Add the new named definition to the intended configuration collection through the current discovered save semantics; never assume an array replacement or resend every existing definition. Update only the agreed definition, preserve omitted secrets according to the contract, and verify the canonical redacted result. A stored-secret indicator is evidence of storage, not a password or proof of successful authentication.
+3. Test the saved configuration using its discovered affordance and linked schema, with the agreed recipient and message behavior. Observe current context restrictions: a configuration check can send real external email even though its purpose is testing; it is not a Workspace Process exercise. Keep unsaved proposals separate from the saved definition being tested. No new Process Definition is needed merely to verify SMTP setup.
+4. Report the saved configuration identity, recipient and actual test result without credentials. Distinguish provider acceptance, confirmed inbox receipt and the wider Process notification flow. The SMTP check verifies the shared email sender and settings; it does not establish Process recipient resolution, queueing or worker completion. On failure or transport uncertainty, stop under the shared error rule and report what was saved and what remains unverified. Check for receipt before proposing another send; an uncertain result can already have sent the email.
+
+Completion: the agreed definition is saved without disturbing other definitions, the authorized saved-configuration check is performed or its availability limit is reported, and the User receives evidence-based feedback that distinguishes storage, SMTP acceptance and actual receipt.
 
 ## Assigned Human Interactions
 

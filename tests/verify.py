@@ -233,6 +233,10 @@ def main():
     require("skills/horizon-interview/SKILL.md", "cosmetic-only edit", "actual automation dependency")
     require("skills/horizon-metadata-authoring/SKILL.md", "ordinary scheduled selection and notification", "narrow reference exception", "logical initiator override cannot answer")
     require("skills/horizon-runtime/SKILL.md", "unavailable reason without a link", "response eligibility", "supported in-platform notifications")
+    required.update({"smtp-configure-test-feedback", "smtp-test-unavailable-or-uncertain"})
+    require("skills/horizon-runtime/SKILL.md", "## Configure and test an SMTP server",
+            "preserve their values", "trusted secret-input channel", "provider acceptance", "saved-configuration check")
+    require("skills/horizon/SKILL.md", "Installation SMTP configuration or email delivery check")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

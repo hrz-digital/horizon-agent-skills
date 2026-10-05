@@ -1268,5 +1268,30 @@
       "startAtDiscovery": true,
       "followReturnedLinks": true
     }
+  },
+  {
+    "id": "smtp-configure-test-feedback",
+    "prompt": "Help me configure a new SMTP server in the selected Installation, preserve existing servers, test it to my agreed recipient, and tell me whether it works. Configuration and this recipient-specific email check are authorized.",
+    "expect": [
+      "routes SMTP setup to Installation System Settings rather than Metadata authoring or a new Process Definition",
+      "discovers authorized configuration management, save semantics and test schemas before writing",
+      "uses the settled recipient and authorization without requesting duplicate permission",
+      "handles the password through trusted secret input without repeating it in feedback or artifacts",
+      "preserves existing definitions and secrets, saves only the agreed definition and verifies the redacted canonical result",
+      "tests the saved definition through the discovered capability using the shared email sender",
+      "reports configuration identity, recipient and provider acceptance without claiming inbox receipt or complete Process notification validation"
+    ]
+  },
+  {
+    "id": "smtp-test-unavailable-or-uncertain",
+    "prompt": "I saved the SMTP definition. Help me test it, but current Discovery either withholds testing in this context or the send result is uncertain.",
+    "expect": [
+      "checks current authority and context rather than inferring support from the skill",
+      "reports unavailable testing without guessing an endpoint or silently switching context",
+      "clarifies missing recipient and external-send intent before sending",
+      "stops on a failed or uncertain request and reports saved state separately from unverified delivery",
+      "does not automatically resend after uncertainty; checks for receipt before proposing another send",
+      "keeps all feedback free of credentials"
+    ]
   }
 ]

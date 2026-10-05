@@ -37,7 +37,7 @@ Completion: compatible CLI 1.x and Discovery v1 confirmed, selected Connection P
 ## Classify
 
 - "implement plan" / "Executar o plano" → follow **Implement approved plan** above; no path required.
-- Business Data, Action, Process run, Process Instance listing/inspection, assigned Human Interaction response, or administrative process-control request → follow `horizon-runtime`. Inspect current authority there; when no executable affordance is available, hand off the control to an eligible human.
+- Installation SMTP configuration or email delivery check, Business Data, Action, Process run, Process Instance listing/inspection, assigned Human Interaction response, or administrative process-control request → follow `horizon-runtime`. Inspect current authority there; when no executable affordance is available, hand off the control to an eligible human.
 - Published Metadata architecture audit or post-Publication AMT verification → follow `horizon-architecture-analysis`.
 - Structure, Field, Relation, Expression, Process Definition or its Structure Action bindings, trigger, recurring summary alert, notification behavior, Human Interaction orchestration, Data Source, Page, View, Widget, or other Metadata proposal, including implementation of selected AMT → follow `horizon-metadata-authoring`. These automation intents use the existing three-layer proposal, not a separate process router.
 - Architecture guidance or explanation of configured Installation Metadata → ask User to invoke `horizon-ask-for-guidance`.
