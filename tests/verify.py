@@ -235,7 +235,7 @@ def main():
     require("skills/horizon-runtime/SKILL.md", "unavailable reason without a link", "response eligibility", "supported in-platform notifications")
     required.update({"smtp-configure-test-feedback", "smtp-test-unavailable-or-uncertain"})
     require("skills/horizon-runtime/SKILL.md", "## Configure and test an SMTP server",
-            "preserve their values", "trusted secret-input channel", "provider acceptance", "saved-configuration check")
+            "preserve their values", "trusted secret-input channel", "provider acceptance", "saved-configuration check", "Installation-wide saved settings", "Keep Process testing restrictions separate")
     require("skills/horizon/SKILL.md", "Installation SMTP configuration or email delivery check")
     assert required == {scenario["id"] for scenario in scenarios}
 

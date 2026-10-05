@@ -1279,12 +1279,13 @@
       "handles the password through trusted secret input without repeating it in feedback or artifacts",
       "preserves existing definitions and secrets, saves only the agreed definition and verifies the redacted canonical result",
       "tests the saved definition through the discovered capability using the shared email sender",
+      "treats the authorized administrative check as Installation-wide regardless of selected Workspace and keeps Process testing restrictions separate",
       "reports configuration identity, recipient and provider acceptance without claiming inbox receipt or complete Process notification validation"
     ]
   },
   {
     "id": "smtp-test-unavailable-or-uncertain",
-    "prompt": "I saved the SMTP definition. Help me test it, but current Discovery either withholds testing in this context or the send result is uncertain.",
+    "prompt": "I saved the SMTP definition. Help me test it, but current Discovery either withholds testing authority or the send result is uncertain.",
     "expect": [
       "checks current authority and context rather than inferring support from the skill",
       "reports unavailable testing without guessing an endpoint or silently switching context",
