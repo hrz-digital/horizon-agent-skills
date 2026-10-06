@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.5.0 (Unreleased)
+## v1.5.0
 
 ### Added
 - Added Discovery-grounded SMTP setup and testing guidance: preserve existing definitions and secrets, save the agreed server, test only to an authorized recipient through the shared notification sender, respect external-send and context limits, and report storage, provider acceptance and inbox receipt separately.
@@ -24,6 +24,7 @@
 - Added Discovery-grounded guidance for selecting active-execution protection inputs, respecting admission conflicts, and distinguishing operation recovery from new starts and permanent business uniqueness.
 
 ### Changed
+- Clarified incremental Process Definition authoring: save an unfinished identity-only draft when Discovery permits it, preserve its incomplete state, and add valid operations before Workspace validation and human Publication.
 - SMTP registration now follows an explicit register → test → User feedback and receipt-confirmation request → persist acknowledgment sequence, with a wait for the User’s confirmation before marking the setup as tested.
 - SMTP setup guidance now records receipt acknowledgment only after explicit recipient confirmation, verifies canonical persistence, and treats confirmation as stale after settings or credential changes.
 - Clarified that SMTP administration tests Installation-wide saved settings independently of the author’s selected Workspace when current Discovery permits the check; Process external-effect restrictions remain separate.

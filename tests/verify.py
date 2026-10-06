@@ -154,7 +154,7 @@ def main():
         "test-scenario-unsupported-capability", "test-scenario-destructive-cleanup",
     })
     required.update({
-        "process-authoring-reuse", "process-authoring-workspace", "process-direct-run",
+        "process-empty-draft", "process-authoring-reuse", "process-authoring-workspace", "process-direct-run",
         "process-start-ambiguous", "process-action-delegation", "process-protection-authoring",
         "process-protection-conflict", "process-support-absent", "process-start-unavailable",
         "process-summary-oversight", "process-summary-missed-notice",

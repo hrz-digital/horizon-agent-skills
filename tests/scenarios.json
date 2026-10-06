@@ -1,5 +1,15 @@
 [
   {
+    "id": "process-empty-draft",
+    "prompt": "Use Acme. I want to start a Package-owned Process Definition with its name and code, but decide its operations later. Current Discovery permits saving an unfinished draft. Explain what can be saved now and what must happen before the Workspace can be published; do not execute yet.",
+    "expect": [
+      "checks live authoring support and keeps the unfinished definition in the selected Workspace",
+      "distinguishes saved draft progress from a valid executable process",
+      "requires valid operations before successful Workspace validation and human Publication",
+      "does not invent a placeholder operation or claim the empty draft can run"
+    ]
+  },
+  {
     "id": "field-batch-authoring",
     "prompt": "Add the agreed Fields to Project and Task in the selected Workspace; current Discovery offers atomic batch creation.",
     "expect": [
