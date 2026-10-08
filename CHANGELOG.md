@@ -3,6 +3,8 @@
 ## v1.5.0
 
 ### Added
+- Added Discovery-grounded JSON starter guidance: complete current draft scaffolds, validate proposals, preserve authored configuration, and respect mutually exclusive choices.
+- Added Discovery-grounded operation label and guard guidance: stable codes versus localized presentation, persisted readback, discovered run-or-skip behavior, and explicit skipped-output dependencies.
 - Added Discovery-grounded SMTP setup and testing guidance: preserve existing definitions and secrets, save the agreed server, test only to an authorized recipient through the shared notification sender, respect external-send and context limits, and report storage, provider acceptance and inbox receipt separately.
 - Added Discovery-grounded integrated periodic-process proof guidance and scenarios: truthful partial committed-effect and delivery summaries, exact response membership across recovery, processed-work exclusion versus active overlap, independent bulk Actions, scoped oversight, recurring and watched-change evidence, and equivalent Test exercise with preserved fixtures and requester attribution.
 - Added Discovery-grounded terminal Test execution purge guidance and scenarios: permanent target-specific intent, administrative authority and current availability, race refusals and safe recovery, retained fixtures and committed effects, compact deletion accountability, stale-work verification and list cleanup.
