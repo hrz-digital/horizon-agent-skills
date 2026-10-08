@@ -3,6 +3,7 @@
 ## v1.5.2 (Unreleased)
 
 ### Added
+- Added Dashboard presentation authoring and runtime scenarios for preserved Page/View/Node trees, reusable Widgets, explicit entry Page selection, independent source refusals and scoped queries, discovered validation/submission, and human Publication.
 - Added Discovery-grounded Dashboard guidance and scenarios for Package ownership, stable identity and translations, Installation-wide default proposals, complete Workspace diffs, human Publication, and independent Dashboard/source Structure authority.
 
 ### Changed

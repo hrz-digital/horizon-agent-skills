@@ -38,6 +38,8 @@ Follow current Discovery to inspect the requested Dashboard or the Installation 
 
 A Dashboard identity does not represent Business Data. Route changes to its Package-owned identity or Installation-default proposal through Metadata authoring and the Workspace lifecycle. Discover each source's current authority when source data is requested; do not invent additional Data Source read grants.
 
+Follow the Dashboard's current Page and source affordances rather than constructing links or selecting the first Page. Query sources independently under current User authority and the requested Metadata context. A refused source is a contained failure: keep unrelated authorized content available, report the refusal honestly, and never retry through a Relation context to widen the source's Access Scope.
+
 Completion: only the requested authorized Dashboard is inspected, unavailable default behavior is reported honestly, and source authority is considered independently.
 
 ## Inspect Process Instances

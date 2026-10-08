@@ -1,5 +1,27 @@
 [
   {
+    "id": "dashboard-presentation-workspace-journey",
+    "prompt": "Use Acme. In the agreed Workspace, extend the selected Dashboard with a Page using supported presentation and a reusable Widget. Include independent sources from two Structures, select the entry Page explicitly, validate and submit the proposal for human review. Preserve unrelated authored presentation and stop before approval or Publication.",
+    "expect": [
+      "discovers current Dashboard presentation support, contracts and Workspace mutation availability",
+      "preserves Dashboard Package identity and unrelated Pages, Views, Node trees and sources",
+      "reuses applicable presentation and Widget definitions without a synthetic Structure or Business Instance",
+      "selects and reads back the explicit entry Page rather than relying on list order",
+      "follows discovered validation and submission affordances and leaves approval and Publication to an eligible human"
+    ]
+  },
+  {
+    "id": "dashboard-independent-source-refusal",
+    "prompt": "Use Acme. Inspect the requested Dashboard through current Discovery. One declared source is authorized and another is denied. Verify the permitted content, explain the refused source, and keep its failure contained. Do not widen authority or invent a Data Source permission.",
+    "expect": [
+      "follows discovered Dashboard Page and source links and schemas",
+      "queries declared sources independently under current User authority",
+      "reports authorized returned values without claiming unavailable source content",
+      "keeps unrelated authorized content usable and reports the denied source honestly",
+      "does not invent a Data Source read grant or use a Relation context to widen source Access Scope"
+    ]
+  },
+  {
     "id": "dashboard-package-default-proposal",
     "prompt": "Use Acme. In the agreed Workspace, create a Dashboard in the selected Package and propose it as the Installation default. Preserve the existing default until human Publication. Explain and inspect the proposal without approving or publishing.",
     "expect": [

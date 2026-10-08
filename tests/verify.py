@@ -252,7 +252,9 @@ def main():
     require("skills/horizon-runtime/SKILL.md", "## Configure and test an SMTP server",
             "preserve their values", "trusted secret-input channel", "provider acceptance", "Test the saved configuration", "Installation-wide saved settings", "Keep Process testing restrictions separate", "wait for that explicit confirmation before saving acknowledgment", "After the User explicitly confirms successful receipt", "register the agreed definition, test the saved configuration, give feedback and ask for receipt confirmation")
     require("skills/horizon/SKILL.md", "Installation SMTP configuration or email delivery check")
-    required.update({"dashboard-package-default-proposal", "dashboard-independent-authority", "dashboard-unavailable-default", "dashboard-unavailable-authoring"})
+    required.update({"dashboard-presentation-workspace-journey", "dashboard-independent-source-refusal", "dashboard-package-default-proposal", "dashboard-independent-authority", "dashboard-unavailable-default", "dashboard-unavailable-authoring"})
+    require("skills/horizon-metadata-authoring/SKILL.md", "preserve unrelated authored trees and sources", "Select the entry Page explicitly", "Follow discovered validation and submission affordances")
+    require("skills/horizon-runtime/SKILL.md", "Query sources independently", "never retry through a Relation context")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"
