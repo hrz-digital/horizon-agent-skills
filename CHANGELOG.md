@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.5.1 (unpublished)
+
+### Added
+- Added Process Definition scenarios for localized-label edits with stable references, selective JSON starter completion, authored-draft preservation after starter changes, and mutually exclusive Mutation value sources.
+- Added structural verification for the new authoring guidance and scenarios, and consistent skill-set metadata versions.
+
+### Changed
+- Clarified JSON starters as independent per-property draft scaffolds: select only needed parts, complete declared references, verify defaults against User intent, and preserve authored configuration.
+- Clarified direct Field mappings versus prepared object results for Mutation authoring, one value source per operation, and creation versus update target requirements.
+- Distinguished Query cardinality and supported extraction from Script object/array results; unsupported whole-object extraction cannot silently select the first row.
+- Sharpened prior-Condition guard references and localized-label readback without changing stable identities, authored translations or behavior.
+- Synced `VERSION` and every skill's metadata version to `1.5.1`.
+
 ## v1.5.0
 
 ### Added

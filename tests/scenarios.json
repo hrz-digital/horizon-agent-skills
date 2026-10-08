@@ -804,12 +804,59 @@
     ]
   },
   {
+    "id": "process-operation-labels-preserve",
+    "prompt": "Change only the translated presentation labels of an existing Process Definition's operations, including one inside an iteration. Preserve the operation identities, existing translations outside the requested edit, bindings and guards. Show what saved readback proves without claiming new runtime behavior.",
+    "expect": [
+      "discovers current localized-text support and Installation locale requirements before authoring",
+      "changes only requested presentation while preserving stable operation identities and existing translations outside the edit",
+      "preserves ordered operations, bindings and guard references including nested work",
+      "reads saved labels, stable identities and affected references back before reporting success",
+      "uses existing representative evidence for a cosmetic-only change and keeps Publication with an eligible human"
+    ]
+  },
+  {
+    "id": "process-json-starters-authoring",
+    "prompt": "Author an agreed Process Definition with a computed decision and a stakeholder notification. Current Discovery offers separate JSON starter examples with empty references and illustrative defaults. Use the relevant starters, complete the proposal, and explain validation and saved readback before human review.",
+    "expect": [
+      "retrieves current authoring affordances, schemas and starter examples through Discovery",
+      "selects only starter properties needed for the intended work rather than merging every supplied example",
+      "treats examples as unfinished scaffolds, completes placeholders and declares needed inputs and prior results",
+      "checks recipient, content, response and other supplied defaults against agreed business intent where relevant",
+      "validates the assembled proposal, verifies saved readback and reports incomplete or refused work truthfully",
+      "copies no platform routes, schemas, payload shapes or catalog values into skill guidance and starts no runtime work implicitly"
+    ]
+  },
+  {
+    "id": "process-json-starters-preserve-draft",
+    "prompt": "Update one agreed setting in an existing unfinished Process Definition with authored JSON, custom message settings and prior-result references. Discovery now supplies different starter defaults. Preserve all unrelated authored configuration and leave unnecessary optional settings absent.",
+    "expect": [
+      "reads the existing Workspace definition and current authoring contracts before editing",
+      "uses starters only for new or explicitly empty configuration needed by the agreed change",
+      "preserves authored JSON and references instead of replacing them with changed starter defaults",
+      "omits unnecessary optional properties and keeps incompatible alternatives out of the assembled proposal",
+      "validates and reads back the targeted change while reporting remaining incomplete work before human review"
+    ]
+  },
+  {
+    "id": "process-mutation-value-source-choice",
+    "prompt": "Propose a simple update to an existing Project and separate creation of a report from transformed data. Explain which value source each mutation needs. An earlier draft mixed alternative sources and carried an update target into creation; repair only those incompatible choices while preserving unrelated settings.",
+    "expect": [
+      "discovers current mutation value-source, target and Business Data validation support",
+      "prefers direct Field mappings for a simple update when supported and prepared prior object results when creation or transformed data requires them",
+      "chooses one supported value source per mutation and removes incompatible leftovers",
+      "discovers creation versus update target requirements and does not reuse an update target for creation",
+      "preserves unrelated operation settings, references, Constraints, Relation authority and fixed Data Scope",
+      "validates the repaired proposal, reads it back and records supported Test evidence and untested behavior before human review"
+    ]
+  },
+  {
     "id": "process-conditional-composition",
     "prompt": "Author a small ordered Process Definition with a condition and a later mutation using a prior output; then explain a Test execution where the guard is false and a dependent operation needs the skipped output.",
     "expect": [
       "follows current Discovery composition schemas and implemented operation vocabulary",
       "preserves stable operation identities and explicitly declares prior outputs before references",
       "validates ordered dependencies and shared conditions before human review",
+      "follows the discovered guard reference to a prior Condition identity and keeps the calculation separate from the guarded step",
       "exercises true, false, unavailable-value and later-failure cases in Test scope when available",
       "distinguishes condition-false skips from condition evaluation failures and unavailable skipped outputs",
       "reports earlier committed effects and uses discovered durable recovery rather than restarting successful work",
@@ -822,7 +869,9 @@
     "expect": [
       "discovers current selection, Relation support, bindings, outputs, script convention and time and size limits before authoring",
       "uses declared downstream results and explicit supported operations for business effects",
-      "tests representative and empty selection, object and array results, downstream use and bounded failures in Test scope",
+      "discovers Query cardinality and empty or multiple-result behavior before assuming one object or extracting one row",
+      "distinguishes supported Query results from object and array transformation results and reports unsupported whole-object extraction",
+      "tests representative and empty selection, supported Query shapes, object and array transformation results, downstream use and bounded failures in Test scope",
       "uses persisted completed results on recovery rather than rerunning completed transformations against changed upstream data",
       "distinguishes definition snapshot from referenced Metadata and Business Data lifecycle",
       "requires sanitization wherever script or AI-derived HTML is rendered",

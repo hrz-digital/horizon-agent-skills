@@ -15,6 +15,10 @@ def require(path, *texts):
 
 
 def main():
+    version = (ROOT / "VERSION").read_text().strip()
+    for skill in (ROOT / "skills").glob("*/SKILL.md"):
+        frontmatter = skill.read_text().split("---", 2)[1]
+        assert f'  version: "{version}"' in frontmatter, f"{skill}: metadata version differs from VERSION"
     require("skills/horizon-metadata-authoring/SKILL.md", "references/integrated-process-proof.md")
     require("skills/horizon-metadata-authoring/references/integrated-process-proof.md", "Completed iterations can undercount", "qualifying rolled-back transition", "unchanged Real data", "Completion:")
     require("skills/horizon/SKILL.md", "references/cli-installation.md", "references/connections.md", "implement plan", "Executar o plano", "approved-to-implement")
@@ -162,6 +166,8 @@ def main():
         "process-actions-selection-coordinated", "process-conditional-composition",
         "process-query-transformation", "process-transformed-business-effects",
         "process-fan-out-authoring", "process-fan-out-recovery",
+        "process-operation-labels-preserve", "process-json-starters-authoring",
+        "process-json-starters-preserve-draft", "process-mutation-value-source-choice",
         "process-response-wait-authoring", "process-response-wait-inspection",
         "process-cancellation",
         "process-test-execution-purge",
@@ -184,6 +190,13 @@ def main():
             "For query and transformation work", "supported Relation selection",
             "current time and size limits", "persisted completed outputs",
             "require sanitization wherever", "hard memory isolation")
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "independent per-property draft scaffolds", "check defaults against the agreed business intent",
+            "Preserve authored JSON when current starters change", "preserve existing translations",
+            "Read labels, stable codes and affected references back", "guard reference to an earlier Condition identity",
+            "Discover Query cardinality", "Script object results do not establish whole-object Query support",
+            "silently choosing the first row", "prefer direct Field mappings",
+            "Choose one supported mutation value source", "creation does not reuse an update target")
     require("skills/horizon-runtime/SKILL.md",
             "For query and transformation runs", "bounded failures",
             "does not freeze referenced Metadata or Business Data")
