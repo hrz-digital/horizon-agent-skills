@@ -15,6 +15,8 @@ def require(path, *texts):
 
 
 def main():
+    require("skills/horizon-metadata-authoring/SKILL.md", "## Dashboard proposals", "Package-owned Installation presentation", "both the new and previous default", "human Publication remains pending")
+    require("skills/horizon-runtime/SKILL.md", "## Inspect Dashboards", "without silently selecting another Dashboard", "do not invent additional Data Source read grants")
     version = (ROOT / "VERSION").read_text().strip()
     for skill in (ROOT / "skills").glob("*/SKILL.md"):
         frontmatter = skill.read_text().split("---", 2)[1]
@@ -250,6 +252,7 @@ def main():
     require("skills/horizon-runtime/SKILL.md", "## Configure and test an SMTP server",
             "preserve their values", "trusted secret-input channel", "provider acceptance", "Test the saved configuration", "Installation-wide saved settings", "Keep Process testing restrictions separate", "wait for that explicit confirmation before saving acknowledgment", "After the User explicitly confirms successful receipt", "register the agreed definition, test the saved configuration, give feedback and ask for receipt confirmation")
     require("skills/horizon/SKILL.md", "Installation SMTP configuration or email delivery check")
+    required.update({"dashboard-package-default-proposal", "dashboard-independent-authority", "dashboard-unavailable-default", "dashboard-unavailable-authoring"})
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

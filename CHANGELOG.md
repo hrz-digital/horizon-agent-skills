@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.5.2 (Unreleased)
+
+### Added
+- Added Discovery-grounded Dashboard guidance and scenarios for Package ownership, stable identity and translations, Installation-wide default proposals, complete Workspace diffs, human Publication, and independent Dashboard/source Structure authority.
+
+### Changed
+- Routed Dashboard proposals to Metadata authoring and authorized inspection to runtime; unavailable authoring and defaults remain explicit refusals.
+- Synced VERSION and every skill metadata version to 1.5.2.
+
 ## v1.5.1 (unpublished)
 
 ### Added

@@ -1,10 +1,10 @@
 ---
 name: horizon-runtime
-description: Operate Horizon Business Data and execute runtime Actions and Process runs through Discovery. Use listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, acting on Business Instances, starting published Process Definitions, listing and inspecting Process Instances, answering assigned Human Interactions, reassigning pending requests, inspecting response deadlines, or configuring and testing Installation SMTP servers.
+description: Operate Horizon Business Data and execute runtime Actions and Process runs through Discovery. Use authorized Dashboard inspection, listing, reading, creating, updating, deleting, restoring, relating, querying, exporting, following, acting on Business Instances, starting published Process Definitions, listing and inspecting Process Instances, answering assigned Human Interactions, reassigning pending requests, inspecting response deadlines, or configuring and testing Installation SMTP servers.
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.5.1"
+  version: "1.5.2"
 ---
 
 # Horizon Runtime
@@ -31,6 +31,14 @@ Completion: compatible CLI and Discovery confirmed, customer Installation explic
 4. Read linked JSON Schema before constructing request. Use stable codes and runtime-provided links; never infer URL, payload, Relation Edge storage, or task implementation.
 
 Completion: target Business Instance, Process Definition, or Process Instance, current runtime affordance, required context, linked schema, and request links identified.
+
+## Inspect Dashboards
+
+Follow current Discovery to inspect the requested Dashboard or the Installation default. Dashboard read authority is independent from source Structure authority; neither implies the other. If the configured default is unavailable, report that state without silently selecting another Dashboard. Missing and inaccessible definitions must remain indistinguishable in user-facing recovery.
+
+A Dashboard identity does not represent Business Data. Route changes to its Package-owned identity or Installation-default proposal through Metadata authoring and the Workspace lifecycle. Discover each source's current authority when source data is requested; do not invent additional Data Source read grants.
+
+Completion: only the requested authorized Dashboard is inspected, unavailable default behavior is reported honestly, and source authority is considered independently.
 
 ## Inspect Process Instances
 

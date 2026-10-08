@@ -1,10 +1,10 @@
 ---
 name: horizon-metadata-authoring
-description: Propose Horizon Metadata through Workspaces. Use when creating or changing Structures, Fields, Relations, Expressions, Structure Action bindings, Constraints, Data Sources, Pages, Views, Nodes, Semantic, Packages, navigation, Process Definitions, or implementing an Architectural Metadata Ticket.
+description: Propose Horizon Metadata through Workspaces. Use when creating or changing Dashboards, Structures, Fields, Relations, Expressions, Structure Action bindings, Constraints, Data Sources, Pages, Views, Nodes, Semantic, Packages, navigation, Process Definitions, or implementing an Architectural Metadata Ticket.
 compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.5.1"
+  version: "1.5.2"
 ---
 
 # Horizon Metadata Authoring
@@ -37,7 +37,7 @@ Completion: each named Ticket is linked to active Workspace progress or returned
 
 Before proposing change:
 
-1. Read owning Structure Semantic, existing children, direct Relations, and related Structure Semantic.
+1. Read the existing Metadata and owning Package Semantic. For Structure work, read owning Structure Semantic, existing children, direct Relations, and related Structure Semantic.
 2. Expand farther only when Links, Terms, or Aliases indicate relevant context.
 3. Treat absent or conflicting Semantic as uncertainty. Cite element codes and ask User instead of guessing.
 4. When requested concept conflicts with nearby Semantic, cite Objective, Usage exclusion, or Relation meaning; recommend correct owner; request clarification.
@@ -64,6 +64,18 @@ An unresolved decision is none of these; return it to interview. User choices ov
 Execute in dependency order: Data Modeling → Visualization → Automation. Recheck contracts at each layer and carry discovered element codes and affordances forward. If a later layer requires a model change, revisit that decision, apply the plan lifecycle when relevant, and revalidate.
 
 Completion: every layer has a settled outcome, only in-scope work is authored, and dependent Metadata resolves in Workspace validation.
+
+## Dashboard proposals
+
+Treat a Dashboard as Package-owned Installation presentation Metadata. Reuse an appropriate existing Dashboard and owning Package before proposing new identities. Select ownership through current Discovery and the agreed Workspace; never create a synthetic Structure to host a Dashboard.
+
+Preserve the Dashboard's stable identity, Package ownership and existing translations when editing its label or icon. Discover the current catalog, authoring availability and linked schemas. If Dashboard authoring is absent or unavailable, report the reason and stop that mutation. Do not infer authority from access to a source Structure.
+
+A default change affects the whole Installation. Follow explicit User intent, inspect the effective default before proposing a replacement, and read back the saved Dashboard plus Workspace diff. Account for both the new and previous default and each affected owning Package. A saved draft default is still a proposal; hand off validation, review and human Publication through the existing Workspace lifecycle without approving or publishing as an Agent.
+
+Dashboard visibility and source Structure access are separate decisions. Discover Dashboard read authority independently, and do not request or invent a separate Data Source read grant. Keep proposed grants within the User's stated audience; authorization administration remains a human handoff where Discovery withholds the mutation.
+
+Completion: Dashboard and Package identities are stable, effective label/icon/default values are read back, the Workspace diff accounts for every affected Package, and human Publication remains pending.
 
 ## Active-execution protection
 

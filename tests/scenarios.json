@@ -1,5 +1,45 @@
 [
   {
+    "id": "dashboard-package-default-proposal",
+    "prompt": "Use Acme. In the agreed Workspace, create a Dashboard in the selected Package and propose it as the Installation default. Preserve the existing default until human Publication. Explain and inspect the proposal without approving or publishing.",
+    "expect": [
+      "discovers current Dashboard authoring support and follows linked schemas",
+      "keeps the Dashboard Package-owned rather than inventing a synthetic Structure",
+      "reads back stable identity, label, icon and effective draft default",
+      "checks the Workspace diff for both default identities and each affected owning Package",
+      "distinguishes the saved draft proposal from Published Installation default and hands off human Publication"
+    ]
+  },
+  {
+    "id": "dashboard-independent-authority",
+    "prompt": "I can read the Dashboard but its source Structure is unavailable to me. Explain whether Dashboard access grants the missing data access or whether I need another Data Source permission; do not execute.",
+    "expect": [
+      "treats Dashboard read and source Structure authority independently",
+      "does not infer source data access from Dashboard visibility",
+      "does not invent an independent Data Source read grant",
+      "uses current Discovery and an eligible human handoff for authorization changes"
+    ]
+  },
+  {
+    "id": "dashboard-unavailable-default",
+    "prompt": "Use Acme. Current Discovery reports that the configured Installation default Dashboard is inaccessible. Another Dashboard is readable. Explain the result without changing configuration.",
+    "expect": [
+      "reports the configured default as unavailable without substituting another Dashboard",
+      "does not disclose the inaccessible Dashboard definition",
+      "keeps any default change in Metadata authoring and human Publication lifecycle",
+      "distinguishes missing and inaccessible definitions safely"
+    ]
+  },
+  {
+    "id": "dashboard-unavailable-authoring",
+    "prompt": "Use Acme. Create a Dashboard in the agreed Workspace, but this Installation does not advertise available Dashboard authoring.",
+    "expect": [
+      "checks live Discovery and reports the absent or unavailable authoring affordance",
+      "does not construct a Dashboard route or fabricate a hosting Structure",
+      "does not claim a saved draft or successful configuration"
+    ]
+  },
+  {
     "id": "process-empty-draft",
     "prompt": "Use Acme. I want to start a Package-owned Process Definition with its name and code, but decide its operations later. Current Discovery permits saving an unfinished draft. Explain what can be saved now and what must happen before the Workspace can be published; do not execute yet.",
     "expect": [
