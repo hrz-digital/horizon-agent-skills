@@ -4,7 +4,7 @@ description: Plan unclear, broad, multi-step, bulk, relational, destructive, or 
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1 when platform facts are needed.
 metadata:
   author: hrz-digital
-  version: "1.5.2"
+  version: "1.5.1"
 ---
 
 # Horizon Interview

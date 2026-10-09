@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.5.1 (Unreleased)
+## v1.5.1
 
 ### Added
 - Added Dashboard presentation authoring and runtime scenarios for preserved Page/View/Node trees, reusable Widgets, explicit entry Page selection, independent source refusals and scoped queries, discovered validation/submission, and human Publication.
