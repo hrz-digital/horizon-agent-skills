@@ -79,7 +79,9 @@ For Dashboard presentation work, follow current Discovery to author its Pages, V
 
 Exercise independent sources under the caller's current authority. Confirm an authorized source returns permitted values and that an unavailable source fails closed while unrelated authorized content remains usable. Dashboard visibility never widens source Access Scope, including when a declared source follows a Relation. Follow discovered validation and submission affordances, retain the proposal for human review, and leave approval and Publication to an eligible human.
 
-Completion: Dashboard and Package identities are stable, effective label/icon/default values are read back, the Workspace diff accounts for every affected Package, authored presentation and source behavior are read back and validated when changed, and human Publication remains pending.
+For a requested Dashboard removal, discover current deletion availability and confirm the target and impact before staging it in the agreed Workspace. Inspect whether it is the Installation default and agree whether to propose a replacement. Read back the effective catalog and complete Workspace diff; the Published presentation remains until human Publication. Preserve unrelated Dashboards and Package content.
+
+Completion: Dashboard and Package identities are stable for retained definitions, effective label/icon/default values and requested removals are read back, the Workspace diff accounts for every affected Package, authored presentation and source behavior are read back and validated when changed, and human Publication remains pending.
 
 ## Active-execution protection
 

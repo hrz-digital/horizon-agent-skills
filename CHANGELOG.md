@@ -1,22 +1,16 @@
 # Changelog
 
-## v1.5.2 (Unreleased)
+## v1.5.1 (Unreleased)
 
 ### Added
 - Added Dashboard presentation authoring and runtime scenarios for preserved Page/View/Node trees, reusable Widgets, explicit entry Page selection, independent source refusals and scoped queries, discovered validation/submission, and human Publication.
 - Added Discovery-grounded Dashboard guidance and scenarios for Package ownership, stable identity and translations, Installation-wide default proposals, complete Workspace diffs, human Publication, and independent Dashboard/source Structure authority.
-
-### Changed
-- Routed Dashboard proposals to Metadata authoring and authorized inspection to runtime; unavailable authoring and defaults remain explicit refusals.
-- Synced VERSION and every skill metadata version to 1.5.2.
-
-## v1.5.1 (unpublished)
-
-### Added
 - Added Process Definition scenarios for localized-label edits with stable references, selective JSON starter completion, authored-draft preservation after starter changes, and mutually exclusive Mutation value sources.
 - Added structural verification for the new authoring guidance and scenarios, and consistent skill-set metadata versions.
 
 ### Changed
+- Added Discovery-grounded Dashboard removal guidance covering explicit target intent, default impact, Workspace read-back, preserved unrelated metadata and human Publication.
+- Routed Dashboard proposals to Metadata authoring and authorized inspection to runtime; unavailable authoring and defaults remain explicit refusals.
 - Clarified JSON starters as independent per-property draft scaffolds: select only needed parts, complete declared references, verify defaults against User intent, and preserve authored configuration.
 - Clarified direct Field mappings versus prepared object results for Mutation authoring, one value source per operation, and creation versus update target requirements.
 - Distinguished Query cardinality and supported extraction from Script object/array results; unsupported whole-object extraction cannot silently select the first row.
