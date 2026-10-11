@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.5.2
+
+### Added
+- Added Dashboard authoring guidance for choosing one or multiple Widget placements based on reuse, data contracts, and interactions; completing Page composition; and distinguishing mock-first Workspace review from live-bound published data.
+- Added guidance and scenarios for converting a complete supplied HTML dashboard into exactly one Widget, preserving embedded records as mock-only data, and leaving fixed presentation out of placement inputs.
+- Added guidance and scenarios for updating existing Widgets through their discovered update affordance while preserving identity and unrelated fields.
+- Added Workspace-context Discovery refresh and verification before following Dashboard authoring links, plus explicit separation of Published listings from Workspace authoring affordances.
+
+### Changed
+- Routed detailed Dashboard and Widget composition workflows into `references/dashboard-and-widgets.md` and strengthened authoring completion criteria for saved placements, bindings, and preview evidence.
+- Expanded verification to cover new Dashboard/Widget scenarios and reference guidance.
+- Synced `VERSION` and every skill's metadata version to `1.5.2`.
+
 ## v1.5.1
 
 ### Added

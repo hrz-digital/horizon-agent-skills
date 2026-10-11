@@ -4,7 +4,7 @@ description: Coordinate Horizon work through Discovery. Use to select Installati
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.5.1"
+  version: "1.5.2"
 ---
 
 # Horizon
@@ -54,10 +54,10 @@ Workspace lifetime follows one coherent review and Publication outcome, not one 
 4. Create Workspace only when no suitable Workspace exists or User chooses separation. Before creating its label, follow [Localized text and codes](references/authoring-conventions.md).
 5. Record meaningful label and initial Activity comment describing requested outcome.
 
-For Agent Credentials, pass selected Connection Profile on every CLI request and Workspace context required by current Discovery on every Workspace-resolved request. With no Workspace selected, use context current Discovery identifies as Published Metadata. Resolve context explicitly; re-discover after synchronization, conflict, Publication, or contract-version change.
+For Agent Credentials, pass selected Connection Profile on every CLI request and Workspace context required by current Discovery on every Workspace-resolved request. With no Workspace selected, use context current Discovery identifies as Published Metadata. After selecting or changing Workspace context, re-request Discovery with that Workspace context, verify returned `metadataContext` identifies the selected Workspace, then follow links from that response. Never use links from Published-context Discovery to infer Workspace authoring availability. Re-discover after synchronization, conflict, Publication, or contract-version change.
 
 Use Workspace Activity for cross-session and cross-Agent handoff: intent, decisions, exceptional placement rationale, test Business Instances, evidence, remaining work. Treat runtime and authoring authority separately; authoring availability never implies Business Data authority.
 
-Completion: after any listed event, current context is synchronized and handoff Activity records intent, decisions, evidence, remaining work.
+Completion: after any listed event, current context is synchronized and handoff Activity records intent, decisions, evidence, remaining work. After selecting or switching Workspace, context-specific Discovery has been refreshed and verified before authoring links are used.
 
 Overall completion: request routed, decisions and required approvals are settled, Connection Profile and Metadata Context explicit, and next skill has current Discovery links rather than guessed routes; a local file is not a routine prerequisite.

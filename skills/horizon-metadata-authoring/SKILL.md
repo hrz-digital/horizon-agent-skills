@@ -4,7 +4,7 @@ description: Propose Horizon Metadata through Workspaces. Use when creating or c
 compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.5.1"
+  version: "1.5.2"
 ---
 
 # Horizon Metadata Authoring
@@ -17,9 +17,9 @@ Author one coherent Metadata proposal from machine-readable Discovery contracts.
 
 1. Run `horizon` bootstrap and inspect relevant Metadata. Satisfy the planning gates, then follow its Workspace selection protocol; retain an already verified selection from approved-plan resume.
 2. Pass selected profile through `--connection` on every request and Workspace context required by current Discovery on Metadata reads, Metadata writes, and the Test-scenario validation requests below.
-3. Follow current authoring affordances and JSON Schema references. Use only values returned by current catalogs.
+3. After selecting or changing Workspace, re-request Discovery in that Workspace context and verify its returned `metadataContext` names the selected Workspace. Then follow current authoring affordances and JSON Schema references. Use only values returned by current catalogs; never treat Published-context links as Workspace authoring links.
 
-Completion: Workspace selection follows `horizon`'s protocol, current Workspace context is active, and authoring schemas and catalogs are loaded.
+Completion: Workspace selection follows `horizon`'s protocol, current Workspace context is active and verified by refreshed Discovery, and authoring schemas and catalogs are loaded.
 
 ## Architectural Metadata Tickets
 
@@ -69,19 +69,19 @@ Completion: every layer has a settled outcome, only in-scope work is authored, a
 
 Treat a Dashboard as Package-owned Installation presentation Metadata. Reuse an appropriate existing Dashboard and owning Package before proposing new identities. Select ownership through current Discovery and the agreed Workspace; never create a synthetic Structure to host a Dashboard.
 
-Preserve the Dashboard's stable identity, Package ownership and existing translations when editing its label or icon. Discover the current catalog, authoring availability and linked schemas. If Dashboard authoring is absent or unavailable, report the reason and stop that mutation. Do not infer authority from access to a source Structure.
+Preserve the Dashboard's stable identity, Package ownership and existing translations when editing its label or icon. After selecting the Workspace, refresh Discovery in that Workspace context and verify `metadataContext` before checking dashboard authoring availability. Follow the Workspace dashboard listing and linked detail/update affordances from that response; a Published-context listing, Dashboard schema, or Workspace changes/diff is not evidence that Workspace authoring is absent. Assess authoring, validation, Workspace Attention, and human-only acknowledgement as separate affordances: existing blockers do not prove that editing is unavailable, and an available edit affordance does not permit bypassing required acknowledgement or claiming successful validation. If refreshed Workspace Discovery omits or marks authoring unavailable, report its exact reason and stop that mutation. Do not infer authority from access to a source Structure.
 
 A default change affects the whole Installation. Follow explicit User intent, inspect the effective default before proposing a replacement, and read back the saved Dashboard plus Workspace diff. Account for both the new and previous default and each affected owning Package. A saved draft default is still a proposal; hand off validation, review and human Publication through the existing Workspace lifecycle without approving or publishing as an Agent.
 
 Dashboard visibility and source Structure access are separate decisions. Discover Dashboard read authority independently, and do not request or invent a separate Data Source read grant. Keep proposed grants within the User's stated audience; authorization administration remains a human handoff where Discovery withholds the mutation.
 
-For Dashboard presentation work, follow current Discovery to author its Pages, Views, Node trees and declared sources in the agreed Workspace. Read each linked contract before changing presentation, preserve unrelated authored trees and sources, and read back the effective saved presentation. Select the entry Page explicitly when presentation contains Pages; do not derive it from list order. Reuse supported presentation and Widget definitions; refuse Business-context dependencies when Discovery provides no selected Business Instance.
+For Widget composition, full-HTML conversion, mock-first review, and completing the Dashboard Page, follow [Dashboard and Widget authoring](references/dashboard-and-widgets.md). It defines separate workflows for business-use-case requests and complete supplied HTML references. Refuse Business-context dependencies when Discovery provides no selected Business Instance.
 
 Exercise independent sources under the caller's current authority. Confirm an authorized source returns permitted values and that an unavailable source fails closed while unrelated authorized content remains usable. Dashboard visibility never widens source Access Scope, including when a declared source follows a Relation. Follow discovered validation and submission affordances, retain the proposal for human review, and leave approval and Publication to an eligible human.
 
 For a requested Dashboard removal, discover current deletion availability and confirm the target and impact before staging it in the agreed Workspace. Inspect whether it is the Installation default and agree whether to propose a replacement. Read back the effective catalog and complete Workspace diff; the Published presentation remains until human Publication. Preserve unrelated Dashboards and Package content.
 
-Completion: Dashboard and Package identities are stable for retained definitions, effective label/icon/default values and requested removals are read back, the Workspace diff accounts for every affected Package, authored presentation and source behavior are read back and validated when changed, and human Publication remains pending.
+Completion: Dashboard and Package identities are stable for retained definitions, effective label/icon/default values and requested removals are read back, the Workspace diff accounts for every affected Package, each requested Dashboard Page has its chosen Widget composition and preview/data-binding stage read back and validated when available, and human Publication remains pending.
 
 ## Active-execution protection
 
@@ -232,7 +232,7 @@ Reuse an existing Widget before authoring one. Discover authorization-filtered W
 
 1. Select libraries through catalog Semantic `when`/`notWhen` guidance, then read the installed entry's versions, module bindings, lifecycle instructions, and executable examples. Use only installed bindings read from Discovery; never guess API names. A Widget needing no chart library stays plain HTML.
 2. Discover dataset binding rules before placing a Widget: implicit versus explicit column mappings, typed inputs and defaults, required columns, types, nullability, extra columns, coercion, and multiple Data Source support. Bind through current placement affordances and verify aggregate completeness rather than using first-page totals.
-3. Preview both ways: Widget-owned mock inputs and data for standalone preview without Business Data, then Node-context preview exercising real mappings against authorized live Data Sources. Author mocks with fictional values; mocks never substitute for failed live queries.
+3. When User supplies a complete HTML reference dashboard, build it as one Widget with all required HTML, CSS and JavaScript in that Widget. Use fictional Widget mock inputs and data for standalone layout preview first, without Business Data. Then define or reuse declared Data Sources, map their authorized live results to the Widget's data contracts through the discovered Page/Node placement contract, and preview those live mappings. Mock records are layout/test fixtures only; never treat them as live data or fallback for a failed query. Preserve real-looking reference records as mock-only only when User explicitly requests it. For all Widgets, preview both standalone mocks and Node-context live mappings; report failed live queries rather than masking them with mocks.
 4. Load geographic and font presentation assets only through declared local Package asset dependencies at pinned immutable versions. Upload new Package assets with `horizon metadata asset upload`, taking both the upload href and the contract JSON payload from current Discovery. Never take the href or the payload shape from memory. Geographic data comes from approved local assets, never third-party downloads. For fonts, inherit the platform default by declaring no Package font dependency; choose a custom font through Semantic suitability, verify the font descriptors and attribution from the discovered asset contract, then use the CSS bindings from the discovered asset contract with readable fallbacks. Canvas and chart text needs declared fonts ready before measurement. Blocked third-party requests must still render.
 5. Discover shared Widget identity, Publication impact, and current review/acknowledgement rules. Inspect the complete usage set across Pages, Views, resolution trees, and Packages before changing contracts; repair affected Nodes and Data Sources in the same Workspace. Use current validation to distinguish non-breaking impact, incompatible bindings, and invalidated prior acknowledgements; acknowledgement is not a repair for incompatibility.
 6. Discover Widget layout defaults, Node overrides, mobile visibility, and alternate mobile View support. Prefer visibility controls for mobile exclusion and alternate Views for different mobile content. Never invent numeric minimums, automatic hiding, or per-Node version pinning.

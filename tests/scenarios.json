@@ -3,11 +3,30 @@
     "id": "dashboard-presentation-workspace-journey",
     "prompt": "Use Acme. In the agreed Workspace, extend the selected Dashboard with a Page using supported presentation and a reusable Widget. Include independent sources from two Structures, select the entry Page explicitly, validate and submit the proposal for human review. Preserve unrelated authored presentation and stop before approval or Publication.",
     "expect": [
+      "refreshes Discovery after Workspace selection and verifies the selected Workspace context before following Dashboard authoring links",
+      "distinguishes the Published `/dashboards` listing from the Workspace dashboard authoring listing",
       "discovers current Dashboard presentation support, contracts and Workspace mutation availability",
+      "chooses one or multiple Widget placements based on reusable sections, interactions, and data contracts rather than a fixed default",
+      "declares presentation inputs only for agreed placement-level configuration, rather than parameterizing every label or setting",
       "preserves Dashboard Package identity and unrelated Pages, Views, Node trees and sources",
       "reuses applicable presentation and Widget definitions without a synthetic Structure or Business Instance",
+      "completes the Dashboard Page with Widget placements, declared sources, explicit entry Page, and read-back evidence",
       "selects and reads back the explicit entry Page rather than relying on list order",
       "follows discovered validation and submission affordances and leaves approval and Publication to an eligible human"
+    ]
+  },
+  {
+    "id": "dashboard-reference-html-single-widget",
+    "prompt": "Use Acme. I supplied a complete functional reference HTML dashboard with markup, CSS, JavaScript, and embedded demo records. Reproduce it on the existing Dashboard. This Widget is only for this Page, with fixed labels and settings and no placement-level configuration. Extract its parts into Widget fields, use the embedded records as mock data for Workspace preview, then finish the Dashboard Page setup. Do not create Business Data or multiple Widgets for this reference.",
+    "expect": [
+      "creates or reuses exactly one Widget for the complete reference dashboard, regardless of its number of visual elements",
+      "splits markup, CSS, JavaScript, and embedded demo records into the corresponding Widget fields",
+      "matches mockData shape to the declared Widget data contracts",
+      "keeps fixed labels in HTML and fixed settings in JavaScript, with empty presentationInputs and mockInputs for this single-purpose Widget",
+      "places the Widget on the requested Dashboard Page and reads back the saved presentation",
+      "uses unbound mock data for Workspace preview and does not present it as Published live data",
+      "does not create Business Data or use mocks as fallback for failed live queries",
+      "stops before acknowledgement, approval, or Publication"
     ]
   },
   {
@@ -443,7 +462,7 @@
   },
   {
     "id": "widget-authoring-journey",
-    "prompt": "Use Acme. Reuse a KPI Widget for project budgets, bind its totals dataset, preview it, and prepare the Workspace for review.",
+    "prompt": "Use Acme. Reuse a KPI Widget for project budgets, bind its totals dataset, preview it, and prepare the Workspace for review. If I provide full dashboard HTML, build it as one Widget with all required HTML, CSS and JavaScript; preview fictional mock data for layout, then bind authorized live Data Sources.",
     "stub": {
       "selected": "Acme",
       "profiles": [
@@ -491,6 +510,9 @@
     },
     "expect": [
       "reuses an existing Widget before creating one",
+      "implements a full HTML dashboard as one Widget containing its complete HTML, CSS and JavaScript",
+      "uses fictional mock inputs/data for standalone layout preview before binding authorized live Data Sources",
+      "never uses mocks to conceal a failed live query",
       "selects libraries through Semantic when and notWhen with installed bindings",
       "binds named datasets with explicit mappings where codes differ",
       "previews standalone mocks then live bindings without substituting mocks for failures",
@@ -502,6 +524,17 @@
       "inspects usages and repairs incompatible bindings before review",
       "stops before acknowledgement, approval, or Publication",
       "never exposes credentials"
+    ]
+  },
+  {
+    "id": "widget-existing-update",
+    "prompt": "Use Acme. Change the existing dashboard Widget's CSS and mock data only, preserving its identity, data contracts, assets, and other source. Follow current Discovery and don't create a replacement Widget.",
+    "expect": [
+      "reads the current Widget definition and follows its item-specific update affordance and linked schema",
+      "preserves current revision, identity, Package ownership, contracts, assets, and every property outside requested changes",
+      "uses the complete update contract rather than sending a partial patch",
+      "reports an unavailable update reason instead of guessing a route or using the create action as a workaround",
+      "reads back the updated Widget and records the draft change without acknowledgement, approval, or Publication"
     ]
   },
   {
