@@ -106,7 +106,7 @@ Use these defaults in both interview proposals and execution. Ask only decisions
 
 Apply only when Visualization is in scope. A Page whose `default` View carries no nodes is unfinished work, not a valid finish, because it renders nothing. Treat usable Create, List, and Details Pages for new Structures, plus parent Navigation to owned child lists, as the default end state rather than a recommendation. Show this baseline as proposed work, not a permission question; follow explicit placement overrides.
 
-- **Create:** suitable editable inputs, including every confirmed required Field; include long text when required or useful, and exclude derived values.
+- **Create:** read the discovered Create presentation contract, then choose a focused, ordered set of editable inputs, including every confirmed required Field and required reference Relation. Include long text when required or useful, and exclude derived values. Prefer the plain input sequence over decorative groups; verify each chosen input resolves to an editable runtime control.
 - **List:** a table element bound to a Data Source over the owning Structure, carrying useful short columns drawn from that Data Source's outputs, plus a create trigger element that makes the Create Page reachable. Omit long text by default unless User requests it.
 - **Details:** show every new Field, including long text, in a contextual sequence with identity/classification first. For few Fields forming one coherent flow, use one unlabeled group; add named groups only when they improve navigation and current Discovery supports the layout. Do not ask whether to display every Field.
 
