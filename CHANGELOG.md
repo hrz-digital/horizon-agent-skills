@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.5.3 (Unreleased)
+
+### Added
+- Added Structure header guidance to Dashboard and Widget authoring covering shared-header reuse, per-Structure ownership of inputs, bindings and sticky setting, related-instance header selection, reserved instance context, exactly-one native navigation marker, content-driven height, and standard-header fallback. Executable routes and schemas come from current Discovery.
+
 ## v1.5.2
 
 ### Added

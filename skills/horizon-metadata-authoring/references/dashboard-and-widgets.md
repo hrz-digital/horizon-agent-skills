@@ -41,6 +41,20 @@ Widget authoring is not complete until requested Widget(s) are placed on the int
 
 Workspace preview can retain mock data for unbound Widget datasets. Published context strips mock data, so complete live Data Source bindings before Publication when users need live results. A mock-first Workspace draft is for layout/design feedback, not a promise that a published Dashboard will show those fixtures.
 
+## Structure headers
+
+A Structure header replaces only the instance identity and navigation area of a Business Instance page. Breadcrumbs, Actions, and save status stay platform-owned. Use it when a Structure needs business context beside identity; use the standard header when identity and navigation alone suffice.
+
+1. Reuse before authoring. Discover the shared header Widget candidates through current Widget links and read each candidate's usages before attaching it. One Widget may serve several Structures, but each Structure owns its own header placement, presentation inputs, data bindings, and sticky setting. Never copy a Widget per Structure to vary those values.
+2. Keep ownership with the Structure whose instance is displayed. A related collection keeps its parent's header; an individual related instance uses its own Structure's header. Do not place header configuration on a Page or View.
+3. Build identity in the Widget. The Widget receives the loaded, authorized instance as reserved instance context and renders code, display label, and Test status itself. Do not name a Data Source `instance`, and do not expect any mandatory native identity or Test slot.
+4. Place exactly one canonical native navigation marker in the Widget markup. The platform mounts real Structure navigation there. Zero or duplicate markers, and noncanonical marker markup, are validation failures; never reimplement navigation in Widget scripts.
+5. Bind only what the header needs. Explicit current-instance filters scope instance totals and rows; a deliberately Structure-wide comparison stays unscoped. Read the discovered binding and selector rules, then read back the bindings rather than assuming them.
+6. Let content set height and let the layout respond to container width. Keep sticky behavior a Structure setting: it defaults on, and an agent chooses it explicitly when the header should scroll with the page.
+7. Preview in the Workspace before handoff. A failed custom header falls back to the standard header with the same sticky setting, so validation must describe the fallback rather than assume the custom header always renders.
+
+Completion: each header placement's Widget reference, inputs, bindings, and sticky setting are read back and validated; marker and reserved-name findings are repaired; and the shared Widget's other usages are checked before human review.
+
 ## Completion
 
 Dashboard Page contains the chosen Widget composition, source reference HTML is represented by exactly one Widget when supplied, mock data matches its declared contract and is visibly treated as demo data, requested live bindings are configured and exercised when in scope, saved presentation is read back, and human review/Publication gates remain intact.
