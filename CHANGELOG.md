@@ -4,6 +4,7 @@
 
 ### Added
 - Added Structure header guidance to Dashboard and Widget authoring covering shared-header reuse, per-Structure ownership of inputs, bindings and sticky setting, related-instance header selection, reserved instance context, exactly-one native navigation marker, content-driven height, and standard-header fallback. Executable routes and schemas come from current Discovery.
+- Added header dataset guidance for explicit instance binding: identity and stored-Field selectors versus deliberately Structure-wide comparisons, and each dataset reading the displayed instance's own Data Scope. Executable selector shapes come from current Discovery.
 
 ## v1.5.2
 
