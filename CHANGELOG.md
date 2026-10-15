@@ -5,8 +5,13 @@
 ### Added
 - Added Structure header guidance to Dashboard and Widget authoring covering shared-header reuse, per-Structure ownership of inputs, bindings and sticky setting, related-instance header selection, reserved instance context, exactly-one native navigation marker, content-driven height, and standard-header fallback. Executable routes and schemas come from current Discovery.
 - Added header dataset guidance for explicit instance binding: identity and stored-Field selectors versus deliberately Structure-wide comparisons, and each dataset reading the displayed instance's own Data Scope. Executable selector shapes come from current Discovery.
+- Added mock-first Structure header review: optional data contracts carry layout fixtures that Workspace preview supplies for unbound datasets, without hard-coded demo values in Widget scripts, and later bindings replace them without a Widget change. The exact preview rule comes from current Discovery.
+- Added a task routing table to `horizon-metadata-authoring` so focused tasks read only the sections they need.
+- Added a compact plan summary for presentation-only changes to `horizon-interview`.
 
 ### Changed
+- Clarified that Workspace preview supplies Widget mocks only for unbound datasets, never replaces bound, failed or empty results, and never reaches Published context.
+- Structure header preview evidence now comes from runtime Structure Discovery for a displayed instance, and Widget mock review names the preview surface actually observed instead of requiring a standalone preview.
 - Extended Structure header guidance across the full cross-Package usage set, incompatible shared changes, impact acknowledgement, standard-header restoration, Workspace validation and handoff, synchronization, Package transport, and Rollback read-back.
 
 ## v1.5.2

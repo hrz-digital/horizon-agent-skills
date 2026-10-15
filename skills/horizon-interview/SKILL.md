@@ -104,6 +104,8 @@ Installation: <selected live-valid Installation; or not applicable — reason>
 <required confirmation or same-session execution>
 ```
 
+For a presentation-only change, such as a Widget, Structure header or Page layout on existing Structures with no Business Data, new Structure, Relation or Automation change, use a compact summary: keep Customer, Installation, Scope, Metadata with its three layer headings, Execution, Validation and Next, and fold the remaining sections into one `Not applicable: <reason>` line. Use the full template whenever Business Data, new Structures, Automation or material risks are involved.
+
 Use counts, mappings, and anonymized examples rather than raw records in summaries. Approval permits agreed execution, not Workspace acknowledgement, human review approval, or Publication.
 
 ## Execution and User testing

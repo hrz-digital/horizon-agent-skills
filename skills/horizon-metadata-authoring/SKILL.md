@@ -13,6 +13,16 @@ Execute agreed Metadata work through a Workspace. Apply the [interview and plan 
 
 Author one coherent Metadata proposal from machine-readable Discovery contracts. Never infer database tables, Relation Edge storage, Action task behavior, request payloads, or supported catalog entries.
 
+Read only the sections a focused task needs:
+
+| Task | Read |
+| --- | --- |
+| Structures, Fields, Relations, Pages | Model, Three-layer Metadata proposal, Structure and Page defaults, Author |
+| Widgets, Dashboards, Structure headers | Widgets, Dashboard proposals, [Dashboard and Widget authoring](references/dashboard-and-widgets.md), Author |
+| Process Definitions and automation | Process Definitions and the trigger, schedule, notification and Human Interaction sections it needs |
+| Architectural Metadata Tickets | Architectural Metadata Tickets, then the sections for the affected Metadata |
+| Test evidence | Test scenarios |
+
 ## Enter Workspace
 
 1. Run `horizon` bootstrap and inspect relevant Metadata. Satisfy the planning gates, then follow its Workspace selection protocol; retain an already verified selection from approved-plan resume.
@@ -232,14 +242,14 @@ Reuse an existing Widget before authoring one. Discover authorization-filtered W
 
 1. Select libraries through catalog Semantic `when`/`notWhen` guidance, then read the installed entry's versions, module bindings, lifecycle instructions, and executable examples. Use only installed bindings read from Discovery; never guess API names. A Widget needing no chart library stays plain HTML.
 2. Discover dataset binding rules before placing a Widget: implicit versus explicit column mappings, typed inputs and defaults, required columns, types, nullability, extra columns, coercion, and multiple Data Source support. Bind through current placement affordances and verify aggregate completeness rather than using first-page totals.
-3. When User supplies a complete HTML reference dashboard, build it as one Widget with all required HTML, CSS and JavaScript in that Widget. Use fictional Widget mock inputs and data for standalone layout preview first, without Business Data. Then define or reuse declared Data Sources, map their authorized live results to the Widget's data contracts through the discovered Page/Node placement contract, and preview those live mappings. Mock records are layout/test fixtures only; never treat them as live data or fallback for a failed query. Preserve real-looking reference records as mock-only only when User explicitly requests it. For all Widgets, preview both standalone mocks and Node-context live mappings; report failed live queries rather than masking them with mocks.
+3. When User supplies a complete HTML reference dashboard, build it as one Widget with all required HTML, CSS and JavaScript in that Widget. Use fictional Widget mock inputs and data for standalone layout preview first, without Business Data. Then define or reuse declared Data Sources, map their authorized live results to the Widget's data contracts through the discovered Page/Node placement contract, and preview those live mappings. Mock records are layout/test fixtures only; never treat them as live data or fallback for a failed query. Preserve real-looking reference records as mock-only only when User explicitly requests it. For all Widgets, review mocks standalone when current Discovery offers a standalone preview, otherwise through a Workspace placement, and say which surface was observed; preview live mappings in placement context once bound. Report failed live queries rather than masking them with mocks.
 4. Load geographic and font presentation assets only through declared local Package asset dependencies at pinned immutable versions. Upload new Package assets with `horizon metadata asset upload`, taking both the upload href and the contract JSON payload from current Discovery. Never take the href or the payload shape from memory. Geographic data comes from approved local assets, never third-party downloads. For fonts, inherit the platform default by declaring no Package font dependency; choose a custom font through Semantic suitability, verify the font descriptors and attribution from the discovered asset contract, then use the CSS bindings from the discovered asset contract with readable fallbacks. Canvas and chart text needs declared fonts ready before measurement. Blocked third-party requests must still render.
 5. Discover shared Widget identity, Publication impact, and current review/acknowledgement rules. Inspect the complete usage set across Pages, Views, resolution trees, and Packages before changing contracts; repair affected Nodes and Data Sources in the same Workspace. Use current validation to distinguish non-breaking impact, incompatible bindings, and invalidated prior acknowledgements; acknowledgement is not a repair for incompatibility.
 6. Discover Widget layout defaults, Node overrides, mobile visibility, and alternate mobile View support. Prefer visibility controls for mobile exclusion and alternate Views for different mobile content. Never invent numeric minimums, automatic hiding, or per-Node version pinning.
 7. Read the current execution and lifecycle contract, including mount, state-preserving update, disposal, refresh failure, initial failure, and authorization loss. Implement supported hooks and data-clearing behavior; keep local interaction state in the Widget, expose accessible labels and descriptions, and communicate only through declared host filter and drill-through intents. No direct API requests or unapproved library imports; never claim iframe isolation or technical containment.
 8. Follow the validation and human-review steps under **Author**, including the discovered review state.
 
-Completion: reused or newly authored Widget binds valid Data Sources, standalone and live previews are recorded, usages are inspected with incompatible bindings repaired or blocking findings surfaced, and work stops before human acknowledgement, approval, or Publication.
+Completion: reused or newly authored Widget binds valid Data Sources, mock and live previews are recorded with the surfaces actually observed, usages are inspected with incompatible bindings repaired or blocking findings surfaced, and work stops before human acknowledgement, approval, or Publication.
 
 ## Test scenarios
 

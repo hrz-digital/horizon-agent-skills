@@ -257,6 +257,9 @@ def main():
     require("skills/horizon-metadata-authoring/references/dashboard-and-widgets.md", "preserve unrelated authored trees and sources", "Select the entry Page explicitly", "one or several Widget placements", "exactly one Widget", "discovered update affordance and linked schema", "embedded demo records", "Workspace preview", "before Publication")
     require("skills/horizon-metadata-authoring/references/dashboard-and-widgets.md", "## Presentation inputs", "intentionally configure per Widget placement", "Use empty `presentationInputs` and `mockInputs`", "Localization alone does not require a presentation input", "regardless of Widget reuse")
     require("skills/horizon-runtime/SKILL.md", "Query sources independently", "never retry through a Relation context")
+    require("skills/horizon-metadata-authoring/references/dashboard-and-widgets.md", "Review layout mock-first when Data Sources are not ready", "optional data contracts", "Never hard-code demo values", "runtime Structure Discovery", "identified as fixtures")
+    require("skills/horizon-metadata-authoring/SKILL.md", "Read only the sections a focused task needs", "say which surface was observed")
+    require("skills/horizon-interview/SKILL.md", "use a compact summary", "Use the full template whenever Business Data")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"
