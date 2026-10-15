@@ -8,6 +8,7 @@
 - Added mock-first Structure header review: optional data contracts carry layout fixtures that Workspace preview supplies for unbound datasets, without hard-coded demo values in Widget scripts, and later bindings replace them without a Widget change. The exact preview rule comes from current Discovery.
 - Added a task routing table to `horizon-metadata-authoring` so focused tasks read only the sections they need.
 - Added a compact plan summary for presentation-only changes to `horizon-interview`.
+- Added Workspace Activity note guidance: write handoff notes through the discovered note affordance, keep them concise and free of sensitive data, treat them as informational without effect on Metadata, review state or concurrency, and report a withheld affordance instead of inventing a route.
 
 ### Changed
 - Clarified that Workspace preview supplies Widget mocks only for unbound datasets, never replaces bound, failed or empty results, and never reaches Published context.

@@ -260,6 +260,7 @@ def main():
     require("skills/horizon-metadata-authoring/references/dashboard-and-widgets.md", "Review layout mock-first when Data Sources are not ready", "optional data contracts", "Never hard-code demo values", "runtime Structure Discovery", "identified as fixtures")
     require("skills/horizon-metadata-authoring/SKILL.md", "Read only the sections a focused task needs", "say which surface was observed")
     require("skills/horizon-interview/SKILL.md", "use a compact summary", "Use the full template whenever Business Data")
+    require("skills/horizon/SKILL.md", "initial Activity note", "discovered Activity note affordance", "without changing proposed Metadata, review state, or Workspace concurrency", "When Discovery withholds the affordance")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

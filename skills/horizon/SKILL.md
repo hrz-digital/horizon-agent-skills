@@ -52,11 +52,11 @@ Workspace lifetime follows one coherent review and Publication outcome, not one 
 2. Inspect likely matches through changes, Activity, diff, review state, and label.
 3. If an existing Workspace may own the outcome, ask whether to continue it unless User named it or approved/previously selected it through the current plan. Verify that choice against current evidence.
 4. Create Workspace only when no suitable Workspace exists or User chooses separation. Before creating its label, follow [Localized text and codes](references/authoring-conventions.md).
-5. Record meaningful label and initial Activity comment describing requested outcome.
+5. Record meaningful label, then an initial Activity note describing requested outcome.
 
 For Agent Credentials, pass selected Connection Profile on every CLI request and Workspace context required by current Discovery on every Workspace-resolved request. With no Workspace selected, use context current Discovery identifies as Published Metadata. After selecting or changing Workspace context, re-request Discovery with that Workspace context, verify returned `metadataContext` identifies the selected Workspace, then follow links from that response. Never use links from Published-context Discovery to infer Workspace authoring availability. Re-discover after synchronization, conflict, Publication, or contract-version change.
 
-Use Workspace Activity for cross-session and cross-Agent handoff: intent, decisions, exceptional placement rationale, test Business Instances, evidence, remaining work. Treat runtime and authoring authority separately; authoring availability never implies Business Data authority.
+Use Workspace Activity for cross-session and cross-Agent handoff: intent, decisions, exceptional placement rationale, test Business Instances, evidence, remaining work. Read Activity before resuming. Write handoff notes through the Workspace's discovered Activity note affordance: concise plain text, one note per meaningful decision or handoff, no credentials, personal data or raw records. A note informs reviewers and later sessions without changing proposed Metadata, review state, or Workspace concurrency, so it never substitutes for a Metadata change, validation, or a review decision. When Discovery withholds the affordance, report its reason and carry the handoff in the User summary instead of inventing a route. Treat runtime and authoring authority separately; authoring availability never implies Business Data authority.
 
 Completion: after any listed event, current context is synchronized and handoff Activity records intent, decisions, evidence, remaining work. After selecting or switching Workspace, context-specific Discovery has been refreshed and verified before authoring links are used.
 
