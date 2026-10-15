@@ -4,11 +4,11 @@ Apply before creating a Workspace or constructing authored labels, localized mes
 
 ## Localized text
 
-1. Follow current Discovery to the Installation's Platform Setup and resolve the shared `localized-text` schema, including references from the request schema. Read `defaultLocale`; use the locale keys and value shape that current schemas accept. Refresh this context after changing Installation or Platform Setup. Chat language does not select the required locale.
+1. Resolve the shared `localized-text` schema from current Discovery, including references from the request schema, and use the locale keys and value shape it accepts. Take the default locale from that schema when it states it; otherwise follow current Discovery to the Installation's Platform Setup and read `defaultLocale`. Refresh this context after changing Installation or Platform Setup. Chat language does not select the required locale.
 2. Supply meaningful, non-blank text in the configured default locale. Other translations are optional unless the current contract says otherwise; PT, ES, and EN are not universally required.
 3. Prefer adding PT, ES, and EN translations when those locales are accepted and the meaning is known. Reuse established terminology from nearby labels and Semantic Terms/Aliases; otherwise translate faithfully when confident. Preserve proper names and domain distinctions. A translation must not add business facts, expand an unexplained acronym, or guess what an ambiguous term means.
 4. Omit an uncertain optional translation rather than filling it with a guess, placeholder, or copied text presented as a translation. If the required default-locale meaning is unclear, ask User before authoring. Note meaningful translation gaps in the handoff.
-5. On updates, preserve correct existing translations. When meaning changes, update affected translations coherently; ask User how to handle any translation you cannot confidently revise instead of leaving stale meaning or silently deleting it.
+5. On updates, preserve correct existing translations. Send the complete localized value with every preserved translation unless the live schema states that a partial value merges. When meaning changes, update affected translations coherently; ask User how to handle any translation you cannot confidently revise instead of leaving stale meaning or silently deleting it.
 
 Apply the same procedure to every property whose schema references `localized-text`, including labels and user-facing localized messages. Keep ordinary prose and plain-string properties in their discovered shape.
 

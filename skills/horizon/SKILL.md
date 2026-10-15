@@ -24,7 +24,7 @@ For an agreed summary in the current session, treat User's execution request as 
 
 ## Errors
 
-The normal scenario has no errors. On any HTTP error status or CLI failure, report status and message to User and stop all Horizon requests for this run, including diagnostic reads. Never retry with a guessed variant or continue elsewhere after an error.
+The normal scenario has no errors. On any HTTP error status or CLI failure, report status and message to User and stop all Horizon requests for this run, including diagnostic reads. Never retry with a guessed variant or continue elsewhere after an error. Judge each response by the HTTP status the CLI reports, not by its exit status alone: an error status can arrive while the command itself succeeds.
 
 ## Bootstrap
 
@@ -51,8 +51,9 @@ Workspace lifetime follows one coherent review and Publication outcome, not one 
 1. Follow authoring affordance listing open Workspaces.
 2. Inspect likely matches through changes, Activity, diff, review state, and label.
 3. If an existing Workspace may own the outcome, ask whether to continue it unless User named it or approved/previously selected it through the current plan. Verify that choice against current evidence.
-4. Create Workspace only when no suitable Workspace exists or User chooses separation. Before creating its label, follow [Localized text and codes](references/authoring-conventions.md).
+4. Create Workspace only when no suitable Workspace exists or User chooses separation. Before creating its label, follow [Localized text and codes](references/authoring-conventions.md). Supply every property the live creation schema requires, choosing a neutral value for presentation-only properties the User did not specify and naming that choice in the handoff.
 5. Record meaningful label, then an initial Activity note describing requested outcome.
+6. Discard a throwaway or abandoned Workspace only through a discard affordance current Discovery exposes for it, confirming with User any Test Business Instance cleanup it reports. When no such affordance is exposed, never construct one: report the Workspace code and label as remaining and ask an eligible human to discard it. Tell User before creating a Workspace purely to experiment when its cleanup will need that human step.
 
 For Agent Credentials, pass selected Connection Profile on every CLI request and Workspace context required by current Discovery on every Workspace-resolved request. With no Workspace selected, use context current Discovery identifies as Published Metadata. After selecting or changing Workspace context, re-request Discovery with that Workspace context, verify returned `metadataContext` identifies the selected Workspace, then follow links from that response. Never use links from Published-context Discovery to infer Workspace authoring availability. Re-discover after synchronization, conflict, Publication, or contract-version change.
 

@@ -11,8 +11,14 @@
 - Added Widget theme guidance: use the published theme tokens with fallbacks, derive tints from them, and check contrast in light and dark mode.
 - Added Structure header navigation alignment guidance: tune the native tab bar only through its published contract and never compensate for platform spacing with fixed offsets.
 - Added Workspace Activity note guidance: write handoff notes through the discovered note affordance, keep them concise and free of sensitive data, treat them as informational without effect on Metadata, review state or concurrency, and report a withheld affordance instead of inventing a route.
+- Added Workspace discard guidance: discard a throwaway Workspace only through a discovered discard affordance with any reported Test cleanup confirmed, otherwise report it as remaining for an eligible human, and warn User before creating an experiment Workspace whose cleanup needs that step.
+- Added pre-existing validation issue guidance: separate issues the proposal introduced from issues already present by comparing their locations with the Workspace diff, resolve those in scope, and report out-of-scope ones as blocking until User decides.
 
 ### Changed
+- Errors are judged by the HTTP status the CLI reports rather than its exit status alone.
+- Workspace creation supplies every schema-required property, with neutral presentation choices named in the handoff.
+- Updates send a revision or other concurrency value only where the update contract declares one.
+- The default locale comes from the shared localized-text schema when it states one, with Platform Setup as the fallback, and localized updates send the complete value with preserved translations unless the schema states that partial values merge.
 - Added narrow Structure authoring reads: request only the advertised detail sections a task needs, relying on the always-included identity and revision, and fall back to the full detail only when no sections are advertised or the task spans the Structure.
 - Clarified that Workspace preview supplies Widget mocks only for unbound datasets, never replaces bound, failed or empty results, and never reaches Published context.
 - Structure header preview evidence now comes from runtime Structure Discovery for a displayed instance, and Widget mock review names the preview surface actually observed instead of requiring a standalone preview.
