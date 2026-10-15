@@ -13,6 +13,7 @@
 - Added Workspace Activity note guidance: write handoff notes through the discovered note affordance, keep them concise and free of sensitive data, treat them as informational without effect on Metadata, review state or concurrency, and report a withheld affordance instead of inventing a route.
 
 ### Changed
+- Added narrow Structure authoring reads: request only the advertised detail sections a task needs, relying on the always-included identity and revision, and fall back to the full detail only when no sections are advertised or the task spans the Structure.
 - Clarified that Workspace preview supplies Widget mocks only for unbound datasets, never replaces bound, failed or empty results, and never reaches Published context.
 - Structure header preview evidence now comes from runtime Structure Discovery for a displayed instance, and Widget mock review names the preview surface actually observed instead of requiring a standalone preview.
 - Extended Structure header guidance across the full cross-Package usage set, incompatible shared changes, impact acknowledgement, standard-header restoration, Workspace validation and handoff, synchronization, Package transport, and Rollback read-back.
