@@ -8,6 +8,8 @@
 - Added mock-first Structure header review: optional data contracts carry layout fixtures that Workspace preview supplies for unbound datasets, without hard-coded demo values in Widget scripts, and later bindings replace them without a Widget change. The exact preview rule comes from current Discovery.
 - Added a task routing table to `horizon-metadata-authoring` so focused tasks read only the sections they need.
 - Added a compact plan summary for presentation-only changes to `horizon-interview`.
+- Added Widget theme guidance: use the published theme tokens with fallbacks, derive tints from them, and check contrast in light and dark mode.
+- Added Structure header navigation alignment guidance: tune the native tab bar only through its published contract and never compensate for platform spacing with fixed offsets.
 - Added Workspace Activity note guidance: write handoff notes through the discovered note affordance, keep them concise and free of sensitive data, treat them as informational without effect on Metadata, review state or concurrency, and report a withheld affordance instead of inventing a route.
 
 ### Changed
