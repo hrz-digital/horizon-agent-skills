@@ -27,7 +27,7 @@ Read only the sections a focused task needs:
 
 1. Run `horizon` bootstrap and inspect relevant Metadata. Satisfy the planning gates, then follow its Workspace selection protocol; retain an already verified selection from approved-plan resume.
 2. Pass selected profile through `--connection` on every request and Workspace context required by current Discovery on Metadata reads, Metadata writes, and the Test-scenario validation requests below.
-3. After selecting or changing Workspace, re-request Discovery in that Workspace context and verify its returned `metadataContext` names the selected Workspace. Then follow current authoring affordances and JSON Schema references. Use only values returned by current catalogs; never treat Published-context links as Workspace authoring links.
+3. After selecting or changing Workspace, re-request Discovery in that Workspace context and verify its returned `metadataContext` names the selected Workspace. Then follow current authoring affordances and JSON Schema references. Use only values returned by current catalogs; never treat Published-context links as Workspace authoring links. Structure, Widget, Package and Workspace catalogs may advertise a top-level create affordance: follow its discovered method, href and linked schema instead of guessing a route. An unavailable create carries a reason from Discovery; report that reason and do not attempt the write. A catalog that advertises no create means the caller has no privilege to create there, so do not look for another route.
 
 Completion: Workspace selection follows `horizon`'s protocol, current Workspace context is active and verified by refreshed Discovery, and authoring schemas and catalogs are loaded.
 

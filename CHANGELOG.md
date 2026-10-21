@@ -13,6 +13,7 @@
 - Added Workspace Activity note guidance: write handoff notes through the discovered note affordance, keep them concise and free of sensitive data, treat them as informational without effect on Metadata, review state or concurrency, and report a withheld affordance instead of inventing a route.
 - Added Workspace discard guidance: discard a throwaway Workspace only through a discovered discard affordance with any reported Test cleanup confirmed, otherwise report it as remaining for an eligible human, and warn User before creating an experiment Workspace whose cleanup needs that step.
 - Added pre-existing validation issue guidance: separate issues the proposal introduced from issues already present by comparing their locations with the Workspace diff, resolve those in scope, and report out-of-scope ones as blocking until User decides.
+- Added catalog create affordance guidance: Structure, Widget, Package and Workspace catalogs advertise a top-level create affordance that Agents follow instead of guessing a route; an unavailable create reports its Discovery reason and is not attempted, and an absent create means no privilege to create there. Executable routes and availability come from current Discovery.
 
 ### Changed
 - Errors are judged by the HTTP status the CLI reports rather than its exit status alone.

@@ -262,6 +262,7 @@ def main():
     require("skills/horizon-interview/SKILL.md", "use a compact summary", "Use the full template whenever Business Data")
     require("skills/horizon-metadata-authoring/references/dashboard-and-widgets.md", "published Widget theme tokens", "both light and dark mode", "published header navigation contract", "never by compensating for platform spacing")
     require("skills/horizon/SKILL.md", "initial Activity note", "discovered Activity note affordance", "without changing proposed Metadata, review state, or Workspace concurrency", "When Discovery withholds the affordance")
+    require("skills/horizon-metadata-authoring/SKILL.md", "top-level create affordance", "follow its discovered method, href and linked schema instead of guessing a route", "do not attempt the write", "no privilege to create there")
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"
