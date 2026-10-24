@@ -16,6 +16,7 @@
 - Added catalog create affordance guidance: Structure, Widget, Package and Workspace catalogs advertise a top-level create affordance that Agents follow instead of guessing a route; an unavailable create reports its Discovery reason and is not attempted, and an absent create means no privilege to create there. Executable routes and availability come from current Discovery.
 
 ### Changed
+- SMTP setup guidance covers removing a saved definition through the discovered replace affordance, which takes the complete list, keeping disabling as the way to stop using one.
 - Errors are judged by the HTTP status the CLI reports rather than its exit status alone.
 - Workspace creation supplies every schema-required property, with neutral presentation choices named in the handoff.
 - Updates send a revision or other concurrency value only where the update contract declares one.
