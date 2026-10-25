@@ -16,6 +16,7 @@ def require(path, *texts):
 
 def main():
     require("skills/horizon-metadata-authoring/SKILL.md", "## Dashboard proposals", "Package-owned Installation presentation", "both the new and previous default", "human Publication remains pending")
+    require("skills/horizon-runtime/SKILL.md", "## Reading change history", "via <Integration label>", "human HSA or HSC User")
     require("skills/horizon-runtime/SKILL.md", "## Inspect Dashboards", "without silently selecting another Dashboard", "do not invent additional Data Source read grants")
     version = (ROOT / "VERSION").read_text().strip()
     for skill in (ROOT / "skills").glob("*/SKILL.md"):

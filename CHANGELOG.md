@@ -3,6 +3,7 @@
 ## v1.5.3 (Unreleased)
 
 ### Added
+- Added change-history attribution guidance: report an Integration Actor as a machine integration "via <Integration label>" rather than a User, never infer a responsible User from it, and treat Integration management as human-only for HSA and HSC Users. Executable routes and Actor shapes come from current Discovery.
 - Added Structure header guidance to Dashboard and Widget authoring covering shared-header reuse, per-Structure ownership of inputs, bindings and sticky setting, related-instance header selection, reserved instance context, exactly-one native navigation marker, content-driven height, and standard-header fallback. Executable routes and schemas come from current Discovery.
 - Added header dataset guidance for explicit instance binding: identity and stored-Field selectors versus deliberately Structure-wide comparisons, and each dataset reading the displayed instance's own Data Scope. Executable selector shapes come from current Discovery.
 - Added mock-first Structure header review: optional data contracts carry layout fixtures that Workspace preview supplies for unbound datasets, without hard-coded demo values in Widget scripts, and later bindings replace them without a Widget change. The exact preview rule comes from current Discovery.

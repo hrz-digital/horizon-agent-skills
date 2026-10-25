@@ -7,6 +7,9 @@ Horizon Agent Skills package portable workflow policy for AI Agents operating Ho
 **Lua**: Horizon-provided AI assistant persona. Lua operates as an AI Agent through an Agent Credential and has no separate security identity or authority.
 _Avoid_: Agent Credential, authorization role
 
+**Integration**: A non-human, Installation-owned identity that an external platform's server uses through an Integration Credential. A change it makes is shown as "via <Integration label>", never as a User, and only human HSA or HSC Users manage it.
+_Avoid_: technical User, Agent Credential, Browser Client
+
 **Horizon Skill Set**: Public collection of Agent Skills that guides Discovery traversal, Metadata authoring, runtime operation, and workflow selection.
 _Avoid_: API client, platform contract, Lua runtime
 

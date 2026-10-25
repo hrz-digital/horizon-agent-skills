@@ -119,6 +119,10 @@ Workspace context is where proposed Metadata gets tested. Current Discovery repo
 
 For assignment or recipient testing, follow [Test User fixtures](../horizon-metadata-authoring/SKILL.md#test-user-fixtures). Use current Discovery eligibility rather than inferring authority or deliverability from a User's testing designation.
 
+## Reading change history
+
+When reporting who changed Business Data, name the responsible identity exactly as current Discovery and the history response present it. An Agent Credential change is attributed to the Agent acting for its Owner User. An Integration change is a machine integration, not a person: present it as "via <Integration label>" and never as a User, and never infer a responsible User from it. Integrations are managed only by human platform administrators, so do not offer to create, change or issue them; direct that request to a human HSA or HSC User.
+
 ## Independent Action starts for a selection
 
 1. Confirm the explicitly selected Business Instances and intended effect using the existing plan and mutation gates. Discover each Business Instance's current Action availability and linked input contract separately; availability on one item says nothing about another.
