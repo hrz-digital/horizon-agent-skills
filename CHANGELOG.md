@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.5.3 (Unreleased)
+## v1.5.3
 
 ### Added
 - Added change-history attribution guidance: report an Integration Actor as a machine integration "via <Integration label>" rather than a User, never infer a responsible User from it, and treat Integration management as human-only for HSA and HSC Users. Executable routes and Actor shapes come from current Discovery.
