@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.5.4 (Unreleased)
+
+### Added
+- Added guidance for choosing an Owned Relation versus a Reference Relation to an already-owned Secondary target, including source-capability authorization and cross-root display visibility.
+- Added runtime guidance that Reference Relations to Secondary targets link and read through the same current affordances while preserving the target's owner and lifecycle.
+
 ## v1.5.3
 
 ### Added
