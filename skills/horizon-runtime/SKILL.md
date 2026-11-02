@@ -32,7 +32,7 @@ Completion: compatible CLI and Discovery confirmed, customer Installation explic
 
 Completion: target Business Instance, Process Definition, or Process Instance, current runtime affordance, required context, linked schema, and request links identified.
 
-Relation linking and reading follow the same current runtime affordances for Reference Relations to Primary and Secondary targets. A reference to a Secondary target leaves its owner and lifecycle unchanged; deleting the referencing Business Instance does not delete the target. The source Structure capability governs the reference, so eligible Secondary target display data can be visible across roots. Use current Metadata constraints to determine which targets are eligible, and treat a deleted target as unavailable until it is restored.
+Relation linking and reading follow the same current runtime affordances for Reference Relations to Primary and Secondary targets. A reference to a Secondary target leaves its owner and lifecycle unchanged; deleting the referencing Business Instance does not delete the target. The source Structure capability governs the reference, so eligible Secondary target display data can be visible across roots. Use current Metadata constraints to determine which targets are eligible, and treat a deleted target as unavailable until it is restored. For a draft under an owner, supply the discovered parent context when requesting options so same-root filtering can apply. Explain a refused link using the returned eligibility message and preserve existing links until the User directs a change.
 
 ## Inspect Dashboards
 
