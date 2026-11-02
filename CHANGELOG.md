@@ -3,6 +3,8 @@
 ## v1.5.4 (Unreleased)
 
 ### Added
+- Added `horizon-runtime` guidance on explaining missing visibility with Authorization Diagnosis, including `outside_scope` for records not linked on the acting User and routing rule changes to a human HSA or HSC.
+- Added `horizon-metadata-authoring` guidance that User Relations such as `clients` are ordinary User Metadata an Agent may author in a Workspace, while the Access Scope rule that uses them is configured by a human HSA or HSC.
 - Added `horizon` guidance on Profile sign-in applications: every Profile lists the applications where its holders sign in or `none` for Integration-only Profiles, HSA and HSC are never restricted, a legacy Profile allows every application until saved, only a human HSA or HSC changes the list, and an application refusal looks like wrong credentials so it is explained through the security audit by a human HSA or HSC. The list comes from the Profile read in current Discovery.
 - Added `horizon` guidance on applications versus Integrations: applications are where Users sign in, an Integration is a system's own server access with its own Profile, a system needing both registers one of each with the key only on its server and its own signed-in User check, and registering applications is a human HSA or HSC task. Registered applications come from current Platform Setup.
 - Added same-root Relation modeling guidance and draft-parent option and ineligible-link guidance.

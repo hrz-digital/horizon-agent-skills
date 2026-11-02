@@ -125,6 +125,12 @@ For assignment or recipient testing, follow [Test User fixtures](../horizon-meta
 
 When reporting who changed Business Data, name the responsible identity exactly as current Discovery and the history response present it. An Agent Credential change is attributed to the Agent acting for its Owner User. An Integration change is a machine integration, not a person: present it as "via <Integration label>" and never as a User, and never infer a responsible User from it. Integrations are managed only by human platform administrators, so do not offer to create, change or issue them; direct that request to a human HSA or HSC User.
 
+## Explaining missing visibility
+
+When User cannot see a Business Instance they expect, or sees fewer than expected, explain it from current Discovery's Authorization Diagnosis rather than guessing. Diagnosis is available to HSC-owned Agents and returns an outcome with the Access Scope and its Semantic. `outside_scope` means the Group grants the capability but the Business Instance is outside the Access Scope; for a rule that limits a Primary Structure to the records linked on the User (such as a support manager's `clients`), say the record is not among the records linked to that User, and that its Secondary records (such as tickets) follow it. `grant_missing`, `profile_missing` and the other outcomes mean something else; report the outcome as returned. Links on the User and Access Scope rules are changed by a human HSA or HSC; an Agent recommends the change and never replaces Access Scope rules itself. Never describe other Users' records you cannot see.
+
+Completion: outcome and Access Scope reported as returned; any change routed to a human HSA or HSC.
+
 ## Independent Action starts for a selection
 
 1. Confirm the explicitly selected Business Instances and intended effect using the existing plan and mutation gates. Discover each Business Instance's current Action availability and linked input contract separately; availability on one item says nothing about another.
