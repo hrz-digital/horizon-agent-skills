@@ -113,6 +113,7 @@ Use these defaults in both interview proposals and execution. Ask only decisions
 - When a reference must stay within the source's Primary root, use the discovered same-root Constraint and test matching and cross-root targets. Use a Data Source for additional presentation filters or selectable subsets; keep the Constraint authoritative for every write.
 - Discover allowed Relation targets, cardinalities, lifecycle and deletion effects, and authorization for both edges and targets before recommending ownership. Follow the live code schema and [code conventions](../horizon/references/authoring-conventions.md#codes); keep map notation separate from authored codes.
 - For new Structures, settle which Fields are required at creation before assigning Constraints. A single new Field on an existing Structure stays optional unless the request or existing rules require otherwise.
+- Choose a number Field's View by meaning: use `rating` for a whole-number score from 1 to 5 that people set by clicking stars; use `integer` for counts or unbounded whole numbers; use an `enum` when the levels have names. Confirm the View and its value limits in current Discovery's Field catalog before authoring, and copy no view list from this skill.
 
 ### Visualization
 

@@ -6,6 +6,7 @@
 - Added same-root Relation modeling guidance and draft-parent option and ineligible-link guidance.
 - Added guidance for choosing an Owned Relation versus a Reference Relation to an already-owned Secondary target, including source-capability authorization and cross-root display visibility.
 - Added runtime guidance that Reference Relations to Secondary targets link and read through the same current affordances while preserving the target's owner and lifecycle.
+- Added number Field View guidance to `horizon-metadata-authoring`: `rating` for a whole-number 1–5 score set by clicking, `integer` for counts or unbounded numbers, and `enum` for named levels. Value limits and view lists come from current Discovery.
 
 ## v1.5.3
 
