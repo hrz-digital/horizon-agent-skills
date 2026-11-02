@@ -3,6 +3,8 @@
 ## v1.5.4 (Unreleased)
 
 ### Added
+- Added `horizon` guidance on Profile sign-in applications: every Profile lists the applications where its holders sign in or `none` for Integration-only Profiles, HSA and HSC are never restricted, a legacy Profile allows every application until saved, only a human HSA or HSC changes the list, and an application refusal looks like wrong credentials so it is explained through the security audit by a human HSA or HSC. The list comes from the Profile read in current Discovery.
+- Added `horizon` guidance on applications versus Integrations: applications are where Users sign in, an Integration is a system's own server access with its own Profile, a system needing both registers one of each with the key only on its server and its own signed-in User check, and registering applications is a human HSA or HSC task. Registered applications come from current Platform Setup.
 - Added same-root Relation modeling guidance and draft-parent option and ineligible-link guidance.
 - Added guidance for choosing an Owned Relation versus a Reference Relation to an already-owned Secondary target, including source-capability authorization and cross-root display visibility.
 - Added runtime guidance that Reference Relations to Secondary targets link and read through the same current affordances while preserving the target's owner and lifecycle.

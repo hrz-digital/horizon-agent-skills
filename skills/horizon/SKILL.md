@@ -44,6 +44,20 @@ Completion: compatible CLI 1.x and Discovery v1 confirmed, selected Connection P
 
 Completion: request classified, next skill selected, User has clear instruction when router is needed.
 
+## Applications and Integrations
+
+Explain how a person or system connects by this split, reading current Discovery and Platform Setup for what is registered:
+
+- **Application**: an external frontend where Users sign in with their own login and authority. It is registered in Platform Setup and takes effect on save. The core UI is the built-in application "Horizon".
+- **Integration**: a system's own server access, with its own Authorization Profile and key. It never signs in through an application, and Horizon records the Integration as the Actor.
+- An external system that needs both registers one application and one Integration. Keep the Integration key only on that system's server, never in the browser frontend. Because Horizon records the Integration rather than the person, the server must check its own signed-in User before acting for them.
+
+Every Authorization Profile lists its **sign-in applications**: where its holders may sign in, one or more applications or `none`. Read them on the Profile through current Discovery. `none` is for Integration-only Profiles, so nobody holding it can sign in anywhere, while an Integration using it keeps working. HSA and HSC Users are never restricted, and a Profile saved before this setting lists nothing and allows every application until a human saves it.
+
+A refusal because of the application looks exactly like wrong credentials: `authentication_failed` for password sign-in (with no second-factor prompt), the generic refusal for Microsoft sign-in, an ended session at refresh, and no email or an expired-looking link for Password Setup. When a User reports "my password is right but I cannot sign in", do not guess from the response. Explain it from the security audit entry with reason `application_not_allowed`, which names the User and the application, and have a human HSA or HSC read it and decide whether to change the Profile. Never tell the User or a third party that the password was correct.
+
+Read and explain applications and Integrations freely. `GET /platform-setup` lists the `BROWSER_CLIENTS` codes as `browserClients` (the core UI flagged `builtIn`) and reports `capabilities.updateApplications`, which is false for every Agent Credential. Registering or changing an application, issuing Integration keys, and any change to a Profile's sign-in applications are human HSA or HSC tasks, including for HSC-owned Agent Credentials. When asked, do not attempt the change: name what to register and hand it to an eligible human.
+
 ## Workspace selection
 
 Workspace lifetime follows one coherent review and Publication outcome, not one chat session. Before creating Workspace:
