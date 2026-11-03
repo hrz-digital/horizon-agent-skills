@@ -34,6 +34,10 @@ Completion: target Business Instance, Process Definition, or Process Instance, c
 
 Relation linking and reading follow the same current runtime affordances for Reference Relations to Primary and Secondary targets. A reference to a Secondary target leaves its owner and lifecycle unchanged; deleting the referencing Business Instance does not delete the target. The source Structure capability governs the reference, so eligible Secondary target display data can be visible across roots. Use current Metadata constraints to determine which targets are eligible, and treat a deleted target as unavailable until it is restored. For a draft under an owner, supply the discovered parent context when requesting options so same-root filtering can apply. Explain a refused link using the returned eligibility message and preserve existing links until the User directs a change.
 
+## Work with Assets
+
+Use current Discovery to determine Asset visibility and follow returned upload, completion and download links. Explicit public visibility publishes completed bytes for direct anonymous reads; private access URLs expire. Treat object URLs as opaque and fetch them without Horizon credentials. Rediscover access when a private URL expires. Public byte access grants no Business Data or mutation authority. Soft deletion retains public bytes and cannot revoke a shared URL; authorized purge removes stored objects without promising removal from external caches.
+
 ## Inspect Dashboards
 
 Follow current Discovery to inspect the requested Dashboard or the Installation default. Dashboard read authority is independent from source Structure authority; neither implies the other. If the configured default is unavailable, report that state without silently selecting another Dashboard. Missing and inaccessible definitions must remain indistinguishable in user-facing recovery.
