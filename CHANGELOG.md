@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.5.5 (Unreleased)
+## v1.5.5
 
 ### Changed
 - Clarified Discovery-grounded public/private Asset access: directly fetchable public URLs, expiring private URLs, no Horizon credentials on object requests, unchanged Core authority and truthful soft-delete/purge limits.
