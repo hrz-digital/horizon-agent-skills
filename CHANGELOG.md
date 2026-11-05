@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.5.6 (Unreleased)
+## v1.5.6
 
 ### Added
 - Added `horizon-metadata-authoring` guidance on Structure navigation icons: a navigation `icon` is any well-formed Iconify code `prefix:name` (shape only, no existence check), prefer codes the UI can render, legacy hyphenated forms such as `mdi-account-tie` are refused with `icon_not_found`, and the exact format and route come from current Discovery.
