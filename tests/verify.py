@@ -96,6 +96,9 @@ def main():
             "that the Create Page is reachable from the Structure's Pages",
             "Read the exact node and source-data vocabulary from the current Page schema",
             "default_nodes_required")
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "well-formed Iconify code", "`prefix:name`", "mdi:account-tie", "icon_not_found",
+            "navigation-update Discovery")
     require("skills/horizon-interview/SKILL.md",
             "a new Structure's Visualization settles as agreed configuration or `out of scope (User-directed)` only",
             "the create trigger that makes each new Structure's Create Page reachable",
