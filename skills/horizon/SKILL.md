@@ -4,7 +4,7 @@ description: Coordinate Horizon work through Discovery. Use to select Installati
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.5.6"
+  version: "1.6.0"
 ---
 
 # Horizon
@@ -35,6 +35,8 @@ The normal scenario has no errors. On any HTTP error status or CLI failure, repo
 Completion: compatible CLI 1.x and Discovery v1 confirmed, selected Connection Profile is explicit and live-valid, current identity known, available Metadata Context and Discovery roots recorded. Selected label remains current session context and every later request carries it explicitly.
 
 ## Classify
+
+- Prepare a Design Brief for external Dashboard or Structure header design, export an existing Widget for improvement, or reconcile a returned external design → follow [horizon-design](../horizon-design/SKILL.md). Brief export is read-only Metadata work and does not create a Workspace. Direct in-platform edits remain with authoring.
 
 - "implement plan" / "Executar o plano" → follow **Implement approved plan** above; no path required.
 - Installation SMTP configuration or email delivery check, authorized Dashboard inspection, Business Data, Action, Process run, Process Instance listing/inspection, assigned Human Interaction response, or administrative process-control request → follow `horizon-runtime`. Inspect current authority there; when no executable affordance is available, hand off the control to an eligible human.

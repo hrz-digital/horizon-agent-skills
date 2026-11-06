@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import pathlib
+import re
 import subprocess
 import tempfile
 import uuid
@@ -267,6 +268,32 @@ def main():
     require("skills/horizon-metadata-authoring/references/dashboard-and-widgets.md", "published Widget theme tokens", "both light and dark mode", "published header navigation contract", "never by compensating for platform spacing")
     require("skills/horizon/SKILL.md", "initial Activity note", "discovered Activity note affordance", "without changing proposed Metadata, review state, or Workspace concurrency", "When Discovery withholds the affordance")
     require("skills/horizon-metadata-authoring/SKILL.md", "top-level create affordance", "follow its discovered method, href and linked schema instead of guessing a route", "do not attempt the write", "no privilege to create there")
+    required.update({
+        "design-full-dashboard", "design-project-header", "design-header-related-context",
+        "design-existing-widget-export", "design-export-embedded-business-data",
+        "design-export-missing-contract", "design-return-revision-drift", "design-return-workspace-selection",
+        "design-return-sanitized-baseline", "design-raw-aggregation-incomplete",
+        "design-raw-aggregation-complete", "design-return-new-contract",
+    })
+    # Check the new workflow's entry points and reference graph, not its prose.
+    entry = ROOT / "skills/horizon-design/SKILL.md"
+    assert entry.exists()
+    for listing in ("README.md", "docs/skill-set.md", "skills/horizon/SKILL.md",
+                    "skills/horizon-metadata-authoring/SKILL.md"):
+        links = re.findall(r"\[[^\]]+\]\(([^)]+)\)", (ROOT / listing).read_text())
+        targets = [(ROOT / listing).parent / link.split("#", 1)[0] for link in links
+                   if "://" not in link and not link.startswith("#")]
+        assert entry.resolve() in [target.resolve() for target in targets], listing
+    for document in entry.parent.rglob("*.md"):
+        for link in re.findall(r"\[[^\]]+\]\(([^)]+)\)", document.read_text()):
+            if "://" not in link and not link.startswith("#"):
+                assert (document.parent / link.split("#", 1)[0]).exists(), (document, link)
+    design = [scenario for scenario in scenarios if scenario["id"].startswith("design-")]
+    assert len(design) == 12
+    for scenario in design:
+        assert len(scenario["expect"]) >= 3, scenario["id"]
+        assert "stub" not in scenario and "contractFixture" not in scenario, scenario["id"]
+    assert len(scenarios) == len({scenario["id"] for scenario in scenarios}), "Duplicate scenario id"
     assert required == {scenario["id"] for scenario in scenarios}
 
     stub = ROOT / "tests/stub-horizon"

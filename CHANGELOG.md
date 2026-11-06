@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.6.0
+
+### Added
+- Added a visual README overview of the four capability pillars, coordination and planning workflows, and shared foundations, with a linked guide to choosing each skill.
+- Added `horizon-design` for Metadata-only Design Briefs covering new platform Dashboards, Structure headers, and existing Widget improvements.
+- Added Field-first scope selection, Discovery-derived offline Design Guides, inspected source baselines, synthetic fixtures, and strict exclusion of client Business Data, including embedded records and existing mocks.
+- Added returned-design reconciliation against the selected implementation Workspace for revisions, context drift, shared usages and sanitized source regions, repeated when the target context changes, before existing Metadata authoring handles Data Sources, bindings and validation.
+- Added design workflow scenarios and structural verification for export boundaries, capability gaps, dataset completeness and safe integration.
+
+### Changed
+- Routed external design handoffs through `horizon-design` while keeping direct platform edits and Workspace execution with `horizon-metadata-authoring`.
+- Documented Design Brief and Design Guide terminology, avoiding confusion with platform Packages.
+- Synced `VERSION` and every skill metadata version to `1.6.0`.
+
 ## v1.5.6
 
 ### Added

@@ -1,19 +1,32 @@
 <p align="left">
-  <img src="assets/horizon-logo.png" alt="Horizon" height="271">
+  <img src="assets/horizon-logo.png" alt="Horizon" width="360">
 </p>
 
 # Horizon Agent Skills
 
-Portable [Agent Skills](https://agentskills.io) for AI Agents operating Horizon through machine-facing Discovery. Horizon Discovery is source of truth for schemas, affordances, authorization, Metadata Context, and runtime behavior. Skills provide workflow policy, safety, and continuity; they do not replace Discovery.
+Understand your Horizon Installation, design and build its configuration, operate Business Data, and improve its architecture—with portable [Agent Skills](https://agentskills.io) for your AI Agent.
+
+## What you can do
+
+Start with your goal. `horizon` connects to the selected Installation and coordinates the work; `horizon-interview` helps clarify requirements and required approvals when needed. For general modeling advice, you can invoke the guidance skill without connecting to an Installation.
+
+![Capability map: Understand with horizon-ask-for-guidance; Design and build with horizon-design and horizon-metadata-authoring; Operate with horizon-runtime; Review and improve with horizon-architecture-analysis. Coordination and planning support the four pillars.](assets/skill-map.svg)
+
+**Built on current Horizon capabilities.** The CLI provides secure transport, Discovery supplies current contracts and authority, and humans review and publish Metadata proposals. Skills add workflow policy, safety, and continuity.
 
 ## Skills
 
-- [`horizon`](skills/horizon/SKILL.md)
-- [`horizon-interview`](skills/horizon-interview/SKILL.md) — plan complex or ambiguous work before execution.
-- [`horizon-metadata-authoring`](skills/horizon-metadata-authoring/SKILL.md)
-- [`horizon-architecture-analysis`](skills/horizon-architecture-analysis/SKILL.md)
-- [`horizon-runtime`](skills/horizon-runtime/SKILL.md)
-- [`horizon-ask-for-guidance`](skills/horizon-ask-for-guidance/SKILL.md) — user-invoked router
+| Skill | When to use it |
+| --- | --- |
+| [`horizon`](skills/horizon/SKILL.md) | Connect, select an Installation, route your request, and resume work. |
+| [`horizon-interview`](skills/horizon-interview/SKILL.md) | Clarify complex requirements, agree on a plan, and settle required approvals. |
+| [`horizon-ask-for-guidance`](skills/horizon-ask-for-guidance/SKILL.md) | Ask for read-only modeling advice, explanations of configured behavior, or help using the skills. Invoke this skill explicitly. |
+| [`horizon-design`](skills/horizon-design/SKILL.md) | Prepare Metadata-only Design Briefs for external Dashboard or header design, export existing Widgets, and reconcile returned improvements. |
+| [`horizon-metadata-authoring`](skills/horizon-metadata-authoring/SKILL.md) | Build data models, Pages, Dashboards, Widgets, and automation through a Workspace and human review. |
+| [`horizon-runtime`](skills/horizon-runtime/SKILL.md) | Inspect Dashboards, work with Business Data, run Actions and Processes, handle assigned interactions, and configure or test Installation SMTP. |
+| [`horizon-architecture-analysis`](skills/horizon-architecture-analysis/SKILL.md) | Audit Published Metadata, track architectural concerns, and verify implemented improvements. |
+
+See [how the skill set is organized](docs/skill-set.md) for workflow ownership and detailed guidance.
 
 ## Automation guidance
 
@@ -65,7 +78,7 @@ npx skills add hrz-digital/horizon-agent-skills --skill '*' -g
 ln -s ~/.agents/skills ~/.gemini/antigravity-cli/skills
 ```
 
-### 3. Connect you Horizon CLI to a Horizon Installation
+### 3. Connect Horizon CLI to a Horizon Installation
 
 1. Open the Account Sidebar in the target Horizon Installation.
 2. Create an Agent Credential.
@@ -77,14 +90,14 @@ ln -s ~/.agents/skills ~/.gemini/antigravity-cli/skills
 horizon connection add
 ```
 
-6. Run the below command to verify the profile with:
+6. Verify the Connection Profile:
 
 ```bash
 horizon connection list --check
 ```
 
 > [!WARNING]
-> You must personally perform all this steps mannualy. Never paste **Connection Profile** JSON or API keys into Agent chat or ask the Agent to run `horizon connection add`.
+> You must perform these steps yourself in a separate terminal. Never paste **Connection Profile** JSON or API keys into Agent chat or ask the Agent to run `horizon connection add`.
 
 ## Updating setup
 
@@ -127,12 +140,12 @@ npx skills update
 Install this Skill Set at an exact version:
 
 ```bash
-npx skills add https://github.com/hrz-digital/horizon-agent-skills/archive/refs/tags/v1.5.0.tar.gz --all -g
+npx skills add https://github.com/hrz-digital/horizon-agent-skills/archive/refs/tags/v1.6.0.tar.gz --all -g
 ```
 
 ## Authentication
 
-Horizon CLI is required authentication and transport boundary. It stores Agent Credential API keys in operating-system credential store, exchanges short-lived tokens, and sends authenticated requests. API keys and tokens never belong in Harness storage, environment variables, prompts, skills, repositories, URLs, command arguments, output, or logs.
+Horizon CLI provides the required authentication and transport boundary. It stores Agent Credential API keys in the operating-system credential store, exchanges short-lived tokens, and sends authenticated requests. API keys and tokens never belong in Harness storage, environment variables, prompts, skills, repositories, URLs, command arguments, output, or logs.
 
 Skills verify CLI, list live-checked non-secret Connection Profiles, require explicit customer Installation choice, and pass selected profile on every request. Shared procedure lives in [`horizon`](skills/horizon/SKILL.md).
 

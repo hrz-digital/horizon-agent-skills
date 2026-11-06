@@ -4,7 +4,7 @@ description: Propose Horizon Metadata through Workspaces. Use when creating or c
 compatibility: Requires HSC-owned Agent access through Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.5.6"
+  version: "1.6.0"
 ---
 
 # Horizon Metadata Authoring
@@ -245,6 +245,8 @@ Exercise an early answer, restart during waiting, concurrent final answers and c
 Completion: exact request selection and response meaning are settled, the discovered composition validates, representative Test evidence proves the separate stages and recovery, and unsupported completion policies remain explicit.
 
 ## Widgets
+
+For an external design round trip, use [horizon-design](../horizon-design/SKILL.md) to export a Design Brief or reconcile returned work before entering this execution procedure. Export privacy and baseline comparison belong there; this skill owns the resulting Workspace changes, Data Sources, bindings and validation. For raw-row Widget calculations, apply its completeness boundary and verify current Discovery supports the proposal.
 
 Reuse an existing Widget before authoring one. Discover authorization-filtered Widgets through current authoring links and read each candidate's Semantic, presentation inputs, named data contracts, layout defaults, dependencies, and usage locations. Create a new Widget only when no suitable Widget exists; evolve genuinely different behavior as a separate Widget.
 

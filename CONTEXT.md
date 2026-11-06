@@ -21,3 +21,9 @@ _Avoid_: Source-code review, Workspace validation, automatic Metadata repair
 
 **Architectural Metadata Ticket**: A durable Metadata architecture quality concern created or reconfirmed by Metadata Architecture Analysis and tracked through implementation, verification, resolution, or reasoned acceptance.
 _Avoid_: Workspace Attention Item, issue tracker ticket, analysis report
+
+**Design Brief**: A shareable document describing the goal, available Metadata, design constraints and, for improvements, the existing presentation baseline. It supports external design and return integration without client Business Data.
+_Avoid_: Design Package, platform Package, implementation plan
+
+**Design Guide**: The reusable compatibility instructions included in a Design Brief, grounded in the selected Installation's current discovered contracts.
+_Avoid_: Design Brief, API authority
