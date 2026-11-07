@@ -97,7 +97,7 @@ Produce one self-contained Markdown Design Brief in English, with source blocks 
 
 Ask the external agent, under **What to return**, to:
 
-- Deliver separate markup, styles and lifecycle JavaScript that follow the host contract, without relying on libraries unless they help.
+- Return the design as a folder with these files, so we can move it into the platform as it is: `widget.html` (markup), `widget.css` (styles), `widget.js` (lifecycle JavaScript following the host contract, without relying on libraries unless they help), `mock-data.json`, `gap-register.md`, `fonts/` when fonts are used, and a short `README.md` listing the fonts, icons, libraries and calculations. A preview page may be included separately.
 - Deliver the gap register with the first revision.
 - Return mock data; we derive the datasets from it at integration. The mock data is one object whose keys name collections and whose values are arrays of row objects, the shape the JavaScript receives as `data`. Choose the collections and columns the design needs from the data model, using the supported value types and marking nullability. A column or collection the design needs that does not exist in the data model yet may be included and is marked `proposed`; all others are `available`. State for each calculated value whether the Widget computes it from the rows.
 - Keep the mock data as separate content from the rendering code, covering representative multi-row, empty, null, zero and long-label cases. The mock data must be fictional and must not suggest that real data looks like it. Include the proposed columns so the preview shows the target design.

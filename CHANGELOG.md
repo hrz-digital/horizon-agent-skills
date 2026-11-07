@@ -18,6 +18,8 @@
 - Briefs state that every Business Instance has `created_at`, `created_by`, `updated_at` and `updated_by`, add the other system fields and change history Discovery exposes, never present them as absent, and do not propose new fields for what a system field already provides.
 - Removed numeric limits (row limits, group counts, page sizes) from briefs and made them integration checks, with the agent stating the volume each dataset is expected to have.
 - Reordered Design Briefs into goal, locale, scope, system fields, data model, business rules and open questions, platform contract, what to return, Design Session and provenance, with a self-check before delivery.
+- Briefs ask the external agent to return a fixed folder (`widget.html`, `widget.css`, `widget.js`, `mock-data.json`, `gap-register.md`, fonts, README) and give directions rather than constraints.
+- Moved the staged import (mock data first, then real data) into the new "Import an external dashboard design" topic, kept out of the brief.
 - Synced `VERSION` and every skill metadata version to `1.6.3`.
 
 ## v1.6.2

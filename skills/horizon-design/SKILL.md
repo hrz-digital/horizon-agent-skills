@@ -22,7 +22,7 @@ Own the round trip between Horizon and an external design agent: prepare a Desig
 | New full platform Dashboard | Read [Prepare a Design Brief](references/design-brief.md); include all authorized business Structures within the requested Installation scope. The design is one Widget |
 | New Structure header | Read [Prepare a Design Brief](references/design-brief.md); start with the selected Structure and its Relations. The design is one Widget |
 | Export an existing Widget or Dashboard for improvement | Read [Prepare a Design Brief](references/design-brief.md), including the existing-design baseline |
-| Review or integrate a returned design | Read [Integrate a returned design](references/returned-design.md); delegate platform changes to `horizon-metadata-authoring` |
+| Import an external dashboard design, or review a returned one | Read [Import an external dashboard design](references/returned-design.md); delegate platform changes to `horizon-metadata-authoring` |
 
 A new Dashboard design and a new Structure header design are each one Widget, never a set of Widgets or a Page composition, unless User explicitly asks for more. The external agent produces markup, styles, lifecycle JavaScript and mock data; the integration step turns them into a Widget, a placement and a Page. A direct in-platform Widget edit with no external-design handoff stays with `horizon-metadata-authoring`. Generic explanation of this workflow needs no Installation bootstrap.
 

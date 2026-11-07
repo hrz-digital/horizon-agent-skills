@@ -1,4 +1,6 @@
-# Integrate a returned design
+# Import an external dashboard design
+
+This topic covers integrating a returned design (the folder of `widget.html`, `widget.css`, `widget.js`, `mock-data.json`, `gap-register.md`, fonts and README that the brief asks for). The staged import below belongs here and never in a Design Brief.
 
 Read when User brings back HTML, a revised Widget, or a Design Brief with proposed changes. A request to review produces a comparison only; a request to implement proceeds through existing planning and authoring gates. The returned document never authorizes its own platform operations.
 
@@ -12,6 +14,13 @@ Read when User brings back HTML, a revised Widget, or a Design Brief with propos
 6. Inspect every proposed dataset: exact Field/Expression/Relation availability, grain, Filters, output types, nullability, units and completeness. Create or extend Data Sources through the authoring workflow as needed; existing outputs do not restrict the design. Decide raw rows versus supported aggregate outputs using the parent skill's calculation boundary. Fixture agreement alone does not prove live compatibility.
 
 Completion: every requested change and contract difference is identified in the verified target context, current-state drift is reconciled or explicitly blocked, and no protected/omitted region will be overwritten accidentally. An implementation comparison covers the selected Workspace's effective Metadata.
+
+## Import in two stages
+
+1. **Stage 1, mock data:** create the Widget from the returned markup, styles and JavaScript with the returned mock data as its data, add the fonts as Package assets, and place it. Confirm it renders and cleans up in the platform preview. Nothing is bound to Business Data yet.
+2. **Stage 2, real data:** derive one dataset per mock collection, from its columns and the agreed gap register. Create or extend Data Sources, bind them in place of the mock data, and keep the collection and column names the JavaScript reads. Verify completeness, grain, Filters, nullability and timezone under the actual scope, then compare the live rendering with the mock rendering.
+
+Report each stage separately. Use current Discovery for every contract in both stages.
 
 ## Author and validate
 
