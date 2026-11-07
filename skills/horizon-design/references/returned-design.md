@@ -17,7 +17,7 @@ Completion: every requested change and contract difference is identified in the 
 
 ## Import in two stages
 
-1. **Stage 1, mock data:** create the Widget from the returned markup, styles and JavaScript with the returned mock data as its data, add the fonts as Package assets, and place it. Confirm it renders and cleans up in the platform preview. Nothing is bound to Business Data yet.
+1. **Stage 1, mock data:** create the Widget from the returned markup, styles and JavaScript with the returned mock data as its data, add the fonts as Package assets, and place it. Confirm it renders and cleans up in the platform preview. Nothing is bound to Business Data yet. A usable, visual Widget with mock data comes first: do not settle or resolve any gap-register item before creating the Widget, or updating it when it already exists. Gaps, Data Sources and live data belong to Stage 2.
 2. **Stage 2, real data:** derive one dataset per mock collection, from its columns and the agreed gap register. Create or extend Data Sources, bind them in place of the mock data, and keep the collection and column names the JavaScript reads. Verify completeness, grain, Filters, nullability and timezone under the actual scope, then compare the live rendering with the mock rendering.
 
 Report each stage separately. Use current Discovery for every contract in both stages.

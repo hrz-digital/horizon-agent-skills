@@ -22,6 +22,7 @@
 - Briefs ask the external agent to deliver a single self-contained `preview.html` for layout approval first, then the platform files, with `preview.html` included in the returned folder.
 - Made the brief a source of Metadata and working method only: it no longer recommends or decides what the dashboard shows (KPIs, charts, lists, density, periods); that comes from the User's request to the external agent.
 - Gave the Design Session and agreement more emphasis in the brief: a "Start here" note in the Goal and a lead-in before the unchanged Design Session block.
+- Stated that importing a returned design creates or updates the Widget with mock data first, without treating any gap before that.
 - Moved the staged import (mock data first, then real data) into the new "Import an external dashboard design" topic, kept out of the brief.
 - Synced `VERSION` and every skill metadata version to `1.6.3`.
 
