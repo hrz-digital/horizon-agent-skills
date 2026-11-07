@@ -68,7 +68,7 @@ The procedure is one ordered pass: Describe, never invent; collect Metadata and 
 
 Request only links and paths that Discovery advertises, copied exactly. If a fact cannot be reached through an advertised link, leave it out of the brief; never try a guessed route to look for it, because any error stops the run.
 
-Collect these from current Discovery and include only what Discovery states. Leave out what it does not state: do not mention missing, undefined or unsupported items in the brief. Never fill a gap from memory.
+Collect these from current Discovery and include only what Discovery states. Leave out what it does not state: do not mention missing, undefined or unsupported items in the brief. Never fill a gap from memory or from an earlier brief: build every brief from fresh reads, and read earlier revisions only to choose the next revision number. A brief thinner than this list is expected when Discovery states less.
 
 - **System fields and history:** state that every Business Instance has `created_at`, `created_by`, `updated_at` and `updated_by`, and add whatever else Discovery exposes about system fields, their types and any change history. Never state or imply that system fields do not exist, and never propose a new field for what a system field already provides.
 - **Option colors and icons:** the option tables already carry the colors and icons Metadata defines; state whether a Widget can use them only if Discovery says so.
