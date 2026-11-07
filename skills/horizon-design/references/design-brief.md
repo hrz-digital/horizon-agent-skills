@@ -13,9 +13,9 @@ Completion: every requested Structure or design component is accounted for, all 
 
 ## Collect Field-first Metadata
 
-For each included Structure, collect discovered identity and meaning; Fields with exact codes, types, requiredness/nullability, static options, relevant constraints, units and formatting; Expressions with declared result types and safe descriptions of meaning; and Relations with direction, cardinality, ownership and target. Mark properties not supplied by Discovery as unknown rather than inferring them from labels. Render every Structure in the same format: one Fields table (code, type/view, label, requiredness, notes), then Expressions, then Relations. Give each enum or multi-select Field its complete option list as a `code → label` table, never codes alone and never a summary or count in place of the list.
+For each included Structure, collect discovered identity and meaning; Fields with exact codes, types, requiredness/nullability, static options, relevant constraints, units and formatting; Expressions with declared result types and safe descriptions of meaning; and Relations with direction, cardinality, ownership and target. Mark properties not supplied by Discovery as unknown rather than inferring them from labels. Metadata revisions are recorded per Structure; no single Installation revision is needed. Render every Structure in the same format: one Fields table (code, type/view, label, requiredness, notes), then Expressions, then Relations. Give each enum or multi-select Field its complete option list as a table of option code and label, plus a Color column and an Icon column whenever any option of that Field carries one, filled from every option and never from a sample. Never state that options have no colors or icons without checking every option of every Field. Never use a summary or count in place of the list.
 
-Collect relevant existing Data Source declarations as optional reuse context only. Do not collect query limits, pagination, aggregation rules or completeness semantics for the brief; those belong to integration. A new design may use any available Field, not only current outputs.
+Collect relevant existing Data Source declarations as optional reuse context only. A new design may use any available Field, not only current outputs. Dataset capabilities (never numeric limits) are stated once, as today's platform contract, under Collect platform facts.
 
 Read current Widget authoring and presentation catalogs and their linked schemas/examples. Extract only what an offline external agent needs to produce markup, styles, lifecycle JavaScript and mock data that can be moved into a Widget unchanged:
 
@@ -24,10 +24,10 @@ Read current Widget authoring and presentation catalogs and their linked schemas
 - Theme tokens, light and dark behavior, and how the design adapts to the width of its container. Do not teach Page layout, group types or placement.
 - Libraries: list the bundled libraries and their versions as optional help, with a note that plain HTML, CSS and JavaScript is often the better choice and that using a library is never required. Keep the note short. Do not describe how libraries are declared for the Widget.
 - Typography: when Discovery's Package asset contract supports fonts, tell the external agent that custom fonts are welcome for better layouts and design, without explaining how a font is attached to a Widget. State the font media types Discovery lists as supported and say the best-supported format works best for us; do not name a format from memory. Ask for free fonts under open licenses that allow embedding and redistribution, and tell the agent not to rely on proprietary or paid fonts. Mention that omitting a custom font inherits the platform default typography, so a font is never required.
-- Interaction outputs and host intents only if the request needs them and Discovery states how a Widget emits them; otherwise omit them.
+- Interaction outputs and host intents only if Discovery states how a Widget emits them; otherwise leave them out of the brief.
 - For headers: exact native navigation marker, reserved instance context, identity/Test presentation, ownership, content height, sticky configuration, native chrome boundaries and failure fallback.
 
-Copy exact executable details into the generated brief only from these current contracts. Do not fill gaps from memory, source-code inspection, or a previously exported brief. If a contract the design truly needs is unavailable, say so briefly in the provenance footer and do not promise a fully compatible implementation.
+Copy exact executable details into the generated brief only from these current contracts. Do not fill gaps from memory, source-code inspection, or a previously exported brief. State only what Discovery states and leave out what it does not: the brief never lists missing, undefined or unsupported items.
 
 ## Existing-design baseline
 
@@ -41,27 +41,73 @@ If an asset or source section cannot be shared safely, include a dependency desc
 
 Completion: every included source section has been inspected, the baseline identifies its context and revision, shared impact is visible, and source omissions are explicitly separated from intended changes.
 
+## Describe, never invent
+
+The brief starts a Design Session: describe today's reality precisely and bring the open questions to the surface so the external agent does not have to discover them. Take every code, label, type, option and relation exactly from Metadata. Never guess a business meaning. Write meaning that User has confirmed as plain statements, and everything else as an open question with a default the agent may assume. Word a default as an assumption ("assume as stated in Metadata"), never as "confirmed", unless User confirmed it. Never phrase the data model or the platform contract as a reason to make the design smaller.
+
+Facts that are not Metadata and must not be read from Business Data:
+
+- **Record counts (required):** if a count cannot be read, stop, report a tooling error to User, and do not deliver the brief with counts missing. Read the total per included Structure through its discovered query affordance, one explicit request per Structure with its own discovered path and no shell loop. Use a page window beyond the data so the response carries no records, take the number from the total in the response's pagination data, and record only that number with its date. If the response does not show where the total is, inspect only the keys other than the record list. Ask User for the expected size in a year, or mark it as an estimate to agree together. Counts are the only Business Data allowed in a brief. Report a zero count as zero, and note that the mock data is then the only picture of that Structure. Dashboards are usually designed before a new client has any Business Instances. When the counts are zero or show that the client has not started using the platform, say so plainly in the Goal section: this is a new client, no real volumes exist yet, and the expected number of records per Structure will be estimated together with User. Put the expected volumes in the open questions as estimates to agree, with a reasonable default, and ask the agent to state the volume each of its datasets assumes. When counts are non-zero, state them as today's size and still ask for the expected size in a year.
+- **Business rules and the revenue or cost meaning and period of money fields:** ask User or raise an open question.
+- **Scope:** one brief designs one dashboard. Take its scope from User's request, for example follow-up of one Structure and nothing about another, and state it as the Scope. Do not guess scope or intent, and do not invent an audience, roles, questions or priorities: they are defined with User in the Design Session agreement.
+- **Locale:** take currency, default locale and timezone from the Installation's discovered setup. If the language variant (for example `pt-BR` versus `pt-PT`) is not stated, say what is stated, state your assumption and list it as an open question. Never write a bare language code as the whole answer.
+
+## Run the metadata checks
+
+The procedure is one ordered pass: Describe, never invent; collect Metadata and platform facts; run these checks; generate the brief; then verify and deliver. Run these checks on the collected Metadata. Every hit about the meaning of Metadata becomes an open question. Include only what exists: the brief shares the current Metadata and how to work with it, and never lists items that are missing or do not exist.
+
+1. **Lifecycle fields:** when a Structure has more than one status-like enum, ask how they relate, which combinations are valid, and which values count as open, active, won, lost and closed. The default mapping must cover every value of every such enum, including values that fit more than one state, so that no stage or status is left without a meaning.
+2. **Final states:** for every status enum, ask whether its final option separates success from failure and whether a reason is recorded.
+3. **Time series date:** when a Structure has several dates, list them and say that each is valid for a different purpose; which one a chart uses is decided in the Design Session agreement.
+4. **Money semantics:** for each currency field, revenue or cost, and one-time, monthly or yearly. Metadata rarely says which, so never call a field revenue or cost, or monthly, without Metadata or User saying so; otherwise state it as an assumption. When several Structures hold related amounts (for example a contract value, a project cost and an invoice amount), ask how they relate and which source is authoritative for contracted, billed and received, so the same money is not counted twice. Check every Expression for assumptions not stated in field notes and ask for confirmation.
+5. **Optional enums:** state how an unset value arrives in a grouped row and which label to show.
+6. **Computable defaults:** every default you give for an open question, and every rule you state, must be computable from Fields, Expressions and system fields that exist today. If it is not, rewrite it so it is, or leave the default out.
+7. **Contradictions:** compare the statements in the platform contract with each other and with the data model, for example a timezone, a rounding, a date format or a capability stated two ways. Resolve each contradiction from Discovery, or list it as an open question. Do not try to reconcile the audience questions with business defaults inside the brief: such differences are settled with User in the Design Session agreement.
+
+## Collect platform facts
+
+Collect these from current Discovery and include only what Discovery states. Leave out what it does not state: do not mention missing, undefined or unsupported items in the brief. Never fill a gap from memory.
+
+- **System fields and history:** state that every Business Instance has `created_at`, `created_by`, `updated_at` and `updated_by`, and add whatever else Discovery exposes about system fields, their types, their use in datasets and any change history. Never state or imply that system fields do not exist, and never propose a new field for what a system field already provides.
+- **Parent identity in rows:** whether a dataset over a child Structure can carry its parent's identifier and display label on each row, only if Discovery says so.
+- **Dataset capabilities:** what a dataset can do today (filter, grouping including by date bucket, counting, sum, average, minimum, maximum, distinct count, joins across Relations, unnesting multi-value fields, sort, date-range parameters), and whether calculations can run in the platform or only in the Widget. State capabilities as examples of what is possible, never as boundaries, and when Discovery pairs a capability with a number, state the capability without the number. Keep numeric limits out of the brief: row limits, group counts, page sizes, pagination and error behavior for oversized results. Those are integration checks, and a limit the design exceeds is a platform enhancement to decide with User, not a constraint on the agent. Tell the agent plainly to design for the data the experience needs, at any volume, and not to shrink a design to fit any size limit.
+- **Dataset timezone:** the timezone datasets use to bucket dates and decide relative dates, stated explicitly, with where it is set.
+- **Option colors and icons:** the option tables already carry the colors and icons Metadata defines; state whether a Widget can use them only if Discovery says so.
+- **Icons:** the icon codes in Metadata, such as those on enum options, are [Iconify](https://iconify.design) codes in the form `prefix:name`, for example `mdi:cancel`. Tell the agent they only name which icon Metadata means. A Widget has no platform icon component, so say plainly that the agent should deliver every icon it needs as inline SVG inside its own markup, matching the Metadata icon where it wants to mirror it, and may use any other open-licensed icon set. Never imply that a Widget can render an icon from its code at runtime unless Discovery says so.
+- **Value formats on the wire:** for `date`, `datetime`, `month`, currency numbers, `boolean` and `null` group keys.
+- **Lifecycle:** whether `mount` may be async, what `update` receives and when it is called, refresh cadence, and whether inputs can change while mounted.
+- **Rendering environment:** shadow or regular DOM, style and identifier isolation between instances, container height behavior, pixel ranges for narrow, medium and wide, and how a theme change is signalled to canvas-based content.
+- **Libraries and fonts:** the shape of the libraries argument as used inside the lifecycle functions, and how a Widget refers to a font file as far as Discovery says. Do not teach how libraries or fonts are declared on the Widget.
+- **Interaction:** whether a Widget can emit filters, drill-through or navigation, and how. Internal interactions (tabs, period selectors, tooltips) are allowed.
+- **Accessibility:** a target level and expectations for focus, reduced motion and chart alternatives when Discovery or User states them.
+
 ## Generate the shareable document
 
-Produce one self-contained Markdown Design Brief, with source blocks inside it so the external agent needs neither Core nor skills repository access. Write it as context for a high-quality design, not as a list of limitations. Use these sections, omitting only those marked conditional:
+Produce one self-contained Markdown Design Brief in English, with source blocks inside it so the external agent needs neither Core nor skills repository access. Keep user-facing labels in the Installation's language, exactly as Metadata has them. Use these sections in this order; adapt the audience questions for headers and improvements. For an existing design, add an **Existing implementation** section after the data model with the baseline source, placements, dependencies and shared usages:
 
-1. **Goal and quality bar:** new Dashboard, new header or improvement, as one Widget. Say that the target is an excellent, polished, professional result, that the agent should propose the best design for the audience and purpose, and that the platform will be enhanced if the design needs something not yet available. For improvements, state the intended changes and the behavior to preserve.
-2. **Scope:** the Structures included, and the Structures intentionally left out. One short list, not a revision table.
-3. **Available Metadata:** one uniform block per Structure as described in Collect Field-first Metadata, preserving exact schema codes, with Relation context.
-4. **How your code runs:** the deliverable and host contract extracted above, with compact safe examples, and the optional-library note. Keep it brief. These are a snapshot, not future API authority.
-5. **Existing implementation:** conditional baseline source, placements, dependencies and shared usages.
-6. **What to return:** the requested source components and notes, listed below.
-7. **Provenance:** a short footer with the Installation alias, Metadata Context, export timestamp, relevant Metadata revisions, sanitization or coverage omissions, and any missing contract. It is for the integration step, and the external agent may ignore it.
+1. **Goal and quality bar:** new Dashboard, new header or improvement, as one Widget. Include this sentence adapted to the design: "Aim for an excellent, polished, professional result. Nothing in this brief limits the design. The data model and the platform contract describe what exists today. Gaps are expected: record them in the gap register rather than designing around them." Do not state an audience, roles, the questions the dashboard must answer or their priority, and do not guess what User wants: the brief shares the current Metadata and how to work with it, and the Design Session agreement with User defines the rest. Say that in the Goal. Include visual direction (brand, colors, density, tone), the light and dark values of the theme tokens, or expected presentation inputs only when User or Discovery gave them. State the scope exactly as User defined it. For improvements, state intended changes and behavior to preserve.
+2. **Language and locale:** language variant, currency code, number format, date format and how months are written, and the timezone that decides "today", "this month", "overdue" and "expired" with where the Widget gets "today".
+3. **Scope:** the Structures included and the Structures intentionally left out with the reason; ownership stated once.
+4. **System fields:** state that every Business Instance has `created_at`, `created_by`, `updated_at` and `updated_by`, plus the other system fields and change history that Discovery exposes, with their types and use in datasets.
+5. **Data model:** one uniform block per Structure as described in Collect Field-first Metadata. Also give each Structure its record count (read as described above, plus User's expected size in a year when given), mark every Structure that describes real people and state that it should be designed as counts and trends, not lists of personal details, include option colors and icons of enums when Metadata has them (otherwise say whether the agent chooses), give the scale of every rating field, note inconsistent formats in Metadata values such as colors with and without an alpha channel and ask whether they are intentional, and state that grouping by a multi-value field counts a record more than once. Describe Relations to out-of-scope Structures and what the agent may still show. Keep labels with typos, stray spaces or very long text verbatim and add a note.
+6. **Business rules and open questions:** confirmed rules as statements, then a table of open questions with columns ID, Question, Why it matters and Default to assume.
+7. **Platform contract as of today:** say that changes to it are proposed through the gap register, and that these rules bind the code but do not limit the design. Include the deliverable and host contract extracted for the offline agent (separate markup, styles and JavaScript, `mount` / `update` / `cleanup` as discovered, container-only DOM, no network, null as an explicit empty marker, group keys as codes not labels, theme tokens with fallbacks, container-based sizing), the optional-library note with pinned versions, the typography note, and everything collected under Collect platform facts.
+8. **What to return:** see below.
+9. **Design Session and agreement:** copy it from [Design Session section](design-session.md).
+10. **Provenance:** a footer with the Installation alias, Metadata Context, export timestamp, relevant Metadata revisions and sanitization or coverage omissions. It is for the integration step, and the external agent may ignore it.
 
-Do not write sections for proposed datasets, query limits, unsupported requirements or ready-made fixtures. In **What to return**, ask the external agent to:
+Ask the external agent, under **What to return**, to:
 
 - Deliver separate markup, styles and lifecycle JavaScript that follow the host contract, without relying on libraries unless they help.
-- Define the datasets the design needs: for each, a name, one row's meaning, and the columns with their types and nullability, derived from the available Metadata. The agent chooses the datasets freely and is not limited to current Data Sources.
-- Create the mock data itself for those datasets, as separate content from the rendering code, covering representative multi-row, empty, null, zero and long-label cases. The mock data must be fictional and must not suggest that real data looks like it.
-- If custom fonts are used, list every one in the return: family, weights, styles, character coverage, license and source, and supply the font files in the supported format so we can add them. Fonts the design does not need should be left out.
+- Deliver the gap register with the first revision.
+- Define the datasets the design needs: for each, a name, one row's meaning, and the columns with types and nullability, derived from the data model, marking every dataset and column `available` or `proposed`. The agent chooses the datasets freely and is not limited to current Data Sources. State for each dataset the volume the design expects (approximate rows or groups, now and over time), and for each calculated value whether the Widget computes it from rows or the platform delivers it, and whether it assumes the complete set. We use these to check feasibility at integration.
+- Create the mock data itself, as separate content from the rendering code, including proposed columns so the preview shows the target design, and covering representative multi-row, empty, null, zero and long-label cases. The mock data must be fictional and must not suggest that real data looks like it.
+- Give every proposed item the fallback the design uses if it is rejected, already designed and shown in the preview, for example through a mock-data switch.
+- If custom fonts are used, list every one: family, weights, styles, character coverage, license and source, and supply the font files in the supported format so we can add them. Fonts the design does not need should be left out.
 - Keep rendering dependent only on the supplied data and context, never on embedded records, and keep any standalone preview harness separate from production code.
+- If icons are used, list each icon, its source set and license, and the Metadata icon code it mirrors when it does; the icons themselves are inline SVG in the markup.
 - Check narrow and wide containers, light and dark themes, repeated placements, empty and null data, lifecycle cleanup and relevant header navigation, and report checks actually observed separately from suggested ones.
-- List the datasets, columns, inputs, dependencies and calculations the design introduces, and for each calculation say whether it assumes a complete dataset.
+- List the datasets, columns, inputs, dependencies and calculations the design introduces.
 
 For improvements, require preservation of existing contracts and behavior except explicitly requested changes. Identify every added or removed dataset, column, input and output, calculation change and new dependency. Preserve omitted baseline sections as integration requirements; returned placeholders are not replacements for platform content.
 
@@ -70,3 +116,22 @@ For improvements, require preservation of existing contracts and behavior except
 Inspect the entire final document, including fenced source blocks and examples, for client Business Data, secrets, live identifiers, unsafe links and copied mocks. Check every claimed capability against collected Discovery evidence, and confirm every enum list is complete. Check requested Metadata coverage and source-section completeness. A scan alone does not prove that a business value is synthetic: verify its provenance.
 
 If inspection finds unsafe content, remove or replace it before delivery; describe omissions without echoing removed content. If uncertainty remains, omit the affected section and note the limitation in the provenance footer. Save only the inspected shareable artifact. Report its path, coverage and unresolved gaps; do not upload, email or send it to an external design service.
+
+Before delivery, confirm each item and fix the brief or turn the item into an open question when one fails:
+
+- Every code, label and option matches Metadata exactly, every enum list is complete, and every color and icon an option carries is shown.
+- Language variant, currency, formats and timezone are explicit.
+- System fields are stated as User and Discovery describe them, never as absent.
+- Each Structure has its record count, with the date it was read, and no other Business Data was retained.
+- Each currency field says revenue or cost and its period, or has an open question.
+- Each rating field has a scale or an open question.
+- Every metadata check ran and each hit about the meaning of Metadata is an open question, including the computable-defaults and contradiction checks.
+- The brief states no audience, roles, questions or priorities of its own.
+- Every status value has a meaning, and related money fields say which source is authoritative.
+- Every record count was read, or the work was stopped with a tooling error.
+- The dataset timezone and the usability of option colors and icons are stated.
+- Every open question has a default the agent may assume.
+- Every platform fact above is stated only if Discovery states it, and no missing, undefined or unsupported item is listed.
+- The Design Session section is included and the quality-bar sentence about gaps is present.
+- Nothing tells the agent to reduce the design because of today's data.
+- The brief contains no real business data, personal data, links or credentials.

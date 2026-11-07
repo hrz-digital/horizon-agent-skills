@@ -1459,11 +1459,13 @@
     "expect": [
       "routes through horizon-design after normal bootstrap and verifies Published Metadata context",
       "enumerates all authorized business Structures and follows Metadata pagination rather than limiting scope to existing Data Source outputs",
-      "includes exact available Fields, Expressions and Relations in one uniform format per Structure, with every enum option as a complete code-to-label list, plus the current discovered host contract in one self-contained local Markdown brief",
-      "frames the design as a single Widget, with a quality bar and no Page layout, Widget declaration properties, query limits, proposed Data Sources or unsupported-requirement lists",
-      "presents bundled libraries only as optional help and asks the external agent to create its own mock data and propose its own datasets",
+      "includes exact available Fields, Expressions and Relations in one uniform format per Structure, with every enum option as a complete list including any colors and icons the options carry, plus the current discovered host contract in one self-contained local Markdown brief",
+      "frames the design as a single Widget with a quality bar, explicit locale, the Design Session section, and no Page layout, Widget declaration properties, proposed Data Sources or ready-made fixtures",
+      "runs the metadata checks and records open questions with defaults, reads only record totals through a window that returns no records, takes business rules from User rather than Business Data, treats one brief as one dashboard without guessing roles, states no audience, roles, questions or priorities of its own and leaves them to the Design Session agreement, checks the platform contract for contradictions, checks unmapped status values and double-counted money, stops with a tooling error when a record count cannot be read, says the client is new and volumes are estimated together when counts are zero, and states system fields and only the platform contract Discovery states, without listing missing, undefined or unsupported items",
+      "presents bundled libraries only as optional help and asks the external agent to create its own mock data, propose its own datasets and return a gap register with fallbacks",
+      "explains that Metadata icon codes are Iconify codes that only name an icon, asks for icons as inline SVG with their source and license, and does not imply a Widget can render them from the code",
       "invites free, open-license custom fonts in the media types Discovery lists as supported, asks the agent to list and supply each font used, and does not explain how fonts are attached to a Widget",
-      "reports inaccessible Metadata as a coverage limitation in a short provenance footer, invents no unavailable Fields, and makes no Business Data reads, platform writes or external uploads"
+      "reports inaccessible Metadata as a coverage limitation in a short provenance footer, invents no unavailable Fields, and reads no Business Data other than record counts, makes no platform writes and no external uploads"
     ]
   },
   {

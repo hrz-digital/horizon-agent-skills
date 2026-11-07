@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.6.3
+
+### Added
+- Added a Design Session to Design Briefs: explicit language variant, currency, formats and timezone; system fields and change history; metadata checks that raise open questions with default assumptions; today's platform contract stated as a rule for the code rather than a limit; and a gap register with `available` or `proposed` items, fallbacks and an agreement step.
+- Added a rule that one brief designs one dashboard, scoped exactly as User describes it, without guessed roles, and that a missing platform capability is described as something the platform can be enhanced to provide, never as a restriction on the design.
+- Added record counts per Structure to Design Briefs, read only as totals through a window that returns no records. This is the only Business Data a brief may contain. Business rules and money semantics still come from User or open questions.
+
+### Changed
+- Kept audience, roles, questions and priorities out of the brief, to be defined with User in the Design Session agreement, so the brief only shares the current Metadata, how to work with it and the assets to return; required a tooling-error stop when a record count cannot be read; added checks that every default is computable from existing fields and that platform contract statements do not contradict each other; and required the dataset timezone and the usability of option colors and icons to be stated.
+- Told the external agent that Metadata icon codes are Iconify codes (`prefix:name`) that only name an icon, that Widgets have no platform icon component so icons are delivered as inline SVG, and asked it to list each icon with its source and license; required option colors and icons to be shown in the option tables.
+- Told the external agent when an Installation has no Business Instances yet: the brief states that this is a new client and that expected record volumes will be estimated together with User, as open questions with defaults.
+- Added brief checks that every status value has a meaning, related money fields name an authoritative source, and platform contract statements do not contradict each other. Defaults are worded as assumptions, never as confirmed. Briefs also state whether child datasets can carry the parent's identity, record visual direction and expected inputs only when given, note inconsistent Metadata color formats, and mark layout-defining platform gaps as essential.
+- Stopped briefs from listing items that are missing, undefined or unsupported: the detected gaps section, the Missing contracts row, "not defined yet" statements and the missing-dates and missing-status checks are gone, so a brief shares only what exists.
+- Briefs state that every Business Instance has `created_at`, `created_by`, `updated_at` and `updated_by`, add the other system fields and change history Discovery exposes, never present them as absent, and do not propose new fields for what a system field already provides.
+- Removed numeric limits (row limits, group counts, page sizes) from briefs and made them integration checks, with the agent stating the volume each dataset is expected to have.
+- Reordered Design Briefs into goal, locale, scope, system fields, data model, business rules and open questions, platform contract, what to return, Design Session and provenance, with a self-check before delivery.
+- Synced `VERSION` and every skill metadata version to `1.6.3`.
+
 ## v1.6.2
 
 ### Added
