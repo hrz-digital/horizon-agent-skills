@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.6.1
+
+### Changed
+- Reframed `horizon-design` Design Briefs as context for one high-quality Widget: a new Dashboard or Structure header design is a single Widget unless User asks for more, and the brief carries a quality bar instead of platform limitations.
+- Required every Structure in a brief to use one uniform Fields table and every enum or multi-select Field to list its complete `code → label` options.
+- Narrowed the Widget guidance to what the external agent needs to deliver HTML, CSS, lifecycle JavaScript and mock data that can be moved into a Widget; Widget declaration properties, Page layout and library declaration details are left to the integration step.
+- Made bundled libraries optional help, noting that plain HTML, CSS and JavaScript is often the better choice.
+- Moved dataset proposals and mock data to the external agent. Briefs no longer carry proposed datasets, query limits, unsupported-requirement lists or ready-made fixtures, and the old Snapshot and Readiness sections became a short provenance footer.
+- Changed the gap rule for returned designs: when the platform cannot deliver a dataset or aggregate, report it so User can choose between a platform enhancement and a design change.
+- Updated design scenarios, test documentation and the skill-set guide, and synced `VERSION` and every skill metadata version to `1.6.1`.
+
 ## v1.6.0
 
 ### Added

@@ -4,7 +4,7 @@ description: Prepare Metadata-only Design Briefs for external dashboard or Struc
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1; reads and integration remain subject to current Metadata authority.
 metadata:
   author: hrz-digital
-  version: "1.6.0"
+  version: "1.6.1"
 ---
 
 # Horizon Design
@@ -19,12 +19,12 @@ Own the round trip between Horizon and an external design agent: prepare a Desig
 
 | Request | Procedure |
 | --- | --- |
-| New full platform Dashboard | Read [Prepare a Design Brief](references/design-brief.md); include all authorized business Structures within the requested Installation scope |
-| New Structure header | Read [Prepare a Design Brief](references/design-brief.md); start with the selected Structure and its Relations |
+| New full platform Dashboard | Read [Prepare a Design Brief](references/design-brief.md); include all authorized business Structures within the requested Installation scope. The design is one Widget |
+| New Structure header | Read [Prepare a Design Brief](references/design-brief.md); start with the selected Structure and its Relations. The design is one Widget |
 | Export an existing Widget or Dashboard for improvement | Read [Prepare a Design Brief](references/design-brief.md), including the existing-design baseline |
 | Review or integrate a returned design | Read [Integrate a returned design](references/returned-design.md); delegate platform changes to `horizon-metadata-authoring` |
 
-A direct in-platform Widget edit with no external-design handoff stays with `horizon-metadata-authoring`. Generic explanation of this workflow needs no Installation bootstrap.
+A new Dashboard design and a new Structure header design are each one Widget, never a set of Widgets or a Page composition, unless User explicitly asks for more. The external agent produces markup, styles, lifecycle JavaScript and mock data; the integration step turns them into a Widget, a placement and a Page. A direct in-platform Widget edit with no external-design handoff stays with `horizon-metadata-authoring`. Generic explanation of this workflow needs no Installation bootstrap.
 
 ## Metadata-only boundary
 
@@ -36,12 +36,14 @@ These rules also apply to re-export after integration. Authorized live verificat
 
 ## Responsibility and data calculations
 
-The exporting agent provides available Fields, Expressions, Relations and discovered capabilities. Existing Data Source outputs are reuse opportunities, not the ceiling on a design. The external agent proposes dataset contracts and synthetic fixtures; the integrating Horizon agent creates or extends Data Sources and binds them under current authority.
+The exporting agent provides available Fields, Expressions and Relations as design context, and sets an ambitious quality bar. It does not limit the design to what the platform serves today, and it does not propose Data Sources, state query limits, or list unsupported requirements. Existing Data Source outputs are optional reuse context, not the ceiling on a design.
 
-Keep presentation calculations in Widget JavaScript. Grouping or aggregation over raw rows is acceptable only when the integrating agent can establish that the supplied dataset is complete and reasonably bounded for the intended scope. Otherwise use supported Data Source aggregation, or label the calculation explicitly as a current-page summary. Discover query bounds and completeness signals; never infer completeness from a small fixture, a short result, or an absent pagination property. The Widget must not fetch additional pages itself. Settle grain, null handling, units, timezone, duplicate handling and Relation multiplicity before deciding where a calculation runs.
+The external agent proposes its own datasets (grain, columns, types) and creates its own mock data from the Metadata. The integrating Horizon agent then checks feasibility and creates or extends Data Sources and binds them under current authority.
 
-If the deployed runtime cannot deliver the required complete dataset or aggregate, report the gap and adjust the design with User; do not silently substitute first-page totals. Keep any conflicting platform authoring rule explicit instead of claiming that this policy grants unsupported execution.
+During integration, keep presentation calculations in Widget JavaScript. Grouping or aggregation over raw rows is acceptable only when the integrating agent can establish that the supplied dataset is complete and reasonably bounded for the intended scope. Otherwise use supported Data Source aggregation, or label the calculation explicitly as a current-page summary. Discover query bounds and completeness signals; never infer completeness from a small mock, a short result, or an absent pagination property. The Widget must not fetch additional pages itself. Settle grain, null handling, units, timezone, duplicate handling and Relation multiplicity before deciding where a calculation runs.
+
+If the deployed platform cannot deliver the required dataset or aggregate, report the gap to User and let User choose between a platform enhancement and a design change; do not silently substitute first-page totals. Keep any conflicting platform authoring rule explicit instead of claiming that this policy grants unsupported execution.
 
 ## Completion
 
-For export, deliver a self-contained, inspected Design Brief with scope coverage, provenance, synthetic-only examples, and explicit omissions. No platform writes or Business Data reads occurred. For return, report the baseline comparison and delegate authorized implementation through the existing authoring lifecycle, with actual validation/preview evidence and unresolved gaps. A locally saved brief is a design artifact, not an approved implementation plan or permission to publish.
+For export, deliver a self-contained, inspected Design Brief with scope coverage, a brief provenance footer, synthetic-only examples, and explicit sanitization omissions. No platform writes or Business Data reads occurred. For return, report the baseline comparison and delegate authorized implementation through the existing authoring lifecycle, with actual validation/preview evidence and unresolved gaps. A locally saved brief is a design artifact, not an approved implementation plan or permission to publish.

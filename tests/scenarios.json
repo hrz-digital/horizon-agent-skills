@@ -1459,9 +1459,10 @@
     "expect": [
       "routes through horizon-design after normal bootstrap and verifies Published Metadata context",
       "enumerates all authorized business Structures and follows Metadata pagination rather than limiting scope to existing Data Source outputs",
-      "includes exact available Fields, Expressions and Relations plus current discovered Widget contracts in one self-contained local Markdown brief",
-      "reports inaccessible Metadata as a coverage limitation and invents no unavailable Fields",
-      "uses newly synthetic fixtures and makes no Business Data reads, platform writes or external uploads"
+      "includes exact available Fields, Expressions and Relations in one uniform format per Structure, with every enum option as a complete code-to-label list, plus the current discovered host contract in one self-contained local Markdown brief",
+      "frames the design as a single Widget, with a quality bar and no Page layout, Widget declaration properties, query limits, proposed Data Sources or unsupported-requirement lists",
+      "presents bundled libraries only as optional help and asks the external agent to create its own mock data and propose its own datasets",
+      "reports inaccessible Metadata as a coverage limitation in a short provenance footer, invents no unavailable Fields, and makes no Business Data reads, platform writes or external uploads"
     ]
   },
   {
@@ -1480,8 +1481,8 @@
     "expect": [
       "expands relevant Contract Metadata through the declared Project Relation without exporting unrelated Structures",
       "treats available Fields as design context even when absent from current Data Source outputs",
-      "records Relation multiplicity, grain and completeness requirements before proposing aggregation",
-      "marks unsupported traversal or aggregation as a capability gap rather than inventing a query",
+      "lists the Contract Fields and the Relation with its cardinality as design context without proposing a query or Data Source",
+      "leaves feasibility of the total to the integration step instead of listing a capability gap in the brief",
       "makes no Business Data reads to determine the total"
     ]
   },
@@ -1561,7 +1562,7 @@
       "rejects first-page aggregation as an all-record total and does not infer completeness from fixtures",
       "discovers supported complete aggregate outputs and proposes Data Source changes or explicit current-page labeling",
       "does not make the Widget fetch remaining pages itself",
-      "reports unsupported complete results as a design gap and makes no mutations for this review-only request"
+      "reports unsupported complete results as a gap for User to resolve by platform enhancement or design change, and makes no mutations for this review-only request"
     ]
   },
   {
