@@ -1462,6 +1462,7 @@
       "includes exact available Fields, Expressions and Relations in one uniform format per Structure, with every enum option as a complete code-to-label list, plus the current discovered host contract in one self-contained local Markdown brief",
       "frames the design as a single Widget, with a quality bar and no Page layout, Widget declaration properties, query limits, proposed Data Sources or unsupported-requirement lists",
       "presents bundled libraries only as optional help and asks the external agent to create its own mock data and propose its own datasets",
+      "invites free, open-license custom fonts in the media types Discovery lists as supported, asks the agent to list and supply each font used, and does not explain how fonts are attached to a Widget",
       "reports inaccessible Metadata as a coverage limitation in a short provenance footer, invents no unavailable Fields, and makes no Business Data reads, platform writes or external uploads"
     ]
   },

@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.6.2
+
+### Added
+- Added Design Brief guidance inviting free, open-license custom fonts in the media types Discovery lists as supported, without explaining how fonts are attached to a Widget, and asking the external agent to list and supply each font used with its family, weights, styles, coverage, license and source.
+
+### Changed
+- Named Design Briefs `design-brief-rev<N>.md`, starting at `design-brief-rev1.md` and using the next revision number for each new brief in the same design folder, never overwriting an earlier revision.
+- Synced `VERSION` and every skill metadata version to `1.6.2`.
+
 ## v1.6.1
 
 ### Changed
