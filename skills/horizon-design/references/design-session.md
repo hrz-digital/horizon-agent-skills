@@ -11,9 +11,9 @@ describes what exists today. It is a starting point, not a limit.
 ### How the session works
 
 1. **First revision: design for the ideal.** Design the dashboard that best
-   serves the audience, assuming any field, dataset or platform capability
+   serves the audience, assuming any field, mock data collection or platform capability
    you need. Do not reduce the design to fit today's data.
-2. **Make every dependency visible.** Mark each dataset, column, calculation
+2. **Make every dependency visible.** Mark each mock data collection, column, calculation
    and business rule as `available` (exists in this brief) or `proposed`
    (new). Mock data includes proposed columns, so the preview shows the target.
 3. **Deliver a gap register** with the first revision (format below).
@@ -29,7 +29,7 @@ describes what exists today. It is a starting point, not a limit.
 | --- | --- |
 | Business rule | What a final status means; how status fields relate; which date drives a time series |
 | New field | Created date, due date, request status, loss reason, a value scale |
-| New dataset capability | Group by month, join across a Relation, unnest a multi-value field, date-range filter |
+| New data shape | Group by month, join across a Relation, unnest a multi-value field, date-range filter |
 | Platform contract | Interaction events, theme-change signal, font loading, container height |
 | Data-protection decision | Whether a personal field may appear, and in what aggregated form |
 
@@ -38,7 +38,7 @@ For each item give:
 - **ID** and **kind** (from the table above)
 - **What the design needs**, in one or two sentences
 - **Why**: which audience question it serves, and what the user loses without it
-- **Proposal**: an exact field code, type, options or dataset shape
+- **Proposal**: an exact field code, type, options or mock data shape
 - **Fallback**: what the design shows if the item is rejected
 - **Priority**: `essential`, `valuable` or `nice-to-have`
 - **Decision**: left empty; filled in during the agreement

@@ -36,9 +36,9 @@ These rules also apply to re-export after integration. Authorized live verificat
 
 ## Responsibility and data calculations
 
-The exporting agent provides available Fields, Expressions and Relations as design context, sets an ambitious quality bar, and runs the Metadata checks that surface open questions. It states today's platform contract as a binding rule for the code, never as a limit on the design, and it does not propose Data Sources itself. Existing Data Source outputs are optional reuse context, not the ceiling on a design.
+The exporting agent provides available Fields, Expressions and Relations as design context, sets an ambitious quality bar, and runs the Metadata checks that surface open questions. It states today's platform contract as a binding rule for the code, never as a limit on the design, and it does not propose Data Sources. The external agent creates no datasets and uses none; it only generates mock data.
 
-The brief starts a Design Session. The external agent proposes its own datasets (grain, columns, types), creates its own mock data from the Metadata, and returns a gap register with `available` and `proposed` items and a fallback for each proposal. User and the integrating Horizon agent then agree each item, check feasibility, and create or extend Data Sources and bind them under current authority.
+The brief starts a Design Session. The external agent creates its own mock data from the Metadata, shaped as named collections of rows, and returns a gap register with `available` and `proposed` items and a fallback for each proposal. User and the integrating Horizon agent then agree each item, derive the datasets from the mock data, check feasibility, and create or extend Data Sources and bind them under current authority.
 
 Facts that are not Metadata, such as business rules and the meaning of money fields, come from User or become open questions, never from Business Data. Record counts follow the Metadata-only boundary exception.
 
