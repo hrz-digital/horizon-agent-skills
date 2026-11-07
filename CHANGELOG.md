@@ -20,6 +20,7 @@
 - Reordered Design Briefs into goal, locale, scope, system fields, data model, business rules and open questions, platform contract, what to return, Design Session and provenance, with a self-check before delivery.
 - Briefs ask the external agent to return a fixed folder (`widget.html`, `widget.css`, `widget.js`, `mock-data.json`, `gap-register.md`, fonts, README) and give directions rather than constraints.
 - Briefs ask the external agent to deliver a single self-contained `preview.html` for layout approval first, then the platform files, with `preview.html` included in the returned folder.
+- Made the brief a source of Metadata and working method only: it no longer recommends or decides what the dashboard shows (KPIs, charts, lists, density, periods); that comes from the User's request to the external agent.
 - Moved the staged import (mock data first, then real data) into the new "Import an external dashboard design" topic, kept out of the brief.
 - Synced `VERSION` and every skill metadata version to `1.6.3`.
 
