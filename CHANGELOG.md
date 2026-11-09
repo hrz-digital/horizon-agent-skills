@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.6.4 (Unreleased)
+## v1.6.4
 
 ### Changed
 - Added guidance to verify live Widget data: Discovery's save-time Widget binding codes versus row-level checks the Agent runs through the Page's advertised source links, rows that carry every declared output as null when unset (and how to treat older Installations), the Real default of Dashboards in a Workspace, reporting the data scope behind every figure, and Dashboard Data Source saving, joins through `relation.<code>` and `ownerInstanceCode`. The runtime skill points to it for an empty or incomplete Dashboard.

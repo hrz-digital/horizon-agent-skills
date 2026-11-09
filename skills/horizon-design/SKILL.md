@@ -4,7 +4,7 @@ description: Prepare Metadata-only Design Briefs for external dashboard or Struc
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1; reads and integration remain subject to current Metadata authority.
 metadata:
   author: hrz-digital
-  version: "1.6.3"
+  version: "1.6.4"
 ---
 
 # Horizon Design
