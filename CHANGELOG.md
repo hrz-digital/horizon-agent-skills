@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.6.5 (Unreleased)
+
+### Changed
+- Metadata authoring now guides a Table Element's default setup: declare it to choose and order what a Table opens with, read its contract, validation codes and eligible columns and sortable Fields from Discovery, write it as a complete-View Page update reviewed like any Metadata change, treat a default sort as a starting point, and never reset a User's saved arrangement. Adds a black-box scenario.
+
 ## v1.6.4
 
 ### Changed

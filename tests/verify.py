@@ -146,6 +146,7 @@ def main():
             "Fixtures beyond that set need fresh confirmation",
             "including the Test instances the checks reuse or create")
     require("skills/horizon-ask-for-guidance/SKILL.md", "test scenarios; explain that Workspace context validates against Test Business Instances")
+    require("skills/horizon-metadata-authoring/SKILL.md", "**Table default setup:**", "never to list every Field", "never reset a User's arrangement yourself")
     require("skills/horizon-metadata-authoring/references/dashboard-and-widgets.md", "## Verify live Widget data", "Row-level checks are yours", "state the scope behind every figure")
     require("skills/horizon-runtime/SKILL.md", "#verify-live-widget-data")
     scenarios = json.loads((ROOT / "tests/scenarios.json").read_text())
@@ -276,7 +277,7 @@ def main():
         "design-existing-widget-export", "design-export-embedded-business-data",
         "design-export-missing-contract", "design-return-revision-drift", "design-return-workspace-selection",
         "design-return-sanitized-baseline", "design-raw-aggregation-incomplete",
-        "design-raw-aggregation-complete", "design-return-new-contract", "widget-live-data-diagnosis",
+        "design-raw-aggregation-complete", "design-return-new-contract", "widget-live-data-diagnosis", "table-default-setup",
     })
     # Check the new workflow's entry points and reference graph, not its prose.
     entry = ROOT / "skills/horizon-design/SKILL.md"

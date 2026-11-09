@@ -1611,5 +1611,15 @@
       "distinguishes save-time validation codes from row-level failures that the resolved Page does not report",
       "never hides a failed dataset behind mock data, states what was not observed in the rendered Page, and leaves approval and Publication to an eligible human"
     ]
+  },
+  {
+    "id": "table-default-setup",
+    "prompt": "Use Acme. The Projects list should open with Name, Stage, Owner and Due date, newest due date first, instead of every column. Propose it.",
+    "expect": [
+      "selects a Workspace and reads the Table Element's discovered setup contract and the Data Source's eligible columns and sortable Fields instead of assuming them",
+      "declares only the requested columns in the requested order plus a default sort, and does not list every Field or reshape the Data Source output",
+      "updates the Page by resending the complete View list with the other nodes preserved, validates, and leaves approval and Publication to an eligible human",
+      "states that a User's saved arrangement outranks the default, never resets a User's arrangement, and treats a sort as a starting point and not a filter"
+    ]
   }
 ]
