@@ -24,7 +24,14 @@ For an agreed summary in the current session, treat User's execution request as 
 
 ## Errors
 
-The normal scenario has no errors. On any HTTP error status or CLI failure, report status and message to User and stop all Horizon requests for this run, including diagnostic reads. Never retry with a guessed variant or continue elsewhere after an error. Judge each response by the HTTP status the CLI reports, not by its exit status alone: an error status can arrive while the command itself succeeds.
+The normal scenario has no errors. Judge each response by the HTTP status the CLI reports, not by its exit status alone: an error status can arrive while the command itself succeeds. Routes come only from Discovery; never take the next route to try from an error body, memory or a similar path.
+
+- **5xx, or a CLI or transport failure** (network, TLS, unreadable output): stop all Horizon requests for this run, including diagnostic reads. Report the status and message to the operator and wait. Never retry with a variant.
+- **404 or 405 on a request you made:** the path or method was not an advertised one, or the capability is unavailable. Never retry a variant or a neighboring route. Return to the nearest Discovery document that should link to it, re-request that document in the same Metadata Context, and follow the link it returns. If Discovery advertises no such link, the capability is absent: report its stated reason and skip that step. If you built the path yourself, say so in your report. A 404 on a link Discovery did advertise means the target changed: refresh the listing it came from.
+- **401 or 403:** authority is missing. Stop that step, report the status and reason, and never route around it through another affordance or credential. Unrelated steps that Discovery shows as available may continue.
+- **409, 422 and other 4xx that carry issues or a remediation:** follow the response's own remediation and the authoring skill's rules for that case, then re-validate. Never adjust a payload by guessing.
+
+Completion: every error was handled by its class, no route was guessed or retried as a variant, and any 5xx or transport failure stopped the run with a report to the operator.
 
 ## Bootstrap
 

@@ -11,6 +11,8 @@ metadata:
 
 Own the round trip between Horizon and an external design agent: prepare a Design Brief, preserve an existing design baseline, and reconcile a returned design before authoring. Scope is Widgets for Dashboards and Structure headers. A Design Brief is a local, shareable document, never a platform Package or an import payload.
 
+For local brief revisions, User-requested business definitions and returned design artifacts, follow [Local design files](references/design-brief.md#local-design-files). Saving User decisions alone needs no Installation bootstrap; exporting current Metadata still follows the workflow below.
+
 ## Enter and choose mode
 
 1. Run `horizon` bootstrap for Installation work; reuse the session's explicit live-valid selection. For export or review, use Published Metadata by default, or a User-selected existing Workspace with refreshed Discovery and verified Metadata Context. These modes make no platform writes. For returned-design implementation, establish the target Workspace through the return procedure before completing reconciliation.

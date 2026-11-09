@@ -4,12 +4,24 @@ Read for a new Dashboard, Structure header, or an existing design exported for i
 
 ## Select context
 
-1. Record the requested outcome, chosen Installation alias (the label of the selected Connection Profile), Metadata Context, export timestamp, and relevant stable Metadata identities/revisions for the provenance footer. Avoid credentials and network addresses. Use an agreed output path, or a local `design-brief-rev<N>.md` under the current project's `.hrz` design directory, in a folder named for the design. Start at `design-brief-rev1.md`; for each new brief in that folder use the next revision number, and never overwrite an earlier revision. A design artifact does not trigger the saved implementation-plan workflow.
+1. Record the requested outcome, chosen Installation alias (the label of the selected Connection Profile), Metadata Context, export timestamp, and relevant stable Metadata identities/revisions for the provenance footer. Avoid credentials and network addresses. Select the output folder and revision through [Local design files](#local-design-files). A design artifact does not trigger the saved implementation-plan workflow.
 2. For a full platform Dashboard, which is one Widget, enumerate all authorized business Structures within the requested scope. Follow Metadata listing pagination and detail links until coverage is complete; do not silently select only Structures used by existing Data Sources. Report unavailable or excluded Metadata as coverage limits, never as proof that it does not exist.
 3. For a Structure header, include its Fields, Expressions, direct Relations and target identities/meaning. Expand related Structure details only for requested related information. A Project header that summarizes Contracts needs the relevant Contract Metadata; a Project identity header does not need the entire Installation.
 4. For an existing design, identify the Widget and selected usage context. Include all Widgets and placements when the request covers a composed Dashboard. Inspect the complete effective usage set so shared-change impact is visible; the requested placement is not necessarily the only consumer.
 
 Completion: every requested Structure or design component is accounted for, all necessary Metadata pages are read, and inaccessible or intentionally unexpanded context is named.
+
+## Local design files
+
+Store each design under the current project's `.hrz/<customer-code>/design/<design-code>/`, unless User explicitly chooses another output path. The first folder below `.hrz` identifies the customer context, for example `crm`, `aegea` or `bayer`; it is not a Business Instance or a requirement to register the vendor as a client. Reuse the customer code and design folder User has named; ask for the code when it is unknown rather than deriving it from a Connection Profile label.
+
+For example, the CRM dashboard lives in `.hrz/crm/design/horizon-crm-dashboard/`. Keep the Design Brief revisions, User-requested business definitions and returned design artifacts together in that design folder. Other customers' designs use their own customer folders. Creating one customer's design does not require empty folders for other customers.
+
+Name briefs `design-brief-rev<N>.md`. Start at `design-brief-rev1.md` and use the next revision number found in the selected design folder. Preserve earlier revisions, including when User requests moving an existing design into this layout; keep its associated artifacts together and update affected local links.
+
+Business definitions requested by User can be saved separately in the same folder without a platform read. Identify their source as User decisions and distinguish agreed meaning, proposed modeling and unresolved rules. Such a note is Design Session input, not a refreshed Metadata export, a Design Brief or an approved implementation plan. Inspect any material selected for external sharing under the parent skill's Metadata-only boundary.
+
+Completion: the customer and design folder are explicit, existing revisions and artifacts are preserved, and each new document identifies whether it is a brief or User-provided business definitions.
 
 ## Collect Field-first Metadata
 
@@ -68,7 +80,7 @@ The procedure is one ordered pass: Describe, never invent; collect Metadata and 
 
 ## Collect platform facts
 
-Request only links and paths that Discovery advertises, copied exactly. If a fact cannot be reached through an advertised link, leave it out of the brief; never try a guessed route to look for it, because any error stops the run.
+Request only links and paths that Discovery advertises, copied exactly. If a fact cannot be reached through an advertised link, leave it out of the brief; never try a guessed route to look for it; a guessed route fails with a 404 and the only valid recovery is back through Discovery.
 
 Collect these from current Discovery and include only what Discovery states. Leave out what it does not state: do not mention missing, undefined or unsupported items in the brief. Never fill a gap from memory or from an earlier brief: build every brief from fresh reads, and read earlier revisions only to choose the next revision number. A brief thinner than this list is expected when Discovery states less.
 
