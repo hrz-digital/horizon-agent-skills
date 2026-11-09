@@ -41,6 +41,20 @@ Widget authoring is not complete until requested Widget(s) are placed on the int
 
 Workspace preview supplies Widget mock data only for datasets a placement leaves unbound; read the exact per-placement rule from current Discovery. Published context never carries mocks, and a mock never replaces a bound dataset, including one that fails or returns empty. Complete live Data Source bindings before Publication when users need live results. A mock-first Workspace draft is for layout/design feedback, not a promise that a published Dashboard or header will show those fixtures.
 
+## Verify live Widget data
+
+Discovery reports Widget data problems that can be known when a presentation is saved; problems in the rows themselves only show when the data is read. Check both before handoff.
+
+- **Save-time checks.** The presentation catalog lists the validation codes for Widget bindings, such as `widget_column_not_found`, `widget_column_type_mismatch`, `widget_column_nullability_mismatch` and `widget_mapping_unknown_column`. Read the codes from current Discovery and fix the mapping, the Data Source output or the Widget contract. A column declared non-nullable needs an output the platform declares non-nullable; declare a column nullable when its Field can be unset.
+- **Row-level checks are yours.** A resolved Page does not report that a dataset's rows break the Widget contract; a User sees a corner warning icon naming the unavailable datasets and the Widget draws with the rest. After binding, query each bound Data Source through the link the resolved Page advertises, and compare the rows with the contract per column: the column is present, the type fits, and null appears only where the contract allows it. A Data Source is reachable through that link only once a placement binds it; never construct the route.
+- **Unset values.** A Data Source row carries every declared output, with null when the Field is unset. An Installation older than that release omits unset outputs instead; treat an absent value as null for a nullable column, and report a non-nullable column that is absent or null. Report which release behavior you observed.
+- **Data scope.** In a Workspace, a Dashboard reads Real data when a request names no scope, because it is a read-only panel; Structure Pages and Tables keep the Test default. Read `defaultDataScope` and `dataScopes` from the resolved Page, state the scope behind every figure you report, and never create Test records only to make a read-only Dashboard show data. A request that names a scope gets exactly that scope.
+- **Failures stay visible.** A dataset that fails is reported with its name and reason, never hidden by mock data and never described as a rendering success. State plainly when you did not observe the rendered Page.
+- **Joins and ownership.** A to-one Reference Relation can be an output as `relation.<code>`, which returns the target's instance code as nullable text; an Owned source exposes `ownerInstanceCode`. Join datasets in the Widget on those codes instead of duplicating Fields.
+- **Saving Data Sources.** Dashboard Data Sources are saved through the Dashboard's discovered presentation affordance together with its Pages and default Page. On a validation failure, follow its remediation, for example when it names a missing default Page, rather than retrying a variant.
+
+Completion: each bound dataset is queried in the selected context and scope, its rows are compared with the Widget contract, every mismatch is reported with dataset and column, and every reported figure names its data scope.
+
 ## Structure headers
 
 A Structure header replaces only the instance identity and navigation area of a Business Instance page. Breadcrumbs, Actions, and save status stay platform-owned. Use it when a Structure needs business context beside identity; use the standard header when identity and navigation alone suffice.

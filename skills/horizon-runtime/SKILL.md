@@ -46,6 +46,8 @@ A Dashboard identity does not represent Business Data. Route changes to its Pack
 
 Follow the Dashboard's current Page and source affordances rather than constructing links or selecting the first Page. Query sources independently under current User authority and the requested Metadata context. A refused source is a contained failure: keep unrelated authorized content available, report the refusal honestly, and never retry through a Relation context to widen the source's Access Scope.
 
+In a Workspace, a Dashboard reads Real data when a request names no scope; name the scope behind every figure you report. When a Dashboard looks empty or incomplete, diagnose from the sources: query each source through the link the resolved Page advertises, compare the rows with the Widget's data contract, and report the dataset and column that fail, following [Verify live Widget data](../horizon-metadata-authoring/references/dashboard-and-widgets.md#verify-live-widget-data). A resolved Page does not report row-level failures itself.
+
 Completion: only the requested authorized Dashboard is inspected, unavailable default behavior is reported honestly, and source authority is considered independently.
 
 ## Inspect Process Instances

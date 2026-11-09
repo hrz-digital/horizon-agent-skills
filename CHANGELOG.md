@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.6.4 (Unreleased)
+
+### Changed
+- Added guidance to verify live Widget data: Discovery's save-time Widget binding codes versus row-level checks the Agent runs through the Page's advertised source links, rows that carry every declared output as null when unset (and how to treat older Installations), the Real default of Dashboards in a Workspace, reporting the data scope behind every figure, and Dashboard Data Source saving, joins through `relation.<code>` and `ownerInstanceCode`. The runtime skill points to it for an empty or incomplete Dashboard.
+- The `horizon` skill's Errors rule now handles each class instead of stopping on every error: a 404 or 405 sends the Agent back to Discovery to follow the advertised link and never to a guessed variant, 401 and 403 stop only that step, 409 and 422 follow their remediation, and 5xx or transport failures still stop the run and go to the operator.
+- Metadata authoring now guides whole-dataset Widget calculations to Data Sources whose Discovery contract advertises complete delivery (refusal is a visible failure, never partial or mock data), child-row reporting to the advertised owned-relation selection instead of duplicate parent Fields, and new dashboard Fields on populated Structures to optional-with-fallback entry, no Real backfill, and a prior count of records that would violate state-conditional required Constraints.
+- Organized local design artifacts by customer code under `.hrz/<customer-code>/design/<design-code>/`, preserving brief revision numbering and keeping returned designs and User-requested business definitions with their design. Business-definition notes remain distinct from Metadata exports and implementation plans.
+- Added Discovery-grounded Widget authoring guidance and a black-box scenario for to-one Reference identity plus audit time and display-name outputs: prefer supported outputs over duplicate Fields, match type and nullability, and preserve unknown values.
+
 ## v1.6.3
 
 ### Added
