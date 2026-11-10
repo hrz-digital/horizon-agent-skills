@@ -4,7 +4,7 @@ description: Operate Horizon Business Data and execute runtime Actions and Proce
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.6.4"
+  version: "1.6.5"
 ---
 
 # Horizon Runtime
@@ -28,11 +28,17 @@ Completion: compatible CLI and Discovery confirmed, customer Installation explic
 1. Open current runtime Discovery entry and select Published Metadata context it exposes for ordinary runtime work. Keep authoring Workspace context out of ordinary runtime requests, except for the Workspace feature validation in `horizon-metadata-authoring`.
 2. For Business Data or an Action, select Structure from compact Semantic summaries, then follow detail link. For a direct Process run, follow the Process Definition catalog and detail instead; execution inspection follows **Inspect Process Instances** below without selecting a Structure.
 3. Follow authorized runtime affordance for Business Instance CRUD, Relations, Assets, Data Sources, recovery, following, notifications, Installation email settings, assigned Human Interactions, Actions, or Process starts. Concrete Business Instance affordances determine Action availability; never infer it by scanning definitions.
-4. Read linked JSON Schema before constructing request. Use stable codes and runtime-provided links; never infer URL, payload, Relation Edge storage, or task implementation.
+4. For period or numeric-interval queries, follow [Query periods and numeric intervals](#query-periods-and-numeric-intervals). Read linked JSON Schema before constructing request. Use stable codes and runtime-provided links; never infer URL, payload, Relation Edge storage, or task implementation.
 
 Completion: target Business Instance, Process Definition, or Process Instance, current runtime affordance, required context, linked schema, and request links identified.
 
 Relation linking and reading follow the same current runtime affordances for Reference Relations to Primary and Secondary targets. A reference to a Secondary target leaves its owner and lifecycle unchanged; deleting the referencing Business Instance does not delete the target. The source Structure capability governs the reference, so eligible Secondary target display data can be visible across roots. Use current Metadata constraints to determine which targets are eligible, and treat a deleted target as unavailable until it is restored. For a draft under an owner, supply the discovered parent context when requesting options so same-root filtering can apply. Explain a refused link using the returned eligibility message and preserve existing links until the User directs a change.
+
+## Query periods and numeric intervals
+
+For a requested period or numeric interval, read the selected Data Source's current input contract before constructing bounds. Preserve an intentionally open endpoint; do not invent zero, today's date, or another limit. Keep meaningful zero and negative numeric values, check endpoint order, and use the discovered interval support rather than approximating a range with one scalar comparison. Retain fixed restrictions, current Access Scope and Data Scope for the query and any export. If the Installation lacks interval support, report that capability gap instead of presenting a broader or narrower result as the requested interval.
+
+Completion: the discovered input represents the requested interval, every supplied endpoint is retained, and the result is reported with its actual scope.
 
 ## Work with Assets
 

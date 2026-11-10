@@ -1621,5 +1621,18 @@
       "updates the Page by resending the complete View list with the other nodes preserved, validates, and leaves approval and Publication to an eligible human",
       "states that a User's saved arrangement outranks the default, never resets a User's arrangement, and treats a sort as a starting point and not a filter"
     ]
+  },
+  {
+    "id": "runtime-open-ended-intervals",
+    "prompt": "Use Acme. Inspect the requested report for all dates up to my chosen cutoff and amounts starting at zero, with no upper amount limit. Discover the current Data Source contract, preserve those open endpoints, and export the same selection. If interval support is unavailable, explain the gap rather than guessing a filter. Do not change Business Data or Metadata.",
+    "expect": [
+      "reads current Discovery and linked input schema before constructing the query",
+      "preserves the missing lower date endpoint and missing upper numeric endpoint",
+      "keeps zero as a meaningful numeric bound",
+      "checks supplied endpoint order and uses discovered interval support",
+      "preserves fixed restrictions, Access Scope and Data Scope in both query and export",
+      "reports unsupported interval capability honestly rather than approximating with a scalar comparison",
+      "does not mutate Business Data or Metadata"
+    ]
   }
 ]

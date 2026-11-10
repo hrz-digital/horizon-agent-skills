@@ -277,7 +277,7 @@ def main():
         "design-existing-widget-export", "design-export-embedded-business-data",
         "design-export-missing-contract", "design-return-revision-drift", "design-return-workspace-selection",
         "design-return-sanitized-baseline", "design-raw-aggregation-incomplete",
-        "design-raw-aggregation-complete", "design-return-new-contract", "widget-live-data-diagnosis", "table-default-setup",
+        "design-raw-aggregation-complete", "design-return-new-contract", "widget-live-data-diagnosis", "table-default-setup", "runtime-open-ended-intervals",
     })
     # Check the new workflow's entry points and reference graph, not its prose.
     entry = ROOT / "skills/horizon-design/SKILL.md"
