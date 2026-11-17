@@ -149,6 +149,8 @@ def main():
     require("skills/horizon-metadata-authoring/SKILL.md", "**Table default setup:**", "never to list every Field", "never reset a User's arrangement yourself")
     require("skills/horizon-metadata-authoring/references/dashboard-and-widgets.md", "## Verify live Widget data", "Row-level checks are yours", "state the scope behind every figure")
     require("skills/horizon-runtime/SKILL.md", "#verify-live-widget-data")
+    require("skills/horizon-metadata-authoring/SKILL.md", "### Typed interactions and routing", "Route every negative outcome", "never means approved")
+    require("skills/horizon-runtime/SKILL.md", "role's own response contract")
     scenarios = json.loads((ROOT / "tests/scenarios.json").read_text())
     required = {
         "missing-cli", "unsupported-cli", "update-available", "install-refused", "zero-profiles", "one-profile", "many-profiles",
@@ -277,7 +279,7 @@ def main():
         "design-existing-widget-export", "design-export-embedded-business-data",
         "design-export-missing-contract", "design-return-revision-drift", "design-return-workspace-selection",
         "design-return-sanitized-baseline", "design-raw-aggregation-incomplete",
-        "design-raw-aggregation-complete", "design-return-new-contract", "widget-live-data-diagnosis", "table-default-setup", "runtime-open-ended-intervals",
+        "design-raw-aggregation-complete", "design-return-new-contract", "widget-live-data-diagnosis", "table-default-setup", "runtime-open-ended-intervals", "typed-human-interaction-authoring",
     })
     # Check the new workflow's entry points and reference graph, not its prose.
     entry = ROOT / "skills/horizon-design/SKILL.md"

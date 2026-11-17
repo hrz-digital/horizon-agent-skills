@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.6.6 (Unreleased)
+
+### Added
+- Metadata authoring now guides typed Human Interactions: choose `action`, `approval` or `review` by business meaning, keep Structure Actions as process starters, let a `review` own the revision loop because processes run forward, route every negative outcome and inspect skipped spans, never treat a wait or expired deadline as approval, and rely on implicit notifications instead of a duplicate. Runtime guidance reads each typed request's role-specific response contract. Adds a black-box scenario.
+
 ## v1.6.5
 
 ### Changed

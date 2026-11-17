@@ -108,6 +108,8 @@ Discover the acting User's assigned requests and read the selected request's cur
 
 Confirm the User's intended response and submit only the declared response values through the current affordance. Let authenticated transport determine the acting identity. Keep the responsible User separate from Agent Credential provenance, and verify the accepted response and actual responder from a fresh read. If Login Access or assignment is unavailable, report that condition instead of proposing a general grant or substituting another identity.
 
+A typed request carries the acting role's own response contract: a reviewer decides, while the responsible User of a revision only reports the rework done. Read the contract of the exact request rather than reusing an earlier round's answer, and include the comment a negative or revision answer requires.
+
 After an uncertain submission, read the durable request before retrying and follow the current repeat/stale-response contract. Preserve an already accepted response and its audit; reassess a stale rejection rather than sending a different answer as recovery. A contextual status change is a separate Business Data mutation and does not substitute for answering. Request creation, accepted response and subsequent process progress are separate facts; discover explicit continuation support before claiming that an answer resumed work.
 
 ### Reassignment and deadline recovery

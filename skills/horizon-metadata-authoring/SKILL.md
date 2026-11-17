@@ -233,6 +233,12 @@ When a process requires a User's decision or typed input, discover supported Hum
 
 Minimize contextual information and keep linked Business Data access under its own authority. Select response values explicitly rather than inferring approval from a Field name or status update. Discover whether request creation continues independently or an explicit wait is available; model continuation only when supported. Test using eligible Test Users and the authorized Workspace context, verifying assignment, input validation, durable acceptance, authenticated provenance and repeat behavior without adding process or CRUD grants to the responder.
 
+### Typed interactions and routing
+
+Choose the interaction type by business meaning, then read its roles, outcomes and starter from current Discovery: an **action** is a step one responsible User completes, an **approval** is a one-shot decision whose responsible User is only informed, and a **review** is a decision that can send work back for revision. A Structure Action only starts a process; the button a User presses inside a running process is an `action` interaction. Model rework as a `review` with its attempt bound: processes run forward, and the review owns the loop.
+
+Route every negative outcome to a later operation or to the process end, and read back which operations a route skips; a later operation that consumes a skipped output must fail validation, not run. A wait or an expired deadline never means approved. Take role Users from declared inputs or Relation identity outputs the platform resolves, and rely on the interaction's implicit notifications, confirming the notification default in the saved read-back, instead of adding a duplicate notification operation. In Test scope, answer each round as the eligible Test User the role names and record each outcome, attempt count and skipped span; report a step as untested when a human must enable that User.
+
 Completion: responsibility, response meaning and placement are supported by current Discovery, safe Test evidence establishes the exact request authority, and notification receipt, Field mutation, response acceptance and process continuation remain distinct.
 
 ## Generation and response waiting

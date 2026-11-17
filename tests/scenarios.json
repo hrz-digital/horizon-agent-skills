@@ -1634,5 +1634,17 @@
       "reports unsupported interval capability honestly rather than approximating with a scalar comparison",
       "does not mutate Business Data or Metadata"
     ]
+  },
+  {
+    "id": "typed-human-interaction-authoring",
+    "prompt": "Use Acme. When a project starts, its approver approves the kickoff, its reviewer reviews the plan and may send it back for rework, and the responsible person then completes three stage steps. A rejection or denial should end the process. Propose it.",
+    "expect": [
+      "selects a Workspace and reads the process-definition catalog, its typed Human Interaction starters and role meanings from Discovery instead of assuming a payload",
+      "uses an approval for the kickoff, a review with an attempt bound for the plan and action interactions for the stage steps, keeping the Structure Action only as the process starter",
+      "routes every rejected and denied outcome as requested and reads back which operations are skipped",
+      "takes role Users from declared inputs or Relation identity outputs and never treats a wait or expired deadline as approval",
+      "relies on implicit notifications and checks the notification default in the saved read-back instead of adding a duplicate notification operation",
+      "validates, reports untested Test User steps that need a human, and leaves approval and Publication to an eligible human"
+    ]
   }
 ]
