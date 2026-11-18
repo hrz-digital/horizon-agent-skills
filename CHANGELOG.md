@@ -5,6 +5,9 @@
 ### Added
 - Metadata authoring now guides typed Human Interactions: choose `action`, `approval` or `review` by business meaning, keep Structure Actions as process starters, let a `review` own the revision loop because processes run forward, route every negative outcome and inspect skipped spans, never treat a wait or expired deadline as approval, and rely on implicit notifications instead of a duplicate. Runtime guidance reads each typed request's role-specific response contract. Adds a black-box scenario.
 
+### Changed
+- Test User fixture guidance now requires each Test User who must answer in a Workspace Test run to be a current owner or preview User of that Workspace, with usable login, before the run starts. An Agent uses a discovered preview-User affordance only for the agreed Test Users and otherwise hands the preparation to a human Workspace owner or platform administrator.
+
 ## v1.6.5
 
 ### Changed
