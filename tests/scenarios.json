@@ -1655,7 +1655,7 @@
       "reads the composition contract to learn what a Condition may read before promising a guard, and does not guard on the output of a step a route can skip",
       "routes each denial to a later step that reads the record again, evaluates a Condition on that value and guards the cancelling steps on it, so the normal path skips them",
       "reads the record once for the process and asks before creating a new Data Source",
-      "labels every new operation and does not invent a way to clear the optional Field, reporting that clear as untested when Discovery does not confirm it",
+      "labels every new operation and clears the optional Field the way Discovery documents, directly in the cancelling mutation, without a script that only returns constants",
       "validates, tells the User which scenarios to run (success, each denial) because no Agent Test run is advertised, and leaves approval and Publication to an eligible human"
     ]
   }
