@@ -6,6 +6,7 @@
 - Metadata authoring now guides typed Human Interactions: choose `action`, `approval` or `review` by business meaning, keep Structure Actions as process starters, let a `review` own the revision loop because processes run forward, route every negative outcome and inspect skipped spans, never treat a wait or expired deadline as approval, and rely on implicit notifications instead of a duplicate. Runtime guidance reads each typed request's role-specific response contract. Adds a black-box scenario.
 
 ### Changed
+- Process Definition authoring now guides: label every operation including Human Interactions; change an existing definition through its own advertised save link; read a business record once and declare every needed value from that read; guard work after a skipping route by re-reading the record and evaluating a Condition on the fresh value; report an unverified Field clear as untested; hand the process run to a preview User with named scenarios when Discovery advertises no Agent Test run. Adds a black-box scenario.
 - Test User fixture guidance now requires each Test User who must answer in a Workspace Test run to be a current owner or preview User of that Workspace, with usable login, before the run starts. Agents use Discovery eligibility for agreed preview assignments and cleanup, verify membership after each change, and hand off unavailable operations to an authorized human.
 
 ## v1.6.5

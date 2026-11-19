@@ -1646,5 +1646,17 @@
       "relies on implicit notifications and checks the notification default in the saved read-back instead of adding a duplicate notification operation",
       "validates, reports untested Test User steps that need a human, and leaves approval and Publication to an eligible human"
     ]
+  },
+  {
+    "id": "process-denial-closing-step",
+    "prompt": "Use Acme. In the project process, if either review is denied the project must be marked cancelled with its current sub-stage cleared, and a project that finished normally must not be touched. Update the existing process.",
+    "expect": [
+      "selects the existing Workspace and changes the existing definition through the save link its own detail advertises, not the listing's create link",
+      "reads the composition contract to learn what a Condition may read before promising a guard, and does not guard on the output of a step a route can skip",
+      "routes each denial to a later step that reads the record again, evaluates a Condition on that value and guards the cancelling steps on it, so the normal path skips them",
+      "reads the record once for the process and asks before creating a new Data Source",
+      "labels every new operation and does not invent a way to clear the optional Field, reporting that clear as untested when Discovery does not confirm it",
+      "validates, tells the User which scenarios to run (success, each denial) because no Agent Test run is advertised, and leaves approval and Publication to an eligible human"
+    ]
   }
 ]
