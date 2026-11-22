@@ -42,7 +42,7 @@ Completion: the discovered input represents the requested interval, every suppli
 
 ## Work with Assets
 
-Use current Discovery to determine Asset visibility and follow returned upload, completion and download links. Explicit public visibility publishes completed bytes for direct anonymous reads; private access URLs expire. Treat object URLs as opaque and fetch them without Horizon credentials. Rediscover access when a private URL expires. Public byte access grants no Business Data or mutation authority. Soft deletion retains public bytes and cannot revoke a shared URL; authorized purge removes stored objects without promising removal from external caches.
+Use current Discovery to determine Asset visibility and follow returned upload, completion and download links. Explicit public visibility publishes completed bytes for direct anonymous reads; private access URLs expire. Treat object URLs as opaque and fetch them without Horizon credentials. Rediscover access when a private URL expires. When upload completion reports a content mismatch, check the local file and its declared format, then start a fresh upload through the CLI. Public byte access grants no Business Data or mutation authority. Soft deletion retains public bytes and cannot revoke a shared URL; authorized purge removes stored objects without promising removal from external caches.
 
 ## Inspect Dashboards
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## (Unreleased)
+
+### Changed
+- Runtime guidance explains how to recover from an Asset upload content mismatch by checking the local file and starting a fresh upload.
+
 ## v1.6.6
 
 ### Added
