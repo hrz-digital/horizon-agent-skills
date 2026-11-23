@@ -3,7 +3,7 @@
 ## (Unreleased)
 
 ### Added
-- Metadata authoring now guides Business Steps in Process Definitions: draft an outline of business-named steps first, assign consecutive stretches of operations, keep shared tail work ungrouped, remember fan-out children inherit their container's step and that reordering steps never reorders operations, validate and fix step issues by location, and expect an added outline to affect only new runs. Runtime guidance reads the outline frozen with each run to report progress in business terms, keeps historical runs on their starting outline and diagnostics administrative.
+- Metadata authoring now guides Business Steps in Process Definitions as optional organization only, left out of auxiliary automation: draft an outline of business-named steps first, assign consecutive stretches of operations, keep shared tail work ungrouped, remember fan-out children inherit their container's step and that reordering steps never reorders operations, validate and fix step issues by location, and expect an added outline to affect only new runs. Runtime guidance reads the outline frozen with each run to report progress in business terms, keeps historical runs on their starting outline and diagnostics administrative.
 
 ### Changed
 - Runtime guidance explains how to recover from an Asset upload content mismatch by checking the local file and starting a fresh upload.
