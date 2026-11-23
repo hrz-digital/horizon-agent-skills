@@ -167,7 +167,7 @@ Start published Process Definitions and track Process Instances through live run
 2. Apply **Execute** above for admission, ambiguous-start retry safety, tracking, and business-value and provenance verification; never report business effects until runtime confirms them.
 3. Keep the accepted Data Scope. Run under Published context unless current Discovery explicitly offers another scope. On a scope, target, or launch refusal, report the stable reason and stop; never fall back to other data or guess an alternate route.
 4. A missing executable link means no launch authority; report the stable reason and stop.
-5. A running instance keeps its original definition snapshot across later Publications; re-reading the definition never rewrites running state.
+5. A running instance keeps its original definition snapshot across later Publications; re-reading the definition never rewrites running state. A run records the Version of the definition it started from; read that Version, not a Revision, to relate the run to a Publication.
 
 Completion: launch confirmation obtained, accepted instance tracked through returned state links to runtime-confirmed completion or stable failure, committed values and provenance verified, and refusals reported without fallback or guessed routes.
 
@@ -207,6 +207,8 @@ Exercise a Workspace draft against Test fixtures before Publication, using the s
 4. Deliver only to currently eligible test participants through contained in-app means and recheck eligibility at delivery time. Requests that need a human answer additionally require current authentication, Login Access, response eligibility, and Workspace access; plain notification recipients need none of that.
 5. Leave automatic schedules and event subscriptions off while exercising. Use explicit runs or discovered trigger exercises against committed Test transitions; neither subscribes the Workspace globally. Fixtures outlive the run for reuse.
 6. Report real failures as failures: a failed item, a refused recipient, or an ineligible participant is evidence, never a silent success. Restart mid-wait and retry failed items to confirm durable progress and continued containment before calling the exercise complete.
+
+A Workspace exercise reports which definition state ran: v0 for a never-published definition, or the last published Version plus the draft Revision for a changed draft. Compare Versions across runs to tell whether the published definition changed; the draft Revision only identifies the saved draft.
 
 Completion: effective definition and eligible participants discovered; explicit Test run tracked to completion or stable failure; Real data, audit, and other inboxes untouched; provenance distinguishes requester from logical initiator; refusals and failures reported as such.
 

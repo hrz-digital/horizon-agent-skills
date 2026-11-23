@@ -22,6 +22,12 @@ _Avoid_: Source-code review, Workspace validation, automatic Metadata repair
 **Architectural Metadata Ticket**: A durable Metadata architecture quality concern created or reconfirmed by Metadata Architecture Analysis and tracked through implementation, verification, resolution, or reasoned acceptance.
 _Avoid_: Workspace Attention Item, issue tracker ticket, analysis report
 
+**Version**: The published state of a Metadata item (Structure, Process Definition, Widget, Dashboard, Profile Feedback Definition). It advances once per Publication that changes the item; v0 means awaiting first Publication. A Package has its own published Version. An Asset's content versions are upload snapshots, not Publication Versions.
+_Avoid_: revision, save counter, Asset content version
+
+**Revision**: The saved-change counter of one record. It advances on every save and is the optimistic-concurrency token an Agent reads and sends back when saving; shown as rev.N. A Structure's effective revision is an opaque token, never a number to compute.
+_Avoid_: Version, published state, counter to increment locally
+
 **Design Brief**: A shareable document describing the goal, available Metadata, design constraints and, for improvements, the existing presentation baseline. It supports external design and return integration without client Business Data.
 _Avoid_: Design Package, platform Package, implementation plan
 

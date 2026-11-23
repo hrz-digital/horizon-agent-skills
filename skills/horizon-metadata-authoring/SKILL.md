@@ -94,11 +94,20 @@ For a requested Dashboard removal, discover current deletion availability and co
 
 Completion: Dashboard and Package identities are stable for retained definitions, effective label/icon/default values and requested removals are read back, the Workspace diff accounts for every affected Package, each requested Dashboard Page has its chosen Widget composition and preview/data-binding stage read back and validated when available, and human Publication remains pending.
 
+## Versions and Revisions
+
+Two counters answer different questions; never mix them.
+
+- **Version** is the published state of a Metadata item (v0, v1, v2). It advances once per Publication that changes the item, and v0 means awaiting first Publication. To tell whether a published item changed, or to relate a Process run to a Publication, compare Versions. Packages have their own published Version; Asset content versions are upload snapshots, not Publication Versions.
+- **Revision** (rev.N) counts saved changes to one record and advances on every save. It is the concurrency token for saving, never a measure of published change.
+
+Never send a Version or Revision as a property to change. Read the current Revision from Discovery immediately before saving and send it back as Discovery directs. A Structure's effective Revision is a token to pass through, not a number to compute. On a conflict, reload, reapply the intended change to the fresh state and save again; never increment a Revision locally or force the save.
+
 ## Active-execution protection
 
 When concurrent runs for the same business inputs would interfere, select declared inputs that express that boundary through the definition's current authoring affordance. Confirm the intended grouping with the User when it is unclear; include every input needed to distinguish independent work. Read normalization, defaults, Data Scope, Publication, and lifecycle semantics from Discovery before promising which starts conflict. Validate the proposed selection and read it back through Discovery.
 
-Treat active-execution protection as a concurrency policy. Express permanent business uniqueness and intentional repeat policy separately through the appropriate Metadata. A new definition revision alone does not justify assuming earlier work has finished.
+Treat active-execution protection as a concurrency policy. Express permanent business uniqueness and intentional repeat policy separately through the appropriate Metadata. A new published Version of a definition alone does not justify assuming earlier work has finished.
 
 Completion: the intended grouping is settled, the discovered protection selection is validated and read back, and business repeat policy remains explicit.
 

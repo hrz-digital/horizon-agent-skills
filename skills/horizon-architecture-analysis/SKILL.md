@@ -24,7 +24,7 @@ Completion: supported Discovery and the current Metadata Architecture Analysis c
 
 Before finding new concerns, explicitly evaluate every Ticket awaiting post-Publication verification:
 
-1. Read its problem, evidence, recommendation, involved element revisions, and Publication reference.
+1. Read its problem, evidence, recommendation, involved element Versions, and Publication reference.
 2. Compare claim against current Published Metadata, including owning Structure, siblings, direct Relations, and executable definitions.
 3. When correction is demonstrated, update Ticket through its current affordance with resolution evidence.
 4. When concern remains, return it to attention with current evidence and recommendation.
@@ -40,8 +40,8 @@ Build an inventory and account for every discoverable Structure and element.
 1. Compare Structure boundaries globally. Look for overlapping business identity, lifecycle, ownership, Relations, and intended use. Shared terminology or Objective alone never proves duplication or consolidation.
 2. For each element, compare its meaning with owning Structure, siblings, direct Relations, and related Structure Semantic.
 3. Look for overlapping purpose, concepts outside owner boundary, Structures representing same business identity, missing distinctions likely to cause misuse, Relation meaning inconsistent with ownership, and recommendations contradicted by executable Metadata.
-4. Read accepted Tickets before judging matching concerns. Their rationale remains architecture context while involved Metadata revisions are unchanged; changed revisions require reassessment.
-5. Ground every concern in stable element references, current revisions, Semantic evidence, and executable Metadata. Incomplete or conflicting Semantic lowers confidence rather than inviting guesses.
+4. Read accepted Tickets before judging matching concerns. Their rationale remains architecture context while involved Metadata Versions are unchanged; changed Versions require reassessment.
+5. Ground every concern in stable element references, current Versions, Semantic evidence, and executable Metadata. Incomplete or conflicting Semantic lowers confidence rather than inviting guesses.
 
 Assess relative remediation complexity, architectural impact, and evidential confidence using values allowed by the discovered schema. Localized Metadata edits are less complex than cross-Structure or consolidation work; ambiguity is lower impact than conflicting business identity or ownership; explicit corroborating Semantic and executable evidence increases confidence.
 
@@ -56,7 +56,7 @@ Completion: inventory covers every discoverable Structure and element, each cand
 3. Include concise title, problem, structured involved-element references, evidence, recommendation, and schema-required assessments.
 4. Follow server duplicate response to existing Ticket and then use its discovered update affordance. Never treat create as silent update.
 5. Preserve accepted rationale and implementation provenance. Reopen accepted concern only when relevant Metadata changed and current evidence still supports it.
-6. Send each mutation with required concurrency revision. On stale Metadata or Ticket revision, refetch and reassess.
+6. Send each mutation with required concurrency Revision. On a stale Revision conflict, refetch and reassess.
 
 An explicit audit request authorizes only analysis mutations exposed by current Discovery; it does not authorize Metadata changes or Publication. Follow each mutation's current authorization, confirmation, schema, and concurrency requirements. Agent never accepts a concern or claims Publication occurred.
 

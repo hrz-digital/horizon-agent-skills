@@ -45,7 +45,7 @@ Copy exact executable details into the generated brief only from these current c
 
 Include the current effective HTML, CSS and JavaScript as separate fenced sections, plus data contracts, presentation inputs, interaction outputs, library and asset dependencies, and sanitized selected placement configuration. Include relevant Data Source definitions and their output mappings and Filter bindings. Separate reusable Widget definition from each placement's configuration.
 
-Record Widget identity, Package ownership, revision, context, placement identities and relevant dependency revisions when exposed. List shared usages and unchanged behavior that the requested improvement must preserve. A single reference Widget remains one Widget unless User requests a different composition.
+Record Widget identity, Package ownership, Version, draft Revision when in a Workspace, context, placement identities and relevant dependency revisions when exposed. List shared usages and unchanged behavior that the requested improvement must preserve. A single reference Widget remains one Widget unless User requests a different composition.
 
 Apply export inspection to every source and configuration section. Discard existing mocks entirely and ask the external agent to create new mock data from the contracts. Mark each sanitized or omitted region with a stable local reference and its reason without retaining the removed value. Preserve a distinction between original source and sanitized export: hashes of exported sections may establish the returned baseline, but cannot prove equality with current platform source. Do not create a second local copy of unsafe original content for this workflow.
 
@@ -107,7 +107,7 @@ Produce one self-contained Markdown Design Brief in English, with source blocks 
 7. **Platform contract as of today:** say that changes to it are proposed through the gap register, and that they describe how the code plugs into the platform, not what the design may show. Include the deliverable and host contract extracted for the offline agent (separate markup, styles and JavaScript, `mount` / `update` / `cleanup` as discovered, container-only DOM, no network, null as an explicit empty marker, group keys as codes not labels, theme tokens with fallbacks, container-based sizing), the optional-library note with pinned versions, the typography note, and everything collected under Collect platform facts.
 8. **What to return:** see below.
 9. **Design Session and agreement:** open it with a short emphasized lead-in saying that this is the agreed way of working, that the layout is approved with User before any platform files are produced, and that every item in the gap register is settled together; then copy the block from [Design Session section](design-session.md) unchanged.
-10. **Provenance:** a footer with the Installation alias, Metadata Context, export timestamp, relevant Metadata revisions and sanitization or coverage omissions. It is for the integration step, and the external agent may ignore it.
+10. **Provenance:** a footer with the Installation alias, Metadata Context, export timestamp, relevant Metadata Versions and sanitization or coverage omissions. It is for the integration step, and the external agent may ignore it.
 
 Ask the external agent, under **What to return**, to:
 
