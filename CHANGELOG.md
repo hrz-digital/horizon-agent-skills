@@ -1,6 +1,6 @@
 # Changelog
 
-## (Unreleased)
+## v1.6.7
 
 ### Added
 - Guidance and glossary now separate a Metadata item's Version (published state, advances once per changing Publication, v0 awaiting first Publication) from a record's Revision (saved-change counter and concurrency token): never send either as a property to change, read the current Revision before saving and resend it, on a conflict reload and reapply instead of incrementing, compare Versions to relate a run to a Publication or tell whether a published item changed, and read a Workspace exercise's v0 or last published Version plus draft Revision accordingly. Asset content versions stay separate upload snapshots. Design and architecture-analysis guidance now compare Versions instead of calling published state a revision.
