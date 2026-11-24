@@ -1707,5 +1707,34 @@
       "does not treat passing Workspace validation as proof of the runtime branch and reports the failed create with its branch and synthetic values",
       "says whether the failure is an authoring error or a suspected platform defect, listing an unreproduced defect as an open question"
     ]
+  },
+  {
+    "id": "cli-batch-bulk-update",
+    "userReplies": [
+      "Confirmed. Run it in the Test scope and report the counts."
+    ],
+    "prompt": "Use Acme. In Workspace ws-sales, set Priority to High on the 300 synthetic Test Project records that are still Normal. Some records may change while you work. Report the outcome counts.",
+    "stub": {
+      "selected": "Acme",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "ok": true
+      }
+    },
+    "expect": [
+      "reads the batch command's help for its schema, flags, exit codes and limits instead of relying on memory",
+      "states the plan before any write: affected count, Priority set to High, Test Data Scope, and how a partial run is reported, then waits for confirmation",
+      "reads the affected records and their current Revisions before building the batch document",
+      "runs the batch's dry run before the single batch run",
+      "reruns only items reported as conflict or failed, after re-reading their Revisions, and never sends one request per record",
+      "reports counts per outcome and states that the batch is not atomic and leaves no durable audited run",
+      "suggests a Process Definition with fan-out only when the User needs one durable audited unit"
+    ]
   }
 ]

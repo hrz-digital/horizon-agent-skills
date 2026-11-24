@@ -17,7 +17,7 @@ Apply these gates after `horizon` bootstrap and initial Discovery/Metadata inspe
 
 - **Clarification:** interview unresolved or substantial Metadata work and unclear, broad, multi-step, bulk, relational, destructive, or cross-surface runtime work. Ask only what inspection and the request cannot settle. Fully specified localized work can proceed directly.
 - **Default:** show a concise plan summary in chat, confirm clarified decisions and required approvals, then execute in the same session. Skip the interview round when the agent has no question, and wait for approval before proposing any mutation. Multiple Structures, bulk work, and interview depth do not by themselves require a file.
-- **Business Data:** every Business Data mutation needs explicit confirmation of target, records, values, and intended effect, whether planned in chat or in a file.
+- **Business Data:** every Business Data mutation needs explicit confirmation of target, records, values, and intended effect, whether planned in chat or in a file. A bulk write is a plan to confirm before it runs: state the affected count, the Field and values, the Data Scope (Real or Test), and how a partial run will be reported.
 - **Plan file:** use one only for large work spanning multiple sessions with substantial dependencies or sequencing, or when User explicitly requests a durable plan. Routine interruptions do not require a file; use Workspace Activity for Metadata continuity.
 
 ## Interview

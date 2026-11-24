@@ -137,6 +137,21 @@ Workspace context is where proposed Metadata gets tested. Current Discovery repo
 
 For assignment or recipient testing, follow [Test User fixtures](../horizon-metadata-authoring/SKILL.md#test-user-fixtures). Use current Discovery eligibility rather than inferring authority or deliverability from a User's testing designation.
 
+## Bulk Business Data changes
+
+For a change to many Business Instances, use the CLI's batch request command instead of one request per record. Its help (`horizon request batch --help`) is the source of its document schema, flags, exit codes and limits: read it for each run rather than working from memory.
+
+1. Read the affected records and their current Revisions, and confirm the change's discovered update affordance is available in the selected context.
+2. Build the batch document from those reads, setting only the Fields the agreed change sets.
+3. Run the batch's dry-run option named in its help, read the planned and invalid items, and correct the document before any write.
+4. Run the batch once. A batch is not atomic: succeeded items stay applied, and it leaves no durable audited run.
+5. Read the summary and per-item outcomes. Rerun only the items reported as conflict or failed, after re-reading their current Revisions. Never fall back to one request per record.
+6. Report counts per outcome (applied, conflict, failed, not attempted) by Business Instance Display Label and stable instance code.
+
+When the work must be one durable, audited unit with its own run history, prefer a Process Definition with fan-out over a batch; see [Process Definitions](../horizon-metadata-authoring/SKILL.md#process-definitions).
+
+Completion: every record has a reported outcome, each conflict or failure was rerun only after its Revision was re-read, and no record was changed one request at a time.
+
 ## Reading change history
 
 When reporting who changed Business Data, name the responsible identity exactly as current Discovery and the history response present it. An Agent Credential change is attributed to the Agent acting for its Owner User. An Integration change is a machine integration, not a person: present it as "via <Integration label>" and never as a User, and never infer a responsible User from it. Integrations are managed only by human platform administrators, so do not offer to create, change or issue them; direct that request to a human HSA or HSC User.

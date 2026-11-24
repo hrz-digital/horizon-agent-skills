@@ -167,6 +167,7 @@ def main():
     }
     required.add("contract-gap-advertised-remediation")
     required.add("conditional-field-branch-testing")
+    required.add("cli-batch-bulk-update")
     required.update({"field-batch-authoring", "field-batch-unavailable", "field-batch-rejected"})
     required.update({
         "test-scenario-new-structure", "test-scenario-fixture-reuse", "test-scenario-cross-scope-rejection",
