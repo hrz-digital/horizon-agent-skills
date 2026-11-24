@@ -145,12 +145,12 @@ For a change to many Business Instances, use the CLI's batch request command ins
 2. Build the batch document from those reads, setting only the Fields the agreed change sets.
 3. Run the batch's dry-run option named in its help, read the planned and invalid items, and correct the document before any write.
 4. Run the batch once. A batch is not atomic: succeeded items stay applied, and it leaves no durable audited run.
-5. Read the summary and per-item outcomes. Rerun only the items reported as conflict or failed, after re-reading their current Revisions. Never fall back to one request per record.
-6. Report counts per outcome (applied, conflict, failed, not attempted) by Business Instance Display Label and stable instance code.
+5. Read the summary and per-item outcomes. For each item reported as conflict or failed, re-read its record and re-evaluate the approved predicate against the current values before any retry. Rebuild the retry only from that fresh read, including its current Revision: drop items that are no longer eligible and report them, and never replay the original body. An item whose HTTP outcome is ambiguous (the response was received but its body was lost) must be reconciled by reading the record before any replay. Never fall back to one request per record.
+6. Report counts per outcome (applied, conflict, failed, not attempted, ineligible) by Business Instance Display Label and stable instance code.
 
 When the work must be one durable, audited unit with its own run history, prefer a Process Definition with fan-out over a batch; see [Process Definitions](../horizon-metadata-authoring/SKILL.md#process-definitions).
 
-Completion: every record has a reported outcome, each conflict or failure was rerun only after its Revision was re-read, and no record was changed one request at a time.
+Completion: every record has a reported outcome, each conflict or failure was retried only from a fresh read of its record with ineligible items reported rather than written, and no record was changed one request at a time.
 
 ## Reading change history
 

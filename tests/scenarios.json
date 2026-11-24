@@ -1732,7 +1732,7 @@
       "states the plan before any write: affected count, Priority set to High, Test Data Scope, and how a partial run is reported, then waits for confirmation",
       "reads the affected records and their current Revisions before building the batch document",
       "runs the batch's dry run before the single batch run",
-      "reruns only items reported as conflict or failed, after re-reading their Revisions, and never sends one request per record",
+      "after a conflict or failure, re-reads each affected record, re-evaluates the approved predicate against current values, reruns only still-eligible items rebuilt from that fresh read, reports ineligible items, and never replays the original body or sends one request per record",
       "reports counts per outcome and states that the batch is not atomic and leaves no durable audited run",
       "suggests a Process Definition with fan-out only when the User needs one durable audited unit"
     ]
