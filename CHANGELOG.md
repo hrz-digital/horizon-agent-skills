@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.6.8 (Unreleased)
+
+### Added
+- Metadata authoring now guides contract gaps, where a linked schema contradicts live validation: capture the smallest contradiction (request, schema identifier, error code), try the advertised remediation through its discovered update affordance, validate again, and report the schema gap instead of working around it. Adds a black-box scenario.
+
 ## v1.6.7
 
 ### Added

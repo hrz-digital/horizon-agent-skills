@@ -283,6 +283,12 @@ Reuse an existing Widget before authoring one. Discover authorization-filtered W
 
 Completion: reused or newly authored Widget binds valid Data Sources, mock and live previews are recorded with the surfaces actually observed, usages are inspected with incompatible bindings repaired or blocking findings surfaced, and work stops before human acknowledgement, approval, or Publication.
 
+## Contract gaps
+
+When a linked schema contradicts live validation, the schema is the gap and the authored Metadata may be correct. Capture the smallest contradiction: the request you sent, the schema identifier it names, and the error code returned. Try the remediation the response advertises through its discovered update affordance and the schema that link names, then validate again. Supply any required value from current Discovery or ask the User; never invent one to pass validation. When the remediation clears the rejection, finish the change and report the gap with the captured evidence. When it does not, stop that change and report the same evidence.
+
+Completion: the contradiction is recorded with request, schema identifier and error code; the change is validated after the advertised remediation or stopped; and the schema gap is reported to the User as a finding for the contract's owner, not worked around.
+
 ## Test scenarios
 
 A new Structure or changed behavior is unvalidated until representative Test Business Instances exercise it, so a test scenario is a normal part of feature validation. Inspect existing Test instances before creating any, reuse a fixture that already represents the case, and create only the missing instances a Relation, Expression, or Action needs. A cosmetic-only change, such as a label or Page layout, needs no new instance when reuse already exercises it. Keep Test data fictional and free of personal or customer data.

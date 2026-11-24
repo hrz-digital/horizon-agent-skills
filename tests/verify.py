@@ -165,6 +165,7 @@ def main():
         "same-session-summary-and-adjustments",
         "three-structures-three-layers", "new-structure-page-defaults",
     }
+    required.add("contract-gap-advertised-remediation")
     required.update({"field-batch-authoring", "field-batch-unavailable", "field-batch-rejected"})
     required.update({
         "test-scenario-new-structure", "test-scenario-fixture-reuse", "test-scenario-cross-scope-rejection",
