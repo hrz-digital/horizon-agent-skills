@@ -4,6 +4,7 @@
 
 ### Added
 - Metadata authoring now guides contract gaps, where a linked schema contradicts live validation: capture the smallest contradiction (request, schema identifier, error code), try the advertised remediation through its discovered update affordance, validate again, and report the schema gap instead of working around it. Adds a black-box scenario.
+- Metadata authoring and runtime guidance now tell agents to exercise every branch of a conditional Field rule with synthetic Test Business Instances: the applicable case, the inapplicable case with the optional value omitted, and a valid zero where the type permits it. Runtime results are recorded beside Workspace validation, and an unreproduced platform defect is listed as an open question. Adds a black-box scenario.
 
 ## v1.6.7
 

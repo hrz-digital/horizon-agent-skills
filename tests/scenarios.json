@@ -1682,5 +1682,30 @@
       "supplies any required value from current Discovery or asks the User instead of inventing it",
       "reports the schema gap as a finding with the captured evidence instead of silently working around it"
     ]
+  },
+  {
+    "id": "conditional-field-branch-testing",
+    "prompt": "Use Acme. Workspace validation passed for a Project rule that checks Budget against a limit when Status is Active. Creating a synthetic Project with Budget omitted failed at runtime. Test every branch of the rule in Workspace ws-sales and report the validation and runtime results side by side.",
+    "stub": {
+      "selected": "Acme",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "ok": true
+      }
+    },
+    "expect": [
+      "lists existing Test instances and reuses a fixture for any branch before creating new ones",
+      "creates or reuses synthetic Test instances for the applicable case, the inapplicable case with Budget omitted, and a zero value where the type permits it",
+      "records the runtime result of each branch next to the Workspace validation result",
+      "uses no Real Business Instances and no Installation-specific values in test data",
+      "does not treat passing Workspace validation as proof of the runtime branch and reports the failed create with its branch and synthetic values",
+      "says whether the failure is an authoring error or a suspected platform defect, listing an unreproduced defect as an open question"
+    ]
   }
 ]
