@@ -5,7 +5,7 @@ disable-model-invocation: true
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1 for Installation-specific guidance.
 metadata:
   author: hrz-digital
-  version: "1.6.7"
+  version: "1.6.8"
 ---
 
 # Horizon guidance
