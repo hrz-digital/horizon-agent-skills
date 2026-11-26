@@ -169,6 +169,7 @@ def main():
     required.add("conditional-field-branch-testing")
     required.add("cli-batch-bulk-update")
     required.add("boolean-views-and-row-group")
+    required.update({"organize-page-form", "organize-page-form-no-authoring"})
     require("skills/horizon-metadata-authoring/SKILL.md",
             "boolean Field's View by label length",
             "label-over View",
@@ -178,7 +179,22 @@ def main():
             "Section grid flow",
             "only label-over booleans",
             "controlHeight",
-            "Relation and asset pickers")
+            "Relation and asset pickers",
+            "references/organize-page-form.md")
+    require("skills/horizon-metadata-authoring/references/organize-page-form.md",
+            "## Workflow",
+            "## Layout rules",
+            "omits `authoring`",
+            "### Lone label-over boolean",
+            "### Mixed control heights on one line",
+            "### Boolean-only Row Group",
+            "### Redundant authored size",
+            "**Detect:**",
+            "**Propose:**",
+            "**Why:**",
+            "Preserve tree order where meaning depends on sequence",
+            "before/after",
+            "Completion:")
     required.update({"field-batch-authoring", "field-batch-unavailable", "field-batch-rejected"})
     required.update({
         "test-scenario-new-structure", "test-scenario-fixture-reuse", "test-scenario-cross-scope-rejection",
