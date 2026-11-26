@@ -189,6 +189,7 @@ def main():
             "### Mixed control heights on one line",
             "### Boolean-only Row Group",
             "### Redundant authored size",
+            "flag an explicit `content` size as redundant",
             "**Detect:**",
             "**Propose:**",
             "**Why:**",

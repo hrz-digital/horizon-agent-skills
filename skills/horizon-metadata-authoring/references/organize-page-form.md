@@ -40,6 +40,6 @@ Evaluate every rule below. Keep this list extensible: later rules join as peer s
 
 ### Redundant authored size
 
-- **Detect:** An explicit `size` authored on an Element or Row Group that already matches what current Discovery's size derivation and defaults give in its current parent context. Check parent context before flagging: outside a Row Group, compare against Discovery's Element derivation; on a Row Group itself, compare against its discovered default; inside a Row Group, keep an explicit tier `size` because omitting `size` there derives `content` instead of stretching.
+- **Detect:** An explicit `size` authored on an Element or Row Group that already matches what current Discovery's size derivation and defaults give in its current parent context. Check parent context before flagging: outside a Row Group, compare against Discovery's Element derivation; on a Row Group itself, compare against its discovered default; inside a Row Group, flag an explicit `content` size as redundant (because an omitted `size` derives `content` there), while keeping explicit tier sizes because omitting them would stop them stretching.
 - **Propose:** Remove the redundant `size` property from the Node so current Discovery derivation governs it.
 - **Why:** Authored sizes that duplicate derivation add metadata noise and prevent future derivation updates from applying automatically.
