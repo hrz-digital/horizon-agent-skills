@@ -1754,9 +1754,9 @@
       }
     },
     "expect": [
-      "selects Workspace ws-projects and reads current Discovery for Field Views, Page layout rules, and controlHeight classes instead of guessing or copying platform enumerations",
-      "uses a label-over switch View for the short Reviewed Field and a switchLabel View for the long-label boolean Field, giving it a larger tier size if the label needs room",
-      "wraps Planned Cost and Reviewed in one Row Group with content size on the switch, a tier size on the currency input, and the Row Group sized to their combined occupancy rather than relying on Section grid flow",
+      "selects Workspace ws-projects and reads current Discovery for Field Views (viewDetails.labelPosition), Page layout rules, and controlHeight classes instead of guessing or copying platform enumerations",
+      "uses a label-over boolean View from Discovery for the short Reviewed Field and a label-beside boolean View from Discovery for the long-label boolean Field, giving the label-beside Element a larger tier size if the label needs room",
+      "wraps Planned Cost and Reviewed in one Row Group with content size on the label-over boolean, a tier size on the currency input, and the Row Group sized to their combined occupancy rather than relying on Section grid flow",
       "avoids creating a Row Group containing only label-over booleans and keeps controls of the same controlHeight class together on a line",
       "updates the Page with the complete View node tree, validates the Workspace, reads back the change, and stops before human acknowledgement, approval, or Publication"
     ]

@@ -172,8 +172,9 @@ def main():
     required.update({"organize-page-form", "organize-page-form-no-authoring"})
     require("skills/horizon-metadata-authoring/SKILL.md",
             "boolean Field's View by label length",
-            "label-over View",
-            "label-beside View",
+            "label-over boolean View",
+            "label-beside boolean View",
+            "viewDetails.labelPosition",
             "Row Group",
             "combined occupancy",
             "Section grid flow",
