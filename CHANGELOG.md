@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.6.9 (Unreleased)
+
+### Added
+- Metadata authoring now guides boolean Field Views, Row Groups, and `controlHeight` pairing: choose `switch` or `checkbox` for short labels and `checkboxLabel` or `switchLabel` for sentence-like labels (with a larger tier from Discovery when needed), wrap a label-over boolean beside an input in a Row Group with `content` on the boolean, a tier size on the input, and the row sized to combined occupancy instead of relying on Section grid flow, avoid Row Groups of only label-over booleans, and keep Elements of the same `controlHeight` class together on a line. Adds a black-box scenario.
+
 ## v1.6.8
 
 ### Added

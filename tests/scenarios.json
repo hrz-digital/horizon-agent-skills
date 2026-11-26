@@ -1736,5 +1736,29 @@
       "reports counts per outcome and states that the batch is not atomic and leaves no durable audited run",
       "suggests a Process Definition with fan-out only when the User needs one durable audited unit"
     ]
+  },
+  {
+    "id": "boolean-views-and-row-group",
+    "prompt": "Use Acme. In Workspace ws-projects, update the Project Details Page so the Planned Cost currency Field and a short Reviewed switch sit side by side on one line, and add a long-label boolean switch for \"External vendor terms have been verified and signed off by procurement\". Validate and report the change.",
+    "stub": {
+      "selected": "Acme",
+      "profiles": [
+        {
+          "label": "Acme",
+          "apiUrl": "https://acme.example",
+          "status": "valid"
+        }
+      ],
+      "response": {
+        "ok": true
+      }
+    },
+    "expect": [
+      "selects Workspace ws-projects and reads current Discovery for Field Views, Page layout rules, and controlHeight classes instead of guessing or copying platform enumerations",
+      "uses a label-over switch View for the short Reviewed Field and a switchLabel View for the long-label boolean Field, giving it a larger tier size if the label needs room",
+      "wraps Planned Cost and Reviewed in one Row Group with content size on the switch, a tier size on the currency input, and the Row Group sized to their combined occupancy rather than relying on Section grid flow",
+      "avoids creating a Row Group containing only label-over booleans and keeps controls of the same controlHeight class together on a line",
+      "updates the Page with the complete View node tree, validates the Workspace, reads back the change, and stops before human acknowledgement, approval, or Publication"
+    ]
   }
 ]

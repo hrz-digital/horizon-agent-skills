@@ -168,6 +168,17 @@ def main():
     required.add("contract-gap-advertised-remediation")
     required.add("conditional-field-branch-testing")
     required.add("cli-batch-bulk-update")
+    required.add("boolean-views-and-row-group")
+    require("skills/horizon-metadata-authoring/SKILL.md",
+            "boolean Field's View by label length",
+            "label-over View",
+            "label-beside View",
+            "Row Group",
+            "combined occupancy",
+            "Section grid flow",
+            "only label-over booleans",
+            "controlHeight",
+            "Relation and asset pickers")
     required.update({"field-batch-authoring", "field-batch-unavailable", "field-batch-rejected"})
     required.update({
         "test-scenario-new-structure", "test-scenario-fixture-reuse", "test-scenario-cross-scope-rejection",
