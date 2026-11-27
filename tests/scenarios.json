@@ -1756,7 +1756,7 @@
     "expect": [
       "selects Workspace ws-projects and reads current Discovery for Field Views (viewDetails.labelPosition), Page layout rules, and controlHeight classes instead of guessing or copying platform enumerations",
       "uses a label-over boolean View from Discovery for the short Reviewed Field and a label-beside boolean View from Discovery for the long-label boolean Field, giving the label-beside Element a larger tier size if the label needs room",
-      "wraps Planned Cost and Reviewed in one Row Group with content size on the label-over boolean, a tier size on the currency input, and the Row Group sized to their combined occupancy rather than relying on Section grid flow",
+      "wraps Planned Cost and Reviewed in one Row Group with no size on the label-over boolean (it derives content), an explicit tier size on the currency input, and no size on the Row Group unless other Nodes must share its line, rather than relying on Section grid flow",
       "avoids creating a Row Group containing only label-over booleans and keeps controls of the same controlHeight class together on a line",
       "updates the Page with the complete View node tree, validates the Workspace, reads back the change, and stops before human acknowledgement, approval, or Publication"
     ]
@@ -1782,7 +1782,7 @@
       "reads the Project details Page Views and Nodes, referenced Field definitions, and current Discovery layout rules (sizes, size derivation, controlHeight classes, and Row Group behavior) instead of guessing or copying platform contracts",
       "applies the extensible layout rule set: handles lone label-over booleans (Row Group with a neighbouring input or label-beside View for long labels), regroups mixed controlHeight classes on one line (pickers with pickers), fixes boolean-only Row Groups, and removes redundant authored sizes already given by Discovery derivation (including explicit content on a Row Group child) without stripping explicit tier sizes inside Row Groups",
       "preserves tree order where meaning depends on sequence (such as a Field qualifying the Field before it) and states every proposed reorder explicitly",
-      "updates the Page with its complete View node tree and any changed Field View in the same Workspace, validates the Workspace, and reads back the saved change",
+      "lists every Page where a boolean Field renders and asks the User before changing that Field's View, otherwise keeps the change Page-only; updates the Page with its complete View node tree in the same Workspace, validates the Workspace, and reads back the saved change",
       "presents a before/after summary naming each applied rule, any reorder, and any Field-level View scope impact for HSA acceptance, and stops before acknowledgement, approval, or Publication"
     ]
   },
