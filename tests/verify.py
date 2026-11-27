@@ -193,6 +193,8 @@ def main():
             "### Redundant authored size",
             "flag an explicit `content` size as redundant",
             "report it as likely rather than certain",
+            "even if no reason is given",
+            "as pre-existing without fixing them",
             "Without agreement, keep the Field's View",
             "**Detect:**",
             "**Propose:**",
