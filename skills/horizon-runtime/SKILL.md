@@ -4,7 +4,7 @@ description: Operate Horizon Business Data and execute runtime Actions and Proce
 compatibility: Requires Horizon CLI 1.x and Horizon Discovery contract v1.
 metadata:
   author: hrz-digital
-  version: "1.6.8"
+  version: "1.6.9"
 ---
 
 # Horizon Runtime

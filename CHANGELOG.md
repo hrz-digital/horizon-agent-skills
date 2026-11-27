@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.6.9 (Unreleased)
+## v1.6.9
 
 ### Added
 - Metadata authoring now guides boolean Field Views, Row Groups, and `controlHeight` pairing: choose a label-over boolean View for short labels and a label-beside boolean View for sentence-like labels (checking Discovery's Field catalog `viewDetails.labelPosition` for which Views those are, and giving a label-beside Element a larger tier from Discovery when needed), wrap a label-over boolean beside an input in a Row Group with no size on the boolean (it derives `content`), a tier size on the input, and no Row Group size unless other Nodes share its line instead of relying on Section grid flow, ask the User before changing a Field's View because it renders on every Page that shows the Field, avoid Row Groups of only label-over booleans, and keep Elements of the same `controlHeight` class together on a line. Adds a black-box scenario.
